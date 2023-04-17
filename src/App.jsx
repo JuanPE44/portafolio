@@ -1,23 +1,16 @@
-import styled from "styled-components";
 import "./App.css";
 import Sidebar from "./components/Sidebar/Sidebar";
-import AboutMe from "./pages/AboutMe.jsx/AboutMe";
-import Home from "./pages/Home/Home";
+import Main from "./components/Main/Main";
 
+import { GlobalContextProvider } from "./context/GlobalContext";
 
 export default function App() {
   return (
-    <div className="app-container">
-      <Sidebar />
-      <Main>
-        <Home />
-        <AboutMe />
-      </Main>
-    </div>
+    <GlobalContextProvider>
+      <div className="app-container">
+        <Sidebar />
+        <Main />
+      </div>
+    </GlobalContextProvider>
   );
 }
-
-const Main = styled.main`
-  display: flex;
-  flex-direction: column;
-`

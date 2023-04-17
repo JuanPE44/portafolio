@@ -1,17 +1,23 @@
 
 import styled from "styled-components";
-import imgAboutMe from "../../assets/fondo-home.jpg";
+import imgProjects from "../../assets/fondo-home.jpg";
 import { colors } from "../../contants/theme";
 
-export default function AboutMe () {
+export default function Projects() {
   return (
     <Container>
-      <img className="img-container" src={imgAboutMe} alt="" />
+      <img className="img-container" src={imgProjects} alt="" />
       <Content>
-
+        <div className="projects-container">
+          <h1>Proyectos</h1>
+          <ul>
+            <li></li>
+          </ul>
+        </div>
       </Content>
+      <div className="observer" id="Proyectos"></div>
     </Container>
-  )
+  );
 }
 
 const Container = styled.div`
@@ -34,6 +40,7 @@ const Container = styled.div`
     object-position: bottom;
     object-fit: cover;
     position: absolute;
+    transform: rotate(180deg);
     left: 0;
     top: 0;
     width: 100%;
@@ -45,4 +52,7 @@ const Container = styled.div`
 const Content = styled.div`
   z-index: 100;
 
+  .projects-container {
+
+  }
 `;

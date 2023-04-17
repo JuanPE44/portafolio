@@ -7,10 +7,13 @@ export default function Home() {
     <Container>
       <img className="img-container" src={imgHome} alt="" />
       <Content>
-        <div></div>
-        <h1 className="name-container">Juan Peñalba</h1>
-        <span>Desarrollador FrontEnd</span>
+        <div className="name-container">
+          <h1 className="name">Juan Peñalba</h1>
+          <span>Desarrollador FrontEnd</span>
+        </div>
+       
       </Content>
+      <div className="observer" id="Bienvenido"></div>
     </Container>
   );
 }
@@ -21,7 +24,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
+  
   &::before {
     content: "";
     position: absolute;
@@ -52,15 +55,19 @@ const Content = styled.div`
   }
 
   .name-container {
-    color: ${colors.white};
-    font-weight: 900;
-    font-size: 6rem;
-    margin-bottom: 0.5rem;
-  }
+    
 
-  span {
-    font-size: 3rem;
-    color: ${colors.secondary};
-    font-weight: 400;
+    .name {
+      color: ${colors.white};
+      font-weight: 900;
+      font-size: 6rem;
+      margin: 0.5rem 0;
+    }
+
+    span {
+      font-size: 3rem;
+      color: ${colors.secondary};
+      font-weight: 400;
+    }
   }
 `;
