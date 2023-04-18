@@ -10,15 +10,14 @@ export default function AboutMe() {
         <div className="aboutme-container">
           <h1>Sobre mi</h1>
           <p>
-            Desde mi infancia, me ha fascinado la programación y todo
-            lo relacionado con la informática. Esto me llevó a
-            estudiar programación en una escuela técnica, y también a
-            desarrollar habilidades autodidactas en el campo del desarrollo web.
-            Disfruto trabajando en equipo y siempre estoy dispuesto a aprender
-            cosas nuevas. Además de la programación, tengo una gran pasión por
-            la fotografía, el fútbol y los videojuegos, que me permiten mantener
-            un equilibrio en mi vida y desarrollar habilidades en diferentes
-            áreas.
+            Desde mi infancia, me ha fascinado la programación y todo lo
+            relacionado con la informática. Esto me llevó a estudiar
+            programación en una escuela técnica, y también a desarrollar
+            habilidades autodidactas en el campo del desarrollo web. Disfruto
+            trabajando en equipo y siempre estoy dispuesto a aprender cosas
+            nuevas. Además de la programación, tengo una gran pasión por la
+            fotografía, el fútbol y los videojuegos, que me permiten mantener un
+            equilibrio en mi vida y desarrollar habilidades en diferentes áreas.
           </p>
         </div>
       </Content>
@@ -57,16 +56,18 @@ const Container = styled.div`
 
 const Content = styled.div`
   z-index: 100;
+  padding-left: 10rem;
 
   .aboutme-container {
+    margin: 3rem;
     padding: 1rem 2rem;
-    border-right: 2px dashed ${colors.primary};
+    border-right: 1px dashed ${colors.primary};
 
     h1 {
       font-size: 4rem;
       color: ${colors.secondary};
       font-weight: 700;
-      letter-spacing: .1rem;
+      letter-spacing: 0.1rem;
     }
 
     p {
@@ -74,6 +75,21 @@ const Content = styled.div`
       text-align: justify;
       font-size: 2rem;
       color: ${colors.white};
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    padding-left: 0;
+  }
+
+  @media only screen and (max-width: 550px) {
+    .aboutme-container {
+      h1 {
+        font-size: 3rem;
+      }
+      p {
+        font-size: 1.5rem;
+      }
     }
   }
 `;

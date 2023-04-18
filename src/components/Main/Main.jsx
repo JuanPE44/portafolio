@@ -1,10 +1,11 @@
 import styled from "styled-components";
-import Home from "../../pages/Home/Home"
+import Home from "../../pages/Home/Home";
 import AboutMe from "../../pages/AboutMe/AboutMe";
-import Projects from "../../pages/Projects/Projects"
-import useObserver from "../../common/hooks/useObserver"
+import Projects from "../../pages/Projects/Projects";
+import useObserver from "../../common/hooks/useObserver";
 import { useEffect } from "react";
 import { useGlobalContext } from "../../common/hooks/useGlobalContext";
+import Skills from "../../pages/Skills/Skills";
 
 export default function Main() {
   const [observer, setElements, entries] = useObserver({
@@ -31,6 +32,7 @@ export default function Main() {
       <Home />
       <AboutMe />
       <Projects />
+      <Skills />
     </Container>
   );
 }
