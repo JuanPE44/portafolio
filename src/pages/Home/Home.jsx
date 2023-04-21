@@ -5,6 +5,7 @@ import { useGlobalContext } from "../../common/hooks/useGlobalContext";
 
 export default function Home() {
   const { currentPage } = useGlobalContext();
+  
   return (
     <Container page={currentPage}>
       <img className="img-container" src={imgHome} alt="" />
@@ -60,17 +61,25 @@ const Content = styled.div`
   }
 
   .name-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     .name {
       color: ${colors.white};
       font-weight: 900;
       font-size: 6rem;
-      margin: 0.5rem 0;
+      margin: 0.5rem 0;      
     }
 
     span {
       font-size: 3rem;
       color: ${colors.secondary};
       font-weight: 400;
+      background: linear-gradient(45deg,#b38053,#4b84b6);
+      -webkit-background-clip: text;
+      color: transparent;  
+      background-size: 300%;
+      animation: name 5s infinite ease;
     }
   }
 
@@ -83,5 +92,11 @@ const Content = styled.div`
         font-size: 2rem;
       }
     }
+  }
+
+  @keyframes name {
+    0%{background-position:left}
+    50%{background-position:right}
+    100%{background-position:left}
   }
 `;

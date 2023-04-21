@@ -1,14 +1,16 @@
 import styled from "styled-components";
-import imgSkills from "../../assets/fondo-home.jpg";
 import { colors } from "../../contants/theme";
-import IconHTML from "../../common/icons/IconHTML";
-import IconCSS from "../../common/icons/IconCSS";
-import IconJS from "../../common/icons/IconJS";
-import IconSass from "../../common/icons/IconSass";
-import IconReact from "../../common/icons/IconReact";
-import IconTailWind from "../../common/icons/IconTailWind";
+import {
+  SvgCSS,
+  SvgHTML,
+  SvgJs,
+  SvgReact,
+  SvgTaildwind,
+  SvgSass,
+} from "../../common/icons/svgsIcons";
+import { IconSvg } from "../../common/icons/IconSvg";
 
-const ICON_SIZE = 100;
+const ICON_SIZE = 10;
 
 export default function Skills() {
   return (
@@ -17,12 +19,24 @@ export default function Skills() {
         <div className="skills-container">
           <h1>Habilidades</h1>
           <div className="languajes-container">
-            <IconReact width={ICON_SIZE} height={ICON_SIZE} />
-            <IconJS width={ICON_SIZE} height={ICON_SIZE} />
-            <IconHTML width={ICON_SIZE} height={ICON_SIZE} />
-            <IconCSS width={ICON_SIZE} height={ICON_SIZE} />
-            <IconSass width={ICON_SIZE} height={ICON_SIZE} />
-            <IconTailWind width={ICON_SIZE} height={ICON_SIZE} />
+            <IconSvg width={ICON_SIZE} height={ICON_SIZE}>
+              <SvgHTML />
+            </IconSvg>
+            <IconSvg width={ICON_SIZE} height={ICON_SIZE}>
+              <SvgCSS />
+            </IconSvg>
+            <IconSvg width={ICON_SIZE} height={ICON_SIZE}>
+              <SvgJs />
+            </IconSvg>
+            <IconSvg width={ICON_SIZE} height={ICON_SIZE}>
+              <SvgReact />
+            </IconSvg>
+            <IconSvg width={ICON_SIZE} height={ICON_SIZE}>
+              <SvgSass />
+            </IconSvg>
+            <IconSvg width={ICON_SIZE} height={ICON_SIZE}>
+              <SvgTaildwind />
+            </IconSvg>
           </div>
         </div>
       </Content>
@@ -48,11 +62,14 @@ const Container = styled.div`
   }
 `;
 
-const Content = styled.div`
-  z-index: 100;
+const Content = styled.div` 
+  width: 100%;
   padding-left: 10rem;
+  z-index: 100;
 
   .skills-container {
+    display: grid;
+    place-items: center;
     h1 {
       font-size: 5rem;
       color: ${colors.white};
@@ -66,6 +83,7 @@ const Content = styled.div`
     .languajes-container {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       max-width: 500px;
       gap: 2rem;
     }

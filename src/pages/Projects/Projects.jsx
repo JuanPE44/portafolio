@@ -77,7 +77,9 @@ const Content = styled.div`
   z-index: 100;
   width: 100%;
   max-width: 900px;
+  padding-bottom: 10rem;
   padding-left: 10rem;
+
 
   .projects-container {
     h1 {

@@ -1,6 +1,8 @@
 import styled from "styled-components";
+import { IconSvg } from "../../common/icons/IconSvg";
+import { SvgGithub } from "../../common/icons/svgsIcons";
 import { colors } from "../../contants/theme";
-import IconGithub from "../../common/icons/IconGithub";
+import { motion } from "framer-motion";
 
 export default function CardProject({
   title,
@@ -12,12 +14,14 @@ export default function CardProject({
     <Card>
       <div className="card-header">
         <h2>{title}</h2>
-        <IconGithub
+        <IconSvg
           href={githubHref}
           color={colors.white}
-          width={30}
-          height={30}
-        />
+          width={3}
+          height={3}
+        >
+          <SvgGithub />
+        </IconSvg>
       </div>
       <p>{description}</p>
       <div className="card-footer">
@@ -27,7 +31,7 @@ export default function CardProject({
   );
 }
 
-const Card = styled.li`
+const Card = styled(motion.div)`
   position: relative;
   border-radius: 10px;
   border: 2px dashed ${colors.primary};
@@ -40,6 +44,7 @@ const Card = styled.li`
   height: 100%;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 
   &::before {
     content: "";

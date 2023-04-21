@@ -55,13 +55,21 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
-  z-index: 100;
+  width: 100%;
   padding-left: 10rem;
+  z-index: 100;
 
   .aboutme-container {
     margin: 3rem;
-    padding: 1rem 2rem;
-    border-right: 1px dashed ${colors.primary};
+    padding: 1rem 3rem;
+    width: max-content;
+    background: linear-gradient(90deg, ${colors.primary} 50%, transparent 50%),
+      linear-gradient(90deg, ${colors.primary} 50%, transparent 50%),
+      linear-gradient(0deg, ${colors.primary} 50%, transparent 50%),
+      linear-gradient(0deg, ${colors.primary} 50%, transparent 50%);
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 0, 0, 0, 2px 15px;
+    animation: border-dance 10s infinite linear;
 
     h1 {
       font-size: 4rem;
@@ -73,8 +81,9 @@ const Content = styled.div`
     p {
       max-width: 550px;
       text-align: justify;
-      font-size: 2rem;
+      font-size: 1.8rem;
       color: ${colors.white};
+      font-weight: 700;
     }
   }
 
@@ -92,4 +101,13 @@ const Content = styled.div`
       }
     }
   }
+
+  @keyframes border-dance {
+  0% {
+    background-position: 0 0, 100% 100%, 0 100%, 100% 0;
+  }
+  100% {
+    background-position: 100% 0, 0 100%, 0 0, 100% 100%;
+  }
+}
 `;

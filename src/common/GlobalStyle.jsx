@@ -17,6 +17,8 @@ export const GlobalStyle = createGlobalStyle`
       background-color: ${colors.primary};
       border-radius: 5px;
     }
+
+    scroll-behavior: smooth;
   }
   a:link, a:visited, a:active {
     text-decoration:none;
