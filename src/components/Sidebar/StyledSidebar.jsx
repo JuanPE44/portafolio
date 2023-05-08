@@ -79,6 +79,7 @@ export const Aside = styled.aside`
       position: static;
       overflow: hidden;
       transform: none;
+      animation: none;
 
       .titulo {
         max-width: none;
