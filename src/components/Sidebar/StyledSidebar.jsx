@@ -28,6 +28,7 @@ export const Aside = styled.aside`
   .titulo-container {
     position: absolute;
     bottom: 50%;
+    transform: translateY(-100%);
 
     .titulo {
       max-width: 2rem;
@@ -77,6 +78,7 @@ export const Aside = styled.aside`
     .titulo-container {
       position: static;
       overflow: hidden;
+      transform: none;
 
       .titulo {
         max-width: none;
@@ -105,41 +107,41 @@ export const Aside = styled.aside`
 
   @keyframes bienvenido {
     0% {
-      transform: scale(1) rotateY(180deg);
+      transform: scale(1) rotateY(180deg) translateY(-100%);
       color: transparent;
     }
     100% {
-      transform: scale(1) rotateY(360deg);
+      transform: scale(1) rotateY(360deg) translateY(-100%);
       color: #fff;
     }
   }
   @keyframes sobremi {
     0% {
-      transform: scale(1) rotateY(180deg);
+      transform: scale(1) rotateY(180deg) translateY(-100%);
       color: transparent;
     }
     100% {
-      transform: scale(1) rotateY(360deg);
+      transform: scale(1) rotateY(360deg) translateY(-100%);
       color: #fff;
     }
   }
   @keyframes proyectos {
     0% {
-      transform: scale(1) rotateY(180deg);
+      transform: scale(1) rotateY(180deg) translateY(-100%);
       color: transparent;
     }
     100% {
-      transform: scale(1) rotateY(360deg);
+      transform: scale(1) rotateY(360deg) translateY(-100%);
       color: #fff;
     }
   }
   @keyframes habilidades {
     0% {
-      transform: scale(1) rotateY(180deg);
+      transform: scale(1) rotateY(180deg) translateY(-100%);
       color: transparent;
     }
     100% {
-      transform: scale(1) rotateY(360deg);
+      transform: scale(1) rotateY(360deg) translateY(-100%);
       color: #fff;
     }
   }

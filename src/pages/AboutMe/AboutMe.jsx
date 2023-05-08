@@ -58,6 +58,8 @@ const Content = styled.div`
   width: 100%;
   padding-left: 10rem;
   z-index: 100;
+  display: grid;
+  place-items: center;
 
   .aboutme-container {
     margin: 3rem;
@@ -103,11 +105,11 @@ const Content = styled.div`
   }
 
   @keyframes border-dance {
-  0% {
-    background-position: 0 0, 100% 100%, 0 100%, 100% 0;
+    0% {
+      background-position: 0 0, 100% 100%, 0 100%, 100% 0;
+    }
+    100% {
+      background-position: 100% 0, 0 100%, 0 0, 100% 100%;
+    }
   }
-  100% {
-    background-position: 100% 0, 0 100%, 0 0, 100% 100%;
-  }
-}
 `;

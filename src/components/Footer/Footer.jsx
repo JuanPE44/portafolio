@@ -13,10 +13,10 @@ export default function Footer() {
         <span>juantandil123@gmail.com</span>
       </div>
       <div className="phone-container">
-      <IconSvg width={3} height={3} color="#fff">
+        <IconSvg width={3} height={3} color="#fff">
           <SvgPhone />
         </IconSvg>
-      <span>+54 2494377662</span>
+        <span>+54 2494377662</span>
       </div>
     </Container>
   );
@@ -33,7 +33,8 @@ const Container = styled.footer`
   padding: 5rem 5rem 5rem 14rem;
   font-size: 2rem;
 
-  .gmail-container, .phone-container {
+  .gmail-container,
+  .phone-container {
     display: flex;
     align-items: center;
     gap: 1rem;
