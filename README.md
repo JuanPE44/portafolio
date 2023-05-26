@@ -16,10 +16,10 @@ Este es mi portafolio personal, desarrollado utilizando React y Styled Component
 
 ## Instalación
 
-1. Clona este repositorio en tu máquina local: git clone https://github.com/JuanPE44/portafolio.git
-2. Navega hasta el directorio del proyecto: cd portafolio 
-3. Instala las dependencias: npm install 
-4. Inicia la aplicación: npm run dev
+1. Clona este repositorio en tu máquina local: `git clone https://github.com/JuanPE44/portafolio.git`
+2. Navega hasta el directorio del proyecto: `cd portafolio`
+3. Instala las dependencias: `npm install`
+4. Inicia la aplicación: `npm run dev`
 
 
 
