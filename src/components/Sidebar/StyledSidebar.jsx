@@ -12,6 +12,11 @@ export const Aside = styled.aside`
   height: 100vh;
   z-index: 200;
 
+  .icon-github {
+    width: 3rem;
+    margin-top: 2rem;
+  }
+
   .icon-code {
     margin-top: 3rem;
     font-size: 3rem;
@@ -64,6 +69,11 @@ export const Aside = styled.aside`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    .icon-github {
+      margin-top: 0;
+      margin-left: 2rem;
+    }
 
     .icon-code {
       margin-top: 0;

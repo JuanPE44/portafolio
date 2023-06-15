@@ -19,24 +19,47 @@ export default function Skills() {
         <div className="skills-container">
           <h1>Habilidades</h1>
           <div className="languajes-container">
-            <IconSvg width={ICON_SIZE} height={ICON_SIZE}>
-              <SvgHTML />
-            </IconSvg>
-            <IconSvg width={ICON_SIZE} height={ICON_SIZE}>
-              <SvgCSS />
-            </IconSvg>
-            <IconSvg width={ICON_SIZE} height={ICON_SIZE}>
-              <SvgJs />
-            </IconSvg>
-            <IconSvg width={ICON_SIZE} height={ICON_SIZE}>
-              <SvgReact />
-            </IconSvg>
-            <IconSvg width={ICON_SIZE} height={ICON_SIZE}>
-              <SvgSass />
-            </IconSvg>
-            <IconSvg width={ICON_SIZE} height={ICON_SIZE}>
-              <SvgTaildwind />
-            </IconSvg>
+            <IconSvg
+              width={ICON_SIZE}
+              height={ICON_SIZE}
+              icon={<SvgHTML />}
+              animate={false}
+            />
+
+            <IconSvg
+              width={ICON_SIZE}
+              height={ICON_SIZE}
+              icon={<SvgCSS />}
+              animate={false}
+            />
+
+            <IconSvg
+              width={ICON_SIZE}
+              height={ICON_SIZE}
+              icon={<SvgJs />}
+              animate={false}
+            />
+
+            <IconSvg
+              width={ICON_SIZE}
+              height={ICON_SIZE}
+              icon={<SvgReact />}
+              animate={false}
+            />
+
+            <IconSvg
+              width={ICON_SIZE}
+              height={ICON_SIZE}
+              icon={<SvgSass />}
+              animate={false}
+            />
+
+            <IconSvg
+              width={ICON_SIZE}
+              height={ICON_SIZE}
+              icon={<SvgTaildwind />}
+              animate={false}
+            />
           </div>
         </div>
       </Content>
@@ -62,7 +85,7 @@ const Container = styled.div`
   }
 `;
 
-const Content = styled.div` 
+const Content = styled.div`
   width: 100%;
   padding-left: 10rem;
   z-index: 100;
