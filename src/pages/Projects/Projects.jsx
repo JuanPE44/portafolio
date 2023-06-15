@@ -12,6 +12,18 @@ export default function Projects() {
           <h1>Proyectos</h1>
           <ul>
             <CardProject
+              title="app-peliculas"
+              description="En este proyecto, he desarrollado una página web interactiva que permite a los usuarios explorar y buscar películas utilizando React, junto con la API de The Movie Database (TMDB)"
+              technologies="React - JavaScript - styled-components"
+              githubHref="https://github.com/JuanPE44/app-peliculas"
+            />
+            <CardProject
+              title="Ajedrez"
+              description="En este proyecto, he desarrollado un ajedrez interactivo utilizando tecnologías web como JavaScript, HTML y CSS. Me he inspirado en el popular sitio web de ajedrez, Chess.com, para recrear su estilo y ofrecer a los usuarios una experiencia similar."
+              technologies="HTML - CSS - JavaScript"
+              githubHref="https://github.com/JuanPE44/ajedrez"
+            />
+            <CardProject
               title="Aplicacion del clima"
               description="Esta página ofrece información en tiempo real sobre el clima de diferentes ciudades del mundo gracias a la API del clima WeatherAPI. Utilicé React para crear una experiencia de usuario fluida e interactiva. También utilicé Sass para la estilización de la página y hacerla más escalable"
               technologies="React - JavaScript - Sass"
@@ -79,7 +91,6 @@ const Content = styled.div`
   max-width: 900px;
   padding-bottom: 10rem;
   padding-left: 10rem;
-
 
   .projects-container {
     h1 {

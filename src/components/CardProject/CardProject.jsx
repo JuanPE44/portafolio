@@ -19,9 +19,8 @@ export default function CardProject({
           color={colors.white}
           width={3}
           height={3}
-        >
-          <SvgGithub />
-        </IconSvg>
+          icon={<SvgGithub />}
+        />
       </div>
       <p>{description}</p>
       <div className="card-footer">
