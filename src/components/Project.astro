@@ -1,0 +1,21 @@
+---
+import type { CollectionEntry } from "astro:content";
+type Props = {
+  project: CollectionEntry<"projects">;
+  index: number;
+};
+const { project, index } = Astro.props;
+---
+
+<a
+  href={`/projects/${project.slug}`}
+  class="hover:text-orange-500 dark:hover:text-orange-500"
+>
+  <img
+    class="aspect-square object-cover rounded-lg w-44"
+    src={project.data.image}
+    alt={project.data.title}
+    transition:name={`image-${index}`}
+  />
+  <h2 class="pt-4 font-semibold dark:text-white">{project.data.title}</h2>
+</a>

@@ -1,0 +1,14 @@
+---
+import Project from "./Project.astro";
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
+---
+
+<div class="flex gap-x-4 mb-24">
+  {
+    projects.map((project, index) => (
+      <Project project={project} index={index} />
+    ))
+  }
+</div>

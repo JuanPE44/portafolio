@@ -1,0 +1,41 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Main from "../../components/Main.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+
+export const getStaticPaths = async () => {
+  const projects = await getCollection("projects");
+
+  const paths = projects.map((project, index) => {
+    return {
+      params: {
+        slug: project.slug,
+      },
+      props: {
+        project,
+        index,
+      },
+    };
+  });
+
+  return paths;
+};
+
+type Props = {
+  project: CollectionEntry<"projects">;
+  index: number;
+};
+
+const { project, index } = Astro.props;
+---
+
+<Layout title="">
+  <Main>
+    <img
+      class="aspect-square object-cover rounded-lg w-64"
+      src={project.data.image}
+      alt={project.data.title}
+      transition:name={`image-${index}`}
+    />
+  </Main>
+</Layout>
