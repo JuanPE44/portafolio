@@ -9,13 +9,36 @@ const { project, index } = Astro.props;
 
 <a
   href={`/projects/${project.slug}`}
-  class="hover:text-orange-500 dark:hover:text-orange-500"
+  class="hover:text-pink-500 dark:hover:text-pink-500 dark:text-white"
 >
-  <img
-    class="aspect-square object-cover rounded-lg w-44"
-    src={project.data.image}
-    alt={project.data.title}
-    transition:name={`image-${index}`}
-  />
-  <h2 class="pt-4 font-semibold dark:text-white">{project.data.title}</h2>
+  <div class="img-project rounded-lg hover:p-0.5 transition-all">
+    <img
+      class="aspect-square object-cover rounded-lg w-64"
+      src={project.data.image}
+      alt={project.data.title}
+      transition:name={`image-${index}`}
+    />
+  </div>
+  <h2 class="pt-4 font-semibold">{project.data.title}</h2>
 </a>
+
+<style>
+  .img-project {
+    background: linear-gradient(89.81deg, #33d3ff, #ff65d9, #ced63d, #ff8f33);
+    background-size: 300%;
+    animation: gradient 20s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+</style>

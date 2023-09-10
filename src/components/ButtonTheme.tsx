@@ -10,7 +10,7 @@ export function ButtonTheme() {
   };
   return (
     <button
-      className="dark:text-white p-5 rounded-full opacity-50 bg-zinc-200 dark:bg-zinc-800"
+      className=" rounded-sm text-xl text-zinc-950 dark:text-zinc-100"
       onClick={() => handleClick()}
     >
       {darkMode ? <IconSun /> : <IconMoon />}
@@ -21,16 +21,14 @@ export function ButtonTheme() {
 const IconMoon = () => {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
       width="18"
       height="18"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      className="feather feather-moon"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     >
       <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
     </svg>
@@ -46,10 +44,9 @@ const IconSun = () => {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      className="feather feather-sun"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     >
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>

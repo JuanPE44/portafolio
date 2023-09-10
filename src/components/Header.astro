@@ -2,15 +2,27 @@
 import { ButtonTheme } from "./ButtonTheme.jsx";
 ---
 
-<header class="px-8 py-10 flex justify-between items-center">
-  <a class="text-3xl dark:text-white font-bold dark:font-semibold font-outfit"
-    >JP<span class="text-orange-800 dark:text-orange-400">.</span></a
+<header class="absolute top-0 w-full z-50">
+  <section
+    class="px-20 py-10 max-sm:px-5 max-w-5xl m-auto w-full flex items-center justify-between"
   >
-  <nav>
-    <ul class="flex items-center gap-4">
-      <li><a class="text-lg font-semibold dark:text-white">Sobre mi</a></li>
-      <li><a class="text-lg font-semibold dark:text-white">Proyectos</a></li>
-      <li class="ml-6"><ButtonTheme client:visible /></li>
-    </ul>
-  </nav>
+    <a
+      class="text-xl text-zinc-950 dark:text-white font-bold dark:font-semibold font-outfit"
+      >JP</a
+    >
+    <nav>
+      <ul class="flex items-center gap-4">
+        <li>
+          <a
+            href="#projects"
+            class="text-lg text-zinc-950 font-semibold dark:text-white"
+            >Proyectos</a
+          >
+        </li>
+        <li class="ml-6 flex justify-center items-center">
+          <ButtonTheme client:visible />
+        </li>
+      </ul>
+    </nav>
+  </section>
 </header>

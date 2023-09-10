@@ -2,30 +2,49 @@
 import Layout from "../layouts/Layout.astro";
 import Main from "../components/Main.astro";
 import ProjectList from "../components/ProjectList.astro";
+import H1 from "../components/H1.astro";
 ---
 
 <Layout title="Mi portafolio">
-  <section class="flex items-center m-auto justify-center mt-7 relative">
-    <img src="/images/juan.png" class="rounded-b-full w-96 aspect-square" />
-    <div>
-      <h1 class="text-6xl font-bold">Juan Peñalba</h1>
-      <h2 class="text-xl font-semibold dark:text-zinc-200 text-zinc-600">
-        Desarrollador FrontEnd
+  <Main>
+    <section
+      class="flex flex-col justify-center relative min-h-screen pointer-events-none z-20"
+    >
+      <div class="flex items-center gap-5">
+        <div>
+          <H1 text="Juan Peñalba" />
+          <h2
+            class="subtitulo mt-1 text-3xl font-semibold dark:text-zinc-200 text-zinc-600"
+          >
+            Desarrollador FrontEnd
+          </h2>
+          <p class="text-lg mt-7 text-zinc-800 dark:text-zinc-300">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem,
+            facilis. Porro temporibus tempore eligendi illo fuga suscipit unde
+            asperiores harum necessitatibus, quas sunt natus adipisci
+            perspiciatis ullam corporis accusantium saepe.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="parse mt-20">
+      <h2 class="font-bold text-4xl mb-7 dark:text-white" id="projects">
+        Proyectos
       </h2>
-    </div>
-  </section>
-  <Main />
+      <ProjectList />
+    </section>
+  </Main>
 </Layout>
 
 <style>
-  h1 {
-    background: linear-gradient(89.81deg, #ff8f33, #ced63d, #ff65d9);
+  .subtitulo {
+    background: linear-gradient(89.81deg, #33d3ff, #ff65d9, #ced63d, #ff8f33);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
     background-size: 300%;
-    animation: gradient 10s ease infinite;
+    animation: gradient 20s ease infinite;
     line-height: 1.2;
   }
 
