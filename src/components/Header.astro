@@ -1,15 +1,28 @@
 ---
-import { ButtonTheme } from "./ButtonTheme.jsx";
+import { AnimationMove } from "./React/AnimationMove";
+import { ButtonTheme } from "./React/ButtonTheme.jsx";
 ---
 
 <header class="absolute top-0 w-full z-50">
   <section
-    class="px-20 py-10 max-sm:px-5 max-w-5xl m-auto w-full flex items-center justify-between"
+    class="px-20 py-10 max-sm:px-5 max-w-7xl m-auto w-full flex items-center justify-between"
   >
-    <a
-      class="text-xl text-zinc-950 dark:text-white font-bold dark:font-semibold font-outfit"
-      >JP</a
-    >
+    <div class="overflow-hidden w-full">
+      <AnimationMove
+        client:visible
+        initial={{ y: "-100%", opacity: 0 }}
+        ease="easeOut"
+        duration={2}
+        delay={2.2}
+      >
+        <h2
+          class="text-2xl font-semibold dark:text-stone-200 text-stone-600 mb-2"
+        >
+          Juan Peñalba
+        </h2>
+      </AnimationMove>
+    </div>
+
     <nav>
       <ul class="flex items-center gap-4">
         <li>
@@ -18,9 +31,6 @@ import { ButtonTheme } from "./ButtonTheme.jsx";
             class="text-lg text-zinc-950 font-semibold dark:text-white"
             >Proyectos</a
           >
-        </li>
-        <li class="ml-6 flex justify-center items-center">
-          <ButtonTheme client:visible />
         </li>
       </ul>
     </nav>

@@ -2,62 +2,158 @@
 import Layout from "../layouts/Layout.astro";
 import Main from "../components/Main.astro";
 import ProjectList from "../components/ProjectList.astro";
-import H1 from "../components/H1.astro";
+import TechnologiesList from "../components/TechnologiesList.astro";
+import H2 from "../components/H2.astro";
+import { Row } from "../components/React/Row";
+import { AnimationMove } from "../components/React/AnimationMove";
 ---
 
 <Layout title="Mi portafolio">
-  <Main>
-    <section
-      class="flex flex-col justify-center relative min-h-screen pointer-events-none z-20"
+  <div
+    class="pointer-events-none inset-0 z-30 transition duration-300 lg:absolute follower"
+  >
+  </div>
+  <section class="flex gap-5 relative min-h-screen pointer-events-none z-20">
+    <Main>
+      <div class="flex flex-col justify-center w-full h-full overflow-hidden">
+        <div class="overflow-hidden">
+          <AnimationMove client:visible initial={{ y: "100%" }} duration={1}>
+            <h1
+              class="text-rainbow text-8xl uppercase text-zinc-950 dark:text-stone-100 font-bold"
+            >
+              DESARROLLADOR FRONTEND
+            </h1>
+          </AnimationMove>
+        </div>
+        <AnimationMove
+          client:visible
+          initial={{ x: "-100%" }}
+          duration={1}
+          delay={0.8}
+          className="text-base text-pink-400 uppercase mt-3"
+        >
+          <span class="mr-1">→</span>Creador de experiencias web con React
+        </AnimationMove>
+      </div>
+    </Main>
+
+    <AnimationMove
+      client:visible
+      initial={{ y: "100%" }}
+      duration={1}
+      delay={1.6}
+      className="absolute bottom-0 left-2/4 flex items-center flex-col pb-4"
     >
-      <div class="flex items-center gap-5">
+      <Row client:visible />
+      <div class="text-white">SCROLL</div>
+    </AnimationMove>
+  </section>
+
+  <section class="min-h-screen bg-stone-300">
+    <AnimationMove
+      client:visible
+      initial={{ x: "100%" }}
+      duration={1}
+      delay={1.3}
+      className="flex items-center"
+    >
+      <img
+        src="/images/juan.png"
+        class="rounded-md object-cover w-96 h-96 my-auto p-3"
+      />
+    </AnimationMove>
+  </section>
+
+  <section>
+    <Main>
+      <H2 text="Projectos" id="projects" />
+      <ProjectList />
+      <p class="text-lg mt-6 text-zinc-700 dark:text-stone-300 font-medium">
+        Estudiante de escuela técnica en programación<span class="text-rainbow"
+          >.</span
+        >
+         Cursando ingreso a ingeniería en sistemas<span class="text-rainbow"
+          >.</span
+        >
+         Mi curiosidad por los videojuegos y mi pasión por el diseño me llevo a
+        estudiar desarrollo web de forma autodidacta desde hace mas de 3 años<span
+          class="text-rainbow">.</span
+        > Disfruto trabajando en equipo y siempre estoy dispuesto a aprender
+        cosas nuevas<span class="text-rainbow">.</span>
+      </p>
+    </Main>
+  </section>
+  <section class="flex gap-20">
+    <div class="flex items-start">
+      <H2 text="Educacion" id="educacion" margin={false} />
+    </div>
+    <div class="w-full flex flex-col mt-3">
+      <div class="flex justify-between">
         <div>
-          <H1 text="Juan Peñalba" />
-          <h2
-            class="subtitulo mt-1 text-3xl font-semibold dark:text-zinc-200 text-zinc-600"
-          >
-            Desarrollador FrontEnd
-          </h2>
-          <p class="text-lg mt-7 text-zinc-800 dark:text-zinc-300">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem,
-            facilis. Porro temporibus tempore eligendi illo fuga suscipit unde
-            asperiores harum necessitatibus, quas sunt natus adipisci
-            perspiciatis ullam corporis accusantium saepe.
+          <div class="mb-2 flex justify-between items-center">
+            <p class="dark:text-stone-200 font-bold">
+              ESCUELA TECNICA Nº2 ING. FELIPE SENILLOSA
+            </p>
+            <span class="dark:text-stone-300 min-w-fit">2020 - 2023</span>
+          </div>
+          <p class="text-rainbow text-base">
+            Tecnicatura, Programación informática, aplicaciones específicas
           </p>
+          <ul class="dark:text-stone-300 mt-5 ml-1 text-base">
+            <li>
+              - Aprendi a planificar, diseñar y desarrollar un proyecto web,
+              creando TRYNING, una aplicación de gestion de rutinas<span
+                class="text-rainbow">.</span
+              >
+            </li>
+            <li>
+              - Diseñe el prototipo de alta y baja fidelidad con la herramienta
+              figma<span class="text-rainbow">.</span>
+            </li>
+            <li>
+              - Desarrolle el frontend y backend, utilizando Vite, React Js,
+              Tailwind, Firebase, Node JS, Express, phpMyAdmin<span
+                class="text-rainbow">.</span
+              >
+            </li>
+          </ul>
         </div>
       </div>
-    </section>
-    <section class="parse mt-20">
-      <h2 class="font-bold text-4xl mb-7 dark:text-white" id="projects">
-        Proyectos
-      </h2>
-      <ProjectList />
-    </section>
-  </Main>
+    </div>
+  </section>
+  <section>
+    <H2 text="Tecnologias" id="tecnologias" />
+    <TechnologiesList />
+  </section>
 </Layout>
 
 <style>
-  .subtitulo {
-    background: linear-gradient(89.81deg, #33d3ff, #ff65d9, #ced63d, #ff8f33);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
-    background-size: 300%;
-    animation: gradient 20s ease infinite;
-    line-height: 1.2;
-  }
-
   @keyframes gradient {
     0% {
-      background-position: 0% 50%;
+      background-position: 0% 0%;
     }
 
     50% {
-      background-position: 100% 50%;
+      background-position: 100% 0%;
     }
     100% {
-      background-position: 0% 50%;
+      background-position: 0% 0%;
     }
   }
 </style>
+
+<script>
+  let follower = document.querySelector(".follower");
+
+  function followMouse(event: MouseEvent) {
+    const { clientX, clientY } = event;
+    const bodyX = clientX - document.body.getBoundingClientRect().left;
+    const bodyY = clientY - document.body.getBoundingClientRect().top;
+
+    // Aplica el fondo con coordenadas relativas al cuerpo
+    follower!.style.background = `radial-gradient(600px at ${bodyX}px ${bodyY}px,  #ff65d922, transparent 80%)`;
+  }
+
+  document.addEventListener("mousemove", followMouse);
+</script>
+ ../components/React/Row

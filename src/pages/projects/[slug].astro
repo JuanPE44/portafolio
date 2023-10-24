@@ -31,16 +31,14 @@ const { project, index } = Astro.props;
 
 <Layout title="">
   <Main>
-    <section class="flex mt-7">
-      <div>
-        <img
-          class="aspect-square object-cover rounded-lg w-96"
-          src={project.data.image}
-          alt={project.data.title}
-          transition:name={`image-${index}`}
-        />
-      </div>
-      <div class="ml-7">
+    <section class="mt-32 min-h-screen">
+      <img
+        class="aspect-video object-cover rounded-lg w-96 bg-rainbow p-0.5"
+        src={project.data.image}
+        alt={project.data.title}
+        transition:name={`image-${index}`}
+      />
+      <div class="ml-7 text-white">
         <h1 class="text-4xl">{project.data.title}</h1>
         <p>React - Sass - Firebase</p>
         <p>
