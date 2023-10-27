@@ -13,13 +13,20 @@ import { AnimationMove } from "../components/React/AnimationMove";
     class="pointer-events-none inset-0 z-30 transition duration-300 lg:absolute follower"
   >
   </div>
-  <section class="flex gap-5 relative min-h-screen pointer-events-none z-20">
+  <section
+    class="flex-col sm:flex gap-5 relative min-h-screen pointer-events-none z-20 overflow-hidden"
+  >
     <Main>
-      <div class="flex flex-col justify-center w-full h-full overflow-hidden">
+      <div class="flex flex-col justify-center w-full h-full">
         <div class="overflow-hidden">
-          <AnimationMove client:visible initial={{ y: "100%" }} duration={1}>
+          <AnimationMove
+            client:visible
+            initial={{ y: "100%" }}
+            duration={1}
+            viewport={true}
+          >
             <h1
-              class="text-rainbow text-8xl uppercase text-zinc-950 dark:text-stone-100 font-bold"
+              class="text-rainbow text-3xl sm:text-6xl md:text-8xl uppercase text-zinc-95 font-bold"
             >
               DESARROLLADOR FRONTEND
             </h1>
@@ -30,11 +37,25 @@ import { AnimationMove } from "../components/React/AnimationMove";
           initial={{ x: "-100%" }}
           duration={1}
           delay={0.8}
-          className="text-base text-pink-400 uppercase mt-3"
+          viewport={true}
+          className="text-xs sm:text-sm md:text-base text-pink-400 uppercase mt-3"
         >
           <span class="mr-1">→</span>Creador de experiencias web con React
         </AnimationMove>
       </div>
+
+      <AnimationMove
+        client:visible
+        initial={{ x: "-100%" }}
+        duration={1}
+        delay={1.3}
+        className="flex items-center sm:hidden w-full"
+      >
+        <img
+          src="/images/juan.jpeg"
+          class="object-cover w-full h-60 overflow-hidden mt-20"
+        />
+      </AnimationMove>
     </Main>
 
     <AnimationMove
@@ -42,14 +63,15 @@ import { AnimationMove } from "../components/React/AnimationMove";
       initial={{ y: "100%" }}
       duration={1}
       delay={1.6}
-      className="absolute bottom-0 left-2/4 flex items-center flex-col pb-4"
+      viewport={true}
+      className="absolute bottom-0 flex items-center w-full justify-center flex-col pb-4"
     >
       <Row client:visible />
-      <div class="text-white">SCROLL</div>
+      <div class="text-white text-xs md:text-base">SCROLL</div>
     </AnimationMove>
   </section>
 
-  <section class="min-h-screen bg-stone-300">
+  <section class="min-h-screen bg-stone-300 flex justify-center items-center">
     <AnimationMove
       client:visible
       initial={{ x: "100%" }}

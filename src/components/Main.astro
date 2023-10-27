@@ -1,3 +1,13 @@
-<main class="relative px-20 max-sm:px-5 max-w-7xl mx-auto w-full">
+---
+type Props = {
+  className?: string;
+};
+
+const { className } = Astro.props;
+---
+
+<main
+  class={`relative px-20 max-sm:px-5 max-w-7xl mx-auto w-full ${className}`}
+>
   <slot />
 </main>

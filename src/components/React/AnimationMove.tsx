@@ -9,6 +9,7 @@ interface RowProps {
   final?: { x?: number | string; y?: number | string; opacity?: number };
   delay?: number;
   ease?: string;
+  viewport?: boolean;
 }
 
 export function AnimationMove({
@@ -19,12 +20,14 @@ export function AnimationMove({
   final = { x: 0, y: 0, opacity: 1 },
   delay = 0,
   ease = "backOut",
+  viewport = false,
 }: RowProps) {
   return (
     <motion.div
       className={className}
       initial={initial}
-      animate={final}
+      whileInView={final}
+      viewport={{ once: viewport }}
       transition={{ duration: duration, ease: ease, delay: delay }}
     >
       {children}

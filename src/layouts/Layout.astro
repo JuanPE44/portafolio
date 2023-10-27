@@ -37,6 +37,26 @@ const { title } = Astro.props;
         backdrop-filter: blur(100px);
       }
 
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 5px;
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+
       .bg-rainbow {
         background: linear-gradient(
           89.81deg,
