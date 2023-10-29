@@ -24,7 +24,7 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body
-    class="bg-stone-200 dark:bg-stone-900 overflow-y-auto overflow-x-hidden"
+    class="bg-stone-200 overflow-y-auto overflow-x-hidden"
     transition:animate="fade"
   >
     <Header />
@@ -58,25 +58,13 @@ const { title } = Astro.props;
       }
 
       .bg-rainbow {
-        background: linear-gradient(
-          89.81deg,
-          #33d3ff,
-          #ff65d9,
-          #ced63d,
-          #ff8f33
-        );
+        background: linear-gradient(89.81deg, #d6bf3d, #855026);
         background-size: 300%;
         animation: gradient 20s ease infinite;
       }
 
       .text-rainbow {
-        background: linear-gradient(
-          89.81deg,
-          #33d3ff,
-          #ff65d9,
-          #ced63d,
-          #ff8f33
-        );
+        background: linear-gradient(89.81deg, #d6bf3d, #855026);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
