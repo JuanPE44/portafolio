@@ -12,7 +12,8 @@ import { AnimationMove } from "./React/AnimationMove";
         initial={{ y: "-100%", opacity: 0 }}
         ease="easeOut"
         duration={2}
-        delay={2.2}
+        viewport={true}
+        delay={2}
       >
         <h2 class="text-base sm:text-xl font-semibold mb-2">Juan Peñalba</h2>
       </AnimationMove>
@@ -22,7 +23,8 @@ import { AnimationMove } from "./React/AnimationMove";
         client:visible
         initial={{ x: "100%" }}
         duration={1}
-        delay={1.2}
+        delay={1.5}
+        viewport={true}
         className="flex gap-2"
       >
         <svg viewBox="0 0 24 24" class="w-8 h-8 fill-yellow-900"

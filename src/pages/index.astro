@@ -50,16 +50,20 @@ import { AnimationMove } from "../components/React/AnimationMove";
       </div>
     </Main>
 
-    <AnimationMove
-      client:visible
-      initial={{ y: "100%" }}
-      duration={1}
-      delay={1.6}
-      viewport={true}
-      className="absolute bottom-0 flex items-center w-full justify-center flex-col pb-4"
+    <div
+      class="absolute bottom-0 flex items-center w-full justify-center flex-col"
     >
-      <Row client:visible />
-      <div class="text-yellow-800 text-xs md:text-base">SCROLL</div>
+      <AnimationMove
+        client:visible
+        initial={{ y: "100%" }}
+        duration={1}
+        delay={1.6}
+        viewport={true}
+        className="flex flex-col pb-2 items-center"
+      >
+        <Row client:visible />
+        <div class="text-yellow-800 text-xs md:text-base">SCROLL</div>
+      </AnimationMove>
 
       <div
         class="absolute right-0 bottom-0 flex flex-col justify-end items-end"
@@ -67,50 +71,76 @@ import { AnimationMove } from "../components/React/AnimationMove";
         <AnimationMove
           client:visible
           initial={{ y: "100%" }}
+          final={{ y: "10%" }}
           duration={1}
-          delay={1}
+          delay={1.5}
+          viewport={true}
         >
           <img
             src="/images/juan2.png"
-            class="object-cover h-72 w-72 grayscale hover:grayscale-0 mx-3 overflow-hidden object-top"
+            class="object-cover h-auto w-72 grayscale hover:grayscale-0 mx-3"
           />
         </AnimationMove>
       </div>
-    </AnimationMove>
+    </div>
   </section>
 
-  <section class="min-h-screen bg-stone-300 flex justify-center items-center">
-    <AnimationMove
-      client:visible
-      initial={{ x: "100%" }}
-      duration={1}
-      delay={1.3}
-      className="flex items-center"
-    >
-      <img
-        src="/images/juan.png"
-        class="rounded-md object-cover w-96 h-96 my-auto p-3"
-      />
-    </AnimationMove>
+  <section class="min-h-screen bg-stone-800 flex justify-center items-center">
+    <Main className="text-4xl text-stone-300  font-medium">
+      <AnimationMove
+        client:visible
+        initial={{ opacity: 0, x: "-100%" }}
+        duration={1.4}
+      >
+        <p>
+          Estudiante de escuela técnica en programación<span
+            class="text-rainbow">.</span
+          >
+        </p>
+      </AnimationMove>
+      <AnimationMove
+        client:visible
+        initial={{ opacity: 0, x: "-100%" }}
+        duration={1.4}
+        delay={0.1}
+      >
+        <p>
+          Cursando ingreso a ingeniería en sistemas<span class="text-rainbow"
+            >.</span
+          >
+        </p>
+      </AnimationMove>
+      <AnimationMove
+        client:visible
+        initial={{ opacity: 0, x: "-100%" }}
+        duration={1.4}
+        delay={0.2}
+      >
+        <p>
+          Mi curiosidad por los videojuegos y mi pasión por el diseño me llevo a
+          estudiar desarrollo web de forma autodidacta desde hace mas de 3 años<span
+            class="text-rainbow">.</span
+          >
+        </p>
+      </AnimationMove>
+      <AnimationMove
+        client:visible
+        initial={{ opacity: 0, x: "-100%" }}
+        duration={1.4}
+        delay={0.3}
+      >
+        <p>
+          Disfruto trabajando en equipo y siempre estoy dispuesto a aprender
+          cosas nuevas<span class="text-rainbow">.</span>
+        </p>
+      </AnimationMove>
+    </Main>
   </section>
 
   <section>
     <Main>
       <H2 text="Projectos" id="projects" />
       <ProjectList />
-      <p class="text-lg mt-6 text-zinc-700 dark:text-stone-300 font-medium">
-        Estudiante de escuela técnica en programación<span class="text-rainbow"
-          >.</span
-        >
-         Cursando ingreso a ingeniería en sistemas<span class="text-rainbow"
-          >.</span
-        >
-         Mi curiosidad por los videojuegos y mi pasión por el diseño me llevo a
-        estudiar desarrollo web de forma autodidacta desde hace mas de 3 años<span
-          class="text-rainbow">.</span
-        > Disfruto trabajando en equipo y siempre estoy dispuesto a aprender
-        cosas nuevas<span class="text-rainbow">.</span>
-      </p>
     </Main>
   </section>
   <section class="flex gap-20">
