@@ -1,16 +1,25 @@
 ---
+import { AnimationMove } from "./React/AnimationMove";
 type Props = {
   text: string;
   id: string;
+  className?: string;
   margin?: boolean;
 };
 
-const { text, id, margin = true } = Astro.props;
+const { text, id, margin = true, className } = Astro.props;
 ---
 
-<h2
-  class=`font-bold text-2xl dark:text-stone-100 min-w-fit ${margin ? "mb-7 mt-40" : ""}`
-  id={id}
+<AnimationMove
+  client:visible
+  initial={{ opacity: 0, y: 100 }}
+  duration={2}
+  viewport={true}
 >
-  {text}<span class="text-rainbow text-4xl">.</span>
-</h2>
+  <h2
+    class=`${className} font-bold uppercase text-3xl min-w-fit ${margin ? "mb-7 mt-40" : ""}`
+    id={id}
+  >
+    {text}<span class="text-rainbow text-4xl">.</span>
+  </h2>
+</AnimationMove>

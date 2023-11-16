@@ -1,0 +1,19 @@
+<div
+  class="pointer-events-none inset-0 z-30 transition duration-300 lg:absolute follower"
+>
+</div>
+
+<script>
+  let follower = document.querySelector(".follower");
+
+  function followMouse(event: MouseEvent) {
+    const { clientX, clientY } = event;
+    const bodyX = clientX - document.body.getBoundingClientRect().left;
+    const bodyY = clientY - document.body.getBoundingClientRect().top;
+
+    // Aplica el fondo con coordenadas relativas al cuerpo
+    follower!.style.background = `radial-gradient(600px at ${bodyX}px ${bodyY}px,  #c710df22, transparent 80%)`;
+  }
+
+  document.addEventListener("mousemove", followMouse);
+</script>

@@ -9,8 +9,9 @@ const { project, index } = Astro.props;
 
 <a
   href={`/projects/${project.slug}`}
-  class="hover:text-pink-500 dark:hover:text-pink-500 dark:text-stone-400"
+  class="hover:text-pink-800 text-stone-700"
 >
+  <h2 class="pt-4 font-semibold">{project.data.title}</h2>
   <div class="bg-rainbow rounded-lg transition-all">
     <img
       class="aspect-video object-cover rounded-lg w-96 hover:p-0.5"
@@ -19,7 +20,6 @@ const { project, index } = Astro.props;
       transition:name={`image-${index}`}
     />
   </div>
-  <h2 class="pt-4 font-semibold">{project.data.title}</h2>
 </a>
 
 <style>

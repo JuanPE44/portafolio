@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "portafolio",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/react": "^3.0.1",
     "@astrojs/tailwind": "^5.0.0",
+    "@astrojs/vercel": "^5.2.0",
     "@tailwindcss/typography": "^0.5.10",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",

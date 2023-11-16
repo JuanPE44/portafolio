@@ -5,7 +5,7 @@ import { getCollection } from "astro:content";
 const projects = await getCollection("projects");
 ---
 
-<div class="flex gap-x-4 mb-24 justify-between">
+<div class="flex-col gap-x-4 mb-24 justify-between">
   {
     projects.map((project, index) => (
       <Project project={project} index={index} />

@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Main from "../components/Main.astro";
-import ProjectList from "../components/ProjectList.astro";
 import TechnologiesList from "../components/TechnologiesList.astro";
 import H2 from "../components/H2.astro";
 import { Row } from "../components/React/Row";
@@ -9,16 +8,12 @@ import { AnimationMove } from "../components/React/AnimationMove";
 ---
 
 <Layout title="Mi portafolio">
-  <div
-    class="pointer-events-none inset-0 z-30 transition duration-300 lg:absolute follower"
-  >
-  </div>
   <section
-    class="flex-col sm:flex gap-5 relative min-h-screen pointer-events-none z-20 overflow-hidden"
+    class="flex-col sm:flex gap-5 relative min-h-screen pointer-events-none z-20 overflow-hidden bg"
   >
     <Main className="flex flex-col justify-center  items-center min-h-screen">
       <div class="flex flex-col justify-center w-full">
-        <div class="overflow-hidden">
+        <div class="overflow-y-hidden">
           <AnimationMove
             client:visible
             initial={{ y: "100%" }}
@@ -26,7 +21,7 @@ import { AnimationMove } from "../components/React/AnimationMove";
             viewport={true}
           >
             <h1
-              class="text-rainbow text-3xl sm:text-6xl md:text-8xl uppercase text-zinc-95 font-bold"
+              class="text-rainbow text-4xl sm:text-6xl md:text-8xl uppercase text-zinc-95 font-bold"
             >
               DESARROLLADOR FRONTEND
             </h1>
@@ -36,9 +31,9 @@ import { AnimationMove } from "../components/React/AnimationMove";
           client:visible
           initial={{ x: "-100%" }}
           duration={1}
-          delay={0.8}
+          delay={0.3}
           viewport={true}
-          className="flex items-center text-xs sm:text-sm md:text-base text-yellow-950 uppercase mt-3"
+          className="flex items-center text-xs sm:text-sm md:text-base text-stone-300 uppercase mt-5"
         >
           <svg class="h-5 w-5 mr-1" viewBox="0 0 24 24"
             ><path
@@ -48,73 +43,69 @@ import { AnimationMove } from "../components/React/AnimationMove";
           >Creador de experiencias web con React
         </AnimationMove>
       </div>
-    </Main>
 
-    <div
-      class="absolute bottom-0 flex items-center w-full justify-center flex-col"
-    >
-      <AnimationMove
-        client:visible
-        initial={{ y: "100%" }}
-        duration={1}
-        delay={1.6}
-        viewport={true}
-        className="flex flex-col pb-2 items-center"
-      >
-        <Row client:visible />
-        <div class="text-yellow-800 text-xs md:text-base">SCROLL</div>
-      </AnimationMove>
-
-      <div
-        class="absolute right-0 bottom-0 flex flex-col justify-end items-end"
-      >
+      <div class="overflow-hidden w-full">
         <AnimationMove
           client:visible
-          initial={{ y: "100%" }}
-          final={{ y: "10%" }}
-          duration={1}
-          delay={1.5}
+          initial={{ opacity: 0, x: "-100%" }}
+          duration={0.5}
+          delay={1}
+          ease="easeOut"
           viewport={true}
+          className="relative w-full flex flex-col sm:flex-row sm:justify-between sm:items-end"
         >
           <img
-            src="/images/juan2.png"
-            class="object-cover h-auto w-72 grayscale hover:grayscale-0 mx-3"
+            class="h-[40vh] w-full sm:w-56 sm:h-56 mt-8 object-cover rounded-lg grayscale"
+            src="/images/juan.jpg"
           />
+          <div class="flex mt-10 sm:gap-2">
+            <svg viewBox="0 0 24 24" class="w-8 h-8 fill-stone-100"
+              ><path
+                d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4.44c-.32-.07-.33-.68-.33-.89l.01-2.47c0-.84-.29-1.39-.61-1.67c2.01-.22 4.11-.97 4.11-4.44c0-.98-.35-1.79-.92-2.42c.09-.22.4-1.14-.09-2.38c0 0-.76-.23-2.48.93c-.72-.2-1.48-.3-2.25-.31c-.76.01-1.54.11-2.25.31c-1.72-1.16-2.48-.93-2.48-.93c-.49 1.24-.18 2.16-.09 2.38c-.57.63-.92 1.44-.92 2.42c0 3.47 2.1 4.22 4.1 4.47c-.26.2-.49.6-.57 1.18c-.52.23-1.82.63-2.62-.75c0 0-.48-.86-1.38-.93c0 0-.88 0-.06.55c0 0 .59.28 1 1.32c0 0 .52 1.75 3.03 1.21l.01 1.53c0 .21-.02.82-.34.89H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"
+              ></path></svg
+            >
+            <svg class="w-8 h-8 fill-stone-100" viewBox="0 0 24 24"
+              ><path
+                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77Z"
+              ></path></svg
+            >
+            <svg class="w-8 h-8 fill-stone-100" viewBox="0 0 24 24"
+              ><path
+                d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3Z"
+              ></path></svg
+            >
+          </div>
         </AnimationMove>
       </div>
-    </div>
+    </Main>
   </section>
 
-  <section class="min-h-screen bg-stone-800 flex justify-center items-center">
-    <Main className="text-4xl text-stone-300  font-medium">
+  <section class="relative min-h-screen bg-stone-200">
+    <Main>
+      <h2 class="text-[var(--color-1)] text-3xl font-semibold uppercase">
+        Sobre mi
+      </h2>
+    </Main>
+    {
+      /*
+
+<Main>
+  <H2 text="Projectos" className="text-stone-800" id="projects" />
+  <ProjectList />
+</Main>
+   */
+    }
+  </section>
+
+  <section class="min-h-screen flex justify-center items-center">
+    <Main>
       <AnimationMove
         client:visible
-        initial={{ opacity: 0, x: "-100%" }}
+        ease="easeInOut"
+        initial={{ opacity: 0 }}
         duration={1.4}
-      >
-        <p>
-          Estudiante de escuela técnica en programación<span
-            class="text-rainbow">.</span
-          >
-        </p>
-      </AnimationMove>
-      <AnimationMove
-        client:visible
-        initial={{ opacity: 0, x: "-100%" }}
-        duration={1.4}
-        delay={0.1}
-      >
-        <p>
-          Cursando ingreso a ingeniería en sistemas<span class="text-rainbow"
-            >.</span
-          >
-        </p>
-      </AnimationMove>
-      <AnimationMove
-        client:visible
-        initial={{ opacity: 0, x: "-100%" }}
-        duration={1.4}
-        delay={0.2}
+        viewport={true}
+        className="text-2xl flex flex-col gap-5 md:text-4xl text-stone-600  font-medium"
       >
         <p>
           Mi curiosidad por los videojuegos y mi pasión por el diseño me llevo a
@@ -122,13 +113,6 @@ import { AnimationMove } from "../components/React/AnimationMove";
             class="text-rainbow">.</span
           >
         </p>
-      </AnimationMove>
-      <AnimationMove
-        client:visible
-        initial={{ opacity: 0, x: "-100%" }}
-        duration={1.4}
-        delay={0.3}
-      >
         <p>
           Disfruto trabajando en equipo y siempre estoy dispuesto a aprender
           cosas nuevas<span class="text-rainbow">.</span>
@@ -137,20 +121,14 @@ import { AnimationMove } from "../components/React/AnimationMove";
     </Main>
   </section>
 
-  <section>
-    <Main>
-      <H2 text="Projectos" id="projects" />
-      <ProjectList />
-    </Main>
-  </section>
-  <section class="flex gap-20">
+  <section class="min-h-screen bg-stone-20">
     <div class="flex items-start">
       <H2 text="Educacion" id="educacion" margin={false} />
     </div>
     <div class="w-full flex flex-col mt-3">
-      <div class="flex justify-between">
+      <div>
         <div>
-          <div class="mb-2 flex justify-between items-center">
+          <div class="mb-2">
             <p class="dark:text-stone-200 font-bold">
               ESCUELA TECNICA Nº2 ING. FELIPE SENILLOSA
             </p>
@@ -186,37 +164,3 @@ import { AnimationMove } from "../components/React/AnimationMove";
     <TechnologiesList />
   </section>
 </Layout>
-
-<style>
-  h1 {
-    color: #eee236;
-  }
-  @keyframes gradient {
-    0% {
-      background-position: 0% 0%;
-    }
-
-    50% {
-      background-position: 100% 0%;
-    }
-    100% {
-      background-position: 0% 0%;
-    }
-  }
-</style>
-
-<script>
-  let follower = document.querySelector(".follower");
-
-  function followMouse(event: MouseEvent) {
-    const { clientX, clientY } = event;
-    const bodyX = clientX - document.body.getBoundingClientRect().left;
-    const bodyY = clientY - document.body.getBoundingClientRect().top;
-
-    // Aplica el fondo con coordenadas relativas al cuerpo
-    follower!.style.background = `radial-gradient(600px at ${bodyX}px ${bodyY}px,  #eee23644, transparent 80%)`;
-  }
-
-  document.addEventListener("mousemove", followMouse);
-</script>
- ../components/React/Row

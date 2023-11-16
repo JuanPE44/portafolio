@@ -14,7 +14,7 @@ export function Row() {
       }}
     >
       <svg
-        className="h-5 w-5 mb-1 fill-yellow-800 -rotate-90"
+        className="h-4 w-4 mb-1 fill-stone-300 -rotate-90"
         viewBox="0 0 24 24"
       >
         <path d="M10 22L0 12L10 2l1.775 1.775L3.55 12l8.225 8.225L10 22Z" />
