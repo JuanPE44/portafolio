@@ -19,7 +19,7 @@ export function AnimationMove({
   initial,
   final = { x: 0, y: 0, opacity: 1 },
   delay = 0,
-  ease = "backOut",
+  ease = "easeInOut",
   viewport = false,
 }: RowProps) {
   return (
