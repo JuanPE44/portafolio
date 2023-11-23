@@ -1,4 +1,4 @@
 ---
-title: AJEDREZ
-image: /images/ajedrez.png
+title: CATALOGO INNET
+image: /images/innet.png
 ---

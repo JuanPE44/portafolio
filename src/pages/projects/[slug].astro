@@ -1,7 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Main from "../../components/Main.astro";
-import { getCollection, type CollectionEntry } from "astro:content";
+/*import { getCollection, type CollectionEntry } from "astro:content";
 
 export const getStaticPaths = async () => {
   const projects = await getCollection("projects");
@@ -27,20 +27,27 @@ type Props = {
 };
 
 const { project, index } = Astro.props;
+*/
 ---
 
 <Layout title="">
   <Main>
     <section class="mt-32 min-h-screen">
+      {
+        /*
       <img
         class="aspect-video object-cover rounded-lg w-96 bg-rainbow p-0.5"
         src={project.data.image}
         alt={project.data.title}
         transition:name={`image-${index}`}
-      />
+      /> */
+      }
       <div class="ml-7 text-white">
+        {
+          /*
         <h1 class="text-4xl">{project.data.title}</h1>
-        <p>React - Sass - Firebase</p>
+ */
+        }]} <p>React - Sass - Firebase</p>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis
           placeat fuga culpa rem? Sunt vero ducimus esse veniam maiores beatae,

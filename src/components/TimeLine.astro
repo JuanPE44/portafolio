@@ -1,0 +1,83 @@
+---
+import { AnimationMove } from "./React/AnimationMove";
+---
+
+<ol class="relative">
+  <AnimationMove
+    client:visible
+    duration={1}
+    initial={{ height: "0" }}
+    final={{ height: "100%" }}
+    viewport={true}
+    className="absolute left-[-1px]  h-full w-[2px] bg-gradient-to-b from-[var(--color-1)] to-[var(--color-2)] opacity-[0.5]"
+  />
+  <li class="mb-10 ms-4">
+    <AnimationMove
+      client:visible
+      duration={0.3}
+      delay={0.5}
+      viewport={true}
+      initial={{ opacity: 0 }}
+      className="absolute w-3 h-3 bg-gradient-to-b from-[var(--color-1)] to-[var(--color-2)] rounded-full mt-1.5 -start-1.5 opacity-[0.9]"
+    />
+    <time class="mb-1 text-sm font-normal leading-none text-rainbow"
+      >Noviembre 2023 - Actualidad</time
+    >
+    <h3 class="text-lg font-semibold text-stone-900 dark:text-white">
+      Desarrollador Frontend <span class="text-[var(--color-1)] font-light"
+        >Freelance</span
+      >
+    </h3>
+    <p class="mb-4 text-base font-normal text-stone-300 max-w-3xl">
+      Como freelance, ofrezco soluciones web personalizadas, aplicando lecciones
+      de proyectos anteriores para brindar resultados excepcionales y centrados
+      en la experiencia del usuario.
+    </p>
+  </li>
+  <li class="mb-10 ms-4">
+    <AnimationMove
+      client:visible
+      duration={0.3}
+      delay={0.7}
+      viewport={true}
+      initial={{ opacity: 0 }}
+      className="absolute w-3 h-3 bg-gradient-to-b from-[var(--color-1)] to-[var(--color-2)] rounded-full mt-1.5 -start-1.5 opacity-[0.9]"
+    />
+    <time class="mb-1 text-sm font-normal leading-none text-rainbow">
+      Septiembre 2023 - Octubre 2023 (2 meses)</time
+    >
+    <h3 class="text-lg font-semibold text-stone-900 dark:text-white">
+      Desarrollador Fullstack <span class="text-[var(--color-1)] font-light"
+        >Practica profesional (innet)</span
+      >
+    </h3>
+    <p class="text-base font-normal text-stone-300 max-w-3xl">
+      Colaboré en el desarrollo de un catálogo online para [nombre de la
+      empresa], trabajando como desarrollador fullstack en un equipo
+      multidisciplinario.
+    </p>
+  </li>
+  <li class="ms-4">
+    <AnimationMove
+      client:visible
+      duration={0.3}
+      delay={0.9}
+      viewport={true}
+      initial={{ opacity: 0 }}
+      className="absolute w-3 h-3 bg-gradient-to-b from-[var(--color-1)] to-[var(--color-2)] rounded-full mt-1.5 -start-1.5 opacity-[0.9]"
+    />
+    <time class="mb-1 text-sm font-normal leading-none text-rainbow"
+      >Febrero 2023 - Noviembre 2023 (9 meses)</time
+    >
+    <h3 class="text-lg font-semibold text-stone-900 dark:text-white">
+      Desarrollador Fullstack <span class="text-[var(--color-1)] font-light"
+        >Proyecto tecnicatura (tryning)</span
+      >
+    </h3>
+    <p class="text-base font-normal text-stone-300 max-w-3xl">
+      Desarrollé una aplicación de entrenamiento como líder fullstack,
+      aprendiendo a iniciar proyectos desde cero y coordinar eficientemente un
+      equipo.
+    </p>
+  </li>
+</ol>

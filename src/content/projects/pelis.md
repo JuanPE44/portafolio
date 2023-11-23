@@ -1,4 +1,4 @@
 ---
-title: PELIS
-image: /images/pelis.png
+title: AJEDREZ
+image: /images/ajedrez.png
 ---
