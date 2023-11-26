@@ -1,6 +1,6 @@
 ---
 import { ViewTransitions } from "astro:transitions";
-import Footer from "../components/Footer.astro";
+
 import Header from "../components/Header.astro";
 import Follower from "../components/Follower.astro";
 interface Props {
@@ -25,13 +25,13 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body
-    class="bg-stone-900 overflow-y-auto overflow-x-hidden"
+    class="bg-stone-900 overflow-y-auto overflow-x-hidden pointer-events-auto"
     transition:animate="fade"
   >
+    <Follower />
     <Header />
     <slot />
-    <Follower />
-    <Footer />
+
     <style is:global>
       :root {
         --color-1: #51c6f4;
@@ -64,17 +64,6 @@ const { title } = Astro.props;
         background: #555;
       }
 
-      .bg-rainbow {
-        background: conic-gradient(
-            from 0deg,
-            var(--color-1),
-            var(--color-2),
-            var(--color-3),
-            var(--color-1)
-          )
-          border-box;
-      }
-
       .text-rainbow {
         background: linear-gradient(
           89.81deg,
@@ -94,7 +83,6 @@ const { title } = Astro.props;
         text-fill-color: transparent;
         background-size: 120%;
         animation: gradientText 10s ease infinite;
-        line-height: 1.2;
       }
 
       @keyframes gradientText {
@@ -106,7 +94,7 @@ const { title } = Astro.props;
         }
       }
 
-      .bg {
+      .bg-dotted {
         position: relative;
         background-image: radial-gradient(#444 1px, transparent 1px);
         background-size: 5px 5px;
@@ -115,7 +103,7 @@ const { title } = Astro.props;
           10px 10px;
       }
 
-      .bg::before {
+      .bg-gradient::before {
         content: " ";
         position: absolute;
         width: 100%;

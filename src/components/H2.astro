@@ -1,0 +1,19 @@
+---
+import { AnimationMove } from "./React/AnimationMove";
+
+type Props = {
+  title: string;
+};
+const { title } = Astro.props;
+---
+
+<AnimationMove
+  client:visible
+  initial={{ x: -500 }}
+  duration={1}
+  viewport={true}
+  className="text-2xl text-white mb-5 font-bold tracking-widest"
+>
+  {title}
+  <span class="text-3xl text-rainbow">.</span>
+</AnimationMove>
