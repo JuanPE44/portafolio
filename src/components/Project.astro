@@ -13,17 +13,7 @@ const { project, index } = Astro.props;
   href={`/projects/${project.slug}`}
   class="text-stone-200 cursor-pointer bg-container"
 >
-  <div class="relative flex flex-col sm:flex-row-reverse w-fit overflow-hidden">
-    <div class="pl-4">
-      <h2 class="font-semibold hover:text-rainbow">{project.data.title}</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ea hic
-        voluptas necessitatibus
-      </p>
-      <div>
-        <React />
-      </div>
-    </div>
+  <div class="relative flex flex-col w-fit overflow-hidden">
     <div
       class="relative hover:shadow-lg overflow-hidden sm:max-w-[40%] bg-rainbow rounded-xl"
     >

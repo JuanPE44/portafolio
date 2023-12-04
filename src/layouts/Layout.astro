@@ -82,7 +82,15 @@ const { title } = Astro.props;
         background-clip: text;
         text-fill-color: transparent;
         background-size: 120%;
-        animation: gradientText 10s ease infinite;
+        animation: gradientText 10s ease alternate-reverse infinite;
+      }
+
+      .text-shadow {
+        text-shadow:
+          10px 10px 60px var(--color-1),
+          -10px 10px 60px var(--color-2),
+          -10px -10px 60px var(--color-3),
+          10px -10px 60px var(--color-1);
       }
 
       @keyframes gradientText {

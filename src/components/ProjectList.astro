@@ -5,7 +5,9 @@ import { getCollection } from "astro:content";
 const projects = await getCollection("projects");
 ---
 
-<div class="grid gap-y-10 mb-24 justify-center items-center max-w-3xl z-50">
+<div
+  class="grid gap-y-10 mb-24 justify-start grid-cols-1 items-center max-w-3xl z-50"
+>
   {
     projects.map((project, index) => (
       <Project project={project} index={index} />

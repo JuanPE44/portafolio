@@ -1,29 +1,53 @@
 ---
-import Typescript from "../components/Icons/Typescript.astro";
-import Tailwind from "../components/Icons/Tailwind.astro";
-import CSS from "../components/Icons/CSS.astro";
-import HTML from "../components/Icons/HTML.astro";
-import React from "../components/Icons/React.astro";
-import Javascript from "../components/Icons/Javascript.astro";
+import { TECHNOLOGIES_LANGUAJES, TECHNOLOGIES_OTHERS } from "../common/utils";
 ---
 
-<ul class="grid grid-cols-2 gap-4 w-fit">
-  <li>
-    <Javascript className="w-14 h-14" />
-  </li>
-  <li>
-    <HTML className="w-14 h-14" />
-  </li>
-  <li>
-    <CSS className="w-14 h-14" />
-  </li>
-  <li>
-    <React className="w-14 h-14" />
-  </li>
-  <li>
-    <Tailwind className="w-14 h-14" />
-  </li>
-  <li>
-    <Typescript className="w-14 h-14" />
-  </li>
-</ul>
+<div class="flex flex-col sm:flex-row">
+  <canvas id="canvas" class="border-2 border-[#fff3] rounded-xl"></canvas>
+  <div class="flex sm:ml-14 text-stone-400">
+    <div class="mr-20">
+      <h3 class="font-semibold text-2xl text-rainbow mb-4">Lenguajes</h3>
+      <ul class="flex flex-col list-disc">
+        {
+          TECHNOLOGIES_LANGUAJES.map((technologie) => {
+            return (
+              <li
+                class="technologie transition-[0.5s]"
+                data-color={technologie.color}
+              >
+                {technologie.name}
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+    <div class="mr-10">
+      <h3 class="font-semibold text-2xl text-rainbow mb-4">
+        Frameworks / Otros
+      </h3>
+      <ul class="flex flex-col list-disc">
+        {
+          TECHNOLOGIES_OTHERS.map((technologie) => {
+            return (
+              <li
+                class="technologie transition-[0.5s]"
+                data-color={technologie.color}
+              >
+                {technologie.name}
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+    <script>
+      import { Canvas } from "../common/canvas/Canvas";
+
+      const elementCanvas =
+        document.querySelector<HTMLCanvasElement>("#canvas")!;
+
+      new Canvas(elementCanvas);
+    </script>
+  </div>
+</div>
