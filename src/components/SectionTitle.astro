@@ -1,0 +1,15 @@
+---
+interface Props {
+  text: string;
+}
+const { text } = Astro.props;
+---
+
+<h2
+  class="text-white text-3xl font-bold flex gap-2 items-center w-full justify-center"
+>
+  <div class="border-[1px] border-primary rounded-full p-1">
+    <slot />
+  </div>
+  <span>{text}</span>
+</h2>
