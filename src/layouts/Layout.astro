@@ -1,6 +1,8 @@
 ---
 import ContainerPage from "../components/ContainerPage.astro";
+import Header from "../components/Header.astro";
 import "../styles/globals.css";
+import "@fontsource-variable/baloo-paaji-2";
 ---
 
 <!doctype html>
@@ -14,7 +16,14 @@ import "../styles/globals.css";
   </head>
   <body>
     <ContainerPage>
+      <Header />
       <slot />
     </ContainerPage>
   </body>
 </html>
+
+<style is:global>
+  body {
+    font-family: "Baloo Paaji 2 Variable", system-ui;
+  }
+</style>
