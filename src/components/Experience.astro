@@ -1,70 +1,28 @@
 ---
 import ContainerSection from "./ContainerSection.astro";
-import IconCalendar from "./Icons/IconCalendar.astro";
 import IconExperience from "./Icons/IconExperience.astro";
 import SectionTitle from "./SectionTitle.astro";
-import IconRowRigth from "./Icons/IconRowRigth.astro";
+import CardExperience from "./CardExperience.astro";
 ---
 
 <ContainerSection>
   <SectionTitle text="Mi experiencia">
     <IconExperience />
   </SectionTitle>
-  <div class="border-l-[1px] border-secondary py-12 mt-10 flex flex-col gap-10">
-    <div class="relative -left-3 flex gap-2">
-      <div class="bg-secondary min-w-6 h-6 rounded-full"></div>
-      <div class="flex gap-10">
-        <div class="flex flex-col">
-          <h3 class="text-white text-2xl font-bold text-center w-max">
-            Desarrollador web Frontend
-          </h3>
-          <p class="text-gray text-xl">Freelancer</p>
-          <div class="flex gap-2 text-xs text-gray mt-2">
-            <IconCalendar />
-            <span>Actualmente...</span>
-          </div>
-        </div>
-        <div class="flex flex-col gap-3">
-          <p class="text-gray">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam
-            hic, sequi cum aliquam, accusamus dolorum reprehenderit expedita,
-            ipsam neque obcaecati earum molestiae exercitationem officia maiores
-            delectus laboriosam a adipisci quas.
-          </p>
-          <a href="/work" class="text-primary font-bold flex items-center">
-            <span>Saber mas</span>
-            <IconRowRigth />
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="relative -left-3 flex gap-2">
-      <div class="bg-secondary min-w-6 h-6 rounded-full"></div>
-      <div class="flex gap-10">
-        <div class="flex flex-col">
-          <h3 class="text-white text-2xl font-bold text-center w-max">
-            Desarrollador web fullstack
-          </h3>
-          <p class="text-gray text-xl">Estudiante en practicas</p>
-          <div class="flex gap-2 text-xs text-gray mt-2">
-            <IconCalendar />
-            <span>Marzo 2020 - Diciembre 2023</span>
-          </div>
-        </div>
-        <div class="flex flex-col gap-3">
-          <p class="text-gray">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam
-            hic, sequi cum aliquam, accusamus dolorum reprehenderit expedita,
-            ipsam neque obcaecati earum molestiae exercitationem officia maiores
-            delectus laboriosam a adipisci quas.
-          </p>
-          <a href="/work" class="text-primary font-bold flex items-center">
-            <span>Saber mas</span>
-            <IconRowRigth />
-          </a>
-        </div>
-      </div>
-    </div>
+  <div
+    class="border-l-[1px] border-[#78eb26af] py-12 mt-10 flex flex-col gap-10"
+  >
+    <CardExperience
+      title="Desarrollador Frontend"
+      jobTitle="Freelancer"
+      date="Actualmente..."
+      description="Actualmente, me dedico a desarrollar sitios web que combinan diseño moderno y funcionalidad, ayudando a negocios a destacar en el entorno digital. Una de mis experiencias más destacadas fue la creación de un sitio web para una vidriería que buscaba presencia en línea. Diseñé la página en Figma, asegurando una experiencia visual atractiva y profesional, y desarrollé el proyecto utilizando Astro, optimizando el rendimiento y la experiencia del usuario."
+    />
+    <CardExperience
+      title="Prácticas Profesionales en Programación"
+      jobTitle="ESCUELA TECNICA Nº2 ING. FELIPE SENILLOSA"
+      date="Marzo 2020 - Diciembre 2023"
+      description="Durante el último año de mi tecnicatura en programación, tuve la oportunidad de participar en proyectos destacados que fortalecieron mis habilidades técnicas y mi capacidad de trabajo en equipo."
+    />
   </div>
 </ContainerSection>
