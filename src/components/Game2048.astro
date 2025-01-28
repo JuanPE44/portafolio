@@ -1,0 +1,65 @@
+---
+import "../styles/2048.css";
+import IconRowRigth from "./Icons/IconRowRigth.astro";
+---
+
+<div class="flex justify-center bg-gray-bg rounded-2xl p-4">
+  <div id="app">
+    <div class="container-game flex gap-5">
+      <div class="header flex flex-col">
+        <h1 class="text-white text-5xl text-bold">2048</h1>
+        <div class="container-score flex flex-col gap-2">
+          <div class="score bg-gray p-3 rounded-2xl">
+            <h3>SCORE</h3>
+            <span>0</span>
+          </div>
+          <div class="best-score bg-gray p-3 rounded-2xl">
+            <h3>BEST</h3>
+            <span>0</span>
+          </div>
+        </div>
+        <div class="newgame flex flex-col">
+          <div class="container-buttons flex">
+            <div class="arrow left -rotate-90">
+              <IconRowRigth />
+            </div>
+            <div class="arrow up rotate-90">
+              <IconRowRigth />
+            </div>
+            <div class="arrow bottom rotate-180">
+              <IconRowRigth />
+            </div>
+            <div class="arrow right">
+              <IconRowRigth />
+            </div>
+          </div>
+          <button class="px-4 py-1 rounded-2xl bg-primary text-bold text-white"
+            >New Game</button
+          >
+        </div>
+      </div>
+    </div>
+    <div class="board">
+      <div class="container-win">
+        <h1>YOU WON!</h1>
+        <div class="win-score">Score: <span>1000</span></div>
+        <button class="button-win">New Game</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  import { Game } from "../projects/2048/Game";
+
+  if (localStorage.getItem("bestScore") === null) {
+    let puntos: [] | number[] = [];
+    localStorage.setItem("bestScore", JSON.stringify(puntos));
+  }
+
+  const g = new Game();
+
+  const containerGame =
+    document.querySelector<HTMLDivElement>(".container-game");
+
+  containerGame?.appendChild(g.board.element!);
+</script>
