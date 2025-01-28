@@ -1,0 +1,24 @@
+---
+import IconGithub from "./Icons/IconGithub.astro";
+import IconLinkedin from "./Icons/IconLinkedin.astro";
+---
+
+<footer
+  class="flex gap-2 items-center justify-center bg-gray-bg p-4 rounded-2xl mb-4"
+>
+  <div class="flex gap-2 items-center justify-between w-full">
+    <p class="text-gray">
+      Derechos reservados <span class="text-secondary text-bold"
+        >Juan Peñalba</span
+      > &copy; {new Date().getFullYear()}
+    </p>
+    <div class="flex gap-2">
+      <a href="https://github.com/JuanPe44" target="_blank">
+        <IconGithub className="fill-primary" width="30" height="30" />
+      </a>
+      <a href="https://www.linkedin.com/in/JuanPe44/" target="_blank">
+        <IconLinkedin className="fill-primary" width="30" height="30" />
+      </a>
+    </div>
+  </div>
+</footer>

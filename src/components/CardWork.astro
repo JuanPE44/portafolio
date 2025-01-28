@@ -36,7 +36,7 @@ const { url, title, jobTitle, description, details, tecnologies } = Astro.props;
     <div class="mt-3">
       {
         details.map((detail) => (
-          <div class="flex gap-1 items-center text-lg text-white  mt-2">
+          <div class="flex gap-1 items-center text-lg text-white">
             <IconCheck className="fill-primary" width="20" height="20" />
             <span>{detail}</span>
           </div>
