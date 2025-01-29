@@ -1,10 +1,18 @@
 ---
 import ContainerSection from "./ContainerSection.astro";
 import Game2048 from "./Game2048.astro";
+import IconLigth from "./Icons/IconLigth.astro";
 import SectionTitle from "./SectionTitle.astro";
+import CardProject from "./CardProject.astro";
 ---
 
 <ContainerSection className="py-28">
-  <SectionTitle text="Proyectos" />
-  <Game2048 />
+  <SectionTitle text="Proyectos/Experimentos">
+    <IconLigth />
+  </SectionTitle>
+  <div class="flex flex-col gap-4">
+    <CardProject title="2048" urlDemo="ada" urlGithub="ada">
+      <Game2048 />
+    </CardProject>
+  </div>
 </ContainerSection>

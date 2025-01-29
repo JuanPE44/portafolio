@@ -3,23 +3,9 @@ import "../styles/2048.css";
 import ButtonRow from "./ButtonRow.astro";
 ---
 
-<div
-  class="flex justify-center items-center bg-gray-bg rounded-2xl p-10 relative gap-4"
->
-  <!--
-  <div
-    class="z-30 absolute top-0 left-0 w-full flex justify-center items-center h-full filter backdrop-blur-md rounded-2xl"
-  >
-    <button class="px-6 py-3 rounded-2xl bg-primary text-bold text-white"
-      >Jugar</button
-    >
-  </div>
-  -->
-  <div
-    id="header"
-    class="flex flex-col p-3 rounded-2xl bg-gray-bg border-[#fff1] border-[1px]"
-  >
-    <h1 class="text-secondary text-6xl text-bold mb-2">2048</h1>
+<div class="flex justify-center items-center rounded-2xl relative gap-4">
+  <div class="absolute top-0 w-full" id="disable-scroll"></div>
+  <div id="header" class="flex flex-col p-3 rounded-2xl bg-gray-bg min-w-52">
     <div class="container-score flex flex-col gap-2 font-bold">
       <div
         class="bg-gray-bg text-white p-1 rounded-2xl flex flex-col items-center gap-1"
@@ -35,11 +21,15 @@ import ButtonRow from "./ButtonRow.astro";
       </div>
     </div>
     <div class="newgame flex flex-col mt-5">
-      <div class="container-buttons flex gap-1">
-        <ButtonRow id="row-left" className="-rotate-90" />
-        <ButtonRow id="row-up" className="rotate-90" />
-        <ButtonRow id="row-bottom" className="rotate-180" />
-        <ButtonRow id="row-right" />
+      <div
+        class="container-buttons grid grid-cols-3 grid-rows-2 place-content-center gap-y-2"
+      >
+        <div></div>
+        <ButtonRow id="row-up" className="-rotate-90 m-auto" />
+        <div></div>
+        <ButtonRow id="row-left" className="rotate-180 ml-auto" />
+        <ButtonRow id="row-bottom" className="rotate-90 m-auto" />
+        <ButtonRow id="row-right" className="mr-auto" />
       </div>
       <button class="mt-5 px-4 py-3 rounded-2xl bg-primary text-bold text-white"
         >Nuevo juego</button
@@ -49,7 +39,7 @@ import ButtonRow from "./ButtonRow.astro";
 
   <div id="app">
     <div class="container-game flex gap-5 w-full"></div>
-    <div class="board">
+    <div class="board min-h-80 min-w-80">
       <div class="container-win">
         <h1>YOU WON!</h1>
         <div class="win-score">Score: <span>1000</span></div>
@@ -58,16 +48,13 @@ import ButtonRow from "./ButtonRow.astro";
     </div>
   </div>
 
-  <div
-    class="bg-gray-bg p-3 border-[#fff1] border-[1px] h-full relative rounded-2xl text-white"
-  >
-    <h3 class="text-secondary text-3xl font-bold text-left mb-2">Como Jugar</h3>
+  <div class="bg-gray-bg p-3 min-h-80 relative rounded-2xl text-white">
+    <h3 class="text-secondary text-xl font-bold text-left mb-2">Como Jugar</h3>
     <p class="text-gray">
       Puedes mover las fichas en las cuatro direcciones (arriba, abajo,
       izquierda y derecha) utilizando las flechas del teclado.
     </p>
-    <img src="/public/images/teclas.png" width="100" height="100" />
-    <p class="text-gray">
+    <p class="text-gray mt-3">
       El objetivo del juego es combinar las fichas numeradas hasta alcanzar el
       número 2048.
     </p>
@@ -97,6 +84,26 @@ import ButtonRow from "./ButtonRow.astro";
     },
     { threshold: 0.2 }
   );
+
+  const targetElement = document.querySelector("#disable-scroll"); // Reemplaza con el selector del elemento
+
+  const observerScroll = new IntersectionObserver((entries) => {
+    const isVisible = entries[0].isIntersecting;
+
+    if (isVisible) {
+      window.addEventListener("keydown", disableScrollKeys);
+    } else {
+      window.removeEventListener("keydown", disableScrollKeys);
+    }
+  });
+
+  observerScroll.observe(targetElement!);
+
+  function disableScrollKeys(event: KeyboardEvent) {
+    if (["ArrowUp", "ArrowDown", "Space"].includes(event.key)) {
+      event.preventDefault();
+    }
+  }
 
   observer.observe(document.getElementById("app")!);
 </script>
