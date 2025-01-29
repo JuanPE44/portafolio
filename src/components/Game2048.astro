@@ -62,48 +62,56 @@ import ButtonRow from "./ButtonRow.astro";
 </div>
 
 <script>
-  const observer = new IntersectionObserver(
-    async (entries) => {
+  const targetElement = document.querySelector<HTMLElement>("#disable-scroll"); // Elemento que deshabilita el scroll
+
+  // Función para inicializar el juego
+  async function loadGame() {
+    const { Game } = await import("../projects/2048/Game.ts");
+    console.log("Juego cargado");
+
+    const bestScore: number[] = JSON.parse(
+      localStorage.getItem("bestScore") ?? "[]"
+    );
+    localStorage.setItem("bestScore", JSON.stringify(bestScore));
+
+    const g = new Game();
+    document
+      .querySelector<HTMLDivElement>(".container-game")
+      ?.appendChild(g.board.element!);
+  }
+
+  // Observador para cargar el juego
+  const gameObserver = new IntersectionObserver(
+    (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
       if (entries[0].isIntersecting) {
-        observer.disconnect(); // Evita que se cargue varias veces
-
-        const { Game } = await import("../projects/2048/Game.ts");
-        console.log("juego cargado");
-        if (localStorage.getItem("bestScore") === null) {
-          let puntos: [] | number[] = [];
-          localStorage.setItem("bestScore", JSON.stringify(puntos));
-        }
-
-        const g = new Game();
-
-        const containerGame =
-          document.querySelector<HTMLDivElement>(".container-game");
-
-        containerGame?.appendChild(g.board.element!);
+        observer.disconnect(); // Detiene la observación después de la primera ejecución
+        loadGame();
       }
     },
     { threshold: 0.2 }
   );
 
-  const targetElement = document.querySelector("#disable-scroll"); // Reemplaza con el selector del elemento
-
-  const observerScroll = new IntersectionObserver((entries) => {
-    const isVisible = entries[0].isIntersecting;
-
-    if (isVisible) {
-      window.addEventListener("keydown", disableScrollKeys);
-    } else {
-      window.removeEventListener("keydown", disableScrollKeys);
+  // Observador para deshabilitar el scroll
+  const scrollObserver = new IntersectionObserver(
+    (entries: IntersectionObserverEntry[]) => {
+      const isVisible = entries[0].isIntersecting;
+      if (isVisible) {
+        window.addEventListener("keydown", disableScrollKeys);
+      } else {
+        window.removeEventListener("keydown", disableScrollKeys);
+      }
     }
-  });
+  );
 
-  observerScroll.observe(targetElement!);
-
+  // Función para bloquear las teclas de scroll
   function disableScrollKeys(event: KeyboardEvent) {
     if (["ArrowUp", "ArrowDown", "Space"].includes(event.key)) {
       event.preventDefault();
     }
   }
 
-  observer.observe(document.getElementById("app")!);
+  // Iniciar observadores
+  const appElement = document.getElementById("app");
+  if (appElement) gameObserver.observe(appElement);
+  if (targetElement) scrollObserver.observe(targetElement);
 </script>
