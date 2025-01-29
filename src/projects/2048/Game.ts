@@ -6,15 +6,15 @@ export class Game {
   elementBestScore;
   board;
   win;
-  arrowLeft: HTMLDivElement | null = document.querySelector(".left");
-  arrowUp: HTMLDivElement | null = document.querySelector(".up");
-  arrowBottom: HTMLDivElement | null = document.querySelector(".bottom");
-  arrowRight: HTMLDivElement | null = document.querySelector(".right");
+  arrowLeft = document.getElementById("row-left");
+  arrowUp = document.getElementById("row-up");
+  arrowBottom = document.getElementById("row-bottom");
+  arrowRight = document.getElementById("row-right");
 
   constructor() {
     this.board = new Board(this, 4);
-    this.elementScore = document.querySelector(".score span");
-    this.elementBestScore = document.querySelector(".best-score span");
+    this.elementScore = document.getElementById("score");
+    this.elementBestScore = document.getElementById("best-score");
     this.win = false;
     this.drawBestScore();
     document
@@ -93,16 +93,16 @@ export class Game {
     const keyName = e.code;
     switch (keyName) {
       case "ArrowRight":
-        this.arrowRight!.style.background = "#f2b179";
+        this.arrowRight!.style.background = "#77eb26";
         break;
       case "ArrowUp":
-        this.arrowUp!.style.background = "#f2b179";
+        this.arrowUp!.style.background = "#77eb26";
         break;
       case "ArrowLeft":
-        this.arrowLeft!.style.background = "#f2b179";
+        this.arrowLeft!.style.background = "#77eb26";
         break;
       case "ArrowDown":
-        this.arrowBottom!.style.background = "#f2b179";
+        this.arrowBottom!.style.background = "#77eb26";
         break;
     }
   }

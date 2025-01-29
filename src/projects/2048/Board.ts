@@ -14,7 +14,7 @@ export class Board {
   constructor(game: Game, SIZE: number) {
     this.game = game;
     this.SIZE = SIZE;
-    this.SIZE_SQUARE = 90;
+    this.SIZE_SQUARE = 70;
     this.squareAnt = null;
     this.idSquares = 0;
     this.element = document.querySelector(".board");
