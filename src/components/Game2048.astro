@@ -3,7 +3,14 @@ import "../styles/2048.css";
 import IconRowRigth from "./Icons/IconRowRigth.astro";
 ---
 
-<div class="flex justify-center bg-gray-bg rounded-2xl p-4">
+<div class="flex justify-center bg-gray-bg rounded-2xl p-4 relative">
+  <div
+    class="z-30 absolute top-0 left-0 w-full flex justify-center items-center h-full filter backdrop-blur-md rounded-2xl"
+  >
+    <button class="px-6 py-3 rounded-2xl bg-primary text-bold text-white"
+      >Jugar</button
+    >
+  </div>
   <div id="app">
     <div class="container-game flex gap-5">
       <div class="header flex flex-col">
@@ -49,17 +56,28 @@ import IconRowRigth from "./Icons/IconRowRigth.astro";
   </div>
 </div>
 <script>
-  import { Game } from "../projects/2048/Game";
+  const observer = new IntersectionObserver(
+    async (entries) => {
+      if (entries[0].isIntersecting) {
+        observer.disconnect(); // Evita que se cargue varias veces
 
-  if (localStorage.getItem("bestScore") === null) {
-    let puntos: [] | number[] = [];
-    localStorage.setItem("bestScore", JSON.stringify(puntos));
-  }
+        const { Game } = await import("../projects/2048/Game.ts");
+        console.log("juego cargado");
+        if (localStorage.getItem("bestScore") === null) {
+          let puntos: [] | number[] = [];
+          localStorage.setItem("bestScore", JSON.stringify(puntos));
+        }
 
-  const g = new Game();
+        const g = new Game();
 
-  const containerGame =
-    document.querySelector<HTMLDivElement>(".container-game");
+        const containerGame =
+          document.querySelector<HTMLDivElement>(".container-game");
 
-  containerGame?.appendChild(g.board.element!);
+        containerGame?.appendChild(g.board.element!);
+      }
+    },
+    { threshold: 0.2 }
+  );
+
+  observer.observe(document.getElementById("app")!);
 </script>
