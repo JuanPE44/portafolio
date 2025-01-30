@@ -1,13 +1,11 @@
 ---
-import ContainerSection from "./ContainerSection.astro";
-import IconWork from "./Icons/IconWork.astro";
-import IconCheck from "./Icons/IconCheck.astro";
-import IconGithub from "./Icons/IconGithub.astro";
-import IconLinkedin from "./Icons/IconLinkedin.astro";
-import IconTypescript from "./Icons/IconTypescript.astro";
-import IconAstro from "./Icons/IconAstro.astro";
-import IconReact from "./Icons/IconReact.astro";
+import IconWork from "@components/icons/IconWork.astro";
+import ContainerSection from "@components/ui/ContainerSection.astro";
+import IconGithub from "@components/icons/IconGithub.astro";
+import IconLinkedin from "@components/icons/IconLinkedin.astro";
 import HeroIcon from "./HeroIcon.astro";
+import CardHero from "./CardHero.astro";
+import ListOfHabilities from "./ListOfHabilities.astro";
 ---
 
 <ContainerSection className="py-0">
@@ -48,24 +46,9 @@ import HeroIcon from "./HeroIcon.astro";
       <div class="relative">
         <!-- Card habilidades -->
 
-        <div class="p-3 bg-primary absolute -top-1/3 -left-[40%] rounded-2xl">
-          <h3 class="text-white font-bold">Habilidades</h3>
-          <ul class="text-gray text-sm">
-            <li class="flex gap-2 items-center">
-              <IconCheck className="fill-secondary" /><span>Diseño UX/UI</span>
-            </li>
-            <li class="flex gap-2 items-center">
-              <IconCheck className="fill-secondary" /><span
-                >Desarrollo Frontend</span
-              >
-            </li>
-            <li class="flex gap-2 items-center">
-              <IconCheck className="fill-secondary" /><span
-                >Resolucion de problemas</span
-              >
-            </li>
-          </ul>
-        </div>
+        <CardHero>
+          <ListOfHabilities className="-top-1/3 -left-[40%]" />
+        </CardHero>
         <!-- Card Github -->
         <HeroIcon className="-top-[15%] -right-[15%]">
           <IconGithub width="35" height="35" />
@@ -81,23 +64,9 @@ import HeroIcon from "./HeroIcon.astro";
         </HeroIcon>
 
         <!-- Card Tecnologicas -->
-        <div class="p-3 bg-primary absolute -bottom-1/3 -right-1/2 rounded-2xl">
-          <h3 class="text-white font-bold">Mis tecnologias favoritas</h3>
-          <ul class="text-gray text-sm">
-            <li class="flex gap-2 items-center">
-              <IconTypescript />
-              <span>Typescript</span>
-            </li>
-            <li class="flex gap-2 items-center">
-              <IconReact />
-              <span>React</span>
-            </li>
-            <li class="flex gap-2 items-center">
-              <IconAstro />
-              <span>Astro</span>
-            </li>
-          </ul>
-        </div>
+        <CardHero>
+          <ListOfHabilities className="-bottom-1/3 -right-1/2" />
+        </CardHero>
       </div>
     </div>
   </div>
