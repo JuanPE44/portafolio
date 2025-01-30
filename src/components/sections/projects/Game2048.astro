@@ -1,0 +1,117 @@
+---
+import "@styles/2048.css";
+import ButtonRow from "./ButtonRow.astro";
+---
+
+<div class="flex justify-center items-center rounded-2xl relative gap-4">
+  <div class="absolute top-0 w-full" id="disable-scroll"></div>
+  <div id="header" class="flex flex-col p-3 rounded-2xl bg-gray-bg min-w-52">
+    <div class="container-score flex flex-col gap-2 font-bold">
+      <div
+        class="bg-gray-bg text-white p-1 rounded-2xl flex flex-col items-center gap-1"
+      >
+        <h3>SCORE</h3>
+        <span id="score">0</span>
+      </div>
+      <div
+        class="bg-gray-bg text-white p-1 rounded-2xl flex flex-col items-center gap-1"
+      >
+        <h3>BEST</h3>
+        <span id="best-score">0</span>
+      </div>
+    </div>
+    <div class="newgame flex flex-col mt-5">
+      <div
+        class="container-buttons grid grid-cols-3 grid-rows-2 place-content-center gap-y-2"
+      >
+        <div></div>
+        <ButtonRow id="row-up" className="-rotate-90 m-auto" />
+        <div></div>
+        <ButtonRow id="row-left" className="rotate-180 ml-auto" />
+        <ButtonRow id="row-bottom" className="rotate-90 m-auto" />
+        <ButtonRow id="row-right" className="mr-auto" />
+      </div>
+      <button class="mt-5 px-4 py-3 rounded-2xl bg-primary text-bold text-white"
+        >Nuevo juego</button
+      >
+    </div>
+  </div>
+
+  <div id="app">
+    <div class="container-game flex gap-5 w-full"></div>
+    <div class="board min-h-80 min-w-80">
+      <div class="container-win">
+        <h1>YOU WON!</h1>
+        <div class="win-score">Score: <span>1000</span></div>
+        <button class="button-win">New Game</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-gray-bg p-3 min-h-80 relative rounded-2xl text-white">
+    <h3 class="text-secondary text-xl font-bold text-left mb-2">Como Jugar</h3>
+    <p class="text-gray">
+      Puedes mover las fichas en las cuatro direcciones (arriba, abajo,
+      izquierda y derecha) utilizando las flechas del teclado.
+    </p>
+    <p class="text-gray mt-3">
+      El objetivo del juego es combinar las fichas numeradas hasta alcanzar el
+      número 2048.
+    </p>
+  </div>
+</div>
+
+<script>
+  const targetElement = document.querySelector<HTMLElement>("#disable-scroll"); // Elemento que deshabilita el scroll
+
+  // Función para inicializar el juego
+  async function loadGame() {
+    const { Game } = await import("@utils/2048/Game.ts");
+    console.log("Juego cargado");
+
+    const bestScore: number[] = JSON.parse(
+      localStorage.getItem("bestScore") ?? "[]"
+    );
+    localStorage.setItem("bestScore", JSON.stringify(bestScore));
+
+    const g = new Game();
+    document
+      .querySelector<HTMLDivElement>(".container-game")
+      ?.appendChild(g.board.element!);
+  }
+
+  // Observador para cargar el juego
+  const gameObserver = new IntersectionObserver(
+    (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
+      if (entries[0].isIntersecting) {
+        observer.disconnect(); // Detiene la observación después de la primera ejecución
+        loadGame();
+      }
+    },
+    { threshold: 0.2 }
+  );
+
+  // Observador para deshabilitar el scroll
+  const scrollObserver = new IntersectionObserver(
+    (entries: IntersectionObserverEntry[]) => {
+      const isVisible = entries[0].isIntersecting;
+      if (isVisible) {
+        window.addEventListener("keydown", disableScrollKeys);
+      } else {
+        window.removeEventListener("keydown", disableScrollKeys);
+      }
+    }
+  );
+
+  // Función para bloquear las teclas de scroll
+  function disableScrollKeys(event: KeyboardEvent) {
+    if (["ArrowUp", "ArrowDown", "Space"].includes(event.key)) {
+      event.preventDefault();
+    }
+  }
+
+  // Iniciar observadores
+  const appElement = document.getElementById("app");
+  if (appElement) gameObserver.observe(appElement);
+  if (targetElement) scrollObserver.observe(targetElement);
+</script>

@@ -1,0 +1,16 @@
+---
+import IconRowRigth from "@components/icons/IconRowRigth.astro";
+
+interface Props {
+  className?: string;
+  id: string;
+}
+const { className = "", id } = Astro.props;
+---
+
+<div
+  id={id}
+  class={`${className} w-10 h-10 flex justify-center items-center bg-gray-bg rounded-lg border-[1px] border-gray cursor-pointer`}
+>
+  <IconRowRigth className="fill-gray" />
+</div>

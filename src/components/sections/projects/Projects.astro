@@ -1,0 +1,18 @@
+---
+import ContainerSection from "@components/ui/ContainerSection.astro";
+import Game2048 from "./Game2048.astro";
+import IconLigth from "@components/icons/IconLigth.astro";
+import SectionTitle from "@components/ui/SectionTitle.astro";
+import CardProject from "@components/ui/CardProject.astro";
+---
+
+<ContainerSection>
+  <SectionTitle text="Proyectos/Experimentos">
+    <IconLigth />
+  </SectionTitle>
+  <div class="flex flex-col gap-4">
+    <CardProject title="2048" urlDemo="ada" urlGithub="ada">
+      <Game2048 />
+    </CardProject>
+  </div>
+</ContainerSection>
