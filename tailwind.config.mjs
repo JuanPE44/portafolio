@@ -13,6 +13,7 @@ export default {
         bg: "var(--color-bg)",
         gray: "var(--color-gray)",
         "gray-bg": "var(--color-gray-bg)",
+        "border-color": "var(--color-border)",
       },
       fontFamily: {
         baloo: ["Baloo Paaji 2", ...defaultTheme.fontFamily.serif],

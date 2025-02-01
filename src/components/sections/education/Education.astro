@@ -9,12 +9,12 @@ import SectionTitle from "@components/ui/SectionTitle.astro";
 <ContainerSection className="pb-20">
   <SectionTitle
     text="Educación"
-    className="border-l-[1px] pt-12 pb-4 border-[#78eb26af]"
+    className="border-l-[2px] pt-12 pb-4 border-border-color"
   >
     <IconWork className="fill-primary" />
   </SectionTitle>
   <div
-    class="p-5 border-l-[1px] w-20 border-b-[1px] border-[#78eb26af] rounded-bl-2xl"
+    class="p-5 border-l-[2px] w-20 border-b-[2px] border-border-color rounded-bl-2xl"
   >
   </div>
   <div class="w-full">
@@ -24,10 +24,10 @@ import SectionTitle from "@components/ui/SectionTitle.astro";
         class="w-1/2 rounded-tr-2xl relative borde-parcial-r flex flex-col gap-10 pt-10 pb-20"
       >
         <div
-          class="absolute -top-[1px] -right-[1px] w-[97%] h-11 rounded-tr-2xl bg-bg border-t-[1px] border-r-[1px] border-[#78eb26af]"
+          class="absolute -top-[2px] -right-[2px] w-[97%] h-11 rounded-tr-2xl bg-bg border-t-[2px] border-r-[2px] border-border-color"
         >
           <div
-            class="absolute -top-[1px] -right-[1px] w-5 h-72 rounded-tr-2xl bg-bg border-t-[1px] border-r-[1px] border-[#78eb26af]"
+            class="absolute -top-[2px] -right-[2px] w-5 h-72 rounded-tr-2xl bg-bg border-t-[2px] border-r-[2px] border-border-color"
           >
           </div>
         </div>
@@ -70,11 +70,11 @@ import SectionTitle from "@components/ui/SectionTitle.astro";
 
 <style>
   .borde-parcial-r {
-    border-right: 1px solid;
+    border-right: 2px solid;
     border-image: linear-gradient(
       to bottom,
       transparent 0%,
-      #78eb26af 90%,
+      var(--color-border) 90%,
       transparent 100%
     );
     border-image-slice: 1;

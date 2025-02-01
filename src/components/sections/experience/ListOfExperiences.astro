@@ -5,13 +5,13 @@ import CardExperience from "./CardExperience.astro";
 <div class="borde-parcial-l pb-12 pt-28 flex flex-col gap-10">
   <CardExperience
     title="Desarrollador Frontend"
-    jobTitle="FREELANCER"
+    jobTitle="Frelancer"
     date="Actualmente..."
     description="Actualmente, me dedico a desarrollar sitios web que combinan diseño moderno y funcionalidad, ayudando a negocios a destacar en el entorno digital. Una de mis experiencias más destacadas fue la creación de un sitio web para una vidriería que buscaba presencia en línea. "
   />
   <CardExperience
     title="Prácticas Profesionales en Programación"
-    jobTitle="ESCUELA TECNICA Nº2 ING. FELIPE SENILLOSA"
+    jobTitle="Escuela Tecnica Nº2 Ing. Felipe Senillosa"
     date="Marzo 2020 - Diciembre 2023"
     description="Durante el último año de mi tecnicatura en programación, tuve la oportunidad de participar en proyectos destacados que fortalecieron mis habilidades técnicas y mi capacidad de trabajo en equipo."
   />
@@ -19,8 +19,12 @@ import CardExperience from "./CardExperience.astro";
 
 <style>
   .borde-parcial-l {
-    border-left: 1px solid;
-    border-image: linear-gradient(to bottom, transparent 0%, #78eb26af 95%);
+    border-left: 2px solid;
+    border-image: linear-gradient(
+      to bottom,
+      transparent 1%,
+      var(--color-border) 30%
+    );
     border-image-slice: 1;
   }
 </style>
