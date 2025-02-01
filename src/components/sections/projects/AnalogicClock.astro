@@ -1,0 +1,15 @@
+---
+import "@styles/analogicClock.css";
+---
+
+<div id="analogic-clock"></div>
+
+<script>
+  import { AnalogClock } from "@utils/AnalogicClock/Clock";
+  const clock = new AnalogClock();
+  const clockElement = clock.render();
+  document
+    .querySelector<HTMLDivElement>("#analogic-clock")!
+    .appendChild(clockElement);
+  clock.init();
+</script>
