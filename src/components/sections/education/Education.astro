@@ -1,0 +1,82 @@
+---
+import IconCalendar from "@components/icons/IconCalendar.astro";
+import IconWork from "@components/icons/IconWork.astro";
+import Circle from "@components/ui/Circle.astro";
+import ContainerSection from "@components/ui/ContainerSection.astro";
+import SectionTitle from "@components/ui/SectionTitle.astro";
+---
+
+<ContainerSection className="pb-20">
+  <SectionTitle
+    text="Educación"
+    className="border-l-[2px] pt-12 pb-4 border-border-color"
+  >
+    <IconWork className="fill-primary" />
+  </SectionTitle>
+  <div
+    class="p-5 border-l-[2px] w-20 border-b-[2px] border-border-color rounded-bl-2xl"
+  >
+  </div>
+  <div class="w-full">
+    <div class="w-full flex flex-col items-start">
+      <div class="w-1/2 borde-parcial-t"></div>
+      <div
+        class="w-1/2 rounded-tr-2xl relative borde-parcial-r flex flex-col gap-10 pt-10 pb-20"
+      >
+        <div
+          class="absolute -top-[2px] -right-[2px] w-[97%] h-11 rounded-tr-2xl bg-bg border-t-[2px] border-r-[2px] border-border-color"
+        >
+          <div
+            class="absolute -top-[2px] -right-[2px] w-5 h-72 rounded-tr-2xl bg-bg border-t-[2px] border-r-[2px] border-border-color"
+          >
+          </div>
+        </div>
+        <div class="mt-10 flex w-full relative -right-2 gap-2">
+          <div class="w-full flex justify-end">
+            <div class="flex flex-col">
+              <h3 class="text-secondary text-2xl font-bold max-w-72 text-left">
+                Universidad Nacional del Centro de la Provincia de Buenos Aires
+              </h3>
+              <p class="text-white italic mt-2">Ingenieria en sistemas</p>
+              <div class="flex gap-2 text-xs text-zinc-400 mt-2">
+                <IconCalendar className="fill-zinc-400" />
+                <span>Marzo 2024 - Actualmente..</span>
+              </div>
+            </div>
+          </div>
+          <Circle />
+        </div>
+        <div class="flex w-full relative -right-2 gap-2">
+          <div class="w-full flex justify-start relative ml-4 -right-full">
+            <div class="flex flex-col">
+              <h3 class="text-secondary text-2xl font-bold max-w-72 text-left">
+                ESCUELA TECNICA N°2 ING. FELIPE SENILLOSA
+              </h3>
+              <p class="text-white italic mt-2">
+                Tecnicatura, Progamacion infomatica Aplicaciones especificas
+              </p>
+              <div class="flex gap-2 text-xs text-zinc-400 mt-2">
+                <IconCalendar className="fill-zinc-400" />
+                <span>Marzo 2020 - Diciembre 2023</span>
+              </div>
+            </div>
+          </div>
+          <Circle />
+        </div>
+      </div>
+    </div>
+  </div>
+</ContainerSection>
+
+<style>
+  .borde-parcial-r {
+    border-right: 2px solid;
+    border-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      var(--color-border) 90%,
+      transparent 100%
+    );
+    border-image-slice: 1;
+  }
+</style>
