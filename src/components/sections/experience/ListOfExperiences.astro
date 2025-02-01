@@ -2,7 +2,7 @@
 import CardExperience from "./CardExperience.astro";
 ---
 
-<div class="border-l-[1px] border-[#78eb26af] py-12 flex flex-col gap-10">
+<div class="borde-parcial-l pb-12 pt-28 flex flex-col gap-10">
   <CardExperience
     title="Desarrollador Frontend"
     jobTitle="FREELANCER"
@@ -16,3 +16,11 @@ import CardExperience from "./CardExperience.astro";
     description="Durante el último año de mi tecnicatura en programación, tuve la oportunidad de participar en proyectos destacados que fortalecieron mis habilidades técnicas y mi capacidad de trabajo en equipo."
   />
 </div>
+
+<style>
+  .borde-parcial-l {
+    border-left: 1px solid;
+    border-image: linear-gradient(to bottom, transparent 0%, #78eb26af 95%);
+    border-image-slice: 1;
+  }
+</style>

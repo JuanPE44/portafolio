@@ -3,16 +3,21 @@ import ContainerSection from "@components/ui/ContainerSection.astro";
 import Game2048 from "./Game2048.astro";
 import IconLigth from "@components/icons/IconLigth.astro";
 import SectionTitle from "@components/ui/SectionTitle.astro";
-import CardProject from "@components/ui/CardProject.astro";
+import CardProject from "./CardProject.astro";
 ---
 
 <ContainerSection>
   <SectionTitle text="Proyectos/Experimentos">
     <IconLigth />
   </SectionTitle>
-  <div class="flex flex-col gap-4">
+  <div class="flex flex-col items-center gap-4">
     <CardProject title="2048" urlDemo="ada" urlGithub="ada">
       <Game2048 />
     </CardProject>
+    <a
+      href=""
+      class="py-2 px-4 relative text-white mt-20 bg-primary font-bold rounded-2xl"
+      >Ver proyectos
+    </a>
   </div>
 </ContainerSection>
