@@ -1,23 +1,75 @@
 ---
 import IconLogo from "@components/icons/IconLogo.astro";
+import IconMenu from "@components/icons/IconMenu.astro";
+import IconCross from "@components/icons/IconCross.astro";
 ---
 
 <header
-  class="z-50 px-3 py-1 text-white flex w-full max-w-4xl justify-between items-center left-1/2 -translate-x-1/2 top-3 bg-gray-bg rounded-2xl fixed filter backdrop-blur-2xl"
+  class="z-50 px-4 py-2 text-white flex w-full max-w-4xl left-1/2 -translate-x-1/2 top-3 bg-gray-bg rounded-2xl fixed filter backdrop-blur-2xl"
 >
-  <a href="/" class="ml-4 cursor-pointer">
-    <IconLogo />
-  </a>
-  <nav class="absolute left-1/2 -translate-x-1/2">
-    <ul class="flex gap-4">
-      <li><a href="/work">Trabajos</a></li>
-      <li><a href="/about">Proyectos</a></li>
-      <li><a href="/about">Sobre mi</a></li>
-      <li><a href="/blog">Blog</a></li>
-    </ul>
-  </nav>
-  <a
-    class="border border-white text-white font-bold py-2 px-4 rounded-2xl"
-    href="/contact">Contacto</a
+  <div class="w-full flex justify-between items-center relative">
+    <a href="/" class="cursor-pointer">
+      <IconLogo />
+    </a>
+
+    <nav class="hidden sm:flex absolute left-1/2 -translate-x-1/2">
+      <ul class="flex gap-4">
+        <li><a href="/work">Trabajos</a></li>
+        <li><a href="/about">Proyectos</a></li>
+        <li><a href="/about">Sobre mi</a></li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+    </nav>
+
+    <div>
+      <a
+        class="hidden sm:flex border border-white text-white font-bold py-2 px-4 rounded-2xl"
+        href="/contact">Contacto</a
+      >
+      <IconMenu
+        className="stroke-white sm:hidden z-50 cursor-pointer"
+        width="25"
+        height="25"
+        id="menu-mobile"
+      />
+    </div>
+  </div>
+  <nav
+    id="nav-mobile"
+    class="translate-x-full opacity-0 absolute top-0 transition-[3s] flex flex-col right-0 rounded-2xl bg-secondary w-full h-screen py-2 px-4"
   >
+    <div class="w-full flex justify-end">
+      <IconCross
+        width="25"
+        height="25"
+        className="fill-bg cursor-pointer"
+        id="menu-close"
+      />
+    </div>
+    <div class="w-full">
+      <ul
+        class="flex flex-col items-center mt-20 gap-2 text-3xl text-bg font-bold"
+      >
+        <li><a href="/work">Trabajos</a></li>
+        <li><a href="/about">Proyectos</a></li>
+        <li><a href="/about">Sobre mi</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/contact">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
 </header>
+
+<script>
+  const menuMobile = document.getElementById("menu-mobile");
+  const menuClose = document.getElementById("menu-close");
+  const nav = document.getElementById("nav-mobile");
+  menuMobile?.addEventListener("click", () => {
+    nav?.classList.toggle("translate-x-full");
+    nav?.classList.toggle("opacity-0");
+  });
+  menuClose?.addEventListener("click", () => {
+    nav?.classList.toggle("opacity-0");
+    nav?.classList.toggle("translate-x-full");
+  });
+</script>
