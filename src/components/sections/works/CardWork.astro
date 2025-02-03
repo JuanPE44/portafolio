@@ -14,10 +14,12 @@ interface Props {
 const { url, title, jobTitle, description, details, tecnologies } = Astro.props;
 ---
 
-<div class="flex bg-gray-bg rounded-2xl">
-  <div class="w-1/2 relative">
+<div
+  class="flex md:flex-row flex-col items-center bg-gray-bg rounded-2xl border-[#fff1] border-[1px]"
+>
+  <div class="w-full md:w-1/2 relative">
     <img
-      class="rounded-2xl w-full h-96 object-cover object-top filter"
+      class="rounded-2xl w-full h-72 md:h-[400px] object-cover object-top filter"
       src={url}
       alt=""
     />
@@ -26,8 +28,10 @@ const { url, title, jobTitle, description, details, tecnologies } = Astro.props;
     >
     </div>
   </div>
-  <div class="flex flex-col w-1/2 p-4">
-    <h3 class="text-secondary text-3xl font-bold text-left">{title}</h3>
+  <div class="flex flex-col w-full md:w-1/2 p-4">
+    <h3 class="text-secondary text-3xl font-bold text-left mt-3 md:mt-0">
+      {title}
+    </h3>
     <h5 class="text-zinc-400 italic">{jobTitle}</h5>
     <div class="flex mt-4">
       {tecnologies.map((tecnology) => <BadgeTecnologie name={tecnology} />)}

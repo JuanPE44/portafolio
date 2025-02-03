@@ -11,6 +11,10 @@
   --color-bg: #3a4135;
   --color-gray-bg: #52525252;
   --color-border: #686868;
+  --color-clock: var(--color-primary);
+  --color-hour: #fff;
+  --color-minute: #aaa;
+  --color-second: #555;
 }
 
 body {

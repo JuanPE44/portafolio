@@ -1,0 +1,31 @@
+---
+import "@styles/analogicClock.css";
+---
+
+<div id="analogic-clock" class="min-w-72 min-h-72"></div>
+
+<script>
+  const observer = new IntersectionObserver(
+    async (
+      entries: IntersectionObserverEntry[],
+      observer: IntersectionObserver
+    ) => {
+      if (entries[0].isIntersecting) {
+        observer.disconnect(); // Detiene la observación después de la primera ejecución
+
+        const { AnalogClock } = await import("@utils/AnalogicClock/Clock");
+
+        const clock = new AnalogClock();
+        const clockElement = clock.render();
+        document
+          .querySelector<HTMLDivElement>("#analogic-clock")!
+          .appendChild(clockElement);
+        clock.init();
+      }
+    },
+    { threshold: 0.2 }
+  );
+
+  const targetElement = document.getElementById("analogic-clock");
+  if (targetElement) observer.observe(targetElement);
+</script>

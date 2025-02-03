@@ -1,0 +1,27 @@
+---
+import CardProject from "./CardProject.astro";
+import Game2048 from "./Game2048.astro";
+import AnalogicClock from "./AnalogicClock.astro";
+import Sand from "./Sand.astro";
+---
+
+<div class="flex flex-col gap-6">
+  <div class="flex flex-col items-center gap-20">
+    <CardProject title="2048" urlDemo="ada" urlGithub="ada">
+      <Game2048 />
+    </CardProject>
+    <CardProject title="Relog analogico" urlDemo="ada" urlGithub="ada">
+      <AnalogicClock />
+    </CardProject>
+    <!--
+      <CardProject title="Simulador arena" urlDemo="ada" urlGithub="ada">
+        <Sand />
+      </CardProject>
+    -->
+  </div>
+  <a
+    href=""
+    class="py-2 px-4 relative text-white text-center bg-primary font-bold rounded-2xl"
+    >Ver proyectos
+  </a>
+</div>

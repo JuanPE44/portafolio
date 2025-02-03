@@ -12,7 +12,9 @@ const { title, urlDemo, urlGithub } = Astro.props;
   <div
     class="bg-gray-bg w-full flex items-center justify-between px-4 py-3 rounded-2xl border-[#fff1] border-[1px]"
   >
-    <h3 class="text-secondary text-3xl font-bold text-left">{title}</h3>
+    <h3 class="text-secondary text-xl md:text-3xl font-bold text-left">
+      {title}
+    </h3>
     <div class="flex gap-2 items-center">
       <a
         class="px-4 py-2 rounded-2xl bg-primary text-white font-bold"
@@ -27,9 +29,9 @@ const { title, urlDemo, urlGithub } = Astro.props;
       </a>
     </div>
   </div>
-</div>
-<div
-  class="flex justify-center items-center bg-gray-bg rounded-2xl p-4 relative gap-4 border-[#fff1] border-[1px]"
->
-  <slot />
+  <div
+    class="flex justify-center items-center bg-gray-bg rounded-2xl p-4 relative gap-4 border-[#fff1] border-[1px]"
+  >
+    <slot />
+  </div>
 </div>

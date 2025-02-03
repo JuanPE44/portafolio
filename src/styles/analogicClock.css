@@ -1,0 +1,132 @@
+.container {
+  margin: auto;
+  z-index: 100;
+}
+
+.container-clock {
+  border: 3px solid var(--color-clock);
+  border-radius: 50%;
+  z-index: 100;
+}
+
+.clock {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+}
+
+.container-hour {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  color: #fff;
+  width: 10px;
+  height: 100%;
+}
+
+.hour {
+  position: absolute;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.container-minute {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 10px;
+  height: 100%;
+}
+
+.line-minute {
+  position: absolute;
+  width: 1px;
+  height: 5px;
+  background-color: var(--color-clock);
+}
+
+.center {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--color-clock);
+  z-index: 30;
+}
+
+.line-hour {
+  position: absolute;
+  width: 3px;
+  height: 8px;
+  background-color: var(--color-clock);
+  border-radius: 0 0 5px 5px;
+}
+
+.counterclockwise-hour {
+  width: 10px;
+  height: 40%;
+}
+
+.counterclockwise-hour::after {
+  position: absolute;
+  content: "";
+  height: 50%;
+  width: 100%;
+  background: var(--color-hour);
+}
+
+.counterclockwise-minute {
+  width: 8px;
+  height: 60%;
+}
+
+.counterclockwise-minute::after {
+  position: absolute;
+  content: "";
+  height: 50%;
+  width: 100%;
+  background: var(--color-minute);
+}
+
+.counterclockwise-second {
+  width: 6px;
+  height: 75%;
+}
+
+.counterclockwise-second::after {
+  position: absolute;
+  content: "";
+  height: 50%;
+  width: 100%;
+  background: var(--color-second);
+}
+
+.counterclockwise-hour,
+.counterclockwise-minute,
+.counterclockwise-second {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transition: transform 0.5s ease-in-out;
+  overflow: hidden;
+  border-radius: 40%;
+}
