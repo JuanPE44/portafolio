@@ -2,9 +2,9 @@
 interface Props {
   className?: string;
 }
-const { className = "py-28" } = Astro.props;
+const { className = "py-20 md:py-28" } = Astro.props;
 ---
 
-<section class={`relative w-full min-h-screen ${className}`}>
+<section class={`relative w-full md:min-h-screen ${className}`}>
   <slot />
 </section>
