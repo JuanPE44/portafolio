@@ -12,10 +12,10 @@ export default defineConfig({
   vite: {
     resolve: {
       alias: {
-        "@components": "./src/components",
-        "@styles": "./src/styles",
-        "@utils": "./src/utils",
-        "@assets": "./src/assets",
+        "@components": "/src/components",
+        "@styles": "/src/styles",
+        "@utils": "/src/utils",
+        "@assets": "/src/assets",
       },
     },
   },
