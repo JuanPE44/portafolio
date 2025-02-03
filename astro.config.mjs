@@ -10,4 +10,14 @@ export default defineConfig({
   integrations: [tailwind()],
   adapter: netlify(),
   output: "server",
+  vite: {
+    resolve: {
+      alias: {
+        "@components": "/src/components",
+        "@styles": "/src/styles",
+        "@utils": "/src/utils",
+        "@assets": "/src/assets",
+      },
+    },
+  },
 });
