@@ -38,7 +38,7 @@ import IconCross from "@components/icons/IconCross.astro";
   </div>
   <nav
     id="nav-mobile"
-    class="translate-x-full opacity-0 absolute top-0 transition-[3s] flex flex-col right-0 rounded-2xl bg-secondary w-full h-screen py-2 px-4"
+    class="translate-y-full opacity-0 absolute top-0 transition-[3s] flex flex-col right-0 rounded-2xl bg-secondary w-full h-screen py-2 px-4"
   >
     <div class="w-full flex justify-end">
       <IconCross
@@ -50,7 +50,7 @@ import IconCross from "@components/icons/IconCross.astro";
     </div>
     <div class="w-full">
       <ul
-        class="flex flex-col items-center mt-20 gap-2 text-3xl text-bg font-bold"
+        class="flex flex-col items-center mt-20 gap-3 text-3xl text-bg font-bold"
       >
         <li><a href="/work">Trabajos</a></li>
         <li><a href="/about">Proyectos</a></li>
@@ -67,11 +67,11 @@ import IconCross from "@components/icons/IconCross.astro";
   const menuClose = document.getElementById("menu-close");
   const nav = document.getElementById("nav-mobile");
   menuMobile?.addEventListener("click", () => {
-    nav?.classList.toggle("translate-x-full");
+    nav?.classList.toggle("translate-y-full");
     nav?.classList.toggle("opacity-0");
   });
   menuClose?.addEventListener("click", () => {
     nav?.classList.toggle("opacity-0");
-    nav?.classList.toggle("translate-x-full");
+    nav?.classList.toggle("translate-y-full");
   });
 </script>
