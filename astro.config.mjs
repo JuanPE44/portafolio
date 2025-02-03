@@ -4,13 +4,13 @@ import { fileURLToPath, URL } from "node:url";
 
 import tailwind from "@astrojs/tailwind";
 
-import netlify from "@astrojs/netlify";
+import vercel from "@astrojs/vercel";
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind()],
-  adapter: netlify(),
-  output: "static",
+  adapter: vercel(),
+  output: "server",
   vite: {
     resolve: {
       alias: {
