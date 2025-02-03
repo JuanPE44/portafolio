@@ -9,7 +9,6 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/netlify": "^6.1.0",
     "@astrojs/tailwind": "^5.1.5",
     "@fontsource-variable/baloo-paaji-2": "^5.1.1",
     "astro": "^5.1.7",
@@ -17,5 +16,8 @@
   },
   "engines": {
     "node": "20"
+  },
+  "devDependencies": {
+    "@astrojs/netlify": "^6.1.0"
   }
 }
