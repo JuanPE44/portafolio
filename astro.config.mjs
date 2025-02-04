@@ -9,14 +9,5 @@ import vercel from "@astrojs/vercel";
 export default defineConfig({
   integrations: [tailwind()],
   adapter: vercel(),
-  vite: {
-    resolve: {
-      alias: {
-        "@components": "/src/components",
-        "@styles": "/src/styles",
-        "@utils": "/src/utils",
-        "@assets": "/src/assets",
-      },
-    },
-  },
+  output: "server",
 });

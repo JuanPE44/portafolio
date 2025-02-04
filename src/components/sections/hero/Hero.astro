@@ -1,19 +1,19 @@
 ---
-import IconWork from "@components/Icons/IconWork.astro";
-import ContainerSection from "@components/ui/ContainerSection.astro";
-import IconGithub from "@components/Icons/IconGithub.astro";
-import IconLinkedin from "@components/Icons/IconLinkedin.astro";
+import IconWork from "src/icons/IconWork.astro";
+import IconRowRigth from "src/icons/IconRowRigth.astro";
+import IconGithub from "src/icons/IconGithub.astro";
+import IconLinkedin from "src/icons/IconLinkedin.astro";
 import HeroIcon from "./HeroIcon.astro";
+import ContainerSection from "@components/ui/ContainerSection.astro";
 import CardHero from "./CardHero.astro";
 import ListOfHabilities from "./ListOfHabilities.astro";
 import ListOfTechnologies from "./ListOfTechnologies.astro";
-import IconRowRigth from "@components/Icons/IconRowRigth.astro";
 ---
 
 <ContainerSection className="py-0">
   <div class="w-full flex flex-col sm:flex-row min-h-screen">
     <div
-      class="w-full sm:w-1/2 pt-28 sm:pt-0 min-h-screen flex flex-col gap-10 sm:justify-center relative"
+      class="w-full sm:w-1/2 pt-28 pb-40 sm:pb-0 sm:pt-0 min-h-screen flex flex-col gap-10 justify-between sm:justify-center relative"
     >
       <div
         class="sm:hidden w-96 h-96 bg-gradient-to-r -bottom-1/3 from-primary to-secondary opacity-25 blur-3xl absolute left-1/2 transform -translate-x-1/2 rounded-full -z-10"
@@ -32,42 +32,44 @@ import IconRowRigth from "@components/Icons/IconRowRigth.astro";
             >
           </h1>
           <h2 class="text-gray text-base sm:text-base lg:text-lg">
-            !Hola! Soy Juan. Diseño y programo experiencias web simples,
-            funcionales y hermosas.
+            Soy Juan. Diseño y programo experiencias web simples, funcionales y
+            hermosas.
           </h2>
         </div>
       </div>
       <div class="flex flex-col gap-3">
-        <div class="flex gap-3">
+        <div class="flex flex-col sm:flex-row gap-4 sm:gap-3">
           <a
             href="/work"
-            class="bg-secondary text-bg font-bold py-2 px-4 rounded-2xl flex gap-2 items-center"
+            class="bg-secondary text-bg justify-center font-bold py-2 px-4 rounded-2xl flex gap-2 items-center"
           >
             <IconWork />
             <span>Trabajos</span>
           </a>
           <a
             href="/about"
-            class="border-[1px] border-white text-white font-bold py-2 px-4 rounded-2xl"
+            class="border-[1px] border-white text-white justify-center flex items-center font-bold py-2 px-4 rounded-2xl"
             >Sobre mi</a
           >
         </div>
-        <div class="flex justify-center sm:hidden fixed bottom-5 w-full">
+        <div class="flex justify-center sm:hidden fixed bottom-8 left-0 w-full">
           <div
             id="fadeElement"
-            class="p-1 border border-primary rounded-full animate-bounce filter backdrop-blur-2xl z-50"
+            class="p-1 border-2 border-primary rounded-full animate-bounce filter backdrop-blur-2xl z-50"
           >
             <IconRowRigth
               width="35"
               height="35"
-              className="rotate-90 stroke-primary"
+              className="rotate-90 stroke-primary stroke-2 "
             />
           </div>
         </div>
       </div>
     </div>
 
-    <div class="w-full sm:w-1/2 min-h-screen flex justify-center items-center">
+    <div
+      class="w-full py-36 sm:py-0 sm:w-1/2 sm:min-h-screen flex justify-center items-center"
+    >
       <div class="relative">
         <!-- Card habilidades -->
 
