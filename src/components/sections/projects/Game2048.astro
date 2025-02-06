@@ -1,74 +1,49 @@
 ---
 import "@styles/2048.css";
-import ButtonRow from "./ButtonRow.astro";
+import Header2048 from "./Header2048.astro";
+import ComoJugar from "./ComoJugar.astro";
+import IconCross from "src/icons/IconCross.astro";
+import IconExperience from "src/icons/IconExperience.astro";
 ---
 
-<div
-  class="flex flex-col sm:flex-row justify-center items-center rounded-2xl relative gap-4"
->
-  <div class="absolute top-0 w-full" id="disable-scroll"></div>
+<>
   <div
-    id="header"
-    class="flex w-full sm:w-auto flex-col-reverse gap-3 sm:flex-col p-3 rounded-2xl bg-gray-bg min-w-52"
+    id="contenedor"
+    class="flex flex-col sm:flex-row justify-center items-center rounded-2xl gap-4 relative"
   >
-    <div class="container-score flex flex-row sm:flex-col gap-2 font-bold">
-      <div
-        class="bg-gray-bg text-white p-1 rounded-2xl flex flex-row sm:flex-col w-1/2 sm:w-full items-center justify-center gap-1"
-      >
-        <h3>SCORE</h3>
-        <span id="score">0</span>
-      </div>
-      <div
-        class="bg-gray-bg text-white p-1 rounded-2xl flex flex-row sm:flex-col w-1/2 sm:w-full justify-center items-center gap-1"
-      >
-        <h3>BEST</h3>
-        <span id="best-score">0</span>
-      </div>
+    <!--
+  <div class="absolute top-0 w-full" id="disable-scroll"></div>
+ -->
+    <div id="close" class="absolute top-3 right-3 cursor-pointer hidden">
+      <IconCross width="25" height="25" className="fill-secondary" />
     </div>
-    <div class="newgame flex flex-col mt-1 sm:mt-5">
-      <div
-        class="hidden sm:grid container-buttons grid-cols-3 grid-rows-2 place-content-center gap-y-2"
-      >
-        <div></div>
-        <ButtonRow id="row-up" className="-rotate-90 m-auto" />
-        <div></div>
-        <ButtonRow id="row-left" className="rotate-180 ml-auto" />
-        <ButtonRow id="row-bottom" className="rotate-90 m-auto" />
-        <ButtonRow id="row-right" className="mr-auto" />
-      </div>
-      <button class="mt-5 px-4 py-3 rounded-2xl bg-primary text-bold text-white"
-        >Nuevo juego</button
-      >
-    </div>
-  </div>
 
-  <div id="app">
-    <div class="container-game flex gap-5 w-full"></div>
-    <div class="board min-h-80 min-w-80">
-      <div class="container-win">
-        <h1>YOU WON!</h1>
-        <div class="win-score">Score: <span>1000</span></div>
-        <button class="button-win">New Game</button>
+    <div
+      class="flex items-center justify-center mx-auto w-full max-w-4xl gap-2 relative"
+    >
+      <div class="absolute top-0 left-0">
+        <IconExperience width="25" height="25" className="fill-secondary " />
+      </div>
+      <div id="app" class="relative">
+        <div
+          id="contenedor-jugar"
+          class="absolute top-0 rounded-2xl w-full h-full z-50 flex justify-center items-center"
+        >
+          <button
+            id="jugar"
+            class="px-8 rounded-2xl py-2 bg-primary text-white text-2xl font-bold"
+            >Jugar</button
+          >
+        </div>
+        <div class="container-game flex justify-center gap-5 w-full">
+          <div class="board min-h-80 min-w-80"></div>
+        </div>
       </div>
     </div>
   </div>
-
-  <div class="bg-gray-bg p-3 sm:min-h-80 relative rounded-2xl text-white">
-    <h3 class="text-secondary text-xl font-bold text-left mb-2">Como Jugar</h3>
-    <p class="text-gray">
-      Puedes mover las fichas en las cuatro direcciones (arriba, abajo,
-      izquierda y derecha) utilizando las flechas del teclado.
-    </p>
-    <p class="text-gray mt-3">
-      El objetivo del juego es combinar las fichas numeradas hasta alcanzar el
-      número 2048.
-    </p>
-  </div>
-</div>
+</>
 
 <script>
-  const targetElement = document.querySelector<HTMLElement>("#disable-scroll"); // Elemento que deshabilita el scroll
-
   // Función para inicializar el juego
   async function loadGame() {
     const { Game } = await import("@utils/2048/Game.ts");
@@ -96,17 +71,19 @@ import ButtonRow from "./ButtonRow.astro";
     { threshold: 0.2 }
   );
 
-  // Observador para deshabilitar el scroll
-  const scrollObserver = new IntersectionObserver(
-    (entries: IntersectionObserverEntry[]) => {
-      const isVisible = entries[0].isIntersecting;
-      if (isVisible) {
-        window.addEventListener("keydown", disableScrollKeys);
-      } else {
-        window.removeEventListener("keydown", disableScrollKeys);
-      }
-    }
-  );
+  // click boton para jugar
+  document
+    .querySelector<HTMLButtonElement>("#jugar")
+    ?.addEventListener("click", () => {
+      // loadGame();
+      const contenedor = document.querySelector<HTMLDivElement>("#contenedor");
+
+      contenedor?.classList.remove("rounded-2xl");
+      contenedor?.classList.add("fondo-estatico");
+      document
+        .querySelector<HTMLDivElement>("#contenedor-jugar")
+        ?.classList.add("hidden");
+    });
 
   // Función para bloquear las teclas de scroll
   function disableScrollKeys(event: KeyboardEvent) {
@@ -118,5 +95,18 @@ import ButtonRow from "./ButtonRow.astro";
   // Iniciar observadores
   const appElement = document.getElementById("app");
   if (appElement) gameObserver.observe(appElement);
-  if (targetElement) scrollObserver.observe(targetElement);
 </script>
+
+<style>
+  .fondo-estatico {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+  }
+</style>

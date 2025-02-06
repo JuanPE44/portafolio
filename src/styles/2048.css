@@ -1,3 +1,33 @@
+.fondo-estatico {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+#newgame .jugando {
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 8px 4px;
+}
+
+#close .jugando {
+  background-color: var(--color-secondary);
+  color: #fff;
+  padding: 8px 4px;
+}
+
+.sin-jugar {
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: #fff0;
+}
+
 .board {
   position: relative;
   display: grid;
