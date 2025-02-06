@@ -6,42 +6,39 @@ import IconCross from "src/icons/IconCross.astro";
 import IconExperience from "src/icons/IconExperience.astro";
 ---
 
-<>
-  <div
-    id="contenedor"
-    class="flex flex-col sm:flex-row justify-center items-center rounded-2xl gap-4 relative"
-  >
-    <!--
+<div
+  id="contenedor"
+  class="w-full flex justify-center items-center rounded-2xl relative"
+>
+  <!--
   <div class="absolute top-0 w-full" id="disable-scroll"></div>
  -->
-    <div id="close" class="absolute top-3 right-3 cursor-pointer hidden">
-      <IconCross width="25" height="25" className="fill-secondary" />
-    </div>
+  <div id="close" class="absolute top-4 left-4 cursor-pointer hidden">
+    <IconCross width="25" height="25" className="fill-secondary" />
+  </div>
 
-    <div
-      class="flex items-center justify-center mx-auto w-full max-w-4xl gap-2 relative"
-    >
-      <div class="absolute top-0 left-0">
-        <IconExperience width="25" height="25" className="fill-secondary " />
-      </div>
-      <div id="app" class="relative">
-        <div
-          id="contenedor-jugar"
-          class="absolute top-0 rounded-2xl w-full h-full z-50 flex justify-center items-center"
+  <div class="absolute top-0 right-0 cursor-pointer">
+    <IconCross width="25" height="25" className="fill-primary" />
+  </div>
+
+  <div class="flex items-center justify-center mx-auto w-full">
+    <div id="app" class="relative">
+      <div
+        id="contenedor-jugar"
+        class="absolute top-0 rounded-2xl w-full h-full z-50 flex justify-center items-center"
+      >
+        <button
+          id="jugar"
+          class="px-8 rounded-2xl py-2 bg-primary text-white text-2xl font-bold"
+          >Jugar</button
         >
-          <button
-            id="jugar"
-            class="px-8 rounded-2xl py-2 bg-primary text-white text-2xl font-bold"
-            >Jugar</button
-          >
-        </div>
-        <div class="container-game flex justify-center gap-5 w-full">
-          <div class="board min-h-80 min-w-80"></div>
-        </div>
+      </div>
+      <div class="container-game flex justify-center gap-5 w-full">
+        <div class="board min-h-80 min-w-80"></div>
       </div>
     </div>
   </div>
-</>
+</div>
 
 <script>
   // Función para inicializar el juego
@@ -83,6 +80,8 @@ import IconExperience from "src/icons/IconExperience.astro";
       document
         .querySelector<HTMLDivElement>("#contenedor-jugar")
         ?.classList.add("hidden");
+
+      document.querySelector("#close")?.classList.remove("hidden");
     });
 
   // Función para bloquear las teclas de scroll
