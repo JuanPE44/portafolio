@@ -17,10 +17,12 @@ export class Board {
     this.SIZE_SQUARE = 70;
     this.squareAnt = null;
     this.idSquares = 0;
-    this.element = document.querySelector(".board");
+    this.element = document.querySelector("#board");
     this.array = this.createBoardArray(SIZE);
     this.containerSquares = this.createContainerSquares();
-    this.init();
+
+    this.addRandomSquare(this.SIZE);
+    this.addRandomSquare(this.SIZE);
   }
 
   createBoardArray(SIZE: number): BoardArray {
@@ -86,22 +88,44 @@ export class Board {
     return { x, y };
   }
 
-  init() {
+  disbleMoves() {
+    document.removeEventListener("swipeDown", () => {});
+    document.removeEventListener("swipeRight", () => {});
+
+    document.removeEventListener("swipeLeft", () => {});
+
+    document.removeEventListener("keyDown", () => {});
+
+    document.removeEventListener("keyUp", () => {});
+  }
+
+  enableMoves() {
     let flag = false;
+
+    document.addEventListener("swipeRight", () => {
+      this.handleMoveX(true);
+    });
+    document.addEventListener("swipeLeft", () => {
+      this.handleMoveX(false);
+    });
+    document.addEventListener("swipeUp", () => {
+      this.handleMoveY(false);
+    });
+    document.addEventListener("swipeDown", () => {
+      this.handleMoveY(true);
+    });
+
     document.addEventListener("keydown", (e) => {
       if (!flag) {
         flag = true;
         this.handleMove(e);
+        // this.game.addColorArrows(e);
       }
-      this.game.addColorArrows(e);
     });
     document.addEventListener("keyup", (e) => {
       flag = false;
-      this.game.removeColorArrows(e);
+      //this.game.removeColorArrows(e);
     });
-
-    this.addRandomSquare(this.SIZE);
-    this.addRandomSquare(this.SIZE);
   }
 
   handleMove(e: KeyboardEvent) {

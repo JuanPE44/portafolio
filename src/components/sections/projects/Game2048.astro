@@ -1,46 +1,46 @@
 ---
 import "@styles/2048.css";
-import Header2048 from "./Header2048.astro";
-import ComoJugar from "./ComoJugar.astro";
 import IconCross from "src/icons/IconCross.astro";
-import IconExperience from "src/icons/IconExperience.astro";
+import IconQuestion from "src/icons/IconQuestion.astro";
+import Header2048 from "./Header2048.astro";
+import Board2048 from "./Board2048.astro";
 ---
 
 <div
   id="contenedor"
   class="w-full flex justify-center items-center rounded-2xl relative"
 >
-  <!--
-  <div class="absolute top-0 w-full" id="disable-scroll"></div>
- -->
-  <div id="close" class="absolute top-4 left-4 cursor-pointer hidden">
+  <div
+    id="close"
+    class="absolute top-4 w-full max-w-4xl left-1/2 -translate-x-1/2 px-4 sm:px-10 md:px-12 lg:px-0 justify-between cursor-pointer hidden"
+  >
+    <div class="p-1 border border-primary rounded-full">
+      <IconQuestion width="20" height="20" />
+    </div>
     <IconCross width="25" height="25" className="fill-secondary" />
   </div>
 
-  <div class="absolute top-0 right-0 cursor-pointer">
-    <IconCross width="25" height="25" className="fill-primary" />
-  </div>
+  <div
+    class="flex items-center justify-center mx-auto w-full max-w-4xl relative"
+  >
+    <div id="app" class="relative flex flex-col gap-4">
+      <Header2048 />
 
-  <div class="flex items-center justify-center mx-auto w-full">
-    <div id="app" class="relative">
-      <div
-        id="contenedor-jugar"
-        class="absolute top-0 rounded-2xl w-full h-full z-50 flex justify-center items-center"
-      >
-        <button
-          id="jugar"
-          class="px-8 rounded-2xl py-2 bg-primary text-white text-2xl font-bold"
-          >Jugar</button
-        >
-      </div>
       <div class="container-game flex justify-center gap-5 w-full">
-        <div class="board min-h-80 min-w-80"></div>
+        <Board2048 />
       </div>
     </div>
   </div>
 </div>
 
 <script>
+  const contenedor = document.querySelector<HTMLDivElement>("#contenedor");
+  const contenedorJugar = document.querySelector("#contenedor-jugar");
+
+  const botonJugar = document.querySelector("#jugar");
+  const botonClose = document.querySelector("#close");
+  const newgame = document.querySelector("#newgame");
+
   // Función para inicializar el juego
   async function loadGame() {
     const { Game } = await import("@utils/2048/Game.ts");
@@ -52,6 +52,36 @@ import IconExperience from "src/icons/IconExperience.astro";
     localStorage.setItem("bestScore", JSON.stringify(bestScore));
 
     const g = new Game();
+
+    botonJugar?.addEventListener("click", () => {
+      g.board.enableMoves();
+      newgame?.classList.remove("grayscale");
+      botonJugar.innerHTML = "Seguir jugando";
+      contenedor?.classList.remove("rounded-2xl");
+      contenedor?.classList.add("fondo-estatico");
+      contenedorJugar?.classList.add("hidden");
+
+      botonClose?.classList.remove("hidden");
+      botonClose?.classList.add("flex");
+
+      document.body.style.overflow = "hidden";
+    });
+
+    botonClose?.addEventListener("click", () => {
+      g.board.disbleMoves();
+
+      newgame?.classList.add("grayscale");
+
+      contenedor?.classList.remove("fondo-estatico");
+      contenedor?.classList.add("rounded-2xl");
+      contenedorJugar?.classList.remove("hidden");
+
+      botonClose?.classList.remove("flex");
+      botonClose?.classList.add("hidden");
+
+      document.body.style.overflow = "visible";
+    });
+
     document
       .querySelector<HTMLDivElement>(".container-game")
       ?.appendChild(g.board.element!);
@@ -67,29 +97,6 @@ import IconExperience from "src/icons/IconExperience.astro";
     },
     { threshold: 0.2 }
   );
-
-  // click boton para jugar
-  document
-    .querySelector<HTMLButtonElement>("#jugar")
-    ?.addEventListener("click", () => {
-      // loadGame();
-      const contenedor = document.querySelector<HTMLDivElement>("#contenedor");
-
-      contenedor?.classList.remove("rounded-2xl");
-      contenedor?.classList.add("fondo-estatico");
-      document
-        .querySelector<HTMLDivElement>("#contenedor-jugar")
-        ?.classList.add("hidden");
-
-      document.querySelector("#close")?.classList.remove("hidden");
-    });
-
-  // Función para bloquear las teclas de scroll
-  function disableScrollKeys(event: KeyboardEvent) {
-    if (["ArrowUp", "ArrowDown", "Space"].includes(event.key)) {
-      event.preventDefault();
-    }
-  }
 
   // Iniciar observadores
   const appElement = document.getElementById("app");

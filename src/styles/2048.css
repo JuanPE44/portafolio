@@ -10,25 +10,7 @@
   -webkit-backdrop-filter: blur(15px);
 }
 
-#newgame .jugando {
-  background-color: var(--color-primary);
-  color: #fff;
-  padding: 8px 4px;
-}
-
-#close .jugando {
-  background-color: var(--color-secondary);
-  color: #fff;
-  padding: 8px 4px;
-}
-
-.sin-jugar {
-  border: 1px solid #fff;
-  background-color: transparent;
-  color: #fff0;
-}
-
-.board {
+#board {
   position: relative;
   display: grid;
   background: #bbada0;

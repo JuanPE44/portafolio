@@ -17,7 +17,7 @@ const { title, urlDemo, urlGithub } = Astro.props;
     </h3>
     <div class="flex gap-2 items-center">
       <a
-        class="px-4 py-2 rounded-2xl border border-white text-white font-bold"
+        class="px-4 py-2 rounded-2xl bg-primary text-white font-bold"
         href={urlDemo}>Demo</a
       >
       <a
@@ -30,7 +30,7 @@ const { title, urlDemo, urlGithub } = Astro.props;
     </div>
   </div>
   <div
-    class="flex justify-center items-center bg-gray-bg rounded-2xl p-4 relative gap-4 border-[#fff1] border-[1px]"
+    class="flex justify-center items-center bg-gray-bg rounded-2xl px-4 py-10 relative gap-4 border-[#fff1] border-[1px]"
   >
     <slot />
   </div>

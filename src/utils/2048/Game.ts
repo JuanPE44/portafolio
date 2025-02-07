@@ -18,7 +18,7 @@ export class Game {
     this.win = false;
     this.drawBestScore();
     document
-      .querySelector(".newgame button")
+      .querySelector("#newgame")
       ?.addEventListener("click", () => this.newGame());
     document
       .querySelector(".button-win")
