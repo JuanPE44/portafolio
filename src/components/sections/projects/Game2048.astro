@@ -36,7 +36,6 @@ import Board2048 from "./Board2048.astro";
 <script>
   const contenedor = document.querySelector<HTMLDivElement>("#contenedor");
   const contenedorJugar = document.querySelector("#contenedor-jugar");
-
   const botonJugar = document.querySelector("#jugar");
   const botonClose = document.querySelector("#close");
   const newgame = document.querySelector("#newgame");
@@ -68,8 +67,6 @@ import Board2048 from "./Board2048.astro";
     });
 
     botonClose?.addEventListener("click", () => {
-      g.board.disbleMoves();
-
       newgame?.classList.add("grayscale");
 
       contenedor?.classList.remove("fondo-estatico");

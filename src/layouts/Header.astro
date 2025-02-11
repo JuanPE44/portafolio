@@ -19,7 +19,9 @@ import IconCross from "src/icons/IconCross.astro";
         <li><a href="/#works">Trabajos</a></li>
         <li><a href="/#projects">Proyectos</a></li>
         <li><a href="/#experience">Sobre mi</a></li>
+        <!--
         <li><a href="/#blog">Blog</a></li>
+         -->
       </ul>
     </nav>
 
@@ -55,7 +57,9 @@ import IconCross from "src/icons/IconCross.astro";
         <li><a href="/#works">Trabajos</a></li>
         <li><a href="/#projects">Proyectos</a></li>
         <li><a href="/#experience">Sobre mi</a></li>
-        <li><a href="/#blog">Blog</a></li>
+        <!--
+          <li><a href="/#blog">Blog</a></li>
+         -->
         <li><a href="/#contact">Contacto</a></li>
       </ul>
     </div>
@@ -73,5 +77,12 @@ import IconCross from "src/icons/IconCross.astro";
   menuClose?.addEventListener("click", () => {
     nav?.classList.toggle("opacity-0");
     nav?.classList.toggle("translate-y-full");
+  });
+
+  document.querySelectorAll("#nav-mobile a").forEach((link) => {
+    link.addEventListener("click", () => {
+      nav?.classList.toggle("opacity-0");
+      nav?.classList.toggle("translate-y-full");
+    });
   });
 </script>
