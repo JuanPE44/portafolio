@@ -1,11 +1,57 @@
 ---
 import ContainerSection from "@components/ui/ContainerSection.astro";
-import IconWork from "src/icons/IconWork.astro";
 import SectionTitle from "@components/ui/SectionTitle.astro";
+import IconGuitar from "src/icons/IconGuitar.astro";
 ---
 
 <ContainerSection id="about">
   <SectionTitle text="Sobre mi">
-    <IconWork />
+    <IconGuitar />
   </SectionTitle>
+  <div class="flex">
+    <div class="w-1/2 text-gray text-pretty flex flex-col gap-4 text-base">
+      <p>
+        Soy <span class="text-secondary"> Técnico Programador </span> egresado de
+        la Escuela Técnica N°2 y actualmente curso el segundo año de <span
+          class="text-secondary">Ingeniería en Sistemas</span
+        >
+        en Tandil. Trabajo como<span class="text-secondary">
+          freelance diseñando y desarrollando sitios web a medida</span
+        >, siempre buscando mejorar y aprender cosas nuevas
+      </p>
+      <p>
+        Tengo experiencia en desarrollo web utilizando <span
+          class="text-primary"
+        >
+          React, Astro, Tailwind y TypeScript
+        </span>, enfocándome en rendimiento y experiencia de usuario. Me motiva
+        enfrentar nuevos desafíos y encontrar <span class="text-primary">
+          soluciones eficientes
+        </span> para cada proyecto en el que trabajo
+      </p>
+      <p>
+        Además de la programación, disfruto la fotografía, el gimnasio, correr,
+        dibujar y los videojuegos. Soy fanático del metal y el rock 🎸🔥
+      </p>
+    </div>
+    <div class="w-1/2 flex justify-center items-center">
+      <div class="relative">
+        <div
+          class="bg-primary w-40 h-28 rounded-2xl -top-[40%] -right-[20%] absolute z-40"
+        >
+        </div>
+
+        <div
+          class="bg-primary w-32 h-24 rounded-2xl -bottom-[50%] left-[30%] absolute z-40"
+        >
+        </div>
+        <div
+          class="bg-secondary rounded-full w-20 h-20 -bottom-[70%] left-[5%] text-2xl font-bold text-bg absolute z-40 flex justify-center items-center"
+        >
+          CV
+        </div>
+        <img src="/images/foto-about.png" class="rounded-2xl w-80" alt="" />
+      </div>
+    </div>
+  </div>
 </ContainerSection>

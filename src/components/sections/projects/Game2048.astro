@@ -54,7 +54,10 @@ import Board2048 from "./Board2048.astro";
 
     botonJugar?.addEventListener("click", () => {
       g.board.enableMoves();
+
       newgame?.classList.remove("grayscale");
+      newgame?.classList.toggle("pointer-events-none");
+
       botonJugar.innerHTML = "Seguir jugando";
       contenedor?.classList.remove("rounded-2xl");
       contenedor?.classList.add("fondo-estatico");
@@ -68,6 +71,7 @@ import Board2048 from "./Board2048.astro";
 
     botonClose?.addEventListener("click", () => {
       newgame?.classList.add("grayscale");
+      newgame?.classList.toggle("pointer-events-none");
 
       contenedor?.classList.remove("fondo-estatico");
       contenedor?.classList.add("rounded-2xl");
@@ -77,6 +81,10 @@ import Board2048 from "./Board2048.astro";
       botonClose?.classList.add("hidden");
 
       document.body.style.overflow = "visible";
+    });
+
+    newgame?.addEventListener("click", () => {
+      g.newGame();
     });
 
     document
