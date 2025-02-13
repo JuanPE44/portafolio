@@ -135,12 +135,11 @@ export class Board {
         // this.game.addColorArrows(e);
       }
     });
-    /*
+
     document.addEventListener("keyup", (e) => {
       flag = false;
       //this.game.removeColorArrows(e);
     });
-    */
   }
 
   handleMove(e: KeyboardEvent) {
