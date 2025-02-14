@@ -53,7 +53,7 @@ import Board2048 from "./Board2048.astro";
     const g = new Game();
 
     botonJugar?.addEventListener("click", () => {
-      g.board.enableMoves();
+      g.board.controls.enableMoves();
 
       newgame?.classList.remove("grayscale");
       newgame?.classList.toggle("pointer-events-none");
@@ -70,6 +70,7 @@ import Board2048 from "./Board2048.astro";
     });
 
     botonClose?.addEventListener("click", () => {
+      g.board.controls.disableMoves();
       newgame?.classList.add("grayscale");
       newgame?.classList.toggle("pointer-events-none");
 

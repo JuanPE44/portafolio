@@ -1,6 +1,7 @@
 import { Game } from "./Game";
 import { Square } from "./Square";
 import type { BoardArray, rowBoard, cellBoard } from "../../types";
+import { GameControls } from "./GameControls";
 
 export class Board {
   game;
@@ -11,6 +12,7 @@ export class Board {
   array: BoardArray;
   squareAnt: Square | null;
   idSquares;
+  controls: GameControls;
   constructor(game: Game, SIZE: number) {
     this.game = game;
     this.SIZE = SIZE;
@@ -20,6 +22,7 @@ export class Board {
     this.element = document.querySelector("#board");
     this.array = this.createBoardArray(SIZE);
     this.containerSquares = this.createContainerSquares();
+    this.controls = new GameControls(this);
 
     this.addRandomSquare(this.SIZE);
     this.addRandomSquare(this.SIZE);
