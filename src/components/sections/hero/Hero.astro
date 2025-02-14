@@ -11,14 +11,14 @@ import ListOfTechnologies from "./ListOfTechnologies.astro";
 ---
 
 <ContainerSection className="py-0" id="hero">
-  <div class="w-full flex flex-col sm:flex-row min-h-screen">
+  <div class="w-full flex flex-col sm:flex-row min-h-screen relative">
+    <div
+      class="w-96 h-96 bg-gradient-to-r -bottom-1/3 from-primary to-secondary opacity-25 sm:opacity-15 blur-3xl absolute left-1/2 transform -translate-x-1/2 rounded-full -z-10"
+    >
+    </div>
     <div
       class="w-full sm:w-1/2 pt-28 pb-40 sm:pb-0 sm:pt-0 min-h-screen flex flex-col gap-16 sm:gap-10 sm:justify-center relative"
     >
-      <div
-        class="sm:hidden w-96 h-96 bg-gradient-to-r -bottom-1/3 from-primary to-secondary opacity-25 blur-3xl absolute left-1/2 transform -translate-x-1/2 rounded-full -z-10"
-      >
-      </div>
       <div class="flex flex-col gap-4">
         <p class="text-zinc-400 text-sm md:text-base">
           Llevando tus proyectos web al siguiente nivel
@@ -41,7 +41,7 @@ import ListOfTechnologies from "./ListOfTechnologies.astro";
         <div class="flex flex-col sm:flex-row gap-4 sm:gap-3">
           <a
             href="/#works"
-            class="bg-secondary text-bg justify-center font-bold py-2 px-4 rounded-2xl flex gap-2 items-center"
+            class="bg-secondary text-bg justify-center font-bold py-2 px-4 rounded-2xl flex gap-2 items-center hover:scale-105 hover:shadow-lg transition-[0.3s]"
           >
             <IconWork />
             <span>Trabajos</span>
@@ -49,20 +49,20 @@ import ListOfTechnologies from "./ListOfTechnologies.astro";
 
           <a
             href="/#about"
-            class="border-[1px] border-white text-white justify-center flex items-center font-bold py-2 px-4 rounded-2xl"
+            class="border-[1px] border-white text-white justify-center flex items-center font-bold py-2 px-4 rounded-2xl hover:scale-105 hover:shadow-lg transition-[0.3s]"
             >Sobre mi</a
           >
         </div>
-        <div class="flex justify-center sm:hidden fixed bottom-8 left-0 w-full">
+        <div class="flex justify-center fixed bottom-8 left-0 w-full">
           <div
             id="fadeElement"
-            class="p-1 border-2 border-primary rounded-full animate-bounce filter backdrop-blur-2xl z-50"
+            class="p-1 border-2 sm:border border-[#fff5] rounded-full animate-bounce filter backdrop-blur-2xl z-50"
           >
             <a href="/#experience" class="cursor-pointer">
               <IconRowRigth
                 width="35"
                 height="35"
-                className="rotate-90 stroke-primary stroke-2"
+                className="rotate-90 stroke-[#fff5] stroke-2 sm:stroke-1"
               />
             </a>
           </div>
@@ -84,7 +84,10 @@ import ListOfTechnologies from "./ListOfTechnologies.astro";
         </CardHero>
 
         <!-- Card Github -->
-        <HeroIcon className="-top-[15%] -right-[15%]">
+        <HeroIcon
+          url="https://github.com/JuanPE44"
+          className="-top-[15%] -right-[15%]"
+        >
           <IconGithub width="35" height="35" />
         </HeroIcon>
 
@@ -95,7 +98,10 @@ import ListOfTechnologies from "./ListOfTechnologies.astro";
         />
 
         <!-- Card Linkedin -->
-        <HeroIcon className=" -bottom-[15%] -left-[15%] ">
+        <HeroIcon
+          url="https://www.linkedin.com/in/juan-peñalba-0025b6246/"
+          className=" -bottom-[15%] -left-[15%] "
+        >
           <IconLinkedin width="35" height="35" />
         </HeroIcon>
 

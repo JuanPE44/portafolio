@@ -1,12 +1,15 @@
 ---
 interface Props {
   className?: string;
+  url: string;
 }
-const { className } = Astro.props;
+const { className, url } = Astro.props;
 ---
 
-<div
-  class=`${className}  cursor-pointer p-5 lg:p-7 bg-[#d8d8d896] filter backdrop-blur-lg border border-[#ffffff5e] absolute  rounded-full`
+<a
+  target="_blank"
+  href={url}
+  class=`${className} hover:scale-105 transition-[0.3s]  cursor-pointer p-5 lg:p-7 bg-[#d8d8d896] filter backdrop-blur-lg border border-[#ffffff5e] absolute  rounded-full`
 >
   <slot />
-</div>
+</a>

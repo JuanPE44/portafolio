@@ -18,13 +18,13 @@ const { title, urlDemo, urlGithub } = Astro.props;
     <div class="flex gap-2 items-center">
       <a
         target="_blank"
-        class="px-4 py-2 rounded-2xl bg-primary text-white font-bold"
+        class="px-4 py-2 rounded-2xl bg-primary text-white font-bold hover:scale-105 transition-[0.3s]"
         href={urlDemo}>Demo</a
       >
       <a
         target="_blank"
         href={urlGithub}
-        class="flex gap-2 px-4 py-2 rounded-2xl bg-secondary text-bg font-bold"
+        class="flex gap-2 px-4 py-2 rounded-2xl bg-secondary text-bg font-bold hover:scale-105 transition-[0.3s]"
       >
         <IconGithub className="fill-bg" width="20" height="20" />
         <span>Codigo</span>

@@ -2,70 +2,72 @@
 import IconLogo from "src/icons/IconLogo.astro";
 import IconMenu from "src/icons/IconMenu.astro";
 import IconCross from "src/icons/IconCross.astro";
+import NavLink from "@components/ui/NavLink.astro";
 ---
 
 <header
   class="z-[200] text-white flex w-full max-w-4xl 2xl:max-w-6xl left-1/2 -translate-x-1/2 top-3 fixed"
 >
   <div
-    class="w-full flex justify-between items-center relative mx-4 sm:mx-10 md:mx-12 lg:mx-0 px-3 py-3 sm:py-2 bg-gray-bg rounded-2xl filter backdrop-blur-2xl"
+    class="w-full relative mx-4 sm:mx-10 md:mx-12 lg:mx-0 px-3 py-3 sm:py-2 bg-gray-bg rounded-2xl filter backdrop-blur-2xl"
   >
-    <a href="/#hero" class="cursor-pointer">
-      <IconLogo />
-    </a>
+    <div class="flex flex-col">
+      <div class="flex justify-between items-center">
+        <a href="/#hero" class="cursor-pointer">
+          <IconLogo />
+        </a>
 
-    <nav class="hidden sm:flex absolute left-1/2 -translate-x-1/2">
-      <ul class="flex gap-4">
-        <li><a href="/#experience">Experiencia</a></li>
-        <li><a href="/#works">Trabajos</a></li>
-        <li><a href="/#projects">Proyectos</a></li>
-        <li><a href="/#about">Sobre mi</a></li>
-        <!--
-        <li><a href="/#blog">Blog</a></li>
-         -->
-      </ul>
-    </nav>
+        <nav class="hidden sm:flex absolute left-1/2 -translate-x-1/2">
+          <ul class="flex gap-4">
+            <li><NavLink href="/#experience" text="Experiencia" /></li>
+            <li><NavLink href="/#works" text="Trabajos" /></li>
+            <li><NavLink href="/#projects" text="Proyectos" /></li>
+            <li><NavLink href="/#about" text="Sobre mi" /></li>
+            <!--
+      <li><a href="/#blog">Blog</a></li>
+       -->
+          </ul>
+        </nav>
 
-    <div>
-      <a
-        class="hidden sm:flex border border-white text-white font-bold py-2 px-4 rounded-2xl"
-        href="/#contact">Contacto</a
+        <div class="flex">
+          <a
+            class="hidden sm:flex border border-white text-white font-bold py-2 px-4 rounded-2xl hover:bg-secondary hover:text-bg transition-[0.3s] hover:border-bg hover:scale-105"
+            href="/#contact">Contacto</a
+          >
+          <IconMenu
+            className="stroke-white sm:hidden z-50 cursor-pointer"
+            width="25"
+            height="25"
+            id="menu-mobile"
+          />
+          <IconCross
+            width="25"
+            height="25"
+            className="sm:hidden fill-secondary hidden cursor-pointer"
+            id="menu-close"
+          />
+        </div>
+      </div>
+
+      <nav
+        id="nav-mobile"
+        class="relative sm:hidden h-0 overflow-hidden max-w-4xl top-0 transition-[3s] flex flex-col right-0 w-full"
       >
-      <IconMenu
-        className="stroke-white sm:hidden z-50 cursor-pointer"
-        width="25"
-        height="25"
-        id="menu-mobile"
-      />
-    </div>
-  </div>
-  <nav
-    id="nav-mobile"
-    class="translate-y-full opacity-0 absolute top-0 transition-[3s] flex flex-col right-0 rounded-2xl bg-secondary w-full h-screen py-2 px-4"
-  >
-    <div class="w-full flex justify-end">
-      <IconCross
-        width="25"
-        height="25"
-        className="fill-bg cursor-pointer"
-        id="menu-close"
-      />
-    </div>
-    <div class="w-full">
-      <ul
-        class="flex flex-col items-center mt-20 gap-3 text-3xl text-bg font-bold"
-      >
-        <li><a href="/#experience">Experiencia</a></li>
-        <li><a href="/#works">Trabajos</a></li>
-        <li><a href="/#projects">Proyectos</a></li>
-        <li><a href="/#about">Sobre mi</a></li>
-        <!--
+        <ul
+          class="flex flex-col items-center py-10 gap-3 text-xl uppercase text-white font-bold"
+        >
+          <li><a href="/#experience">Experiencia</a></li>
+          <li><a href="/#works">Trabajos</a></li>
+          <li><a href="/#projects">Proyectos</a></li>
+          <li><a href="/#about">Sobre mi</a></li>
+          <!--
           <li><a href="/#blog">Blog</a></li>
          -->
-        <li><a href="/#contact">Contacto</a></li>
-      </ul>
+          <li><a href="/#contact">Contacto</a></li>
+        </ul>
+      </nav>
     </div>
-  </nav>
+  </div>
 </header>
 
 <script>
@@ -73,18 +75,27 @@ import IconCross from "src/icons/IconCross.astro";
   const menuClose = document.getElementById("menu-close");
   const nav = document.getElementById("nav-mobile");
   menuMobile?.addEventListener("click", () => {
-    nav?.classList.toggle("translate-y-full");
-    nav?.classList.toggle("opacity-0");
+    menuClose?.classList.remove("hidden");
+    menuMobile?.classList.add("hidden");
+    nav?.classList.toggle("h-0");
+    nav?.classList.toggle("px-4");
+    nav?.classList.toggle("py-3");
   });
   menuClose?.addEventListener("click", () => {
-    nav?.classList.toggle("opacity-0");
-    nav?.classList.toggle("translate-y-full");
+    menuMobile?.classList.remove("hidden");
+    menuClose?.classList.add("hidden");
+    nav?.classList.toggle("h-0");
+    nav?.classList.toggle("px-4");
+    nav?.classList.toggle("py-3");
   });
 
   document.querySelectorAll("#nav-mobile a").forEach((link) => {
     link.addEventListener("click", () => {
-      nav?.classList.toggle("opacity-0");
-      nav?.classList.toggle("translate-y-full");
+      menuMobile?.classList.remove("hidden");
+      menuClose?.classList.add("hidden");
+      nav?.classList.toggle("h-0");
+      nav?.classList.toggle("px-4");
+      nav?.classList.toggle("py-3");
     });
   });
 </script>
