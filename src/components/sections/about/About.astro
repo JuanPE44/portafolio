@@ -21,8 +21,8 @@ import IconGithub from "src/icons/IconGithub.astro";
   <SectionTitle text="Sobre mi">
     <IconGuitar />
   </SectionTitle>
-  <div class="flex">
-    <div class="w-1/2 text-gray text-pretty flex flex-col gap-4 text-base">
+  <div class="flex flex-col md:flex-row gap-40 md:gap-0">
+    <div class="md:w-1/2 w-full text-gray flex flex-col gap-4 text-base">
       <p>
         Soy <span class="text-secondary"> Técnico Programador </span> egresado de
         la Escuela Técnica N°2 y actualmente curso el segundo año de <span
@@ -47,14 +47,16 @@ import IconGithub from "src/icons/IconGithub.astro";
         dibujar y los videojuegos. Soy fanático del metal y el rock 🎸🔥
       </p>
     </div>
-    <div class="w-1/2 flex justify-center items-center">
+    <div class="w-full md:w-1/2 flex justify-center items-center pb-28 md:pb-0">
       <div class="relative">
         <div
           class="bg-primary
-          rounded-2xl -top-[20%] p-3 -right-[20%] absolute z-40"
+          rounded-2xl -top-[25%] -right-[5%] md:-top-[20%] md:-right-[20%] p-3 absolute z-40"
         >
-          <h5 class="text-white mb-2 font-bold">Conocimientos tecnicos</h5>
-          <div class="grid grid-cols-5 gap-2 w-max">
+          <h5 class="text-white mb-2 font-bold text-sm md:text-base">
+            Conocimientos tecnicos
+          </h5>
+          <div class="grid grid-cols-5 gap-2 w-max mx-auto">
             <IconJavascript />
             <IconHtml />
             <IconCss />

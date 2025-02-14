@@ -1,33 +1,14 @@
 ---
 import ContainerSection from "@components/ui/ContainerSection.astro";
 import SectionTitle from "@components/ui/SectionTitle.astro";
-import Input from "./Input.astro";
+
 import IconContact from "src/icons/IconContact.astro";
+import FormContact from "./FormContact.astro";
 ---
 
 <ContainerSection id="contact">
   <SectionTitle text="Contacto">
     <IconContact />
   </SectionTitle>
-  <form
-    class="flex flex-col gap-4 max-w-lg mx-auto relative p-10 border border-[#fff1] bg-gray-bg rounded-2xl"
-  >
-    <h2 class="text-gray text-2xl text-center font-bold mb-5">
-      Enviame un mensaje
-    </h2>
-    <div
-      class="w-96 h-96 bg-gradient-to-r -top-1/2 from-primary to-secondary opacity-15 blur-3xl absolute left-1/2 transform -translate-x-1/2 rounded-full -z-10"
-    >
-    </div>
-    <Input name="name" type="text" placeholder="Ingresa tu nombre" />
-    <Input name="email" type="email" placeholder="Ingresa tu correo" />
-    <textarea
-      placeholder="Mensaje"
-      class="border border-[#fff1] min-h-40 bg-gray-bg rounded-2xl py-2 px-4 focus:outline-none focus:ring-2 focus:ring-zinc-600"
-    ></textarea>
-    <button
-      class="bg-secondary text-center font-bold text-bg py-2 px-4 rounded-2xl mt-3"
-      >Enviar</button
-    >
-  </form>
+  <FormContact />
 </ContainerSection>
