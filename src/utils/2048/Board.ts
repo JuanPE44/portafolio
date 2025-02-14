@@ -88,31 +88,44 @@ export class Board {
     return { x, y };
   }
 
-  disbleMoves() {
-    document.removeEventListener("swipeDown", () => {});
-    document.removeEventListener("swipeRight", () => {});
-
-    document.removeEventListener("swipeLeft", () => {});
-
-    document.removeEventListener("keyDown", () => {});
-
-    document.removeEventListener("keyUp", () => {});
-  }
-
   enableMoves() {
     let flag = false;
+    let startX = 0;
+    let startY = 0;
+    let endX = 0;
+    let endY = 0;
 
-    document.addEventListener("swipeRight", () => {
-      this.handleMoveX(true);
+    document.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
     });
-    document.addEventListener("swipeLeft", () => {
-      this.handleMoveX(false);
-    });
-    document.addEventListener("swipeUp", () => {
-      this.handleMoveY(false);
-    });
-    document.addEventListener("swipeDown", () => {
-      this.handleMoveY(true);
+
+    document.addEventListener("touchend", (e) => {
+      endX = e.changedTouches[0].clientX;
+      endY = e.changedTouches[0].clientY;
+
+      let diffX = endX - startX;
+      let diffY = endY - startY;
+
+      if (Math.abs(diffX) > Math.abs(diffY)) {
+        // Movimiento horizontal
+        if (diffX > 50) {
+          console.log("Deslizamiento a la derecha detectado");
+          this.handleMoveX(true);
+        } else if (diffX < -50) {
+          console.log("Deslizamiento a la izquierda detectado");
+          this.handleMoveX(false);
+        }
+      } else {
+        // Movimiento vertical
+        if (diffY > 50) {
+          console.log("Deslizamiento hacia abajo detectado");
+          this.handleMoveY(true);
+        } else if (diffY < -50) {
+          console.log("Deslizamiento hacia arriba detectado");
+          this.handleMoveY(false);
+        }
+      }
     });
 
     document.addEventListener("keydown", (e) => {
@@ -122,6 +135,7 @@ export class Board {
         // this.game.addColorArrows(e);
       }
     });
+
     document.addEventListener("keyup", (e) => {
       flag = false;
       //this.game.removeColorArrows(e);

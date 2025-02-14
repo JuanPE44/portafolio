@@ -1,11 +1,88 @@
 ---
 import ContainerSection from "@components/ui/ContainerSection.astro";
-import IconWork from "src/icons/IconWork.astro";
 import SectionTitle from "@components/ui/SectionTitle.astro";
+import IconGuitar from "src/icons/IconGuitar.astro";
+import IconJava from "src/icons/IconJava.astro";
+import IconHtml from "src/icons/IconHtml.astro";
+import IconCss from "src/icons/IconCss.astro";
+import IconJavascript from "src/icons/IconJavascript.astro";
+import IconTypescript from "src/icons/IconTypescript.astro";
+import IconReact from "src/icons/IconReact.astro";
+import IconAstro from "src/icons/IconAstro.astro";
+import IconGit from "src/icons/IconGit.astro";
+import IconFigma from "src/icons/IconFigma.astro";
+import IconTailwind from "src/icons/IconTailwind.astro";
+import IconVscode from "src/icons/IconVscode.astro";
+import IconNpm from "src/icons/IconNpm.astro";
+import IconGithub from "src/icons/IconGithub.astro";
 ---
 
 <ContainerSection id="about">
   <SectionTitle text="Sobre mi">
-    <IconWork />
+    <IconGuitar />
   </SectionTitle>
+  <div class="flex flex-col md:flex-row gap-40 md:gap-0">
+    <div class="md:w-1/2 w-full text-gray flex flex-col gap-4 text-base">
+      <p>
+        Soy <span class="text-secondary"> Técnico Programador </span> egresado de
+        la Escuela Técnica N°2 y actualmente curso el segundo año de <span
+          class="text-secondary">Ingeniería en Sistemas</span
+        >
+        en Tandil. Trabajo como<span class="text-secondary">
+          freelance diseñando y desarrollando sitios web a medida</span
+        >, siempre buscando mejorar y aprender cosas nuevas
+      </p>
+      <p>
+        Tengo experiencia en desarrollo web utilizando React, Astro, Tailwind y
+        TypeScript, enfocándome en <span class="text-primary"
+          >rendimiento y experiencia de usuario.</span
+        > Me motiva enfrentar nuevos desafíos y encontrar <span
+          class="text-primary"
+        >
+          soluciones eficientes
+        </span> para cada proyecto en el que trabajo
+      </p>
+      <p>
+        Además de la programación, disfruto la fotografía, el gimnasio, correr,
+        dibujar y los videojuegos. Soy fanático del metal y el rock 🎸🔥
+      </p>
+    </div>
+    <div class="w-full md:w-1/2 flex justify-center items-center pb-28 md:pb-0">
+      <div class="relative">
+        <div
+          class="bg-primary
+          rounded-2xl -top-[25%] -right-[5%] md:-top-[20%] md:-right-[20%] p-3 absolute z-40"
+        >
+          <h5 class="text-white mb-2 font-bold text-sm md:text-base">
+            Conocimientos tecnicos
+          </h5>
+          <div class="grid grid-cols-5 gap-2 w-max mx-auto">
+            <IconJavascript />
+            <IconHtml />
+            <IconCss />
+            <IconJava />
+            <IconTailwind />
+            <IconTypescript width="20" height="20" />
+            <IconReact width="20" height="20" />
+            <IconAstro width="20" height="20" />
+            <IconGit />
+            <div class="bg-white rounded-md">
+              <IconGithub width="20" height="20" />
+            </div>
+            <IconFigma />
+            <IconVscode />
+            <IconNpm />
+          </div>
+        </div>
+
+        <div
+          class="bg-primary cursor-pointer rounded-2xl py-3 px-4 -bottom-[40%] left-1/2 -translate-x-1/2 text-lg font-bold text-white absolute z-40"
+        >
+          Descargar CV
+        </div>
+
+        <img src="/images/foto-about.png" class="rounded-2xl w-80" alt="" />
+      </div>
+    </div>
+  </div>
 </ContainerSection>

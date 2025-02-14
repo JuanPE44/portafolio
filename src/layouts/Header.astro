@@ -5,7 +5,7 @@ import IconCross from "src/icons/IconCross.astro";
 ---
 
 <header
-  class="z-50 text-white flex w-full max-w-4xl left-1/2 -translate-x-1/2 top-3 fixed"
+  class="z-[200] text-white flex w-full max-w-4xl left-1/2 -translate-x-1/2 top-3 fixed"
 >
   <div
     class="w-full flex justify-between items-center relative mx-4 sm:mx-10 md:mx-12 lg:mx-0 px-3 py-3 sm:py-2 bg-gray-bg rounded-2xl filter backdrop-blur-2xl"
@@ -16,10 +16,13 @@ import IconCross from "src/icons/IconCross.astro";
 
     <nav class="hidden sm:flex absolute left-1/2 -translate-x-1/2">
       <ul class="flex gap-4">
+        <li><a href="/#experience">Experiencia</a></li>
         <li><a href="/#works">Trabajos</a></li>
         <li><a href="/#projects">Proyectos</a></li>
-        <li><a href="/#experience">Sobre mi</a></li>
+        <li><a href="/#about">Sobre mi</a></li>
+        <!--
         <li><a href="/#blog">Blog</a></li>
+         -->
       </ul>
     </nav>
 
@@ -52,10 +55,13 @@ import IconCross from "src/icons/IconCross.astro";
       <ul
         class="flex flex-col items-center mt-20 gap-3 text-3xl text-bg font-bold"
       >
+        <li><a href="/#experience">Experiencia</a></li>
         <li><a href="/#works">Trabajos</a></li>
         <li><a href="/#projects">Proyectos</a></li>
-        <li><a href="/#experience">Sobre mi</a></li>
-        <li><a href="/#blog">Blog</a></li>
+        <li><a href="/#about">Sobre mi</a></li>
+        <!--
+          <li><a href="/#blog">Blog</a></li>
+         -->
         <li><a href="/#contact">Contacto</a></li>
       </ul>
     </div>
@@ -73,5 +79,12 @@ import IconCross from "src/icons/IconCross.astro";
   menuClose?.addEventListener("click", () => {
     nav?.classList.toggle("opacity-0");
     nav?.classList.toggle("translate-y-full");
+  });
+
+  document.querySelectorAll("#nav-mobile a").forEach((link) => {
+    link.addEventListener("click", () => {
+      nav?.classList.toggle("opacity-0");
+      nav?.classList.toggle("translate-y-full");
+    });
   });
 </script>

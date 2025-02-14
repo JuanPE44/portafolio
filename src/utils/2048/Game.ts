@@ -56,9 +56,9 @@ export class Game {
   }
 
   newGame() {
-    const containerWin: HTMLDivElement | null =
-      document.querySelector(".container-win");
-    containerWin!.style.display = "none";
+    //const containerWin: HTMLDivElement | null =
+    //  document.querySelector(".container-win");
+    //containerWin!.style.display = "none";
     this.score = 0;
     this.win = false;
     this.elementScore!.innerHTML = this.score.toString();

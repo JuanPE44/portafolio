@@ -36,7 +36,6 @@ import Board2048 from "./Board2048.astro";
 <script>
   const contenedor = document.querySelector<HTMLDivElement>("#contenedor");
   const contenedorJugar = document.querySelector("#contenedor-jugar");
-
   const botonJugar = document.querySelector("#jugar");
   const botonClose = document.querySelector("#close");
   const newgame = document.querySelector("#newgame");
@@ -55,7 +54,10 @@ import Board2048 from "./Board2048.astro";
 
     botonJugar?.addEventListener("click", () => {
       g.board.enableMoves();
+
       newgame?.classList.remove("grayscale");
+      newgame?.classList.toggle("pointer-events-none");
+
       botonJugar.innerHTML = "Seguir jugando";
       contenedor?.classList.remove("rounded-2xl");
       contenedor?.classList.add("fondo-estatico");
@@ -68,9 +70,8 @@ import Board2048 from "./Board2048.astro";
     });
 
     botonClose?.addEventListener("click", () => {
-      g.board.disbleMoves();
-
       newgame?.classList.add("grayscale");
+      newgame?.classList.toggle("pointer-events-none");
 
       contenedor?.classList.remove("fondo-estatico");
       contenedor?.classList.add("rounded-2xl");
@@ -80,6 +81,10 @@ import Board2048 from "./Board2048.astro";
       botonClose?.classList.add("hidden");
 
       document.body.style.overflow = "visible";
+    });
+
+    newgame?.addEventListener("click", () => {
+      g.newGame();
     });
 
     document
@@ -111,7 +116,7 @@ import Board2048 from "./Board2048.astro";
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 100;
+    z-index: 300;
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
   }
