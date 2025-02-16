@@ -8,6 +8,7 @@ import ContainerSection from "@components/ui/ContainerSection.astro";
 import CardHero from "./CardHero.astro";
 import ListOfHabilities from "./ListOfHabilities.astro";
 import ListOfTechnologies from "./ListOfTechnologies.astro";
+import { Image } from "astro:assets";
 ---
 
 <ContainerSection className="py-0" id="hero">
@@ -94,11 +95,12 @@ import ListOfTechnologies from "./ListOfTechnologies.astro";
         >
           <IconGithub width="35" height="35" />
         </HeroIcon>
-
-        <img
+        <Image
+          alt="imagen hero"
+          src="/images/foto-hero.webp"
+          width="240"
+          height="208"
           class="rounded-2xl w-60 h-52 object-cover"
-          src="/images/foto-hero.png"
-          alt=""
         />
 
         <!-- Card Linkedin -->
@@ -131,6 +133,12 @@ import ListOfTechnologies from "./ListOfTechnologies.astro";
     const opacity = Math.max(1 - scrollY / maxFadePoint, 0);
 
     element.style.opacity = opacity.toString();
+
+    if (scrollY > maxFadePoint) {
+      element.style.display = "none";
+    } else {
+      element.style.display = "block";
+    }
   };
 
   if (typeof window !== "undefined") {

@@ -15,6 +15,7 @@ import IconTailwind from "src/icons/IconTailwind.astro";
 import IconVscode from "src/icons/IconVscode.astro";
 import IconNpm from "src/icons/IconNpm.astro";
 import IconGithub from "src/icons/IconGithub.astro";
+import { Image } from "astro:assets";
 ---
 
 <ContainerSection id="about">
@@ -75,14 +76,33 @@ import IconGithub from "src/icons/IconGithub.astro";
           </div>
         </div>
 
-        <div
+        <button
+          id="descargar-cv"
           class="bg-primary cursor-pointer rounded-2xl py-3 px-4 -bottom-[40%] left-1/2 -translate-x-1/2 text-lg font-bold text-white absolute z-40"
         >
           Descargar CV
-        </div>
-
-        <img src="/images/foto-about.png" class="rounded-2xl w-80" alt="" />
+        </button>
+        <Image
+          alt="imagen hero"
+          src="/images/foto-about.webp"
+          width="320"
+          height="212"
+          class="rounded-2xl w-80"
+        />
       </div>
     </div>
   </div>
 </ContainerSection>
+
+<script>
+  const boton = document.getElementById("descargar-cv");
+
+  boton?.addEventListener("click", () => {
+    const enlace = document.createElement("a");
+    // Ruta al archivo PDF
+    const rutaPdf = "/public/CV.pdf";
+    enlace.target = "_blank";
+    enlace.href = rutaPdf;
+    enlace.click();
+  });
+</script>
