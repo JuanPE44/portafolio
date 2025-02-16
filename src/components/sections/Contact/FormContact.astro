@@ -14,18 +14,6 @@ import Input from "./Input.astro";
     class="w-96 h-96 bg-gradient-to-r -top-1/2 from-primary to-secondary opacity-15 blur-3xl absolute left-1/2 transform -translate-x-1/2 rounded-full -z-10"
   >
   </div>
-  <Input name="name" type="text" placeholder="Ingresa tu nombre" />
-  <Input name="email" type="email" placeholder="Ingresa tu correo" />
-  <textarea
-    name="message"
-    placeholder="Mensaje"
-    class="text-white border border-[#fff1] min-h-40 bg-gray-bg rounded-2xl py-2 px-4 focus:outline-none focus:ring-2 focus:ring-zinc-600"
-  ></textarea>
-  <button
-    type="submit"
-    class="bg-secondary text-center font-bold text-bg py-2 px-4 rounded-2xl mt-3"
-    >Enviar</button
-  >
   <input
     type="hidden"
     name="_next"
@@ -37,4 +25,16 @@ import Input from "./Input.astro";
     value="Gracias por tu mensaje, el mail fue enviado correctamente :)"
   />
   <input type="hidden" name="_template" value="table" />
+  <Input name="name" type="text" placeholder="Ingresa tu nombre" />
+  <Input name="email" type="email" placeholder="Ingresa tu correo" />
+  <textarea
+    name="message"
+    placeholder="Mensaje"
+    class="text-white border border-[#fff1] min-h-40 bg-gray-bg rounded-2xl py-2 px-4 focus:outline-none focus:ring-2 focus:ring-zinc-600"
+  ></textarea>
+  <button
+    type="submit"
+    class="bg-secondary text-center font-bold text-bg py-2 px-4 rounded-2xl mt-3 hover:scale-105 transition-[0.3s]"
+    >Enviar</button
+  >
 </form>
