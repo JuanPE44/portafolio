@@ -11,13 +11,51 @@ import Board2048 from "./Board2048.astro";
   class="w-full flex justify-center items-center rounded-2xl relative"
 >
   <div
-    id="close"
+    id="container-como-jugar"
+    class="absolute w-full h-screen flex-col justify-center items-center z-[100] bg-[#000a] hidden px-4 sm:px-10 md:px-12 lg:px-0"
+  >
+    <div
+      class="max-w-4xl 2xl:max-w-6xl p-5 sm:mx-auto bg-gray-bg rounded-2xl filter backdrop-blur-md text-gray"
+    >
+      <div class="w-full flex justify-end sm:mb-10">
+        <IconCross
+          width="25"
+          height="25"
+          className="fill-primary cursor-pointer"
+          id="como-jugar"
+        />
+      </div>
+      <h3 class="text-xl text-secondary mb-1 font-bold">Descripcion</h3>
+      <p>
+        2048 es un juego de rompecabezas matemático en el que debes combinar
+        números para alcanzar la casilla con el valor 2048. Se juega en un
+        tablero de 4x4, donde cada turno aparecen nuevas fichas con el número 2
+        o 4.
+      </p>
+      <h3 class="text-xl text-secondary mb-1 mt-3 font-bold">Como jugar</h3>
+      <p class="mb-1">
+        Para jugar, mueve todas las fichas en una dirección usando las flechas
+        del teclado (en computadora) o deslizando el dedo (en celular). Cuando
+        dos fichas con el mismo número se tocan, se fusionan en una sola,
+        sumando su valor.
+      </p>
+      <p>
+        El desafío es planear cada movimiento estratégicamente, evitando que el
+        tablero se llene sin movimientos posibles. ¡Poné a prueba tu lógica y
+        alcanzá el 2048!
+      </p>
+    </div>
+  </div>
+  <div
+    id="container-close"
     class="absolute top-4 w-full max-w-4xl 2xl:max-w-6xl left-1/2 -translate-x-1/2 px-4 sm:px-10 md:px-12 lg:px-0 justify-between cursor-pointer hidden"
   >
-    <div class="p-1 border border-primary rounded-full">
+    <div class="p-1 border border-primary rounded-full" id="como-jugar">
       <IconQuestion width="20" height="20" />
     </div>
-    <IconCross width="25" height="25" className="fill-secondary" />
+    <div id="close">
+      <IconCross width="25" height="25" className="fill-secondary" />
+    </div>
   </div>
 
   <div
@@ -36,10 +74,19 @@ import Board2048 from "./Board2048.astro";
 <script>
   const contenedor = document.querySelector<HTMLDivElement>("#contenedor");
   const contenedorJugar = document.querySelector("#contenedor-jugar");
+  const contenedorComoJugar = document.querySelector("#container-como-jugar");
   const botonJugar = document.querySelector("#jugar");
   const botonClose = document.querySelector("#close");
+  const containerClose = document.querySelector("#container-close");
   const newgame = document.querySelector("#newgame");
+  const botonComoJugar = document.querySelectorAll("#como-jugar");
 
+  botonComoJugar?.forEach((boton) => {
+    boton.addEventListener("click", () => {
+      contenedorComoJugar?.classList.toggle("hidden");
+      contenedorComoJugar?.classList.toggle("flex");
+    });
+  });
   // Función para inicializar el juego
   async function loadGame() {
     const { Game } = await import("@utils/2048/Game.ts");
@@ -63,8 +110,8 @@ import Board2048 from "./Board2048.astro";
       contenedor?.classList.add("fondo-estatico");
       contenedorJugar?.classList.add("hidden");
 
-      botonClose?.classList.remove("hidden");
-      botonClose?.classList.add("flex");
+      containerClose?.classList.toggle("hidden");
+      containerClose?.classList.toggle("flex");
 
       document.body.style.overflow = "hidden";
     });
@@ -78,8 +125,8 @@ import Board2048 from "./Board2048.astro";
       contenedor?.classList.add("rounded-2xl");
       contenedorJugar?.classList.remove("hidden");
 
-      botonClose?.classList.remove("flex");
-      botonClose?.classList.add("hidden");
+      containerClose?.classList.toggle("flex");
+      containerClose?.classList.toggle("hidden");
 
       document.body.style.overflow = "visible";
     });
