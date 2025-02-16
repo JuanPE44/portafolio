@@ -103,6 +103,7 @@ import { Image } from "astro:assets";
     const rutaPdf = "/public/CV.pdf";
     enlace.target = "_blank";
     enlace.href = rutaPdf;
+    enlace.download = "CV.pdf";
     enlace.click();
   });
 </script>
