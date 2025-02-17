@@ -54,9 +54,9 @@ import { Image } from "astro:assets";
           class="bg-primary
           rounded-2xl -top-[25%] -right-[5%] md:-top-[20%] md:-right-[20%] p-3 absolute z-40"
         >
-          <h5 class="text-white mb-2 font-bold text-sm md:text-base">
+          <h3 class="text-white mb-2 font-bold text-sm md:text-base">
             Conocimientos tecnicos
-          </h5>
+          </h3>
           <div class="grid grid-cols-5 gap-2 w-max mx-auto">
             <IconJavascript />
             <IconHtml />
@@ -100,7 +100,7 @@ import { Image } from "astro:assets";
   boton?.addEventListener("click", () => {
     const enlace = document.createElement("a");
     // Ruta al archivo PDF
-    const rutaPdf = "/public/CV.pdf";
+    const rutaPdf = "/CV.pdf";
     enlace.target = "_blank";
     enlace.href = rutaPdf;
     enlace.download = "CV.pdf";
