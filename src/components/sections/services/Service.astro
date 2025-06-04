@@ -1,0 +1,195 @@
+---
+import ContainerSection from "@components/ui/ContainerSection.astro";
+import SectionTitle from "@components/ui/SectionTitle.astro";
+import ListOfServices from "@components/sections/services/ListOfServices.astro";
+import IconExperience from "src/icons/IconExperience.astro";
+
+// ServicesSection.astro
+---
+
+<ContainerSection id="hero" className="my-36">
+  <div class="container mx-auto max-w-6xl">
+    <div class="text-center mb-16">
+      <h2
+        class="text-[1.75rem] sm:text-3xl md:text-[2.5rem] font-bold text-white mb-4 leading-tight font-sans"
+      >
+        Impulsá tu negocio con una página web profesional
+      </h2>
+      <p
+        class="text-base sm:text-lg text-zinc-300 max-w-[600px] mx-auto leading-relaxed"
+      >
+        Conectá con más clientes, mostrales lo que hacés y vendé online las 24
+        hs. Desarrollo sitios web a medida para negocios como el tuyo, sin
+        vueltas.
+      </p>
+    </div>
+
+    <ListOfServices />
+
+    <div class="mb-16 md:mb-20">
+      <SectionTitle text="Por que elegirme?" className="mb-10">
+        <IconExperience />
+      </SectionTitle>
+      <div
+        class="grid grid-cols-1 md:grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-6"
+      >
+        <div
+          class="flex items-start gap-4 p-5 md:p-6 bg-gray-bg rounded-lg border border-[#fff1]"
+        >
+          <div
+            class="benefit-icon w-10 h-10 bg-bg rounded-md flex items-center justify-center text-secondary flex-shrink-0"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              ></path>
+            </svg>
+          </div>
+          <p class="m-0 text-gray leading-normal">
+            Trabajo 100% personalizado, adaptado a tu marca
+          </p>
+        </div>
+        <div
+          class="flex items-start gap-4 p-5 md:p-6 bg-gray-bg rounded-lg border border-[#fff1]"
+        >
+          <div
+            class="benefit-icon w-10 h-10 bg-bg rounded-md flex items-center justify-center text-secondary flex-shrink-0"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path
+                d="m22 21-3-3m0 0a5.5 5.5 0 1 0-7.78-7.78 5.5 5.5 0 0 0 7.78 7.78Z"
+              ></path>
+            </svg>
+          </div>
+          <p class="m-0 text-gray leading-normal">
+            Experiencia con negocios locales y necesidades reales
+          </p>
+        </div>
+        <div
+          class="flex items-start gap-4 p-5 md:p-6 bg-gray-bg rounded-lg border border-[#fff1]"
+        >
+          <div
+            class="benefit-icon w-10 h-10 bg-bg rounded-md flex items-center justify-center text-secondary flex-shrink-0"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+              ></path>
+              <polyline points="3.27,6.96 12,12.01 20.73,6.96"></polyline>
+              <line x1="12" y1="22.08" x2="12" y2="12"></line>
+            </svg>
+          </div>
+          <p class="m-0 text-gray leading-normal">
+            Diseño moderno, simple y enfocado en resultados
+          </p>
+        </div>
+        <div
+          class="flex items-start gap-4 p-5 md:p-6 bg-gray-bg rounded-lg border border-[#fff1]"
+        >
+          <div
+            class="benefit-icon w-10 h-10 bg-bg rounded-md flex items-center justify-center text-secondary flex-shrink-0"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"></path>
+            </svg>
+          </div>
+          <p class="m-0 text-gray leading-normal">
+            Comunicación clara, sin tecnicismos
+          </p>
+        </div>
+        <div
+          class="flex items-start gap-4 p-5 md:p-6 bg-gray-bg rounded-lg border border-[#fff1]"
+        >
+          <div
+            class="benefit-icon w-10 h-10 bg-bg rounded-md flex items-center justify-center text-secondary flex-shrink-0"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+              <path d="m9 12 2 2 4-4"></path>
+            </svg>
+          </div>
+          <p class="m-0 text-gray leading-normal">
+            Mantenimiento y soporte post-entrega
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="text-center bg-gray-bg px-6 py-8 md:p-12 rounded-2xl border border-[#fff1]"
+    >
+      <h3 class="text-2xl md:text-[1.875rem] font-semibold text-white mb-4">
+        ¿Tenés un negocio y querés llevarlo al siguiente nivel?
+      </h3>
+      <p class="text-lg text-zinc-300 mb-8 max-w-lg mx-auto">
+        Hablemos sin compromiso. Contame qué necesitás y te ayudo a hacerlo
+        realidad.
+      </p>
+      <a
+        href="#contact"
+        class="inline-flex items-center gap-2 bg-primary text-white text-base py-[14px] px-[28px] md:text-lg md:py-4 md:px-8 rounded-lg font-medium transition-colors duration-200 ease-in-out hover:bg-secondary"
+      >
+        Quiero mi sitio web
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="m9 18 6-6-6-6"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</ContainerSection>
