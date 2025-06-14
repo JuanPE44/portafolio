@@ -1,0 +1,213 @@
+---
+// services-hero.astro
+---
+
+<section class="relative min-h-screen flex items-center hero-section">
+  <!-- Background decorative elements -->
+  <div class="absolute inset-0 pointer-events-none">
+    <!-- Gradient background with grain effect -->
+    <div class="absolute inset-0 hero-bg"></div>
+    <div class="absolute inset-0 hero-grain-overlay"></div>
+
+    <!-- Glow effects -->
+    <div
+      class="absolute top-0 left-1/4 w-96 h-96 hero-glow-primary rounded-full blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute bottom-0 right-1/4 w-96 h-96 hero-glow-secondary rounded-full blur-3xl"
+    >
+    </div>
+
+    <!-- Decorative shapes -->
+    <div
+      class="absolute top-20 right-[10%] w-24 h-24 rounded-xl hero-border rotate-12 opacity-20"
+    >
+    </div>
+    <div
+      class="absolute bottom-20 left-[10%] w-32 h-32 rounded-full hero-border opacity-20"
+    >
+    </div>
+  </div>
+
+  <div class="container mx-auto max-w-6xl px-4 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <!-- Text content -->
+      <div class="lg:col-span-12 text-center">
+        <div class="space-y-2 max-w-4xl mx-auto">
+          <!-- Heading -->
+          <h2
+            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold hero-text leading-tight"
+          >
+            Impulsá tu negocio con una
+            <span class="relative">
+              <span class="relative z-10 text-secondary">
+                página web profesional
+              </span>
+              <span
+                class="absolute -bottom-1 left-0 right-0 h-3 hero-gradient-underline blur-sm"
+              ></span>
+            </span>
+          </h2>
+
+          <!-- Description -->
+          <p
+            class="text-lg md:text-xl hero-text-secondary max-w-3xl mx-auto leading-relaxed"
+          >
+            Conectá con más clientes, mostrales lo que hacés y vendé online las
+            24 hs. Desarrollo sitios web a medida para negocios como el tuyo,
+            sin vueltas.
+          </p>
+
+          <!-- Stats -->
+          <div class="flex flex-wrap gap-8 justify-center pt-6">
+            <div class="text-center">
+              <div class="text-4xl font-bold hero-stat-primary">+50</div>
+              <div class="text-sm hero-text-secondary mt-1">
+                Proyectos completados
+              </div>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-bold hero-stat-secondary">100%</div>
+              <div class="text-sm hero-text-secondary mt-1">
+                Clientes satisfechos
+              </div>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-bold hero-stat-tertiary">24/7</div>
+              <div class="text-sm hero-text-secondary mt-1">
+                Soporte técnico
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-wrap gap-4 justify-center pt-6">
+            <a
+              href="#services"
+              class="inline-flex items-center gap-2 text-white bg-primary font-medium px-8 py-4 rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105 text-lg"
+            >
+              Ver servicios
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="m9 18 6-6-6-6"></path>
+              </svg>
+            </a>
+            <a
+              href="#contact"
+              class="inline-flex items-center gap-2 hero-btn-secondary font-medium px-8 py-4 rounded-lg hero-border transition-all duration-300 text-lg"
+            >
+              Contactar
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v5Z"
+                ></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  :root {
+    --color-primary: #e126eb;
+    --color-secondary: #77eb26;
+    --color-tertiary: #ffd700;
+    --color-white: #fafafa;
+    --color-gray: #d8d8d8;
+    --color-bg: #3a4135;
+    --color-gray-bg: #52525252;
+    --color-border: #686868;
+  }
+
+  .hero-section {
+    background-color: var(--color-bg);
+  }
+
+  .hero-bg {
+    background-color: var(--color-bg);
+  }
+
+  .hero-glow-primary {
+    background-color: var(--color-primary);
+    opacity: 0.1;
+  }
+
+  .hero-glow-secondary {
+    background-color: var(--color-secondary);
+    opacity: 0.1;
+  }
+
+  .hero-border {
+    border: 1px solid var(--color-border);
+  }
+
+  .hero-text {
+    color: var(--color-white);
+  }
+
+  .hero-text-secondary {
+    color: var(--color-gray);
+  }
+
+  .text-secondary {
+    color: var(--color-secondary);
+  }
+
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+
+  .hero-gradient-underline {
+    background: linear-gradient(
+      to right,
+      var(--color-primary),
+      var(--color-secondary),
+      var(--color-tertiary)
+    );
+    opacity: 0.3;
+  }
+
+  .hero-stat-primary {
+    color: var(--color-primary);
+  }
+
+  .hero-stat-secondary {
+    color: var(--color-secondary);
+  }
+
+  .hero-stat-tertiary {
+    color: var(--color-tertiary);
+  }
+
+  .hero-btn-secondary {
+    background-color: var(--color-gray-bg);
+    color: var(--color-white);
+  }
+
+  .hero-btn-secondary:hover {
+    opacity: 0.8;
+  }
+</style>

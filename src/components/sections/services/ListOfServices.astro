@@ -1,237 +1,347 @@
-<div
-  class="relative grid grid-cols-1 md:grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-6 md:gap-8 mb-16 md:mb-20"
->
-  <div
-    class="w-96 h-96 bg-gradient-to-r -top-1/2 from-primary to-secondary opacity-15 blur-3xl absolute left-1/2 transform -translate-x-1/2 rounded-full -z-10"
-  >
+---
+// services-grid.astro
+const services = [
+  {
+    id: 'landing',
+    title: 'Landing Page',
+    description: 'Ideal para emprendimientos y profesionales que recién empiezan.',
+    price: '$45.000',
+    icon: 'landing',
+    color: 'primary',
+    features: [
+      'Sitio de una sola página',
+      'Diseño personalizado',
+      'Adaptado a celulares',
+      'Formulario de contacto o WhatsApp',
+      'Carga rápida y SEO básico'
+    ]
+  },
+  {
+    id: 'institutional',
+    title: 'Sitio Web Institucional',
+    description: 'Ideal para negocios establecidos con más contenido.',
+    price: '$85.000',
+    icon: 'institutional',
+    color: 'secondary',
+    features: [
+      'Varias secciones (Inicio, Servicios, Nosotros, Contacto, etc.)',
+      'Diseño a medida',
+      'Responsive y optimizado',
+      'SEO inicial y seguridad básica',
+      'Integración con redes sociales y contacto'
+    ]
+  },
+  {
+    id: 'ecommerce',
+    title: 'Tienda Online',
+    description: 'Ideal para emprendedores que quieren vender por internet.',
+    price: '$120.000',
+    icon: 'ecommerce',
+    color: 'tertiary',
+    features: [
+      'Catálogo de productos',
+      'Carrito de compras y pasarela de pago',
+      'Panel de administración',
+      'Diseño moderno y adaptable',
+      'Integración con medios de pago locales (Mercado Pago, etc.)'
+    ]
+  },
+  {
+    id: 'custom',
+    title: 'Página a Medida',
+    description: '¿Necesitás algo distinto? Lo hacemos.',
+    price: 'Consultar',
+    icon: 'custom',
+    color: 'primary',
+    popular: true,
+    features: [
+      'Funcionalidades personalizadas',
+      'Sistemas de reservas, membresías o formularios complejos',
+      'Conexión a bases de datos',
+      'Webapps o soluciones únicas para tu negocio'
+    ]
+  }
+];
+
+const getIcon = (iconType:any) => {
+  const icons = {
+    landing: `<rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M9 9h6v6H9z"></path>`,
+    institutional: `<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9,22 9,12 15,12 15,22"></polyline>`,
+    ecommerce: `<circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="m2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>`,
+    custom: `<path d="M12 3a6.364 6.364 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>`
+  };
+  return icons[iconType] || icons.landing;
+};
+---
+
+<section class="relative py-16 md:py-24 services-section">
+  <!-- Background decorative elements -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 services-glow-primary rounded-full blur-3xl"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 services-glow-secondary rounded-full blur-3xl"></div>
   </div>
 
-  <div
-    class="service-card bg-gray-bg rounded-xl p-5 sm:p-6 md:p-8 shadow-md transition-transform duration-200 ease-in-out hover:-translate-y-1 hover:shadow-xl border border-[#fff1]"
-  >
-    <div
-      class="service-icon w-12 h-12 bg-bg rounded-lg flex items-center justify-center mb-5 text-secondary"
-    >
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+  <div class="relative grid grid-cols-1 md:grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-6 md:gap-8 mb-16 md:mb-20">
+    {services.map((service, index) => (
+      <div 
+        class={`group relative services-card backdrop-blur-sm rounded-3xl p-6 lg:p-8 shadow-2xl transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-3xl services-border ${service.popular ? 'services-popular-ring' : ''}`}
+        style={`animation-delay: ${index * 100}ms`}
       >
-        <rect width="18" height="18" x="3" y="3" rx="2"></rect>
-        <path d="M9 9h6v6H9z"></path>
-      </svg>
-    </div>
-    <h3 class="text-xl font-semibold text-white mb-3">Landing Page</h3>
-    <p class="text-zinc-300 mb-5 leading-normal">
-      Ideal para emprendimientos y profesionales que recién empiezan.
-    </p>
-    <ul class="list-none p-0 mb-6">
-      <li
-        class="py-1.5 text-gray relative pl-5 before:content-['✓'] before:absolute before:left-0 before:text-green-500 before:font-bold"
-      >
-        Sitio de una sola página
-      </li>
-      <li
-        class="py-1.5 text-gray relative pl-5 before:content-['✓'] before:absolute before:left-0 before:text-green-500 before:font-bold"
-      >
-        Diseño personalizado
-      </li>
-      <li
-        class="py-1.5 text-gray relative pl-5 before:content-['✓'] before:absolute before:left-0 before:text-green-500 before:font-bold"
-      >
-        Adaptado a celulares
-      </li>
-      <li
-        class="py-1.5 text-gray relative pl-5 before:content-['✓'] before:absolute before:left-0 before:text-green-500 before:font-bold"
-      >
-        Formulario de contacto o WhatsApp
-      </li>
-      <li
-        class="py-1.5 text-gray relative pl-5 before:content-['✓'] before:absolute before:left-0 before:text-green-500 before:font-bold"
-      >
-        Carga rápida y SEO básico
-      </li>
-    </ul>
-    <div class="border-t border-[#fff1] pt-5 text-center">
-      <span class="block text-sm text-zinc-300 mb-1">Precio desde:</span>
-      <span class="text-2xl font-bold text-secondary">$45.000</span>
-    </div>
-  </div>
+        <!-- Popular badge -->
+        {service.popular && (
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+            <div class="services-popular-badge text-white py-2 px-6 rounded-full text-sm font-semibold shadow-lg">
+              ⭐ Más popular
+            </div>
+          </div>
+        )}
 
-  <div
-    class="service-card bg-gray-bg rounded-xl p-5 sm:p-6 md:p-8 shadow-md transition-transform duration-200 ease-in-out hover:-translate-y-1 hover:shadow-xl border border-[#fff1]"
-  >
-    <div
-      class="service-icon w-12 h-12 bg-bg rounded-lg flex items-center justify-center mb-5 text-secondary"
-    >
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-        <polyline points="9,22 9,12 15,12 15,22"></polyline>
-      </svg>
-    </div>
-    <h3 class="text-xl font-semibold text-white mb-3">
-      Sitio Web Institucional
-    </h3>
-    <p class="text-zinc-300 mb-5 leading-normal">
-      Ideal para negocios establecidos con más contenido.
-    </p>
-    <ul class="list-none p-0 mb-6">
-      <li
-        class="py-1.5 text-gray relative pl-5 before:content-['✓'] before:absolute before:left-0 before:text-green-500 before:font-bold"
-      >
-        Varias secciones (Inicio, Servicios, Nosotros, Contacto, etc.)
-      </li>
-      <li
-        class="py-1.5 text-gray relative pl-5 before:content-['✓'] before:absolute before:left-0 before:text-green-500 before:font-bold"
-      >
-        Diseño a medida
-      </li>
-      <li
-        class="py-1.5 text-gray relative pl-5 before:content-['✓'] before:absolute before:left-0 before:text-green-500 before:font-bold"
-      >
-        Responsive y optimizado
-      </li>
-      <li
-        class="py-1.5 text-gray relative pl-5 before:content-['✓'] before:absolute before:left-0 before:text-green-500 before:font-bold"
-      >
-        SEO inicial y seguridad básica
-      </li>
-      <li
-        class="py-1.5 text-gray relative pl-5 before:content-['✓'] before:absolute before:left-0 before:text-green-500 before:font-bold"
-      >
-        Integración con redes sociales y contacto
-      </li>
-    </ul>
-    <div class="border-t border-[#fff1] pt-5 text-center">
-      <span class="block text-sm text-zinc-300 mb-1">Precio desde:</span>
-      <span class="text-2xl font-bold text-secondary">$85.000</span>
-    </div>
-  </div>
+        <!-- Glow effect on hover -->
+        <div class={`absolute inset-0 services-hover-glow-${service.color} opacity-0 group-hover:opacity-10 rounded-3xl transition-opacity duration-500`}></div>
 
-  <div
-    class="service-card bg-gray-bg rounded-xl p-5 sm:p-6 md:p-8 shadow-md transition-transform duration-200 ease-in-out hover:-translate-y-1 hover:shadow-xl border border-[#fff1]"
-  >
-    <div
-      class="service-icon w-12 h-12 bg-bg rounded-lg flex items-center justify-center mb-5 text-secondary"
-    >
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <circle cx="8" cy="21" r="1"></circle>
-        <circle cx="19" cy="21" r="1"></circle>
-        <path
-          d="m2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
-        ></path>
-      </svg>
-    </div>
-    <h3 class="text-xl font-semibold text-white mb-3">Tienda Online</h3>
-    <p class="text-zinc-300 mb-5 leading-normal">
-      Ideal para emprendedores que quieren vender por internet.
-    </p>
-    <ul class="list-none p-0 mb-6">
-      <li
-        class="py-1.5 text-gray relative pl-5 before:content-['✓'] before:absolute before:left-0 before:text-green-500 before:font-bold"
-      >
-        Catálogo de productos
-      </li>
-      <li
-        class="py-1.5 text-gray relative pl-5 before:content-['✓'] before:absolute before:left-0 before:text-green-500 before:font-bold"
-      >
-        Carrito de compras y pasarela de pago
-      </li>
-      <li
-        class="py-1.5 text-gray relative pl-5 before:content-['✓'] before:absolute before:left-0 before:text-green-500 before:font-bold"
-      >
-        Panel de administración
-      </li>
-      <li
-        class="py-1.5 text-gray relative pl-5 before:content-['✓'] before:absolute before:left-0 before:text-green-500 before:font-bold"
-      >
-        Diseño moderno y adaptable
-      </li>
-      <li
-        class="py-1.5 text-gray relative pl-5 before:content-['✓'] before:absolute before:left-0 before:text-green-500 before:font-bold"
-      >
-        Integración con medios de pago locales (Mercado Pago, etc.)
-      </li>
-    </ul>
-    <div class="border-t border-[#fff1] pt-5 text-center">
-      <span class="block text-sm text-zinc-300 mb-1">Precio desde:</span>
-      <span class="text-2xl font-bold text-secondary">$120.000</span>
-    </div>
-  </div>
+        <!-- Icon -->
+        <div class="relative mb-6">
+          <div class={`w-16 h-16 lg:w-20 lg:h-20 services-icon-${service.color} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+            <svg 
+              width="32" 
+              height="32" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              stroke-width="2" 
+              stroke-linecap="round" 
+              stroke-linejoin="round"
+              class="text-white"
+              set:html={getIcon(service.icon)}
+            >
+            </svg>
+          </div>
+        </div>
 
-  <div
-    class="service-card relative bg-gray-bg rounded-xl p-5 sm:p-6 md:p-8 shadow-md transition-transform duration-200 ease-in-out hover:-translate-y-1 hover:shadow-xl border-2 border-primary
-                  before:content-['Más_popular'] before:absolute before:-top-3 before:left-1/2 before:-translate-x-1/2 before:bg-primary before:text-white before:py-1 before:px-4 before:rounded-full before:text-sm before:font-medium"
-  >
-    <div
-      class="service-icon w-12 h-12 bg-bg rounded-lg flex items-center justify-center mb-5 text-secondary"
-    >
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <path d="M12 3a6.364 6.364 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
-      </svg>
-    </div>
-    <h3 class="text-xl font-semibold text-white mb-3">Página a Medida</h3>
-    <p class="text-zinc-300 mb-5 leading-normal">
-      ¿Necesitás algo distinto? Lo hacemos.
-    </p>
-    <ul class="list-none p-0 mb-6">
-      <li
-        class="py-1.5 text-gray relative pl-5 before:content-['✓'] before:absolute before:left-0 before:text-green-500 before:font-bold"
-      >
-        Funcionalidades personalizadas
-      </li>
-      <li
-        class="py-1.5 text-gray relative pl-5 before:content-['✓'] before:absolute before:left-0 before:text-green-500 before:font-bold"
-      >
-        Sistemas de reservas, membresías o formularios complejos
-      </li>
-      <li
-        class="py-1.5 text-gray relative pl-5 before:content-['✓'] before:absolute before:left-0 before:text-green-500 before:font-bold"
-      >
-        Conexión a bases de datos
-      </li>
-      <li
-        class="py-1.5 text-gray relative pl-5 before:content-['✓'] before:absolute before:left-0 before:text-green-500 before:font-bold"
-      >
-        Webapps o soluciones únicas para tu negocio
-      </li>
-    </ul>
-    <div class="border-t border-[#fff1] pt-5 text-center">
-      <span class="block text-base text-secondary font-medium"
-        >Contame tu idea y lo vemos juntos</span
-      >
-    </div>
+        <!-- Content -->
+        <div class="relative z-10">
+          <h3 class="text-xl lg:text-2xl font-bold services-title mb-3 transition-all duration-300">
+            {service.title}
+          </h3>
+          
+          <p class="services-description mb-6 leading-relaxed text-base lg:text-lg">
+            {service.description}
+          </p>
+
+          <!-- Features list -->
+          <ul class="space-y-3 mb-8">
+            {service.features.map((feature) => (
+              <li class="flex items-start gap-3 transition-colors duration-300">
+                <div class={`flex-shrink-0 w-5 h-5 services-check-${service.color} rounded-full flex items-center justify-center mt-0.5`}>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-white">
+                    <polyline points="20,6 9,17 4,12"></polyline>
+                  </svg>
+                </div>
+                <span class="text-sm lg:text-base services-feature-text leading-relaxed">{feature}</span>
+              </li>
+            ))}
+          </ul>
+
+          <!-- Pricing -->
+          <div class="border-t services-border-top pt-6">
+            {service.price === 'Consultar' ? (
+              <div class="text-center">
+                <span class="text-lg font-semibold services-consult-text">
+                  Contame tu idea y lo vemos juntos
+                </span>
+              </div>
+            ) : (
+              <div class="text-center">
+                <span class="block text-sm services-price-label mb-2">Precio desde:</span>
+                <span class={`text-3xl font-bold services-price-${service.color}`}>
+                  {service.price}
+                </span>
+              </div>
+            )}
+          </div>
+
+          <!-- CTA Button -->
+          <div class="mt-6">
+            <button class={`w-full bg-white text-black py-3 px-6 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0`}>
+              Más información
+            </button>
+          </div>
+        </div>
+
+        <!-- Decorative corner -->
+        <div class="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 services-corner-border rounded-tr-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      </div>
+    ))}
   </div>
-</div>
+</section>
+
+<style>
+  :root {
+    --color-primary: #e126eb;
+    --color-secondary: #77eb26;
+    --color-tertiary: #ffd700;
+    --color-white: #fafafa;
+    --color-gray: #d8d8d8;
+    --color-bg: #3a4135;
+    --color-gray-bg: #52525252;
+    --color-border: #686868;
+  }
+
+  .services-section {
+    background-color: var(--color-bg);
+  }
+
+  .services-glow-primary {
+    background-color: var(--color-primary);
+    opacity: 0.1;
+  }
+
+  .services-glow-secondary {
+    background-color: var(--color-secondary);
+    opacity: 0.1;
+  }
+
+  .services-card {
+    background: linear-gradient(135deg, var(--color-gray-bg), rgba(58, 65, 53, 0.6));
+  }
+
+  .services-border {
+    border: 1px solid var(--color-border);
+  }
+
+  .services-popular-ring {
+    ring-width: 2px;
+    ring-color: var(--color-secondary);
+  }
+
+  /* Solo gradiente para el badge popular (importante) */
+  .services-popular-badge {
+    background: linear-gradient(to right, var(--color-secondary), var(--color-primary));
+  }
+
+  .services-border-top {
+    border-color: var(--color-border);
+  }
+
+  .services-corner-border {
+    border-color: var(--color-border);
+  }
+
+  .services-title {
+    color: var(--color-white);
+  }
+
+  .services-description {
+    color: var(--color-gray);
+  }
+
+  .services-feature-text {
+    color: var(--color-white);
+  }
+
+  .services-price-label {
+    color: var(--color-gray);
+  }
+
+  .services-consult-text {
+    color: var(--color-secondary);
+  }
+
+  /* Colores sólidos para iconos */
+  .services-icon-primary {
+    background-color: var(--color-primary);
+  }
+
+  .services-icon-secondary {
+    background-color: var(--color-secondary);
+  }
+
+  .services-icon-tertiary {
+    background-color: var(--color-tertiary);
+  }
+
+  /* Colores sólidos para checks */
+  .services-check-primary {
+    background-color: var(--color-primary);
+  }
+
+  .services-check-secondary {
+    background-color: var(--color-secondary);
+  }
+
+  .services-check-tertiary {
+    background-color: var(--color-tertiary);
+  }
+
+  /* Colores sólidos para precios */
+  .services-price-primary {
+    color: var(--color-primary);
+  }
+
+  .services-price-secondary {
+    color: var(--color-secondary);
+  }
+
+  .services-price-tertiary {
+    color: var(--color-tertiary);
+  }
+
+  /* Solo gradientes para botones CTA (importantes) */
+  .services-cta-primary {
+    background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+  }
+
+  .services-cta-secondary {
+    background: linear-gradient(to right, var(--color-secondary), var(--color-tertiary));
+  }
+
+  .services-cta-tertiary {
+    background: linear-gradient(to right, var(--color-tertiary), var(--color-primary));
+  }
+
+  /* Solo gradientes para efectos hover (detalles) */
+  .services-hover-glow-primary {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  }
+
+  .services-hover-glow-secondary {
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-tertiary));
+  }
+
+  .services-hover-glow-tertiary {
+    background: linear-gradient(135deg, var(--color-tertiary), var(--color-primary));
+  }
+
+  /* Custom animations */
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .group {
+    animation: slideInUp 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  /* Stagger animation */
+  .group:nth-child(1) { animation-delay: 0ms; }
+  .group:nth-child(2) { animation-delay: 100ms; }
+  .group:nth-child(3) { animation-delay: 200ms; }
+  .group:nth-child(4) { animation-delay: 300ms; }
+
+  /* Enhanced shadow */
+  .shadow-3xl {
+    box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
+
+  /* Smooth hover transitions */
+  .group:hover {
+    transform: translateY(-8px) scale(1.02);
+  }
+</style>
