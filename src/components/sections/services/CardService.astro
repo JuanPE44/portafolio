@@ -1,0 +1,249 @@
+---
+interface Props {
+  popular: boolean;
+  color: string;
+  icon: string;
+  title: string;
+  description: string;
+  features: string[];
+  price: string;
+  index: number;
+}
+
+const { popular, color, icon, title, description, features, price, index } =
+  Astro.props;
+
+const getIconService = (iconType: string) => {
+  const icons = {
+    landing: `<rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M9 9h6v6H9z"></path>`,
+    institutional: `<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9,22 9,12 15,12 15,22"></polyline>`,
+    ecommerce: `<circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="m2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>`,
+    custom: `<path d="M12 3a6.364 6.364 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>`,
+  };
+  return icons[iconType] || icons.landing;
+};
+---
+
+<div
+  class={`flex flex-col justify-between group relative backdrop-blur-sm rounded-2xl p-4 lg:p-5 shadow-2xl transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-3xl border border-color-border animate-slide-up ${popular ? "ring-2 ring-secondary" : "grayscale-100"}  hover:grayscale-0`}
+  style={`animation-delay: ${index * 100}ms; background: linear-gradient(135deg, var(--color-gray-bg), rgba(58, 65, 53, 0.2));`}
+>
+  <!-- Popular badge -->
+  {
+    popular && (
+      <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+        <div class="text-bg py-1.5 px-4 rounded-full text-xs font-semibold shadow-lg bg-secondary">
+          ⭐ Más popular
+        </div>
+      </div>
+    )
+  }
+
+  <!-- Glow effect on hover -->
+  <div
+    class={`absolute inset-0 opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-500 hover-glow-${color}`}
+  >
+  </div>
+
+  <!-- Icon -->
+  <div class="relative mb-4">
+    <div
+      class={`w-12 h-12 lg:w-14 lg:h-14 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 icon-${color}`}
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="text-white"
+        set:html={getIconService(icon)}
+      />
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 flex-1">
+    <h3 class="text-2xl font-bold text-white mb-2 transition-all duration-300">
+      {title}
+    </h3>
+
+    <p
+      class="text-gray mb-4 leading-relaxed text-base lg:text-base line-clamp-2"
+    >
+      {description}
+    </p>
+
+    <!-- Features list -->
+    <ul class="space-y-2 mb-5">
+      {
+        features.slice(0, 3).map((feature) => (
+          <li class="flex items-start gap-2 transition-colors duration-300">
+            <div
+              class={`flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center mt-0.5 check-${color}`}
+            >
+              <svg
+                width="10"
+                height="10"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-white"
+              >
+                <polyline points="20,6 9,17 4,12" />
+              </svg>
+            </div>
+            <span class="text-xs lg:text-sm text-white leading-relaxed">
+              {feature}
+            </span>
+          </li>
+        ))
+      }
+      {
+        features.length > 3 && (
+          <li class="text-xs text-gray ml-6">
+            +{features.length - 3} características más
+          </li>
+        )
+      }
+    </ul>
+
+    <!-- Pricing -->
+    <div class="border-t border-color-border pt-4">
+      {
+        price === "Consultar" ? (
+          <div class="text-center">
+            <span class="text-sm font-semibold text-secondary">
+              Contame tu idea
+            </span>
+          </div>
+        ) : (
+          <div class="text-center">
+            <span class="block text-xs text-gray mb-1">Desde:</span>
+            <span class={`text-xl lg:text-2xl font-bold text-white`}>
+              {price}
+            </span>
+          </div>
+        )
+      }
+    </div>
+
+    <!-- CTA Button -->
+    <div class="mt-4">
+      <button
+        class="w-full bg-secondary text-bg py-2.5 px-4 rounded-lg font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-lg opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0"
+      >
+        Más información
+      </button>
+    </div>
+  </div>
+
+  <!-- Decorative corner -->
+  <div
+    class="absolute top-3 right-3 w-6 h-6 border-t-2 border-r-2 border-color-border rounded-tr-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+  >
+  </div>
+</div>
+
+<style>
+  /* Solo los estilos esenciales que no se pueden hacer con Tailwind */
+
+  /* Iconos con colores sólidos */
+  .icon-primary {
+    background-color: var(--color-primary);
+  }
+  .icon-secondary {
+    background-color: var(--color-secondary);
+  }
+  .icon-tertiary {
+    background-color: var(--color-tertiary);
+  }
+
+  /* Checks con colores sólidos */
+  .check-primary {
+    background-color: var(--color-primary);
+  }
+  .check-secondary {
+    background-color: var(--color-secondary);
+  }
+  .check-tertiary {
+    background-color: var(--color-tertiary);
+  }
+
+  /* Precios con colores */
+  .price-primary {
+    color: var(--color-primary);
+  }
+  .price-secondary {
+    color: var(--color-secondary);
+  }
+  .price-tertiary {
+    color: var(--color-tertiary);
+  }
+
+  /* Efectos hover con gradientes */
+  .hover-glow-primary {
+    background: linear-gradient(
+      135deg,
+      var(--color-primary),
+      var(--color-secondary)
+    );
+  }
+  .hover-glow-secondary {
+    background: linear-gradient(
+      135deg,
+      var(--color-secondary),
+      var(--color-tertiary)
+    );
+  }
+  .hover-glow-tertiary {
+    background: linear-gradient(
+      135deg,
+      var(--color-tertiary),
+      var(--color-primary)
+    );
+  }
+
+  /* Animación personalizada */
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slide-up {
+    animation: slideInUp 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  /* Sombra personalizada */
+  .shadow-3xl {
+    box-shadow:
+      0 35px 60px -12px rgba(0, 0, 0, 0.25),
+      0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
+
+  /* Hover mejorado */
+  .group:hover {
+    transform: translateY(-8px) scale(1.02);
+  }
+
+  /* Limitar líneas de texto */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

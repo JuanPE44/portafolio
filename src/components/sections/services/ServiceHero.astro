@@ -2,42 +2,38 @@
 // services-hero.astro
 ---
 
-<section class="relative min-h-screen flex items-center hero-section">
+<section class="relative min-h-screen flex items-center bg-bg pt-10 sm:pt-0">
   <!-- Background decorative elements -->
   <div class="absolute inset-0 pointer-events-none">
-    <!-- Gradient background with grain effect -->
-    <div class="absolute inset-0 hero-bg"></div>
-    <div class="absolute inset-0 hero-grain-overlay"></div>
-
     <!-- Glow effects -->
     <div
-      class="absolute top-0 left-1/4 w-96 h-96 hero-glow-primary rounded-full blur-3xl"
+      class="absolute top-0 left-1/4 w-96 h-96 bg-primary opacity-10 rounded-full blur-3xl"
     >
     </div>
     <div
-      class="absolute bottom-0 right-1/4 w-96 h-96 hero-glow-secondary rounded-full blur-3xl"
+      class="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary opacity-10 rounded-full blur-3xl"
     >
     </div>
 
     <!-- Decorative shapes -->
     <div
-      class="absolute top-20 right-[10%] w-24 h-24 rounded-xl hero-border rotate-12 opacity-20"
+      class="absolute top-20 right-[10%] w-24 h-24 rounded-xl border border-color-border rotate-12 opacity-20"
     >
     </div>
     <div
-      class="absolute bottom-20 left-[10%] w-32 h-32 rounded-full hero-border opacity-20"
+      class="absolute bottom-20 left-[10%] w-32 h-32 rounded-full border border-color-border opacity-20"
     >
     </div>
   </div>
 
-  <div class="container mx-auto max-w-6xl px-4 relative z-10">
+  <div class="w-full relative z-10">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       <!-- Text content -->
       <div class="lg:col-span-12 text-center">
-        <div class="space-y-2 max-w-4xl mx-auto">
+        <div class="space-y-0 max-w-4xl mx-auto">
           <!-- Heading -->
           <h2
-            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold hero-text leading-tight"
+            class="text-5xl text-start sm:text-center sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight"
           >
             Impulsá tu negocio con una
             <span class="relative">
@@ -52,7 +48,7 @@
 
           <!-- Description -->
           <p
-            class="text-lg md:text-xl hero-text-secondary max-w-3xl mx-auto leading-relaxed"
+            class="text-start sm:text-center text-base md:text-lg text-gray max-w-3xl mx-auto leading-relaxed"
           >
             Conectá con más clientes, mostrales lo que hacés y vendé online las
             24 hs. Desarrollo sitios web a medida para negocios como el tuyo,
@@ -60,22 +56,22 @@
           </p>
 
           <!-- Stats -->
-          <div class="flex flex-wrap gap-8 justify-center pt-6">
+          <div class="hidden sm:flex flex-wrap gap-8 justify-center pt-6">
             <div class="text-center">
-              <div class="text-4xl font-bold hero-stat-primary">+50</div>
-              <div class="text-sm hero-text-secondary mt-1">
+              <div class="sm:text-4xl font-bold text-primary">+50</div>
+              <div class="text-xs sm:text-sm text-gray mt-1">
                 Proyectos completados
               </div>
             </div>
             <div class="text-center">
-              <div class="text-4xl font-bold hero-stat-secondary">100%</div>
-              <div class="text-sm hero-text-secondary mt-1">
+              <div class="sm:text-4xl font-bold text-secondary">100%</div>
+              <div class="text-xs sm:text-sm text-gray mt-1">
                 Clientes satisfechos
               </div>
             </div>
             <div class="text-center">
-              <div class="text-4xl font-bold hero-stat-tertiary">24/7</div>
-              <div class="text-sm hero-text-secondary mt-1">
+              <div class="sm:text-4xl font-bold text-tertiary">24/7</div>
+              <div class="text-xs sm:text-sm text-gray mt-1">
                 Soporte técnico
               </div>
             </div>
@@ -85,7 +81,7 @@
           <div class="flex flex-wrap gap-4 justify-center pt-6">
             <a
               href="#services"
-              class="inline-flex items-center gap-2 text-white bg-primary font-medium px-8 py-4 rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105 text-lg"
+              class="font-bold w-full sm:w-auto flex justify-center items-center gap-2 text-white bg-primary px-4 py-2 rounded-2xl hover:shadow-lg transition-all duration-300 hover:scale-105 sm:text-lg"
             >
               Ver servicios
               <svg
@@ -103,7 +99,7 @@
             </a>
             <a
               href="#contact"
-              class="inline-flex items-center gap-2 hero-btn-secondary font-medium px-8 py-4 rounded-lg hero-border transition-all duration-300 text-lg"
+              class="font-bold w-full sm:w-auto flex justify-center items-center gap-2 bg-gray-bg text-white px-4 py-2 rounded-2xl border border-color-border transition-all duration-300 hover:opacity-80 sm:text-lg"
             >
               Contactar
               <svg
@@ -131,55 +127,7 @@
 </section>
 
 <style>
-  :root {
-    --color-primary: #e126eb;
-    --color-secondary: #77eb26;
-    --color-tertiary: #ffd700;
-    --color-white: #fafafa;
-    --color-gray: #d8d8d8;
-    --color-bg: #3a4135;
-    --color-gray-bg: #52525252;
-    --color-border: #686868;
-  }
-
-  .hero-section {
-    background-color: var(--color-bg);
-  }
-
-  .hero-bg {
-    background-color: var(--color-bg);
-  }
-
-  .hero-glow-primary {
-    background-color: var(--color-primary);
-    opacity: 0.1;
-  }
-
-  .hero-glow-secondary {
-    background-color: var(--color-secondary);
-    opacity: 0.1;
-  }
-
-  .hero-border {
-    border: 1px solid var(--color-border);
-  }
-
-  .hero-text {
-    color: var(--color-white);
-  }
-
-  .hero-text-secondary {
-    color: var(--color-gray);
-  }
-
-  .text-secondary {
-    color: var(--color-secondary);
-  }
-
-  .bg-primary {
-    background-color: var(--color-primary);
-  }
-
+  /* Solo el gradiente personalizado que no se puede hacer con Tailwind */
   .hero-gradient-underline {
     background: linear-gradient(
       to right,
@@ -188,26 +136,5 @@
       var(--color-tertiary)
     );
     opacity: 0.3;
-  }
-
-  .hero-stat-primary {
-    color: var(--color-primary);
-  }
-
-  .hero-stat-secondary {
-    color: var(--color-secondary);
-  }
-
-  .hero-stat-tertiary {
-    color: var(--color-tertiary);
-  }
-
-  .hero-btn-secondary {
-    background-color: var(--color-gray-bg);
-    color: var(--color-white);
-  }
-
-  .hero-btn-secondary:hover {
-    opacity: 0.8;
   }
 </style>

@@ -1,0 +1,130 @@
+---
+interface Props {
+  title: string;
+  icon: string;
+  index?: number;
+}
+const { title, icon, index = 0 } = Astro.props;
+
+// Generar variaciones basadas en el índice
+const getCardVariant = (index: number) => {
+  const variants = [
+    {
+      gradient: "from-primary/10 via-gray-bg to-primary/10",
+      iconBg: "bg-primary/10 border-primary/30",
+      iconColor: "text-primary",
+      overlay: "bg-gradient-to-br from-primary/5 to-transparent",
+    },
+    {
+      gradient: "from-secondary/10 via-gray-bg to-secondary/10",
+      iconBg: "bg-secondary/10 border-secondary/30",
+      iconColor: "text-secondary",
+      overlay: "bg-gradient-to-br from-secondary/5 to-transparent",
+    },
+    {
+      gradient: "from-tertiary/10 via-gray-bg to-tertiary/10",
+      iconBg: "bg-tertiary/10 border-tertiary/30",
+      iconColor: "text-tertiary",
+      overlay: "bg-gradient-to-br from-tertiary/5 to-transparent",
+    },
+    {
+      gradient: "from-blue-500/10 via-gray-bg to-blue-400/5",
+      iconBg: "bg-blue-500/10 border-blue-400/30",
+      iconColor: "text-blue-400",
+      overlay: "bg-gradient-to-br from-blue-500/5 to-transparent",
+    },
+    {
+      gradient: "from-purple-500/10 via-gray-bg to-purple-400/5",
+      iconBg: "bg-purple-500/10 border-purple-400/30",
+      iconColor: "text-purple-400",
+      overlay: "bg-gradient-to-br from-purple-500/5 to-transparent",
+    },
+    {
+      gradient: "from-emerald-500/10 via-gray-bg to-emerald-400/5",
+      iconBg: "bg-emerald-500/10 border-emerald-400/30",
+      iconColor: "text-emerald-400",
+      overlay: "bg-gradient-to-br from-emerald-500/5 to-transparent",
+    },
+  ];
+
+  return variants[index % variants.length];
+};
+
+const variant = getCardVariant(index);
+---
+
+<div
+  class={`group relative h-32  services-skills-card flex items-center gap-4 px-5 md:px-6 border border-color-border rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:border-white/10 bg-gradient-to-br ${variant.gradient}`}
+>
+  <!-- Overlay con efecto hover -->
+  <div
+    class={`absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${variant.overlay}`}
+  >
+  </div>
+
+  <!-- Efecto de brillo en hover -->
+  <div
+    class="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-10 bg-gradient-to-r from-white/0 via-white/10 to-white/0 transition-opacity duration-500"
+  >
+  </div>
+
+  <div
+    class={`relative z-10 w-12 h-12 rounded-xl flex items-center justify-center border transition-all duration-300 group-hover:scale-110 bg-gray-bg border-color-border`}
+  >
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class={`transition-colors duration-300 text-white`}
+      set:html={icon}
+    />
+  </div>
+
+  <div class="relative z-10 flex-1">
+    <p
+      class="m-0 text-white leading-relaxed font-medium group-hover:text-white/90 transition-colors duration-300"
+    >
+      {title}
+    </p>
+  </div>
+
+  <!-- Decorative corner -->
+  <div
+    class="absolute top-3 right-3 w-6 h-6 border-t border-r border-white/10 rounded-tr-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+  >
+  </div>
+</div>
+
+<style>
+  .services-skills-card {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* Animación sutil al cargar */
+  .services-skills-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Efecto de hover mejorado */
+  .group:hover {
+    transform: translateY(-2px) scale(1.02);
+  }
+</style>

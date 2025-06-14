@@ -3,14 +3,7 @@ import IconLogo from "src/icons/IconLogo.astro";
 import IconMenu from "src/icons/IconMenu.astro";
 import IconCross from "src/icons/IconCross.astro";
 import NavLink from "@components/ui/NavLink.astro";
-
-const LINKS = [
-  { href: "/services", text: "Servicios" },
-  { href: "/#experience", text: "Experiencia" },
-  { href: "/#works", text: "Trabajos" },
-  { href: "/#projects", text: "Proyectos" },
-  { href: "/#contact", text: "Contacto" },
-];
+import { LINKS } from "@utils/constants";
 ---
 
 <header

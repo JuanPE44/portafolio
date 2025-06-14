@@ -1,0 +1,16 @@
+---
+import CardSkill from "./CardSkill.astro";
+import { SKILLS } from "@utils/constants"; // Asume que tienes las skills en constants
+---
+
+<section class="relative pt-6 md:pt-20 pb-4 md:pb-6">
+  <div
+    class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
+  >
+    {
+      SKILLS.map((skill, index) => (
+        <CardSkill title={skill.title} icon={skill.icon} index={index} />
+      ))
+    }
+  </div>
+</section>
