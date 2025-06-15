@@ -15,7 +15,7 @@ const { popular, color, icon, title, description, features, price, index } =
 ---
 
 <div
-  class={`card-service flex flex-col justify-between group relative backdrop-blur-sm rounded-2xl p-4 lg:p-5 shadow-2xl transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-3xl border border-color-border  ${popular ? "ring-2 ring-secondary" : "grayscale-100"}  hover:grayscale-0`}
+  class={`card-service flex flex-col justify-between group relative backdrop-blur-sm rounded-2xl p-4 lg:p-5 shadow-2xl transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-3xl border border-color-border  ${popular ? "ring-2 ring-secondary" : "grayscale-0 sm:grayscale-100"}  hover:grayscale-0 `}
   style={`animation-delay: ${index * 100}ms; background: linear-gradient(135deg, var(--color-gray-bg), rgba(58, 65, 53, 0.2));`}
 >
   <!-- Popular badge -->

@@ -9,7 +9,7 @@ import ListOfFAQS from "./ListOfFAQS.astro";
 
 <ContainerSection id="faq">
   <!-- Background decorative elements -->
-  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+  <div class="absolute inset-0 pointer-events-none">
     <div
       class="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
     >
@@ -20,11 +20,9 @@ import ListOfFAQS from "./ListOfFAQS.astro";
     </div>
   </div>
 
-  <div class="container mx-auto max-w-4xl px-4 relative z-10">
-    <SectionTitle text="Preguntas frecuentes">
-      <IconQuestion />
-    </SectionTitle>
+  <SectionTitle text="Preguntas frecuentes">
+    <IconQuestion />
+  </SectionTitle>
 
-    <ListOfFAQS />
-  </div>
+  <ListOfFAQS />
 </ContainerSection>
