@@ -1,0 +1,48 @@
+---
+interface Props {
+  id: string;
+  question: string;
+  answer: string;
+}
+
+const { id, question, answer } = Astro.props;
+---
+
+<div
+  class="faq-item bg-gray-bg rounded-2xl border border-color-border overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+  data-faq={id}
+>
+  <button
+    class="faq-question w-full text-left p-4 flex items-center justify-between gap-4 transition-colors duration-200 hover:bg-white/5 cursor-pointer"
+    onclick={`toggleFAQ('${id}')`}
+  >
+    <h3 class="text-lg md:text-xl font-semibold text-white pr-4">
+      {question}
+    </h3>
+    <div
+      class="faq-icon flex-shrink-0 w-8 h-8 bg-bg rounded-full flex items-center justify-center transition-transform duration-300"
+    >
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="text-secondary"
+      >
+        <path d="M6 9l6 6 6-6"></path>
+      </svg>
+    </div>
+  </button>
+
+  <div
+    class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-out"
+  >
+    <div class="p-4">
+      <p class="text-gray leading-relaxed">{answer}</p>
+    </div>
+  </div>
+</div>

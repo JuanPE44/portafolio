@@ -54,7 +54,7 @@ const variant = getCardVariant(index);
 ---
 
 <div
-  class={`group relative h-32  services-skills-card flex items-center gap-4 px-5 md:px-6 border border-color-border rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:border-white/10 bg-gradient-to-br ${variant.gradient}`}
+  class={`card-skill group relative h-28  services-skills-card flex items-center gap-4 px-5 md:px-6 border border-color-border rounded-2xl transition-all duration-300   bg-gradient-to-br ${variant.gradient}`}
 >
   <!-- Overlay con efecto hover -->
   <div
@@ -104,27 +104,5 @@ const variant = getCardVariant(index);
   .services-skills-card {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-  }
-
-  /* Animación sutil al cargar */
-  .services-skills-card {
-    animation: fadeInUp 0.6s ease-out forwards;
-    opacity: 0;
-  }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Efecto de hover mejorado */
-  .group:hover {
-    transform: translateY(-2px) scale(1.02);
   }
 </style>

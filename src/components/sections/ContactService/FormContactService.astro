@@ -1,0 +1,194 @@
+---
+import IconWhatsapp from "src/icons/IconWhatsapp.astro";
+import Input from "@components/ui/Input.astro";
+---
+
+<section>
+  <div class="container mx-auto max-w-6xl relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 items-start">
+      <!-- Contact Form -->
+      <div class="order-2 lg:order-1">
+        <form
+          action="https://formsubmit.co/juantandil123@gmail.com"
+          method="POST"
+          class="relative p-8 md:p-10 border border-color-border bg-gray-bg rounded-2xl"
+        >
+          <div
+            class="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-r from-primary to-secondary opacity-20 blur-2xl rounded-full"
+          >
+          </div>
+
+          <h3 class="text-white text-2xl font-bold mb-6 text-center">
+            Envíame un mensaje
+          </h3>
+
+          <!-- Hidden inputs for FormSubmit -->
+          <input
+            type="hidden"
+            name="_next"
+            value="https://juanpenalba.vercel.app/#contact"
+          />
+          <input
+            type="hidden"
+            name="_autoresponse"
+            value="Gracias por tu mensaje, el correo fue enviado correctamente :)"
+          />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+
+          <div class="space-y-4">
+            <Input name="name" type="text" placeholder="Tu nombre completo" />
+            <Input
+              name="email"
+              type="email"
+              placeholder="Tu correo electrónico"
+            />
+            <Input
+              name="phone"
+              type="text"
+              required={false}
+              placeholder="Tu teléfono (opcional)"
+            />
+            <div>
+              <label class="block text-sm font-medium text-gray mb-2"
+                >Tipo de proyecto</label
+              >
+              <select
+                name="project_type"
+                class="w-full text-white border border-color-border bg-gray-bg rounded-xl py-3 px-4 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+              >
+                <option value="">Selecciona una opción</option>
+                <option value="landing">Landing Page</option>
+                <option value="institutional">Sitio Web Institucional</option>
+                <option value="ecommerce">Tienda Online</option>
+                <option value="custom">Página a Medida</option>
+                <option value="other">Otro</option>
+              </select>
+            </div>
+            <textarea
+              name="message"
+              placeholder="Contame sobre tu proyecto, qué necesitás y cualquier detalle importante..."
+              rows="5"
+              required
+              class="w-full text-white border border-color-border bg-gray-bg rounded-xl py-3 px-4 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent resize-none"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-secondary text-bg font-bold py-2 px-4 rounded-xl mt-6 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-primary/25"
+          >
+            Enviar mensaje
+          </button>
+        </form>
+      </div>
+
+      <!-- Contact Options -->
+      <div class="order-1 lg:order-2 space-y-4">
+        <!-- WhatsApp Option -->
+        <div
+          class="bg-gray-bg border border-color-border rounded-2xl p-6 md:p-8 relative overflow-hidden group hover:scale-105 transition-all duration-300"
+        >
+          <div
+            class="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"
+          >
+          </div>
+
+          <div class="relative z-10">
+            <div class="flex items-center gap-4 mb-4">
+              <div
+                class="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center"
+              >
+                <IconWhatsapp width="24" height="24" className="fill-bg" />
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-white">WhatsApp</h3>
+                <p class="text-gray text-sm">Respuesta inmediata</p>
+              </div>
+            </div>
+
+            <p class="text-gray mb-6 leading-relaxed">
+              Enviame un mensaje a whatsapp y contandome sobre tu proyecto
+            </p>
+
+            <a
+              href="https://wa.me/5492281234567?text=Hola! Me interesa desarrollar una página web. ¿Podemos hablar?"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 bg-secondary text-bg font-semibold py-3 px-6 rounded-xl hover:scale-105 transition-all duration-300"
+            >
+              <IconWhatsapp width="20" height="20" className="fill-bg" />
+              Escribir por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Email Option -->
+        <div
+          class="bg-gray-bg border border-color-border rounded-2xl p-6 md:p-8 relative overflow-hidden group hover:scale-105 transition-all duration-300"
+        >
+          <div
+            class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"
+          >
+          </div>
+
+          <div class="relative z-10">
+            <div class="flex items-center gap-4 mb-4">
+              <div
+                class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="text-white"
+                >
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  ></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-white">Email</h3>
+                <p class="text-gray text-sm">Respuesta en 24hs</p>
+              </div>
+            </div>
+
+            <p class="text-gray mb-6 leading-relaxed">
+              Perfecto para enviar detalles del proyecto, referencias o
+              archivos. Te respondo con una propuesta detallada.
+            </p>
+
+            <a
+              href="mailto:juantandil123@gmail.com?subject=Consulta sobre desarrollo web&body=Hola Juan, me interesa desarrollar una página web. Te cuento sobre mi proyecto:"
+              class="inline-flex items-center gap-2 bg-primary text-white font-semibold py-3 px-6 rounded-xl hover:scale-105 transition-all duration-300"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                ></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              Enviar email
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -4,12 +4,19 @@ interface Props {
   type: "text" | "email" | "password" | null | undefined;
   placeholder: string;
   className?: string;
+  required?: boolean;
 }
-const { name, type, placeholder, className = "" } = Astro.props;
+const {
+  name,
+  type,
+  placeholder,
+  className = "",
+  required = true,
+} = Astro.props;
 ---
 
 <input
-  required
+  required={required}
   type={type}
   name={name}
   placeholder={placeholder}

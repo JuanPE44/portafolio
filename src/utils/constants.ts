@@ -5,7 +5,7 @@ export const SERVICES = [
     description:
       "Ideal para emprendimientos y profesionales que recién empiezan.",
     price: "$45.000",
-    icon: "landing",
+    icon: `<rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M9 9h6v6H9z"></path>`,
     color: "primary",
     features: [
       "Sitio de una sola página",
@@ -20,7 +20,7 @@ export const SERVICES = [
     title: "Sitio Web Institucional",
     description: "Ideal para negocios establecidos con más contenido.",
     price: "$85.000",
-    icon: "institutional",
+    icon: `<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9,22 9,12 15,12 15,22"></polyline>`,
     color: "primary",
     features: [
       "Varias secciones (Inicio, Servicios, Nosotros, Contacto, etc.)",
@@ -35,7 +35,7 @@ export const SERVICES = [
     title: "Tienda Online",
     description: "Ideal para emprendedores que quieren vender por internet.",
     price: "$120.000",
-    icon: "ecommerce",
+    icon: `<circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="m2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>`,
     color: "primary",
     features: [
       "Catálogo de productos",
@@ -50,7 +50,7 @@ export const SERVICES = [
     title: "Página a Medida",
     description: "¿Necesitás algo distinto? Lo hacemos.",
     price: "Consultar",
-    icon: "custom",
+    icon: `<path d="M12 3a6.364 6.364 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>`,
     color: "primary",
     popular: true,
     features: [
@@ -67,7 +67,6 @@ export const LINKS = [
   { href: "/#experience", text: "Experiencia" },
   { href: "/#works", text: "Trabajos" },
   { href: "/#projects", text: "Proyectos" },
-  { href: "/#contact", text: "Contacto" },
 ];
 
 export const SKILLS = [
@@ -94,5 +93,44 @@ export const SKILLS = [
   {
     title: "Optimización para buscadores (SEO)",
     icon: `<path d="M3 3h18v18H3V3z"></path><path d="M7 14l3-3 2 2 4-4"></path>`,
+  },
+];
+
+export const FAQS = [
+  {
+    id: "precio",
+    question: "¿Que es una landing page?",
+    answer:
+      "Una landing page es una página web pensada para cumplir un único objetivo: convertir visitantes en clientes. Por ejemplo, puede usarse para que una persona te deje sus datos, se registre a un evento o compre un producto. A diferencia de una web tradicional, que tiene muchas secciones, la landing page es simple, directa y está diseñada para que el visitante se enfoque en una sola acción (como apretar un botón o completar un formulario). Es ideal para campañas publicitarias, lanzamientos o promociones.",
+  },
+  {
+    id: "tipos",
+    question: "¿Qué tipo de páginas hacés? ",
+    answer:
+      "Trabajo principalmente con emprendedores, negocios y profesionales, pero también desarrollo sitios para eventos, portfolios personales o proyectos específicos. Cada sitio es 100% personalizado según tus objetivos.",
+  },
+  {
+    id: "tiempo",
+    question: "¿Cuánto tarda en estar lista?",
+    answer:
+      "El tiempo estimado varía según la complejidad del sitio. Una landing page puede estar lista en pocos días, mientras que una tienda online o un sitio a medida puede tardar entre 2 y 4 semanas. Siempre te informo los plazos antes de comenzar.",
+  },
+  {
+    id: "requisitos",
+    question: "¿Qué necesito tener para empezar?",
+    answer:
+      "Solo necesitás tener una idea clara de lo que querés comunicar y, si ya tenés, tu logo, imágenes y textos. Si no tenés todo eso, no te preocupes: también puedo ayudarte con el contenido y el diseño desde cero.",
+  },
+  {
+    id: "responsive",
+    question: "¿La página va a funcionar en celular?",
+    answer:
+      "Sí, todos los sitios que desarrollo son 100% responsivos. Eso significa que se ven y funcionan perfectamente en celulares, tablets y computadoras.",
+  },
+  {
+    id: "dominio",
+    question: "¿Puedo tener mi propio dominio (ej: mipagina.com)?",
+    answer:
+      "Sí, puedo ayudarte a registrar tu dominio si todavía no tenés uno. También me encargo de conectarlo correctamente a tu sitio.",
   },
 ];

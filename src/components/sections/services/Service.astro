@@ -2,23 +2,14 @@
 import ContainerSection from "@components/ui/ContainerSection.astro";
 import SectionTitle from "@components/ui/SectionTitle.astro";
 import ListOfServices from "@components/sections/services/ListOfServices.astro";
-import ServiceHero from "./ServiceHero.astro";
-import ListOfSkills from "./ListOfSkills.astro";
-import ServiceCTA from "./ServiceCTA.astro";
+import IconService from "src/icons/IconService.astro";
 
 // ServicesSection.astro
 ---
 
-<ContainerSection id="hero" className="bg-bg">
-  <ServiceHero />
-
+<ContainerSection id="hero" className="">
+  <SectionTitle text="Servicios" className="my-10 md:my-20">
+    <IconService />
+  </SectionTitle>
   <ListOfServices />
-
-  <h2
-    class="text-3xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-white text-center"
-  >
-    ¿Por que elegirme?
-  </h2>
-  <ListOfSkills />
-  <ServiceCTA />
 </ContainerSection>

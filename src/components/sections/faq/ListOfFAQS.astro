@@ -1,0 +1,67 @@
+---
+import { FAQS } from "@utils/constants";
+import CardFAQ from "./CardFAQ.astro";
+---
+
+<!-- FAQ Items -->
+<div class="space-y-4 mb-16">
+  {
+    FAQS.map((faq) => (
+      <CardFAQ id={faq.id} question={faq.question} answer={faq.answer} />
+    ))
+  }
+</div>
+
+<script>
+  declare global {
+    interface Window {
+      toggleFAQ: (id: number) => void;
+    }
+  }
+
+  function toggleFAQ(id: number) {
+    const faqItem = document.querySelector(`[data-faq="${id}"]`) as HTMLElement;
+    const answer = faqItem!.querySelector(".faq-answer") as HTMLElement;
+    const icon = faqItem!.querySelector(".faq-icon") as HTMLElement;
+    const isOpen = answer.style.maxHeight && answer.style.maxHeight !== "0px";
+
+    // Close all other FAQs
+    document.querySelectorAll(".faq-item").forEach((item) => {
+      if (item !== faqItem) {
+        const otherAnswer = item.querySelector(".faq-answer") as HTMLElement;
+        const otherIcon = item.querySelector(".faq-icon") as HTMLElement;
+        otherAnswer.style.maxHeight = "0px";
+        otherIcon.style.transform = "rotate(0deg)";
+        item.classList.remove("faq-active");
+      }
+    });
+
+    // Toggle current FAQ
+    if (isOpen) {
+      answer.style.maxHeight = "0px";
+      icon.style.transform = "rotate(0deg)";
+      faqItem.classList.remove("faq-active");
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+      icon.style.transform = "rotate(180deg)";
+      faqItem.classList.add("faq-active");
+    }
+  }
+
+  // Make function globally available
+  window.toggleFAQ = toggleFAQ;
+</script>
+
+<style>
+  .faq-active .faq-question {
+    background-color: rgba(255, 255, 255, 0.03);
+  }
+
+  .faq-active .faq-icon {
+    background-color: var(--color-secondary);
+  }
+
+  .faq-active .faq-icon svg {
+    color: var(--color-white);
+  }
+</style>
