@@ -1,18 +1,145 @@
-<form id="contact-form">
-  <input type="text" name="name" placeholder="Tu nombre" required />
-  <input type="email" name="email" placeholder="Tu email" required />
-  <textarea name="message" placeholder="Tu mensaje" required></textarea>
-  <button type="submit">Enviar</button>
+---
+import Input from "@components/ui/Input.astro";
+---
+
+<form
+  id="contact-form"
+  method="POST"
+  class="relative p-8 md:p-10 border border-color-border bg-gray-bg rounded-2xl max-w-lg mx-auto"
+>
+  <!-- Fondo decorativo -->
+  <div
+    class="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-r from-primary to-secondary opacity-20 blur-2xl rounded-full"
+  >
+  </div>
+
+  <h3 class="text-white text-2xl font-bold mb-6 text-center">
+    Envíame un mensaje
+  </h3>
+
+  <!-- Mensajes -->
+  <div
+    id="success-message"
+    class="hidden bg-gradient-to-r from-secondary/20 to-secondary/10 border border-secondary/30 text-secondary p-4 rounded-xl mb-4 animate-fade-in"
+  >
+    <div class="flex items-center gap-3">
+      <svg
+        class="text-secondary flex-shrink-0"
+        width="20"
+        height="20"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        ><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline
+          points="22,4 12,14.01 9,11.01"></polyline></svg
+      >
+      <div>
+        <p class="font-semibold">¡Mensaje enviado correctamente!</p>
+        <p class="text-sm text-secondary/80">
+          Te responderé a la brevedad. Gracias por contactarme.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div
+    id="error-message"
+    class="hidden bg-gradient-to-r from-red-500/20 to-red-500/10 border border-red-500/30 text-red-400 p-4 rounded-xl mb-4 animate-fade-in"
+  >
+    <div class="flex items-center gap-3">
+      <svg
+        class="text-red-400 flex-shrink-0"
+        width="20"
+        height="20"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        ><circle cx="12" cy="12" r="10"></circle><line
+          x1="15"
+          y1="9"
+          x2="9"
+          y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg
+      >
+      <div>
+        <p class="font-semibold">Error al enviar el mensaje</p>
+        <p class="text-sm text-red-400/80">
+          Por favor, intenta nuevamente o contáctame por WhatsApp.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div
+    id="loading-message"
+    class="hidden bg-gradient-to-r from-primary/20 to-primary/10 border border-primary/30 text-primary p-4 rounded-xl mb-4 animate-pulse"
+  >
+    <div class="flex items-center gap-3">
+      <svg
+        class="text-primary animate-spin flex-shrink-0"
+        width="20"
+        height="20"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"><path d="M21 12a9 9 0 11-6.219-8.56"></path></svg
+      >
+      <p class="font-semibold">Enviando mensaje...</p>
+    </div>
+  </div>
+
+  <!-- Hidden inputs -->
+  <input type="hidden" name="_captcha" value="false" />
+  <input type="hidden" name="_template" value="table" />
+
+  <!-- Campos del formulario -->
+  <div class="space-y-4">
+    <Input name="name" type="text" placeholder="Tu nombre completo" />
+    <Input name="email" type="email" placeholder="Tu correo electrónico" />
+  </div>
+
+  <textarea
+    name="message"
+    required
+    placeholder="Contame sobre tu proyecto, qué necesitás y cualquier detalle importante..."
+    rows="5"
+    class="w-full text-white border border-color-border bg-gray-bg rounded-xl py-3 px-4 mt-4 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent resize-none"
+  ></textarea>
+  <button
+    type="submit"
+    id="submit-button"
+    class="w-full bg-secondary cursor-pointer text-bg font-bold py-3 px-4 rounded-xl mt-6 hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+  >
+    <span id="button-text">Enviar mensaje</span>
+  </button>
 </form>
 
-<script>
+<script type="module">
   document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById(
-      "contact-form"
-    ) as HTMLFormElement | null;
-    if (!form) return;
+    const form = document.getElementById("contact-form");
+    const submitButton = document.getElementById("submit-button");
+    const buttonText = document.getElementById("button-text");
+    const successMessage = document.getElementById("success-message");
+    const errorMessage = document.getElementById("error-message");
+    const loadingMessage = document.getElementById("loading-message");
+
+    const showMessage = (element, duration = 6000) => {
+      element?.classList.remove("hidden");
+      setTimeout(() => {
+        element?.classList.add("hidden");
+      }, duration);
+    };
+
+    const hideAllMessages = () => {
+      successMessage?.classList.add("hidden");
+      errorMessage?.classList.add("hidden");
+      loadingMessage?.classList.add("hidden");
+    };
+
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
+      hideAllMessages();
+      showMessage(loadingMessage);
+      submitButton.disabled = true;
+      buttonText.textContent = "Enviando...";
 
       const formData = new FormData(form);
       const data = {
@@ -21,58 +148,73 @@
         message: formData.get("message"),
       };
 
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
+      try {
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
 
-      if (res.ok) {
-        alert("Mensaje enviado correctamente");
-        form.reset();
-      } else {
-        alert("Error al enviar el mensaje");
+        loadingMessage?.classList.add("hidden");
+
+        if (res.ok) {
+          showMessage(successMessage, 8000);
+          form.reset();
+        } else {
+          throw new Error("Error al enviar el formulario");
+        }
+      } catch (err) {
+        loadingMessage?.classList.add("hidden");
+        showMessage(errorMessage, 8000);
+        console.error(err);
+      } finally {
+        submitButton.disabled = false;
+        buttonText.textContent = "Enviar mensaje";
       }
+    });
+
+    // Validación visual
+    const inputs = form.querySelectorAll("input[required], textarea[required]");
+    inputs.forEach((input) => {
+      input.addEventListener("invalid", (e) => {
+        e.preventDefault();
+        const target = e.target;
+        target.classList.add("border-red-500");
+        target.addEventListener(
+          "input",
+          () => {
+            target.classList.remove("border-red-500");
+          },
+          { once: true }
+        );
+      });
     });
   });
 </script>
 
-<!-- 
-<form
-  action="https://formsubmit.co/juantandil123@gmail.com"
-  method="POST"
-  class="flex flex-col gap-4 max-w-lg mx-auto relative p-10 border border-color-border bg-gray-bg rounded-2xl"
->
-  <h2 class="text-gray text-2xl text-center font-bold mb-5">
-    Envíame un mensaje
-  </h2>
-  <div
-    class="w-96 h-96 bg-gradient-to-r -top-1/2 from-primary to-secondary opacity-15 blur-3xl absolute left-1/2 transform -translate-x-1/2 rounded-full -z-10"
-  >
-  </div>
-  <input
-    type="hidden"
-    name="_next"
-    value="https://juanpenalba.vercel.app/#contact"
-  />
-  <input
-    type="hidden"
-    name="_autoresponse"
-    value="Gracias por tu mensaje, el correo fue enviado correctamente :)"
-  />
-  <input type="hidden" name="_template" value="table" />
-  <Input name="name" type="text" placeholder="Ingresa tu nombre" />
-  <Input name="email" type="email" placeholder="Ingresa tu correo" />
-  <textarea
-    name="message"
-    placeholder="Mensaje"
-    class="text-white border border-[#fff1] min-h-40 bg-gray-bg rounded-2xl py-2 px-4 focus:outline-none focus:ring-2 focus:ring-zinc-600"
-  ></textarea>
-  <button
-    type="submit"
-    class="bg-secondary text-center font-bold text-bg py-2 px-4 rounded-2xl mt-3 hover:scale-105 transition-[0.3s]"
-    >Enviar</button
-  >
-</form>
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
--->
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-spin {
+    animation: spin 1s linear infinite;
+  }
+</style>
