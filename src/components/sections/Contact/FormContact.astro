@@ -1,8 +1,43 @@
----
-import IconWhatsapp from "src/icons/IconWhatsapp.astro";
-import Input from "@components/ui/Input.astro";
----
+<form id="contact-form">
+  <input type="text" name="name" placeholder="Tu nombre" required />
+  <input type="email" name="email" placeholder="Tu email" required />
+  <textarea name="message" placeholder="Tu mensaje" required></textarea>
+  <button type="submit">Enviar</button>
+</form>
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById(
+      "contact-form"
+    ) as HTMLFormElement | null;
+    if (!form) return;
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const data = {
+        name: formData.get("name"),
+        email: formData.get("email"),
+        message: formData.get("message"),
+      };
+
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        alert("Mensaje enviado correctamente");
+        form.reset();
+      } else {
+        alert("Error al enviar el mensaje");
+      }
+    });
+  });
+</script>
+
+<!-- 
 <form
   action="https://formsubmit.co/juantandil123@gmail.com"
   method="POST"
@@ -39,3 +74,5 @@ import Input from "@components/ui/Input.astro";
     >Enviar</button
   >
 </form>
+
+-->
