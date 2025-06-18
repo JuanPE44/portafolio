@@ -7,17 +7,29 @@ import "@fontsource-variable/baloo-paaji-2";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content="Portafolio de Juan Peñalba" />
     <link rel="icon" type="image/webp" href="/images/logo.webp" />
     <title>Juan Peñalba</title>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <title>Juan Peñalba – Desarrollador Web</title>
+    <meta
+      name="description"
+      content="Portafolio de Juan Peñalba, desarrollador web especializado en sitios rápidos, modernos y adaptados a tu marca."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Juan Peñalba" />
+    <meta property="og:title" content="Juan Peñalba – Desarrollador Web" />
+    <meta property="og:description" content="Portafolio de Juan Peñalba..." />
+    <meta
+      property="og:image"
+      content="https://juanpenalba.vercel.app/images/foto-hero.webp"
+    />
+    <meta property="og:url" content="https://juanpenalba.vercel.app" />
   </head>
-  <body>
+  <body class="font-baloo">
     <ContainerPage>
       <Header />
       <slot />
@@ -25,13 +37,3 @@ import "@fontsource-variable/baloo-paaji-2";
     </ContainerPage>
   </body>
 </html>
-
-<style is:global>
-  html,
-  body {
-    scroll-behavior: smooth;
-  }
-  body {
-    font-family: "Baloo Paaji 2 Variable", system-ui;
-  }
-</style>
