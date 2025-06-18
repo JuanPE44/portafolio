@@ -1,22 +1,33 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
+@theme {
   --color-primary: #e126eb;
   --color-secondary: #77eb26;
   --color-tertiary: #ffd700;
   --color-white: #fafafa;
-  --color-gray: #d8d8d8;
   --color-bg: #3a4135;
+  --color-gray: #d8d8d8;
   --color-gray-bg: #52525252;
-  --color-border: #686868;
-  --color-clock: var(--color-primary);
-  --color-hour: #fff;
-  --color-minute: #aaa;
-  --color-second: #555;
+  --color-color-border: #fff1;
+
+  --font-baloo: Baloo Paaji 2, ui-serif, Georgia, Cambria, "Times New Roman",
+    Times, serif;
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
 }
 
 body {
   background-color: var(--color-bg);
+  ::selection {
+    background: var(--color-primary);
+    color: var(--color-white);
+  }
 }

@@ -1,0 +1,15 @@
+---
+import ContainerSection from "@components/ui/ContainerSection.astro";
+import SectionTitle from "@components/ui/SectionTitle.astro";
+import ListOfServices from "@components/sections/services/ListOfServices.astro";
+import IconService from "src/icons/IconService.astro";
+
+// ServicesSection.astro
+---
+
+<ContainerSection id="services" className="">
+  <SectionTitle text="Servicios" className="my-10 md:my-20">
+    <IconService />
+  </SectionTitle>
+  <ListOfServices />
+</ContainerSection>

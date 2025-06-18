@@ -1,10 +1,16 @@
+:root {
+  --color-hour: #fff;
+  --color-minute: #aaa;
+  --color-second: #555;
+}
+
 .container {
   margin: auto;
   z-index: 100;
 }
 
 .container-clock {
-  border: 3px solid var(--color-clock);
+  border: 3px solid var(--color-primary);
   border-radius: 50%;
   z-index: 100;
 }
@@ -53,7 +59,7 @@
   position: absolute;
   width: 1px;
   height: 5px;
-  background-color: var(--color-clock);
+  background-color: var(--color-primary);
 }
 
 .center {
@@ -66,7 +72,7 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: var(--color-clock);
+  background-color: var(--color-primary);
   z-index: 30;
 }
 
@@ -74,7 +80,7 @@
   position: absolute;
   width: 3px;
   height: 8px;
-  background-color: var(--color-clock);
+  background-color: var(--color-primary);
   border-radius: 0 0 5px 5px;
 }
 

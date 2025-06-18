@@ -1,0 +1,146 @@
+---
+interface Props {
+  popular: boolean;
+  color: string;
+  icon: string;
+  title: string;
+  description: string;
+  features: string[];
+  price: string;
+  index: number;
+}
+
+const { popular, color, icon, title, description, features, price, index } =
+  Astro.props;
+---
+
+<div
+  class={`card-service flex flex-col justify-between group relative backdrop-blur-sm rounded-2xl p-4 lg:p-5 shadow-2xl transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-3xl border border-color-border  ${popular ? "ring-2 ring-secondary" : "grayscale-0 sm:grayscale-100"}  hover:grayscale-0 `}
+  style={`animation-delay: ${index * 100}ms; background: linear-gradient(135deg, var(--color-gray-bg), rgba(58, 65, 53, 0.2));`}
+>
+  <!-- Popular badge -->
+  {
+    popular && (
+      <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+        <div class="text-bg py-1.5 px-4 rounded-full text-xs font-semibold shadow-lg bg-secondary">
+          ⭐ Más popular
+        </div>
+      </div>
+    )
+  }
+
+  <!-- Glow effect on hover -->
+  <div
+    class={`absolute inset-0 opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-500 hover-glow-${color}`}
+  >
+  </div>
+
+  <!-- Icon -->
+  <div class="relative mb-4">
+    <div
+      class={`w-12 h-12 lg:w-14 lg:h-14 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 bg-${color}`}
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="text-white"
+        set:html={icon}
+      />
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 flex-1 flex flex-col justify-between">
+    <div class="flex flex-col">
+      <h3
+        class="text-2xl font-bold text-white mb-2 transition-all duration-300"
+      >
+        {title}
+      </h3>
+
+      <p
+        class="text-gray mb-4 leading-relaxed text-base lg:text-base line-clamp-2"
+      >
+        {description}
+      </p>
+
+      <!-- Features list -->
+      <ul class="space-y-2 mb-5">
+        {
+          features.map((feature) => (
+            <li class="flex items-start gap-2 transition-colors duration-300">
+              <div
+                class={`flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center mt-0.5 bg-${color}`}
+              >
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="text-white"
+                >
+                  <polyline points="20,6 9,17 4,12" />
+                </svg>
+              </div>
+              <span class="text-xs lg:text-sm text-white leading-relaxed">
+                {feature}
+              </span>
+            </li>
+          ))
+        }
+      </ul>
+
+      <!-- Pricing -->
+      <div class="border-t border-color-border pt-4">
+        {
+          price === "Consultar" && (
+            <div class="text-center">
+              <span class="text-sm font-semibold text-secondary">
+                Contame tu idea
+              </span>
+            </div>
+          )
+        }
+      </div>
+    </div>
+
+    <!-- CTA Button -->
+    <div class="mt-4 w-full">
+      <a
+        href="#contact"
+        class="cursor-pointer block text-center w-full bg-secondary text-bg py-2.5 px-4 rounded-lg font-bold text-sm transition-all duration-300"
+      >
+        Consultar
+      </a>
+    </div>
+  </div>
+
+  <!-- Decorative corner -->
+  <div
+    class="absolute top-3 right-3 w-6 h-6 border-t-2 border-r-2 border-color-border rounded-tr-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+  >
+  </div>
+</div>
+
+<style>
+  /* Solo los estilos esenciales que no se pueden hacer con Tailwind */
+
+  /* Efectos hover con gradientes */
+  .hover-glow-primary {
+    background: linear-gradient(
+      135deg,
+      var(--color-primary),
+      var(--color-secondary)
+    );
+  }
+</style>

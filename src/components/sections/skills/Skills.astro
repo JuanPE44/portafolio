@@ -1,0 +1,15 @@
+---
+import ContainerSection from "@components/ui/ContainerSection.astro";
+import SectionTitle from "@components/ui/SectionTitle.astro";
+import ListOfSkills from "./ListOfSkills.astro";
+import IconImportant from "src/icons/IconImportant.astro";
+import CardCTA from "../services/CardCTA.astro";
+---
+
+<ContainerSection id="hero" className="">
+  <SectionTitle text="¿Por que elegirme?">
+    <IconImportant />
+  </SectionTitle>
+  <ListOfSkills />
+  <CardCTA />
+</ContainerSection>

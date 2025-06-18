@@ -94,19 +94,43 @@ import Input from "@components/ui/Input.astro";
   <div class="space-y-4">
     <Input name="name" type="text" placeholder="Tu nombre completo" />
     <Input name="email" type="email" placeholder="Tu correo electrónico" />
+    <Input
+      name="phone"
+      type="text"
+      placeholder="Tu teléfono (opcional)"
+      required={false}
+    />
+
+    <div>
+      <label class="block text-sm font-medium text-gray mb-2"
+        >Tipo de proyecto</label
+      >
+      <select
+        name="project_type"
+        class="w-full text-white border border-color-border bg-gray-bg rounded-xl py-3 px-4 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+      >
+        <option value="">Selecciona una opción</option>
+        <option value="landing">Landing Page</option>
+        <option value="institutional">Sitio Web Institucional</option>
+        <option value="ecommerce">Tienda Online</option>
+        <option value="custom">Página a Medida</option>
+        <option value="other">Otro</option>
+      </select>
+    </div>
+
+    <textarea
+      name="message"
+      required
+      placeholder="Contame sobre tu proyecto, qué necesitás y cualquier detalle importante..."
+      rows="5"
+      class="w-full text-white border border-color-border bg-gray-bg rounded-xl py-3 px-4 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent resize-none"
+    ></textarea>
   </div>
 
-  <textarea
-    name="message"
-    required
-    placeholder="Contame sobre tu proyecto..."
-    rows="5"
-    class="w-full text-white border border-color-border bg-gray-bg rounded-xl py-3 px-4 mt-4 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent resize-none"
-  ></textarea>
   <button
     type="submit"
     id="submit-button"
-    class="w-full bg-secondary cursor-pointer text-bg font-bold py-3 px-4 rounded-xl mt-6 hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+    class="w-full cursor-pointer bg-secondary text-bg font-bold py-3 px-4 rounded-xl mt-6 hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
   >
     <span id="button-text">Enviar mensaje</span>
   </button>
@@ -145,11 +169,13 @@ import Input from "@components/ui/Input.astro";
       const data = {
         name: formData.get("name"),
         email: formData.get("email"),
+        phone: formData.get("phone"),
+        project_type: formData.get("project_type"),
         message: formData.get("message"),
       };
 
       try {
-        const res = await fetch("/api/contact", {
+        const res = await fetch("/api/contact-service", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data),

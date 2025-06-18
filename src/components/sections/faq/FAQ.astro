@@ -1,0 +1,28 @@
+---
+import ContainerSection from "@components/ui/ContainerSection.astro";
+import SectionTitle from "@components/ui/SectionTitle.astro";
+import IconQuestion from "src/icons/IconQuestion.astro";
+import ListOfFAQS from "./ListOfFAQS.astro";
+
+// FAQSection.astro
+---
+
+<ContainerSection id="faq">
+  <!-- Background decorative elements -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div
+      class="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"
+    >
+    </div>
+  </div>
+
+  <SectionTitle text="Preguntas frecuentes">
+    <IconQuestion />
+  </SectionTitle>
+
+  <ListOfFAQS />
+</ContainerSection>
