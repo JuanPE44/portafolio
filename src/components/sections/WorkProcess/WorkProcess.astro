@@ -1,0 +1,243 @@
+---
+import ContainerSection from "@components/ui/ContainerSection.astro";
+import SectionTitle from "@components/ui/SectionTitle.astro";
+---
+
+<ContainerSection id="work-process">
+  <SectionTitle text="¿Como es trabajar conmigo?">
+    <svg width="20" height="20" viewBox="0 0 24 24"
+      ><g
+        fill="none"
+        class="stroke-primary"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1.5"
+        color="#000000"
+        ><path
+          d="M9 9a3 3 0 1 1-6 0a3 3 0 0 1 6 0m12 9a3 3 0 1 1-6 0a3 3 0 0 1 6 0"
+        ></path><path
+          d="M9 9h5c1.886 0 2.828 0 3.414.586S18 11.114 18 13v2M6 12v10M6 6V2"
+        ></path></g
+      ></svg
+    >
+  </SectionTitle>
+  <!-- Background decorative elements -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div
+      class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"
+    >
+    </div>
+  </div>
+
+  <!-- Process Steps -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 lg:gap-8">
+    <!-- Step 1 -->
+    <div class="relative group">
+      <!-- Connection Line (Desktop) -->
+      <div
+        class="hidden md:block absolute top-16 left-full w-full h-0.5 bg-gradient-to-r from-primary to-transparent -translate-x-4 z-0"
+      >
+      </div>
+
+      <div
+        class="relative bg-gray-bg border border-color-border rounded-2xl p-6 md:p-8 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 z-10"
+      >
+        <!-- Step Number -->
+        <div
+          class="absolute -top-4 -left-4 w-12 h-12 bg-primary rounded-xl flex items-center justify-center shadow-lg"
+        >
+          <span class="text-white font-bold text-lg">01</span>
+        </div>
+
+        <!-- Icon -->
+        <div class="mb-6 flex justify-center">
+          <div
+            class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center"
+          >
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="text-primary"
+            >
+              <path
+                d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+              ></path>
+              <path d="M13 8H7"></path>
+              <path d="M17 12H7"></path>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="text-center">
+          <h3 class="text-xl md:text-2xl font-bold text-white mb-4">
+            Hablemos un poco
+          </h3>
+          <p class="text-gray leading-relaxed">
+            Contanos sobre tu proyecto desde nuestro formulario así podremos
+            evaluarlo y brindarte un presupuesto personalizado.
+          </p>
+        </div>
+
+        <!-- Mobile Connection -->
+        <div class="md:hidden flex justify-center mt-8">
+          <div class="w-0.5 h-8 bg-gradient-to-b from-primary to-transparent">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="relative group">
+      <!-- Connection Line (Desktop) -->
+      <div
+        class="hidden md:block absolute top-16 left-full w-full h-0.5 bg-gradient-to-r from-secondary to-transparent -translate-x-4 z-0"
+      >
+      </div>
+
+      <div
+        class="relative bg-gray-bg border border-color-border rounded-2xl p-6 md:p-8 transition-all duration-300 hover:shadow-lg hover:shadow-secondary/10 z-10"
+      >
+        <!-- Step Number -->
+        <div
+          class="absolute -top-4 -left-4 w-12 h-12 bg-secondary rounded-xl flex items-center justify-center shadow-lg"
+        >
+          <span class="text-white font-bold text-lg">02</span>
+        </div>
+
+        <!-- Icon -->
+        <div class="mb-6 flex justify-center">
+          <div
+            class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-2xl flex items-center justify-center"
+          >
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="text-secondary"
+            >
+              <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+              <path d="M2 17l10 5 10-5"></path>
+              <path d="M2 12l10 5 10-5"></path>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="text-center">
+          <h3 class="text-xl md:text-2xl font-bold text-white mb-4">
+            Comienzo oficial
+          </h3>
+          <p class="text-gray leading-relaxed">
+            Una vez que el presupuesto sea aprobado tendremos otra reunión para
+            reunir toda la información y poner en marcha el desarrollo.
+          </p>
+        </div>
+
+        <!-- Mobile Connection -->
+        <div class="md:hidden flex justify-center mt-8">
+          <div class="w-0.5 h-8 bg-gradient-to-b from-secondary to-transparent">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="relative group">
+      <div
+        class="relative bg-gray-bg border border-color-border rounded-2xl p-6 md:p-8 transition-all duration-300 hover:shadow-lg hover:shadow-tertiary/10 z-10"
+      >
+        <!-- Step Number -->
+        <div
+          class="absolute -top-4 -left-4 w-12 h-12 bg-tertiary rounded-xl flex items-center justify-center shadow-lg"
+        >
+          <span class="text-bg font-bold text-lg">03</span>
+        </div>
+
+        <!-- Icon -->
+        <div class="mb-6 flex justify-center">
+          <div
+            class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-tertiary/20 to-tertiary/10 rounded-2xl flex items-center justify-center"
+          >
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="text-tertiary"
+            >
+              <path
+                d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"
+              ></path>
+              <path
+                d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"
+              ></path>
+              <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+              <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="text-center">
+          <h3 class="text-xl md:text-2xl font-bold text-white mb-4">
+            Entrega final
+          </h3>
+          <p class="text-gray leading-relaxed">
+            Finalizada la página web y aprobado por vos, haremos la migración de
+            la misma para dejar el sitio online y posicionado.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</ContainerSection>
+
+<style>
+  /* Animaciones adicionales */
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .group:hover .animate-float {
+    animation: float 2s ease-in-out infinite;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+  /* Connection lines hover effect */
+  .group:hover + .group::before {
+    opacity: 1;
+  }
+</style>
