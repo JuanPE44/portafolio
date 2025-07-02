@@ -17,8 +17,3 @@ Bienvenido a mi portafolio personal. Este proyecto fue desarrollado utilizando *
 - **Interfaz Moderna:** Uso de componentes interactivos y animaciones sutiles para mejorar la experiencia del usuario.
 - **Optimización y Rendimiento:** Enfocado en la carga rápida y el rendimiento óptimo de la web.
 
-## Instalación y Uso
-
-1. **Clonar el repositorio:**
-   ```bash
-   git clone https://github.com/tu-usuario/tu-portafolio.git
