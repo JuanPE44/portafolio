@@ -1,18 +1,36 @@
 ---
 import CardWork from "./CardWork.astro";
+import { works } from "@data/works";
 ---
 
 <div class="flex flex-col gap-6">
-  <div class="flex flex-col w-full items-center">
-    <CardWork
-      urlImage="/images/work-1.webp"
-      urlLink="https://mamparasesmeralda.com.ar"
-      title="Mamparas Esmeralda"
-      jobTitle="Freelancer"
-      description="Encargado del diseño y desarrollo del sitio web para Mamparas Esmeralda, donde lideré la planificación del proyecto y realicé el diseño personalizado del sitio. "
-      details={["Diseño UX/UI", "Desarrollo Frontend"]}
-      tecnologies={["Astro", "Figma", "Typescript", "Tailwind"]}
-    />
+  <div class="flex flex-col w-full items-center gap-6">
+    {
+      works.map((work) => {
+        const {
+          description,
+          jobTitle,
+          details,
+          tecnologies,
+          title,
+          urlImage,
+          urlLink,
+          urlMore
+        } = work;
+        return (
+          <CardWork
+            description={description}
+            jobTitle={jobTitle}
+            details={details}
+            tecnologies={tecnologies}
+            title={title}
+            urlImage={urlImage}
+            urlLink={urlLink}
+            urlMore={urlMore}
+          />
+        );
+      })
+    }
   </div>
   <!--
     <a

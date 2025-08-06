@@ -5,6 +5,7 @@ import IconCheck from "src/icons/IconCheck.astro";
 interface Props {
   urlImage: string;
   urlLink: string;
+  urlMore: string;
   title: string;
   description: string;
   jobTitle: string;
@@ -15,6 +16,7 @@ interface Props {
 const {
   urlImage,
   urlLink,
+  urlMore,
   title,
   jobTitle,
   description,
@@ -24,18 +26,18 @@ const {
 ---
 
 <div
-  class="flex md:flex-row flex-col items-center bg-gray-bg rounded-2xl border-[#fff1] border-[1px]"
+  class="flex md:flex-row flex-col items-center bg-gray-bg rounded-2xl border-[#fff1] border"
 >
   <div class="w-full md:w-1/2 relative">
     <img
-      class="rounded-2xl w-full h-72 md:h-[400px] object-cover object-top filter"
+      class="rounded-2xl w-full h-72 md:h-[400px] object-top-left object-cover  filter"
       src={urlImage}
       alt=""
     />
     <div
-      class="absolute top-0 left-0 w-full h-full bg-gradient-to-tr from-primary to-secondary opacity-20 rounded-2xl"
+      class="absolute top-0 left-0 w-full h-full bg-gradient-to-tr from-primary to-secondary opacity-15 rounded-2xl"
     >
-    </div>
+    </div> 
   </div>
   <div class="flex flex-col w-full md:w-1/2 p-4">
     <h3 class="text-secondary text-3xl font-bold text-left mt-3 md:mt-0">
@@ -65,8 +67,7 @@ const {
         >Link</a
       >
       <a
-        target="_blank"
-        href="https://www.linkedin.com/in/juan-peñalba-0025b6246/"
+        href={urlMore}
         class="bg-secondary text-bg font-bold py-2 px-4 rounded-2xl hover:scale-105 transition-[0.3s]"
         >Ver más</a
       >
