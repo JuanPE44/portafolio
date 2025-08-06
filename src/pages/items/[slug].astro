@@ -1,0 +1,67 @@
+---
+import ContainerSection from '@components/ui/ContainerSection.astro';
+import Layout from 'src/layouts/Layout.astro';
+import { getAllItems, getItemBySlug } from '@data/itemsData';
+import ItemBreadcrumb from '@components/sections/items/ItemBreadcrumb.astro';
+import ItemHero from '@components/sections/items/ItemHero.astro';
+import ItemDetails from '@components/sections/items/ItemDetails.astro';
+import ItemProcess from '@components/sections/items/ItemProcess.astro';
+import ItemFeatures from '@components/sections/items/ItemFeatures.astro';
+import ItemSidebar from '@components/sections/items/ItemSidebar.astro';
+import ItemBackButton from '@components/sections/items/ItemBackButton.astro';
+
+
+export function getStaticPaths() {
+  const allItems = getAllItems();
+  return allItems.map((item) => ({
+    params: { slug: item.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const item = getItemBySlug(slug as string);
+
+if (!item) {
+  return Astro.redirect('/404'); 
+}
+---
+
+<Layout title={`${item.title} - Juan Peñalba`}>
+  <!-- Hero Section -->
+   
+  <ContainerSection id='hero-item' className="pt-28 pb-20">
+    <!-- Background decorative elements -->
+   
+  
+  </div>
+    <div class="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-10 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
+    
+    <div class="max-w-6xl mx-auto relative z-10">
+      <ItemBreadcrumb category={item.category} title={item.title} />
+      <ItemHero item={item} />
+    </div>
+  </ContainerSection>
+
+  <!-- Project Details -->
+  <ContainerSection id='details' className="py-20">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-3 gap-12">
+        <!-- Main Content -->
+        <div class="lg:col-span-2">
+          <ItemDetails item={item} />
+          <ItemProcess item={item} />
+          <ItemFeatures item={item} />
+        </div>
+
+        <!-- Sidebar -->
+        <div class="lg:col-span-1">
+          <ItemSidebar item={item} />
+        </div>
+      </div>
+    </div>
+  </ContainerSection>
+
+  <!-- Back Button -->
+  <ItemBackButton category={item.category} />
+</Layout>
