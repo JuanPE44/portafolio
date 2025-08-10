@@ -1,0 +1,48 @@
+---
+import { button } from "@/lib/cva/button";
+import { type VariantProps } from "class-variance-authority";
+
+interface Props extends VariantProps<typeof button> {
+  onClick?: () => void;
+  disabled?: boolean;
+  href?: string;
+  target?: string;
+  rel?: string;
+  id?: string;
+  class?: string;
+}
+
+const { intent, size, weight, disabled, href, target, rel, id, class: className } = Astro.props;
+---
+
+{
+  href ? (
+    <a
+      id={id}
+      href={href}
+      target={target}
+      rel={rel ?? (target === "_blank" ? "noopener noreferrer" : undefined)}
+      class={`${button({ intent, size, weight })} ${className}`}
+      aria-disabled={disabled ? "true" : undefined}
+    >
+      <slot />
+    </a>
+  ) : (
+    <button
+      id={id}
+      class={`${button({ intent, size, weight })} ${className}`}
+      disabled={disabled}
+    >
+      <slot />
+    </button>
+  )
+}
+
+<script>
+  const btn = document.getElementById(`${Astro.props.id}`);
+  if (btn) {
+    btn.addEventListener("click", () => {
+      Astro.props.onclick;
+    });
+  }
+</script>

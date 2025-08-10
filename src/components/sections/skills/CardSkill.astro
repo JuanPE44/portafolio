@@ -69,7 +69,7 @@ const variant = getCardVariant(index);
   </div>
 
   <div
-    class={`relative z-10 w-12 h-12 rounded-xl flex items-center justify-center border transition-all duration-300 group-hover:scale-110 bg-gray-bg border-color-border`}
+    class={`relative z-10 w-12 h-12 rounded-xl flex items-center justify-center border transition-all duration-300 group-hover:scale-110 bg-surface  border-color-border`}
   >
     <svg
       width="22"
@@ -80,14 +80,14 @@ const variant = getCardVariant(index);
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
-      class={`transition-colors duration-300 text-white`}
+      class={`transition-colors duration-300 text-white/90`}
       set:html={icon}
     />
   </div>
 
   <div class="relative z-10 flex-1">
     <p
-      class="m-0 text-white leading-relaxed font-medium group-hover:text-white/90 transition-colors duration-300"
+      class="m-0 text-white/90 leading-relaxed font-medium group-hover:text-white/90/90 transition-colors duration-300"
     >
       {title}
     </p>
@@ -95,7 +95,7 @@ const variant = getCardVariant(index);
 
   <!-- Decorative corner -->
   <div
-    class="absolute top-3 right-3 w-6 h-6 border-t border-r border-white/10 rounded-tr-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+    class="absolute top-3 right-3 w-6 h-6 border-t border-r border-white/90/10 rounded-tr-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
   >
   </div>
 </div>

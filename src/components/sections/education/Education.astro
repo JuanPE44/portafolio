@@ -1,9 +1,9 @@
 ---
-import IconBook from "src/icons/IconBook.astro";
-import IconCalendar from "src/icons/IconCalendar.astro";
-import Circle from "@components/ui/Circle.astro";
-import ContainerSection from "@components/ui/ContainerSection.astro";
-import SectionTitle from "@components/ui/SectionTitle.astro";
+import IconBook from "@/components/icons/IconBook.astro";
+import IconCalendar from "@/components/icons/IconCalendar.astro";
+import Circle from "@/components/ui/Circle.astro";
+import ContainerSection from "@/components/ui/ContainerSection.astro";
+import SectionTitle from "@/components/ui/SectionTitle.astro";
 ---
 
 <ContainerSection className="pb-20" id="education">
@@ -24,10 +24,10 @@ import SectionTitle from "@components/ui/SectionTitle.astro";
         class="w-[90%] sm:w-1/2 rounded-tr-2xl relative borde-parcial-r flex flex-col gap-10 pt-10 pb-20"
       >
         <div
-          class="absolute -top-[2px] -right-[2px] w-[97%] h-11 rounded-tr-2xl bg-bg border-t-[2px] border-r-[2px] border-color-border"
+          class="absolute -top-[2px] -right-[2px] w-[97%] h-11 rounded-tr-2xl bg-background border-t-[2px] border-r-[2px] border-color-border"
         >
           <div
-            class="absolute -top-[2px] -right-[2px] w-5 h-72 rounded-tr-2xl bg-bg border-t-[2px] border-r-[2px] border-color-border"
+            class="absolute -top-[2px] -right-[2px] w-5 h-72 rounded-tr-2xl bg-background border-t-[2px] border-r-[2px] border-color-border"
           >
           </div>
         </div>
@@ -39,7 +39,7 @@ import SectionTitle from "@components/ui/SectionTitle.astro";
               >
                 Universidad Nacional del Centro de la Provincia de Buenos Aires
               </h3>
-              <p class="text-white italic mt-2">Ingenieria en sistemas</p>
+              <p class="text-white/90 italic mt-2">Ingenieria en sistemas</p>
               <div class="flex gap-2 text-xs text-zinc-400 mt-2">
                 <IconCalendar className="fill-zinc-400" />
                 <span>Marzo 2024 - Actualmente.</span>
@@ -58,7 +58,7 @@ import SectionTitle from "@components/ui/SectionTitle.astro";
               >
                 Escuela Técnica N.º 2 Ing. Felipe Senillosa
               </h3>
-              <p class="text-white italic mt-2">
+              <p class="text-white/90 italic mt-2">
                 Tecnicatura en Programación Informática - Aplicaciones
                 Específicas
               </p>

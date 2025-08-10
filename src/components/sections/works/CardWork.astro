@@ -1,6 +1,6 @@
 ---
-import BadgeTecnologie from "@components/ui/BadgeTecnologie.astro";
-import IconCheck from "src/icons/IconCheck.astro";
+import BadgeTecnologie from "@/components/ui/BadgeTecnologie.astro";
+import IconCheck from "@/components/icons/IconCheck.astro";
 
 interface Props {
   urlImage: string;
@@ -11,6 +11,7 @@ interface Props {
   jobTitle: string;
   details: string[];
   tecnologies: string[];
+  imgDirIzq: boolean
 }
 
 const {
@@ -22,11 +23,12 @@ const {
   description,
   details,
   tecnologies,
+  imgDirIzq
 } = Astro.props;
 ---
 
 <div
-  class="flex md:flex-row flex-col items-center bg-gray-bg rounded-2xl border-[#fff1] border"
+  class={`flex flex-col items-center group bg-surface  hover:border-secondary/15 rounded-2xl border-color-border border ${imgDirIzq ? 'md:flex-row ' : 'md:flex-row-reverse'}`}
 >
   <div class="w-full md:w-1/2 relative">
     <img
@@ -35,7 +37,7 @@ const {
       alt=""
     />
     <div
-      class="absolute top-0 left-0 w-full h-full bg-gradient-to-tr from-primary to-secondary opacity-15 rounded-2xl"
+      class="absolute top-0 left-0 w-full h-full  bg-zinc-700/30 duration-300  rounded-2xl  group-hover:bg-zinc-700/20 "
     >
     </div> 
   </div>
@@ -47,11 +49,11 @@ const {
     <div class="flex mt-4">
       {tecnologies.map((tecnology) => <BadgeTecnologie name={tecnology} />)}
     </div>
-    <p class="text-gray mt-5">{description}</p>
+    <p class="text-foreground-secondary mt-5">{description}</p>
     <div class="mt-3">
       {
         details.map((detail) => (
-          <div class="flex gap-1 items-center text-lg text-white">
+          <div class="flex gap-1 items-center text-lg text-white/90">
             <IconCheck className="fill-primary" width="20" height="20" />
             <span>{detail}</span>
           </div>
@@ -63,12 +65,12 @@ const {
       <a
         target="_blank"
         href={urlLink}
-        class="bg-primary text-white font-bold py-2 px-4 rounded-2xl hover:scale-105 transition-[0.3s]"
+        class="bg-primary text-white/90 font-bold py-2 px-4 rounded-2xl hover:scale-105 transition-[0.3s]"
         >Link</a
       >
       <a
         href={urlMore}
-        class="bg-secondary text-bg font-bold py-2 px-4 rounded-2xl hover:scale-105 transition-[0.3s]"
+        class="bg-secondary text-background font-bold py-2 px-4 rounded-2xl hover:scale-105 transition-[0.3s]"
         >Ver más</a
       >
     </div>

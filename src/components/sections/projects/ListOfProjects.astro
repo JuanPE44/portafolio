@@ -21,17 +21,42 @@ import Sand from "./Sand.astro";
     >
       <AnalogicClock />
     </CardProject>
-    <!--
-      <CardProject title="Simulador arena" urlDemo="ada" urlGithub="ada">
+    <CardProject title="Sand" urlDemo="ada" urlGithub="ada">
+      <div class="flex flex-col text-gray items-center">
+        <h4 class="text-foreground mb-2 italic">Hace click en el tablero</h4>
         <Sand />
-      </CardProject>
-    -->
+      </div>
+    </CardProject>
   </div>
   <!--
     <a
       href=""
-      class="py-2 px-4 relative text-white text-center border border-white font-bold rounded-2xl"
+      class="py-2 px-4 relative text-white/90 text-center border border-white/90 font-bold rounded-2xl"
       >Ver proyectos
     </a>
    -->
 </div>
+<style>
+  .text-gray {
+  background: linear-gradient(89.81deg, #fff, #aaa, #999, #aaa, #fff);
+  fill: linear-gradient(89.81deg, #fff, #aaa, #999, #aaa, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  background-size: 300%;
+  animation: gradientText 5s ease alternate-reverse infinite;
+}
+@keyframes gradientText {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+</style>

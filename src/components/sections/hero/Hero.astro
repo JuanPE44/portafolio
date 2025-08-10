@@ -1,14 +1,15 @@
 ---
-import IconWork from "src/icons/IconWork.astro";
-import IconRowRigth from "src/icons/IconRowRigth.astro";
-import IconGithub from "src/icons/IconGithub.astro";
-import IconLinkedin from "src/icons/IconLinkedin.astro";
+import IconWork from "@/components/icons/IconWork.astro";
+import IconRowRigth from "@/components/icons/IconRowRigth.astro";
+import IconGithub from "@/components/icons/IconGithub.astro";
+import IconLinkedin from "@/components/icons/IconLinkedin.astro";
 import HeroIcon from "./HeroIcon.astro";
-import ContainerSection from "@components/ui/ContainerSection.astro";
+import ContainerSection from "@/components/ui/ContainerSection.astro";
 import CardHero from "./CardHero.astro";
 import ListOfHabilities from "./ListOfHabilities.astro";
 import ListOfTechnologies from "./ListOfTechnologies.astro";
 import { Image } from "astro:assets";
+import Button from "@/components/atoms/Button.astro";
 ---
 
 <ContainerSection className="py-0" id="hero">
@@ -25,18 +26,18 @@ import { Image } from "astro:assets";
       >
       </div>
       <div class="flex flex-col gap-4">
-        <p class="text-zinc-300 text-sm md:text-base italic">
+        <p class="text-foreground-muted text-sm md:text-base italic">
           Llevando tus proyectos web al siguiente nivel
         </p>
         <div class="flex flex-col gap-3">
           <h1
-            class="text-white text-5xl sm:text-3xl md:text-4xl lg:text-5xl font-bold"
+            class="text-foreground text-5xl sm:text-3xl md:text-4xl lg:text-5xl font-bold"
           >
             Desarrollador Frontend <span class="text-primary">React</span> & <span
               class="text-primary">Typescript</span
             >
           </h1>
-          <h2 class="text-gray text-base sm:text-base lg:text-lg">
+          <h2 class="text-foreground-secondary text-base sm:text-base lg:text-lg">
             Soy Juan. Diseño y programo experiencias web simples, funcionales y
             hermosas.
           </h2>
@@ -44,19 +45,13 @@ import { Image } from "astro:assets";
       </div>
       <div class="flex flex-col gap-3">
         <div class="flex flex-col sm:flex-row gap-4 sm:gap-3">
-          <a
-            href="/#works"
-            class="bg-secondary text-bg justify-center font-bold py-2 px-4 rounded-2xl flex gap-2 items-center hover:scale-105 hover:shadow-lg transition-[0.3s]"
-          >
+          <Button href="/#works" intent="secondary">
             <IconWork />
-            <span>Trabajos</span>
-          </a>
-
-          <a
-            href="/services"
-            class="border border-white text-white justify-center flex items-center font-bold py-2 px-4 rounded-2xl hover:scale-105 hover:shadow-lg transition-[0.3s]"
-            >Servicios</a
-          >
+            <span>Proyectos</span>
+          </Button>
+          <Button href="/#experience" intent="outline">
+            Experiencia
+          </Button>
         </div>
         <div class="flex justify-center fixed bottom-8 left-0 w-full">
           <div

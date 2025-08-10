@@ -1,0 +1,72 @@
+---
+import ContainerPage from "@/components/ui/ContainerPage.astro";
+import Header from "@/components/molecules/Header.astro";
+import Footer from "@/components/molecules/Footer.astro";
+import "@/styles/globals.css";
+import "@fontsource-variable/baloo-paaji-2";
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/webp" href="/images/logo.webp" />
+    <title>Juan Peñalba – Desarrollador Web</title>
+    <meta
+      name="description"
+      content="Portafolio de Juan Peñalba, desarrollador web especializado en sitios rápidos, modernos y adaptados a tu marca."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Juan Peñalba" />
+    <meta property="og:title" content="Juan Peñalba – Desarrollador Web" />
+    <meta property="og:description" content="Portafolio de Juan Peñalba..." />
+    <meta
+      property="og:image"
+      content="https://juanpenalba.vercel.app/images/foto-hero.webp"
+    />
+    <meta property="og:url" content="https://juanpenalba.vercel.app" />
+  </head>
+  <body class="font-baloo bg-background">
+  {/* Dark White Dotted Grid Background 
+  <div
+    class="fixed inset-0 z-0"
+    style={{
+      background: "#00000000",
+      backgroundImage: `
+        radial-gradient(circle, rgba(255, 255, 255, 0.05) 1.5px, transparent 1.5px)
+      `,
+      backgroundSize: "30px 30px",
+      backgroundPosition: "0 0",
+    }}
+  />
+  */}
+     
+
+  {/* Black Grid with White Dots Background */}
+  <div
+    class="fixed inset-0 z-0"
+    style={{
+      background: "#00000000",
+      backgroundImage: `
+        linear-gradient(to right, rgba(255,255,255,0.009) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.009) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,0.009) 1px, transparent 1px)
+      `,
+      backgroundSize: "20px 20px, 20px 20px, 20px 20px",
+      backgroundPosition: "0 0, 0 0, 0 0",
+    }}
+  />
+  {/* Your Content/Components */}
+</div>
+</div>
+
+
+    <ContainerPage>
+      <Header />
+      <slot />
+      <Footer />
+    </ContainerPage>
+  </body>
+</html>

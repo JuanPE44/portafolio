@@ -22,7 +22,7 @@ const { popular, color, icon, title, description, features, price, index } =
   {
     popular && (
       <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
-        <div class="text-bg py-1.5 px-4 rounded-full text-xs font-semibold shadow-lg bg-secondary">
+        <div class="text-background py-1.5 px-4 rounded-full text-xs font-semibold shadow-lg bg-secondary">
           ⭐ Más popular
         </div>
       </div>
@@ -49,7 +49,7 @@ const { popular, color, icon, title, description, features, price, index } =
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        class="text-white"
+        class="text-white/90"
         set:html={icon}
       />
     </div>
@@ -59,13 +59,13 @@ const { popular, color, icon, title, description, features, price, index } =
   <div class="relative z-10 flex-1 flex flex-col justify-between">
     <div class="flex flex-col">
       <h3
-        class="text-2xl font-bold text-white mb-2 transition-all duration-300"
+        class="text-2xl font-bold text-white/90 mb-2 transition-all duration-300"
       >
         {title}
       </h3>
 
       <p
-        class="text-gray mb-4 leading-relaxed text-base lg:text-base line-clamp-2"
+        class="text-foreground-secondary mb-4 leading-relaxed text-base lg:text-base line-clamp-2"
       >
         {description}
       </p>
@@ -87,12 +87,12 @@ const { popular, color, icon, title, description, features, price, index } =
                   stroke-width="3"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="text-white"
+                  class="text-white/90"
                 >
                   <polyline points="20,6 9,17 4,12" />
                 </svg>
               </div>
-              <span class="text-xs lg:text-sm text-white leading-relaxed">
+              <span class="text-xs lg:text-sm text-white/90 leading-relaxed">
                 {feature}
               </span>
             </li>
@@ -118,7 +118,7 @@ const { popular, color, icon, title, description, features, price, index } =
     <div class="mt-4 w-full">
       <a
         href="#contact"
-        class="cursor-pointer block text-center w-full bg-secondary text-bg py-2.5 px-4 rounded-lg font-bold text-sm transition-all duration-300"
+        class="cursor-pointer block text-center w-full bg-secondary text-background py-2.5 px-4 rounded-lg font-bold text-sm transition-all duration-300"
       >
         Consultar
       </a>

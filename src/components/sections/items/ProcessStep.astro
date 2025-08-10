@@ -1,5 +1,5 @@
 ---
-import type { ProcessStep } from '@data/itemsData';
+import type { ProcessStep } from '@/data/itemsData';
 
 interface Props {
   step: ProcessStep;
@@ -45,8 +45,8 @@ const colors = colorConfig[step.color];
 
 <div class={`group bg-gradient-to-r from-gray-bg to-gray-900/50 rounded-2xl p-6 backdrop-blur-sm ${colors.border} border border-gray-600 transition-all duration-300 relative overflow-hidden`}>
   <div class={`absolute inset-0 bg-gradient-to-br ${colors.bg} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
-  <h3 class="text-xl font-semibold text-white mb-3 flex items-center gap-3 relative z-10">
-    <span class={`w-12 h-12 bg-gradient-to-br ${colors.gradient} text-white rounded-full flex items-center justify-center text-lg font-bold group-hover:scale-110 transition-transform`}>
+  <h3 class="text-xl font-semibold text-white/90 mb-3 flex items-center gap-3 relative z-10">
+    <span class={`w-12 h-12 bg-gradient-to-br ${colors.gradient} text-white/90 rounded-full flex items-center justify-center text-lg font-bold group-hover:scale-110 transition-transform`}>
       {step.step}
     </span>
     {step.title}

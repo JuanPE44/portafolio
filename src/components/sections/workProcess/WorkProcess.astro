@@ -1,6 +1,6 @@
 ---
-import ContainerSection from "@components/ui/ContainerSection.astro";
-import SectionTitle from "@components/ui/SectionTitle.astro";
+import ContainerSection from "@/components/ui/ContainerSection.astro";
+import SectionTitle from "@/components/ui/SectionTitle.astro";
 ---
 
 <ContainerSection id="work-process">
@@ -44,13 +44,13 @@ import SectionTitle from "@components/ui/SectionTitle.astro";
       </div>
 
       <div
-        class="relative bg-gray-bg border border-color-border rounded-2xl p-6 md:p-8 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 z-10"
+        class="relative bg-surface  border border-color-border rounded-2xl p-6 md:p-8 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 z-10"
       >
         <!-- Step Number -->
         <div
           class="absolute top-4 left-4 sm:top-4 sm:-left-4 w-12 h-12 bg-primary rounded-xl flex items-center justify-center shadow-lg"
         >
-          <span class="text-white font-bold text-lg">01</span>
+          <span class="text-white/90 font-bold text-lg">01</span>
         </div>
 
         <!-- Icon -->
@@ -80,10 +80,10 @@ import SectionTitle from "@components/ui/SectionTitle.astro";
 
         <!-- Content -->
         <div class="text-center">
-          <h3 class="text-xl md:text-2xl font-bold text-white mb-4">
+          <h3 class="text-xl md:text-2xl font-bold text-white/90 mb-4">
             Hablemos un poco
           </h3>
-          <p class="text-gray leading-relaxed">
+          <p class="text-foreground-secondary leading-relaxed">
             Contanos sobre tu proyecto desde nuestro formulario así podremos
             evaluarlo y brindarte un presupuesto personalizado.
           </p>
@@ -106,13 +106,13 @@ import SectionTitle from "@components/ui/SectionTitle.astro";
       </div>
 
       <div
-        class="relative bg-gray-bg border border-color-border rounded-2xl p-6 md:p-8 transition-all duration-300 hover:shadow-lg hover:shadow-secondary/10 z-10"
+        class="relative bg-surface  border border-color-border rounded-2xl p-6 md:p-8 transition-all duration-300 hover:shadow-lg hover:shadow-secondary/10 z-10"
       >
         <!-- Step Number -->
         <div
           class="absolute top-4 left-4 sm:top-4 sm:-left-4 w-12 h-12 bg-secondary rounded-xl flex items-center justify-center shadow-lg"
         >
-          <span class="text-bg font-bold text-lg">02</span>
+          <span class="text-background font-bold text-lg">02</span>
         </div>
 
         <!-- Icon -->
@@ -140,10 +140,10 @@ import SectionTitle from "@components/ui/SectionTitle.astro";
 
         <!-- Content -->
         <div class="text-center">
-          <h3 class="text-xl md:text-2xl font-bold text-white mb-4">
+          <h3 class="text-xl md:text-2xl font-bold text-white/90 mb-4">
             Comienzo oficial
           </h3>
-          <p class="text-gray leading-relaxed">
+          <p class="text-foreground-secondary leading-relaxed">
             Una vez que el presupuesto sea aprobado tendremos otra reunión para
             reunir toda la información y poner en marcha el desarrollo.
           </p>
@@ -160,13 +160,13 @@ import SectionTitle from "@components/ui/SectionTitle.astro";
     <!-- Step 3 -->
     <div class="relative group">
       <div
-        class="relative bg-gray-bg border border-color-border rounded-2xl p-6 md:p-8 transition-all duration-300 hover:shadow-lg hover:shadow-tertiary/10 z-10"
+        class="relative bg-surface  border border-color-border rounded-2xl p-6 md:p-8 transition-all duration-300 hover:shadow-lg hover:shadow-tertiary/10 z-10"
       >
         <!-- Step Number -->
         <div
           class="absolute top-4 left-4 sm:top-4 sm:-left-4 w-12 h-12 bg-tertiary rounded-xl flex items-center justify-center shadow-lg"
         >
-          <span class="text-bg font-bold text-lg">03</span>
+          <span class="text-background font-bold text-lg">03</span>
         </div>
 
         <!-- Icon -->
@@ -199,10 +199,10 @@ import SectionTitle from "@components/ui/SectionTitle.astro";
 
         <!-- Content -->
         <div class="text-center">
-          <h3 class="text-xl md:text-2xl font-bold text-white mb-4">
+          <h3 class="text-xl md:text-2xl font-bold text-white/90 mb-4">
             Entrega final
           </h3>
-          <p class="text-gray leading-relaxed">
+          <p class="text-foreground-secondary leading-relaxed">
             Finalizada la página web y aprobado por vos, haremos la migración de
             la misma para dejar el sitio online y posicionado.
           </p>

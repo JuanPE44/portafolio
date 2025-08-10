@@ -1,11 +1,11 @@
 ---
-import Input from "@components/ui/Input.astro";
+import Input from "@/components/ui/Input.astro";
 ---
 
 <form
   id="contact-form"
   method="POST"
-  class="relative p-8 md:p-10 border border-color-border bg-gray-bg rounded-2xl max-w-lg mx-auto"
+  class="relative p-8 md:p-10 border border-color-border bg-surface  rounded-2xl max-w-lg mx-auto"
 >
   <!-- Fondo decorativo -->
   <div
@@ -13,7 +13,7 @@ import Input from "@components/ui/Input.astro";
   >
   </div>
 
-  <h3 class="text-white text-2xl font-bold mb-6 text-center">
+  <h3 class="text-white/90 text-2xl font-bold mb-6 text-center">
     Envíame un mensaje
   </h3>
 
@@ -102,12 +102,12 @@ import Input from "@components/ui/Input.astro";
     />
 
     <div>
-      <label class="block text-sm font-medium text-gray mb-2"
+      <label class="block text-sm font-medium text-foreground-secondary mb-2"
         >Tipo de proyecto</label
       >
       <select
         name="project_type"
-        class="w-full text-white border border-color-border bg-gray-bg rounded-xl py-3 px-4 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+        class="w-full text-white/90 border border-color-border bg-surface  rounded-xl py-3 px-4 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
       >
         <option value="">Selecciona una opción</option>
         <option value="landing">Landing Page</option>
@@ -123,14 +123,14 @@ import Input from "@components/ui/Input.astro";
       required
       placeholder="Contame sobre tu proyecto, qué necesitás y cualquier detalle importante..."
       rows="5"
-      class="w-full text-white border border-color-border bg-gray-bg rounded-xl py-3 px-4 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent resize-none"
+      class="w-full text-white/90 border border-color-border bg-surface  rounded-xl py-3 px-4 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent resize-none"
     ></textarea>
   </div>
 
   <button
     type="submit"
     id="submit-button"
-    class="w-full cursor-pointer bg-secondary text-bg font-bold py-3 px-4 rounded-xl mt-6 hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+    class="w-full cursor-pointer bg-secondary text-background font-bold py-3 px-4 rounded-xl mt-6 hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
   >
     <span id="button-text">Enviar mensaje</span>
   </button>

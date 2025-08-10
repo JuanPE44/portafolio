@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @theme {
+  /*
   --color-primary: #e126eb;
   --color-secondary: #77eb26;
   --color-tertiary: #ffd700;
@@ -11,7 +12,49 @@
   --color-color-border: #fff1;
 
   --font-baloo: Baloo Paaji 2, ui-serif, Georgia, Cambria, "Times New Roman",
-    Times, serif;
+  Times, serif;
+ */
+
+  /* 🎨 Colores base */
+  --color-primary: #e126eb; /* Botones principales, enlaces, énfasis */
+  --color-primary-foreground: #050505; /* Texto o íconos sobre primario */
+
+  --color-secondary: #77eb26; /* Elementos secundarios: cards, fondos alternos */
+  --color-secondary-foreground: #ffffff; /* Texto sobre secundario */
+
+  --color-accent: #ff9800; /* Destacar secciones o botones alternativos */
+  --color-accent-foreground: #000000;
+
+  --color-muted: #374151; /* Elementos de UI suaves, como fondos de inputs */
+  --color-muted-foreground: #9ca3af; /* Texto suave: placeholders, descripciones */
+
+  --color-ring: var(--color-primary); /* Enfasis focus (e.g., focus-visible) */
+
+  /* 🧱 Backgrounds */
+  --color-background: #1B1F19; /* Fondo general de la app (Slate 900) */
+  --color-surface: #52525230; /* Superficies elevadas: tarjetas, modales */
+
+  /* 📝 Texto */
+  --color-foreground: #fafafa; /* Texto principal */
+  --color-foreground-secondary: #d8d8d8; /* Texto secundario */
+  --color-foreground-muted: #BCCFCC; /* Texto menos importante / desactivado */
+
+  /* 🧱 UI neutra / tarjetas / inputs (modo oscuro) */
+  --color-muted: #1f2937; /* Fondo oscuro para elementos secundarios: tarjetas, inputs (Slate 800) */
+  --color-muted-foreground: #ffd100; /* Texto claro y con contraste amarillo primario para destacar sobre muted */
+  --color-color-border: #fff1; /* Bordes en tono oscuro tirando a oliva para armonizar con amarillo */
+  --color-input: #111827; /* Fondo de inputs oscuro (Slate 900) */
+  --color-input-placeholder: #a89f48; /* Placeholder en tono amarillo pálido para buen contraste */
+
+  /* 🧨 Estados de error / éxito / alerta */
+  --color-error: #dc2626; /* Rojo para errores */
+  --color-error-foreground: #ffffff;
+
+  --color-success: #16a34a; /* Verde para éxito */
+  --color-success-foreground: #ffffff;
+
+  --color-warning: #f59e0b; /* Amarillo para advertencias */
+  --color-warning-foreground: #000000;
 }
 
 @layer base {
@@ -21,13 +64,5 @@
   ::backdrop,
   ::file-selector-button {
     border-color: var(--color-gray-200, currentcolor);
-  }
-}
-
-body {
-  background-color: var(--color-bg);
-  ::selection {
-    background: var(--color-primary);
-    color: var(--color-white);
   }
 }

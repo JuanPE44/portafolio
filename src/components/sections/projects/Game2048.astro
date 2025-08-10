@@ -1,7 +1,7 @@
 ---
-import "@styles/2048.css";
-import IconCross from "src/icons/IconCross.astro";
-import IconQuestion from "src/icons/IconQuestion.astro";
+import "@/styles/2048.css";
+import IconCross from "@/components/icons/IconCross.astro";
+import IconQuestion from "@/components/icons/IconQuestion.astro";
 import Header2048 from "./Header2048.astro";
 import Board2048 from "./Board2048.astro";
 ---
@@ -15,7 +15,7 @@ import Board2048 from "./Board2048.astro";
     class="absolute w-full h-screen flex-col justify-center items-center z-[100] bg-[#000a] hidden px-4 sm:px-10 md:px-12 lg:px-0"
   >
     <div
-      class="max-w-4xl 2xl:max-w-6xl p-5 sm:mx-auto bg-gray-bg rounded-2xl filter backdrop-blur-md text-gray"
+      class="max-w-4xl 2xl:max-w-6xl p-5 sm:mx-auto bg-surface  rounded-2xl filter backdrop-blur-md text-foreground-secondary"
     >
       <div class="w-full flex justify-end sm:mb-10">
         <IconCross
@@ -89,7 +89,7 @@ import Board2048 from "./Board2048.astro";
   });
   // Función para inicializar el juego
   async function loadGame() {
-    const { Game } = await import("@utils/2048/Game.ts");
+    const { Game } = await import("@/utils/2048/Game.ts");
     console.log("Juego cargado");
 
     const bestScore: number[] = JSON.parse(

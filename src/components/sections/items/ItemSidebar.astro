@@ -1,5 +1,5 @@
 ---
-import type { ItemData } from '@data/itemsData';
+import type { ItemData } from '@/data/itemsData';
 import TechnologyBadge from './TechnologyBadge.astro';
 
 interface Props {
@@ -20,7 +20,7 @@ const categoryConfig = {
 const currentCategory = categoryConfig[item.category];
 ---
 
-<div class="bg-gray-bg border border-gray-600 rounded-2xl p-6 backdrop-blur-sm mb-8 sticky top-24 relative overflow-hidden group hover:border-primary/30 transition-colors duration-300">
+<div class="bg-surface  border border-gray-600 rounded-2xl p-6 backdrop-blur-sm mb-8 sticky top-24 relative overflow-hidden group hover:border-primary/30 transition-colors duration-300">
   <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
   
   
@@ -28,24 +28,24 @@ const currentCategory = categoryConfig[item.category];
   <div class="space-y-4 relative z-10">
     <div>
       <h4 class="text-sm font-medium text-gray-400 uppercase tracking-wide mb-1">Categoría</h4>
-      <p class="text-white font-medium">{currentCategory.label}</p>
+      <p class="text-white/90 font-medium">{currentCategory.label}</p>
     </div>
     
     <div>
       <h4 class="text-sm font-medium text-gray-400 uppercase tracking-wide mb-1">Rol</h4>
-      <p class="text-white">{item.role}</p>
+      <p class="text-white/90">{item.role}</p>
     </div>
     
     {item.client && (
       <div>
         <h4 class="text-sm font-medium text-gray-400 uppercase tracking-wide mb-1">Cliente</h4>
-        <p class="text-white">{item.client}</p>
+        <p class="text-white/90">{item.client}</p>
       </div>
     )}
     
     <div>
       <h4 class="text-sm font-medium text-gray-400 uppercase tracking-wide mb-1">Duración</h4>
-      <p class="text-white">{item.duration}</p>
+      <p class="text-white/90">{item.duration}</p>
     </div>
     
     <div>

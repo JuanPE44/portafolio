@@ -1,7 +1,7 @@
 ---
-import IconRowRigth from "src/icons/IconRowRigth.astro";
-import IconCalendar from "src/icons/IconCalendar.astro";
-import Circle from "@components/ui/Circle.astro";
+import IconRowRigth from "@/components/icons/IconRowRigth.astro";
+import IconCalendar from "@/components/icons/IconCalendar.astro";
+import Circle from "@/components/ui/Circle.astro";
 
 interface Props {
   title: string;
@@ -20,14 +20,14 @@ const { title, date, description, jobTitle } = Astro.props;
       <h3 class="text-secondary text-2xl font-bold text-left">
         {title}
       </h3>
-      <p class="text-white italic mt-2">{jobTitle}</p>
+      <p class="text-white/90 italic mt-2">{jobTitle}</p>
       <div class="flex gap-2 text-xs text-zinc-400 mt-2">
         <IconCalendar className="fill-zinc-400" />
         <span>{date}</span>
       </div>
     </div>
     <div class="flex flex-col gap-3 flex-1">
-      <p class="text-gray">
+      <p class="text-foreground-secondary">
         {description}
       </p>
       <a

@@ -14,6 +14,7 @@
     "@fontsource-variable/baloo-paaji-2": "^5.1.1",
     "@tailwindcss/vite": "^4.1.10",
     "astro": "^5.1.7",
+    "class-variance-authority": "^0.7.1",
     "gsap": "^3.13.0",
     "resend": "^4.6.0"
   },
