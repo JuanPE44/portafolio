@@ -99,9 +99,10 @@ import IconLinux from "@/components/icons/IconLinux.astro";
 </ContainerSection>
 
 <script>
-  const boton = document.getElementById("descargar-cv");
+  const botones = document.querySelectorAll("#descargar-cv");
 
-  boton?.addEventListener("click", () => {
+  botones.forEach(boton => {
+    boton?.addEventListener("click", () => {
     const enlace = document.createElement("a");
     // Ruta al archivo PDF
     const rutaPdf = "/CV.pdf";
@@ -110,4 +111,5 @@ import IconLinux from "@/components/icons/IconLinux.astro";
     enlace.download = "CV.pdf";
     enlace.click();
   });
+  })
 </script>

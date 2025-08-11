@@ -1,6 +1,7 @@
 ---
 import BadgeTecnologie from "@/components/ui/BadgeTecnologie.astro";
 import IconCheck from "@/components/icons/IconCheck.astro";
+import Button from "@/components/atoms/Button.astro";
 
 interface Props {
   urlImage: string;
@@ -23,12 +24,12 @@ const {
   description,
   details,
   tecnologies,
-  imgDirIzq
+  imgDirIzq=false
 } = Astro.props;
 ---
 
 <div
-  class={`flex flex-col items-center group bg-surface  hover:border-secondary/15 rounded-2xl border-color-border border ${imgDirIzq ? 'md:flex-row ' : 'md:flex-row-reverse'}`}
+  class={`flex flex-col  group bg-surface  hover:border-secondary/15 rounded-2xl border-color-border border ${imgDirIzq ? 'md:flex-row ' : 'md:flex-row-reverse'}`}
 >
   <div class="w-full md:w-1/2 relative">
     <img
@@ -61,18 +62,13 @@ const {
       }
     </div>
 
-    <div class="mt-10 flex gap-3">
-      <a
-        target="_blank"
-        href={urlLink}
-        class="bg-primary text-white/90 font-bold py-2 px-4 rounded-2xl hover:scale-105 transition-[0.3s]"
-        >Link</a
-      >
-      <a
-        href={urlMore}
-        class="bg-secondary text-background font-bold py-2 px-4 rounded-2xl hover:scale-105 transition-[0.3s]"
-        >Ver más</a
-      >
+    <div class="mt-5 flex gap-3">
+      <Button href={urlLink} target="_blank" intent="primary">
+        Link
+      </Button>
+       <Button href={urlMore} target="_blank" intent="secondary">
+        Ver más
+      </Button>
     </div>
   </div>
 </div>

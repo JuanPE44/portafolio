@@ -29,44 +29,22 @@ import "@fontsource-variable/baloo-paaji-2";
     <meta property="og:url" content="https://juanpenalba.vercel.app" />
   </head>
   <body class="font-baloo bg-background">
-  {/* Dark White Dotted Grid Background 
-  <div
-    class="fixed inset-0 z-0"
-    style={{
-      background: "#00000000",
-      backgroundImage: `
-        radial-gradient(circle, rgba(255, 255, 255, 0.05) 1.5px, transparent 1.5px)
+    <div
+      class="fixed inset-0 z-0"
+      style={{
+        backgroundImage: `
+        linear-gradient(to right, rgba(75, 85, 99, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(75, 85, 99, 0.05) 1px, transparent 1px)
       `,
-      backgroundSize: "30px 30px",
-      backgroundPosition: "0 0",
-    }}
-  />
-  */}
-     
-
-  {/* Black Grid with White Dots Background */}
-  <div
-    class="fixed inset-0 z-0"
-    style={{
-      background: "#00000000",
-      backgroundImage: `
-        linear-gradient(to right, rgba(255,255,255,0.009) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255,255,255,0.009) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255,255,255,0.009) 1px, transparent 1px)
-      `,
-      backgroundSize: "20px 20px, 20px 20px, 20px 20px",
-      backgroundPosition: "0 0, 0 0, 0 0",
-    }}
-  />
-  {/* Your Content/Components */}
-</div>
-</div>
-
-
-    <ContainerPage>
-      <Header />
-      <slot />
-      <Footer />
-    </ContainerPage>
+        backgroundSize: "40px 40px",
+      }}
+    >
+    </div>
   </body>
+
+  <ContainerPage>
+    <Header />
+    <slot />
+    <Footer />
+  </ContainerPage>
 </html>
