@@ -14,11 +14,16 @@
     "@fontsource-variable/baloo-paaji-2": "^5.1.1",
     "@tailwindcss/vite": "^4.1.10",
     "astro": "^5.1.7",
-    "gsap": "^3.13.0",
+    "class-variance-authority": "^0.7.1",
     "resend": "^4.6.0"
   },
   "devDependencies": {
-    "@types/node": "^22.13.0",
-    "@types/nodemailer": "^6.4.17"
+    "@types/estree": "^1.0.8",
+    "@types/hast": "^3.0.4",
+    "@types/mdast": "^4.0.4",
+    "@types/nlcst": "^2.0.3",
+    "@types/node": "^22.17.1",
+    "@types/nodemailer": "^6.4.17",
+    "@types/unist": "^3.0.3"
   }
 }

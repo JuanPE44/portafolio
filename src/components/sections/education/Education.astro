@@ -1,20 +1,20 @@
 ---
-import IconBook from "src/icons/IconBook.astro";
-import IconCalendar from "src/icons/IconCalendar.astro";
-import Circle from "@components/ui/Circle.astro";
-import ContainerSection from "@components/ui/ContainerSection.astro";
-import SectionTitle from "@components/ui/SectionTitle.astro";
+import IconBook from "@/components/icons/IconBook.astro";
+import IconCalendar from "@/components/icons/IconCalendar.astro";
+import Circle from "@/components/ui/Circle.astro";
+import ContainerSection from "@/components/ui/ContainerSection.astro";
+import SectionTitle from "@/components/ui/SectionTitle.astro";
 ---
 
 <ContainerSection className="pb-20" id="education">
   <SectionTitle
     text="Educación"
-    className="border-l-[2px] pt-28 pb-4 border-color-border"
+    className="border-l-[2px] pt-28 pb-4 border-secondary/20"
   >
     <IconBook />
   </SectionTitle>
   <div
-    class="p-5 border-l-[2px] w-20 border-b-[2px] border-color-border rounded-bl-2xl"
+    class="p-5 border-l-[2px] w-20 border-b-[2px] border-secondary/20 rounded-bl-2xl"
   >
   </div>
   <div class="w-full">
@@ -24,14 +24,14 @@ import SectionTitle from "@components/ui/SectionTitle.astro";
         class="w-[90%] sm:w-1/2 rounded-tr-2xl relative borde-parcial-r flex flex-col gap-10 pt-10 pb-20"
       >
         <div
-          class="absolute -top-[2px] -right-[2px] w-[97%] h-11 rounded-tr-2xl bg-bg border-t-[2px] border-r-[2px] border-color-border"
+          class="absolute -top-[2px] -right-[2px] w-[97%] h-4 rounded-tr-2xl bg-gradient-to-b to-background from-transparent border-t-2 border-r-2 border-secondary/20"
         >
           <div
-            class="absolute -top-[2px] -right-[2px] w-5 h-72 rounded-tr-2xl bg-bg border-t-[2px] border-r-[2px] border-color-border"
+            class="absolute -top-[2px] -right-[2px] w-4 h-72 rounded-tr-2xl bg-background border-t-2 border-r-2 border-secondary/20"
           >
           </div>
         </div>
-        <div class="mt-10 flex w-full relative -right-2 gap-2">
+        <div class="mt-10 flex w-full relative -right-[9px] gap-2">
           <div class="w-full flex justify-end">
             <div class="flex flex-col">
               <h3
@@ -39,7 +39,7 @@ import SectionTitle from "@components/ui/SectionTitle.astro";
               >
                 Universidad Nacional del Centro de la Provincia de Buenos Aires
               </h3>
-              <p class="text-white italic mt-2">Ingenieria en sistemas</p>
+              <p class="text-white/90 italic mt-2">Ingenieria en sistemas</p>
               <div class="flex gap-2 text-xs text-zinc-400 mt-2">
                 <IconCalendar className="fill-zinc-400" />
                 <span>Marzo 2024 - Actualmente.</span>
@@ -48,7 +48,7 @@ import SectionTitle from "@components/ui/SectionTitle.astro";
           </div>
           <Circle />
         </div>
-        <div class="flex w-full relative -right-2 gap-2">
+        <div class="flex w-full relative -right-[9px] gap-2">
           <div
             class="w-full flex justify-start relative sm:ml-4 sm:-right-full"
           >
@@ -58,7 +58,7 @@ import SectionTitle from "@components/ui/SectionTitle.astro";
               >
                 Escuela Técnica N.º 2 Ing. Felipe Senillosa
               </h3>
-              <p class="text-white italic mt-2">
+              <p class="text-white/90 italic mt-2">
                 Tecnicatura en Programación Informática - Aplicaciones
                 Específicas
               </p>
@@ -81,7 +81,7 @@ import SectionTitle from "@components/ui/SectionTitle.astro";
     border-image: linear-gradient(
       to bottom,
       transparent 0%,
-      var(--color-color-border) 90%,
+      color-mix(in srgb, var(--color-secondary) 20%, transparent) 90%,
       transparent 100%
     );
     border-image-slice: 1;

@@ -1,8 +1,8 @@
 ---
-import ContainerPage from "@components/ui/ContainerPage.astro";
-import Header from "./Header.astro";
-import Footer from "./Footer.astro";
-import "@styles/globals.css";
+import ContainerPage from "@/components/ui/ContainerPage.astro";
+import Header from "@/components/molecules/Header.astro";
+import Footer from "@/components/molecules/Footer.astro";
+import "@/styles/globals.css";
 import "@fontsource-variable/baloo-paaji-2";
 ---
 
@@ -13,7 +13,6 @@ import "@fontsource-variable/baloo-paaji-2";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/webp" href="/images/logo.webp" />
-    <title>Juan Peñalba</title>
     <title>Juan Peñalba – Desarrollador Web</title>
     <meta
       name="description"
@@ -29,11 +28,23 @@ import "@fontsource-variable/baloo-paaji-2";
     />
     <meta property="og:url" content="https://juanpenalba.vercel.app" />
   </head>
-  <body class="font-baloo">
-    <ContainerPage>
-      <Header />
-      <slot />
-      <Footer />
-    </ContainerPage>
+  <body class="font-baloo bg-background">
+    <div
+      class="fixed inset-0 z-0"
+      style={{
+        backgroundImage: `
+        linear-gradient(to right, rgba(75, 85, 99, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(75, 85, 99, 0.05) 1px, transparent 1px)
+      `,
+        backgroundSize: "40px 40px",
+      }}
+    >
+    </div>
   </body>
+
+  <ContainerPage>
+    <Header />
+    <slot />
+    <Footer />
+  </ContainerPage>
 </html>

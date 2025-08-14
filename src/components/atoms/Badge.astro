@@ -1,0 +1,30 @@
+---
+import { badge } from "@/lib/cva/badge";
+import { type VariantProps } from "class-variance-authority";
+
+interface Props extends VariantProps<typeof badge> {
+  id?: string;
+  class?: string;
+}
+
+const { variant, id, class: className } = Astro.props;
+
+const defaultNames: Record<string, string> = {
+  astro: "Astro",
+  figma: "Figma",
+  typescript: "Typescript",
+  react: "React",
+  tailwind: "Tailwind CSS",
+  nextjs: "Next.js",
+  storybook: "Storybook",
+  scrum: "Scrum",
+  nodejs: "Node.js",
+  phpmyadmin: "PHPMyAdmin",
+  materialui: "Material UI",
+  default: "Badge",
+};
+---
+
+<span id={id} class={`${badge({ variant })} ${className}`}>
+  {defaultNames[variant ?? "default"]}
+</span>

@@ -1,0 +1,53 @@
+---
+import IconCross from "../icons/IconCross.astro";
+import IconLogo from "../icons/IconLogo.astro";
+import ContainerPage from "./ContainerPage.astro";
+import ContainerSection from "./ContainerSection.astro";
+
+const { id, isOpen = false } = Astro.props;
+
+---
+
+<div
+  id={id}
+  class={` fixed inset-0 z-[300] backdrop-blur-2xl transition-opacity duration-300 bg-[#0007]  overflow-scroll ${
+    isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+  }`}
+>
+  <ContainerPage>
+    <ContainerSection
+      className="relative bg-surface border border-color-border rounded-2xl pt-14 pb-4 px-4 my-6 mx-auto "
+      id="modal"
+    >
+      <!-- Botón cerrar -->
+       <div class="left-4 top-4 absolute fill-primary">
+
+         <IconLogo />
+       </div>
+      <button
+        onclick={`toggleModal('${id}')`}
+        class="cursor-pointer absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl leading-none"
+        aria-label="Cerrar modal"
+      >
+        <IconCross className="fill-secondary" width="20px" height="20px" />
+      </button>
+
+      <!-- Contenido dinámico -->
+      <slot />
+    </ContainerSection>
+  </ContainerPage>
+</div>
+
+<script>
+  window.toggleModal = (modalId: string) => {
+    const m = document.getElementById(modalId);
+    m?.classList.toggle("opacity-0");
+    m?.classList.toggle("pointer-events-none");
+
+    if (document.body.style.overflow == "hidden") {
+      document.body.style.overflow = "visible";
+    } else {
+      document.body.style.overflow = "hidden";
+    }
+  };
+</script>
