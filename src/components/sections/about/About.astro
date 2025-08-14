@@ -1,23 +1,23 @@
 ---
-import ContainerSection from "@components/ui/ContainerSection.astro";
-import SectionTitle from "@components/ui/SectionTitle.astro";
-import IconGuitar from "src/icons/IconGuitar.astro";
-import IconJava from "src/icons/IconJava.astro";
-import IconHtml from "src/icons/IconHtml.astro";
-import IconCss from "src/icons/IconCss.astro";
-import IconJavascript from "src/icons/IconJavascript.astro";
-import IconTypescript from "src/icons/IconTypescript.astro";
-import IconReact from "src/icons/IconReact.astro";
-import IconAstro from "src/icons/IconAstro.astro";
-import IconGit from "src/icons/IconGit.astro";
-import IconFigma from "src/icons/IconFigma.astro";
-import IconTailwind from "src/icons/IconTailwind.astro";
-import IconVscode from "src/icons/IconVscode.astro";
-import IconNpm from "src/icons/IconNpm.astro";
-import IconGithub from "src/icons/IconGithub.astro";
+import ContainerSection from "@/components/ui/ContainerSection.astro";
+import SectionTitle from "@/components/ui/SectionTitle.astro";
+import IconGuitar from "@/components/icons/IconGuitar.astro";
+import IconJava from "@/components/icons/IconJava.astro";
+import IconHtml from "@/components/icons/IconHtml.astro";
+import IconCss from "@/components/icons/IconCss.astro";
+import IconJavascript from "@/components/icons/IconJavascript.astro";
+import IconTypescript from "@/components/icons/IconTypescript.astro";
+import IconReact from "@/components/icons/IconReact.astro";
+import IconAstro from "@/components/icons/IconAstro.astro";
+import IconGit from "@/components/icons/IconGit.astro";
+import IconFigma from "@/components/icons/IconFigma.astro";
+import IconTailwind from "@/components/icons/IconTailwind.astro";
+import IconVscode from "@/components/icons/IconVscode.astro";
+import IconNpm from "@/components/icons/IconNpm.astro";
+import IconGithub from "@/components/icons/IconGithub.astro";
 import { Image } from "astro:assets";
-import IconCpp from "src/icons/IconCpp.astro";
-import IconLinux from "src/icons/IconLinux.astro";
+import IconCpp from "@/components/icons/IconCpp.astro";
+import IconLinux from "@/components/icons/IconLinux.astro";
 ---
 
 <ContainerSection id="about">
@@ -25,7 +25,7 @@ import IconLinux from "src/icons/IconLinux.astro";
     <IconGuitar />
   </SectionTitle>
   <div class="flex flex-col md:flex-row gap-40 md:mt-28 md:gap-0">
-    <div class="md:w-1/2 w-full text-gray flex flex-col gap-4 text-lg">
+    <div class="md:w-1/2 w-full text-foreground-secondary flex flex-col gap-4 text-lg">
       <p>
         Soy <span class="text-secondary font-bold"> Técnico Programador</span>,
         egresé en la Escuela Técnica N°2 y actualmente curso el segundo año de <span
@@ -56,7 +56,7 @@ import IconLinux from "src/icons/IconLinux.astro";
           class="bg-primary
           rounded-2xl -top-[25%] -right-[5%] md:-top-[20%] md:-right-[20%] p-3 absolute z-40"
         >
-          <h3 class="text-white mb-2 font-bold text-sm md:text-base">
+          <h3 class="text-white/90 mb-2 font-bold text-sm md:text-base">
             Conocimientos técnicos
           </h3>
           <div class="grid grid-cols-5 gap-2 w-max mx-auto">
@@ -82,7 +82,7 @@ import IconLinux from "src/icons/IconLinux.astro";
 
         <button
           id="descargar-cv"
-          class="w-max bg-primary hover:scale-105 transition-[0.3s] cursor-pointer rounded-2xl py-3 px-4 -bottom-[40%] left-1/2 -translate-x-1/2 text-lg font-bold text-white absolute z-40"
+          class="w-max bg-primary hover:scale-105 transition-[0.3s] cursor-pointer rounded-2xl py-3 px-4 -bottom-[40%] left-1/2 -translate-x-1/2 text-lg font-bold text-white/90 absolute z-40"
         >
           Descargar mi CV
         </button>
@@ -99,9 +99,10 @@ import IconLinux from "src/icons/IconLinux.astro";
 </ContainerSection>
 
 <script>
-  const boton = document.getElementById("descargar-cv");
+  const botones = document.querySelectorAll("#descargar-cv");
 
-  boton?.addEventListener("click", () => {
+  botones.forEach(boton => {
+    boton?.addEventListener("click", () => {
     const enlace = document.createElement("a");
     // Ruta al archivo PDF
     const rutaPdf = "/CV.pdf";
@@ -110,4 +111,5 @@ import IconLinux from "src/icons/IconLinux.astro";
     enlace.download = "CV.pdf";
     enlace.click();
   });
+  })
 </script>
