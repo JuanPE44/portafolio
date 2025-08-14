@@ -1,6 +1,6 @@
 ---
+import Badge from "../atoms/Badge.astro";
 import Button from "../atoms/Button.astro";
-import BadgeTecnologie from "./BadgeTecnologie.astro";
 
 export interface ProjectDetailsType {
   image: string;
@@ -118,8 +118,8 @@ const {
         </svg>
         Tecnologías utilizadas
       </h4>
-      <div class="flex flex-wrap gap-2">
-        {technologies.map((tech) => <BadgeTecnologie name={tech} />)}
+      <div class="flex flex-wrap ">
+        {technologies.map((tech) => <Badge variant={tech} />)}
       </div>
     </div>
 

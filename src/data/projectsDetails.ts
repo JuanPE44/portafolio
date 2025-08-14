@@ -10,9 +10,9 @@ const PROJECT_ROLE = [
   "Participación en reuniones Scrum y coordinación con el equipo a través del Team Leader.",
 ];
 const PROJECT_TECHNOLOGIES = [
-  "Next.js",
-  "Typescript",
-  "Material UI",
+  "nextjs",
+  "typescript",
+  "materialui",
 ];
 const PROJECT_FEATURES = [
   "Diseño responsive para header y secciones clave.",
@@ -56,10 +56,10 @@ const PROJECT_ROLE_MAMPARAS = [
  
 ];
 const PROJECT_TECHNOLOGIES_MAMPARAS = [
-  "Astro",
-  "Tailwind",
-  "Typescript",
-  "Figma"
+  "astro",
+  "tailwind",
+  "typescript",
+  "figma"
 ];
 const PROJECT_FEATURES_MAMPARAS = [
   "Diseño moderno y adaptable a dispositivos móviles.",
@@ -101,10 +101,10 @@ const PROJECT_ROLE_PRACTICAS = [
   "Participación en planificación, diseño, desarrollo y pruebas.",
 ];
 const PROJECT_TECHNOLOGIES_PRACTICAS = [
-  "Next.js",
-  "Tailwind",
-  "Node.js",
-  "PHPMyAdmin",
+  "nextjs",
+  "tailwind",
+  "nodejs",
+  "phpmyadmin",
 ];
 const PROJECT_FEATURES_PRACTICAS = [
   "Catálogo interactivo con búsqueda y filtrado de instituciones educativas.",
@@ -144,9 +144,9 @@ const PROJECT_ROLE_GASTOS = [
   "Colaboración en el diseño visual y flujo de interacción.",
 ];
 const PROJECT_TECHNOLOGIES_GASTOS = [
-  "React",
-  "Material UI",
-  "Typescript",
+  "react",
+  "materialui",
+  "typescript",
 ];
 const PROJECT_FEATURES_GASTOS = [
   "Registro y clasificación de gastos por categoría.",
@@ -188,10 +188,10 @@ const PROJECT_ROLE_EXACTAMENTE = [
   "Colaboración en la integración de funcionalidades de búsqueda y carga de recursos.",
 ];
 const PROJECT_TECHNOLOGIES_EXACTAMENTE = [
-  "Astro",
-  "React",
-  "Material UI",
-  "Typescript",
+  "astro",
+  "react",
+  "materialui",
+  "typescript",
 ];
 const PROJECT_FEATURES_EXACTAMENTE = [
   "Búsqueda de recursos académicos por materia y tipo (resumen, parcial, final).",

@@ -5,10 +5,7 @@ import ContainerPage from "./ContainerPage.astro";
 import ContainerSection from "./ContainerSection.astro";
 
 const { id, isOpen = false } = Astro.props;
-/*
-id → identificador único del modal (para abrirlo desde botones)
-isOpen → si quieres que inicie abierto (opcional)
-*/
+
 ---
 
 <div
@@ -52,6 +49,5 @@ isOpen → si quieres que inicie abierto (opcional)
     } else {
       document.body.style.overflow = "hidden";
     }
-    console.log(modalId);
   };
 </script>

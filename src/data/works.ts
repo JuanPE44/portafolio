@@ -15,10 +15,10 @@ export const works = [
     description:
       "Desarrollo de una plataforma web para facilitar el acceso y la colaboración en recursos académicos, donde los usuarios pueden buscar y subir resúmenes, parciales y finales de distintas materias.",
     details: ["Desarrollo Frontend", "Integracion con Google Drive"],
-    tecnologies: [  "Astro",
-  "React",
-  "Material UI",
-  "Typescript",
+    tecnologies: [  "astro",
+  "react",
+  "materialui",
+  "typescript",
 ],
     projectDetails: projectDetailsExactamente,
   },
@@ -32,7 +32,7 @@ export const works = [
     description:
       "Encargado del diseño y desarrollo del sitio web para Mamparas Esmeralda, donde lideré la planificación del proyecto y realicé el diseño personalizado del sitio. ",
     details: ["Diseño UX/UI", "Desarrollo Frontend", "SEO"],
-    tecnologies: ["Astro", "Figma", "Typescript", "Tailwind"],
+    tecnologies: ["astro", "figma", "typescript", "tailwind"],
     projectDetails: projectDetailsMamparas,
   },
 
@@ -50,7 +50,7 @@ export const works = [
       "Desarrollo Frontend",
       "Integración de UI Components",
     ],
-    tecnologies: ["React", "Material UI", "Typescript", "Scrum"],
+    tecnologies: ["react", "materialui", "typescript", "scrum"],
     projectDetails: projectDetailsGastos,
   },
 ];

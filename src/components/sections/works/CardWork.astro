@@ -1,10 +1,10 @@
 ---
-import BadgeTecnologie from "@/components/ui/BadgeTecnologie.astro";
 import IconCheck from "@/components/icons/IconCheck.astro";
 import Button from "@/components/atoms/Button.astro";
 import type { ProjectDetailsType } from "@/components/ui/ProjectModalContent.astro";
 import Modal from "@/components/ui/Modal.astro";
 import ProjectModalContent from "@/components/ui/ProjectModalContent.astro";
+import Badge from "@/components/atoms/Badge.astro";
 
 interface Props {
   urlImage: string;
@@ -54,7 +54,7 @@ const {
     </h3>
     <h4 class="text-zinc-400 italic">{jobTitle}</h4>
     <div class="flex mt-4">
-      {tecnologies.map((tecnology) => <BadgeTecnologie name={tecnology} />)}
+      {tecnologies.map((tecnology) => <Badge variant={tecnology}/>)}
     </div>
     <p class="text-foreground-secondary mt-5">{description}</p>
     <div class="mt-3">
