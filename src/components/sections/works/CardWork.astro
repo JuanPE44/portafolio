@@ -32,19 +32,19 @@ const {
 ---
 
 <div
-  class={`flex flex-col  group bg-surface rounded-2xl border-color-border border md:flex-row `}
+  class={`flex flex-col  group bg-surface rounded-2xl border-color-border border md:flex-row-reverse `}
 >
   <Modal id={jobTitle}>
     <ProjectModalContent {...projectDetails} />
   </Modal>
-  <div class="w-full md:w-1/2 relative">
+  <div class="w-full md:w-1/2 relative p-0.5 bg-transparent rounded-2xl ">
     <img
-      class="rounded-2xl w-full h-72 md:h-[400px] object-top-left object-cover filter"
+      class="rounded-2xl w-full h-72 md:h-[400px] object-left object-cover filter"
       src={urlImage}
       alt=""
     />
     <div
-      class="absolute top-0 left-0 w-full h-full bg-zinc-700/30 duration-300 rounded-2xl group-hover:bg-zinc-700/20"
+      class="absolute m-0.5 top-0 left-0 w-full h-full bg-gradient-to-bl from-zinc-700/20 to-zinc-700/40 duration-300 rounded-2xl "
     >
     </div>
   </div>
@@ -86,3 +86,12 @@ const {
     </div>
   </div>
 </div>
+
+
+<style>
+@keyframes rotateBg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+</style>

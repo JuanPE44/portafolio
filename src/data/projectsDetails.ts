@@ -26,7 +26,7 @@ const PROJECT_RESULTS = [
   "Interfaces más adaptables y rápidas gracias a refactorización de código.",
 ];
 const PROJECT_LINK = "";
-const PROJECT_IMAGE = "/images/primarket-modal.png";
+const PROJECT_IMAGE = "/images/primarket-modal.webp";
 const PROJECT_TITLE = "Plataforma Primarket";
 
 export const projectDetailsPrimarket = {
@@ -117,7 +117,7 @@ const PROJECT_RESULTS_PRACTICAS = [
   "Experiencia práctica en el ciclo completo de desarrollo de software.",
 ];
 const PROJECT_LINK_PRACTICAS = ""; // No hay enlace público
-const PROJECT_IMAGE_PRACTICAS = "/images/practicas-modal.png";
+const PROJECT_IMAGE_PRACTICAS = "/images/practicas-modal.webp";
 
 export const projectDetailsPracticas = {
   title: PROJECT_TITLE_PRACTICAS,
@@ -136,7 +136,7 @@ const PROJECT_TITLE_GASTOS = "Aplicación de Gestión de Gastos";
 const COMPANY_NAME_GASTOS = "Proyecto Colaborativo";
 const PROJECT_DATES_GASTOS = "2025";
 const PROJECT_DESCRIPTION_GASTOS =
-  "Aplicación web para registrar, visualizar y gestionar gastos personales de forma sencilla e intuitiva. Participación en la planificación, diseño y desarrollo frontend, con enfoque en una experiencia de usuario clara y responsiva.";
+  "Aplicación web que facilita el registro, categorización y visualización de gastos para un control financiero más eficiente. Formé parte de un equipo de desarrollo, contribuyendo en la planificación estratégica, el diseño UI/UX y la implementación frontend. Trabajamos con Scrum y comunicación continua para garantizar una aplicaicon funcional, adaptable y con una experiencia de usuario fluida en cualquier dispositivo.";
 const PROJECT_ROLE_GASTOS = [
   "Desarrollador Frontend.",
   "Participación activa en la planificación y definición de funcionalidades.",
@@ -160,7 +160,7 @@ const PROJECT_RESULTS_GASTOS = [
   "Experiencia en estructuración y escalabilidad de componentes.",
 ];
 const PROJECT_LINK_GASTOS = ""; // Agregar enlace si está desplegada
-const PROJECT_IMAGE_GASTOS = "/images/app-gastos-modal.png";
+const PROJECT_IMAGE_GASTOS = "/images/app-gastos-modal.webp";
 
 export const projectDetailsGastos = {
   title: PROJECT_TITLE_GASTOS,
@@ -180,12 +180,11 @@ const PROJECT_TITLE_EXACTAMENTE = "Exactamente";
 const COMPANY_NAME_EXACTAMENTE = "Proyecto Personal";
 const PROJECT_DATES_EXACTAMENTE = "2025";
 const PROJECT_DESCRIPTION_EXACTAMENTE =
-  "Plataforma web que centraliza recursos académicos de distintas materias, permitiendo a los usuarios buscar y compartir resúmenes, parciales y finales de manera rápida y organizada.";
+  "Exactamente, es una plataforma web diseñada para estudiantes de Ingeniería en Sistemas que reúne en un único espacio recursos académicos de diversas materias. Su objetivo es facilitar el acceso y la organización de resúmenes, parciales y finales, permitiendo que los usuarios puedan buscar, filtrar y compartir material de manera sencilla y rápida.";
 const PROJECT_ROLE_EXACTAMENTE = [
   "Desarrollador Frontend.",
   "Participación en la planificación y definición de la estructura de la plataforma.",
   "Implementación de componentes reutilizables y diseño adaptativo.",
-  "Colaboración en la integración de funcionalidades de búsqueda y carga de recursos.",
 ];
 const PROJECT_TECHNOLOGIES_EXACTAMENTE = [
   "astro",
@@ -205,7 +204,7 @@ const PROJECT_RESULTS_EXACTAMENTE = [
   "Experiencia en desarrollo colaborativo y uso de librerías UI modernas.",
 ];
 const PROJECT_LINK_EXACTAMENTE = "https://www.exactamente.com.ar/"; // Agregar enlace si está desplegada
-const PROJECT_IMAGE_EXACTAMENTE = "/images/exactamente-modal.png";
+const PROJECT_IMAGE_EXACTAMENTE = "/images/exactamente-modal.webp";
 
 export const projectDetailsExactamente = {
   title: PROJECT_TITLE_EXACTAMENTE,

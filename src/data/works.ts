@@ -7,7 +7,7 @@ import {
 export const works = [
   {
     slug: "exactamente",
-    urlImage: "/images/exactamente.png",
+    urlImage: "/images/exactamente.webp",
     urlLink: "https://exactamente.com.ar",
     urlMore: "items/mamparas-esmeralda",
     title: "Exactamente",
@@ -24,7 +24,7 @@ export const works = [
   },
   {
     slug: "mamparas-esmeralda",
-    urlImage: "/images/mamparas-esmeralda.png",
+    urlImage: "/images/mamparas-esmeralda.webp",
     urlLink: "https://mamparasesmeralda.vercel.app",
     urlMore: "items/mamparas-esmeralda",
     title: "Mamparas Esmeralda",
@@ -38,7 +38,7 @@ export const works = [
 
   {
     slug: "app-gastos",
-    urlImage: "/images/app-gastos.png",
+    urlImage: "/images/app-gastos.webp",
     urlLink: "",
     urlMore: "items/app-gastos",
     title: "Gestor de Gastos",
