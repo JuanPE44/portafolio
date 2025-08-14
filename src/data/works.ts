@@ -17,7 +17,7 @@ export const works = [
     details: ["Desarrollo Frontend", "Integracion con Google Drive"],
     tecnologies: [  "astro",
   "react",
-  "materialui",
+  "tailwind",
   "typescript",
 ],
     projectDetails: projectDetailsExactamente,
