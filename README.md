@@ -2,7 +2,7 @@
 
 Bienvenido a mi portafolio personal. Este proyecto fue desarrollado utilizando **Astro**, **TypeScript**, **Tailwind CSS** y diseñado en **Figma**. Aquí podrás conocer más sobre mi trabajo, habilidades y proyectos destacados.
 
-![image](https://github.com/user-attachments/assets/a942fb55-1dd7-42e5-afaa-efc7380edcd5)
+<img width="1366" height="610" alt="image" src="https://github.com/user-attachments/assets/674e02fa-fe22-4910-ab73-3c8f9b024b85" />
 
 ## Tecnologías Utilizadas
 
