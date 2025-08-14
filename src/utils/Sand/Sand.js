@@ -21,29 +21,60 @@ ctx.fillRect(0, 0, WIDTH_CANVAS, HEIGHT_CANVAS);
 let cubes = Array.from({ length: matrix }, () => Array(matrix).fill(0));
 let nextCubes = Array.from({ length: matrix }, () => Array(matrix).fill(0));
 
-const cubeColors = Array.from({ length: matrix }, () =>
-  Array.from({ length: matrix }, () => {
-    const r = Math.floor(Math.random() * 256);
-    const g = Math.floor(Math.random() * 256);
-    const b = Math.floor(Math.random() * 256);
-    return `rgb(${r},${g},${b})`;
-  })
-);
+
+function getHueColor(number) {
+  number = Math.max(1, Math.min(number, 360));
+  let hue = number;
+  let saturation = 80;
+  let lightness = 50;
+  let hslColor = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+  let rgbColor = hslToRgb(hue / 360, saturation / 100, lightness / 100);
+
+  return {
+    hsl: hslColor,
+    rgb: `rgb(${rgbColor[0]}, ${rgbColor[1]}, ${rgbColor[2]})`,
+  };
+}
+
+function hslToRgb(h, s, l) {
+  let r, g, b;
+
+  if (s === 0) {
+    r = g = b = l;
+  } else {
+    const hue2rgb = (p, q, t) => {
+      if (t < 0) t += 1;
+      if (t > 1) t -= 1;
+      if (t < 1 / 6) return p + (q - p) * 6 * t;
+      if (t < 1 / 2) return q;
+      if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
+      return p;
+    };
+
+    const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+    const p = 2 * l - q;
+    r = hue2rgb(p, q, h + 1 / 3);
+    g = hue2rgb(p, q, h);
+    b = hue2rgb(p, q, h - 1 / 3);
+  }
+
+  return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+}
+
 
 canvas.addEventListener("click", (e) => {
   const rect = canvas.getBoundingClientRect();
   const x = Math.floor((e.clientX - rect.left) / SIZE_CUBE);
   const y = Math.floor((e.clientY - rect.top) / SIZE_CUBE);
-
+  if(cubes[x][y] !== 0) return
   addCubes({ x, y });
-  if (numberColor === 0) numberColor = 1;
+  if (numberColor > 360) {
+    numberColor = 0;
+  }
+  numberColor += 5;
 });
 
-canvas.addEventListener("mousemove", (e) => {
-  const rect = canvas.getBoundingClientRect();
-  mousePosition.x = Math.floor((e.clientX - rect.left) / SIZE_CUBE);
-  mousePosition.y = Math.floor((e.clientY - rect.top) / SIZE_CUBE);
-});
+
 
 function addCubes({ x, y }) {
   const rangoX = Math.floor(Math.random() * 2) + 1;
@@ -65,21 +96,12 @@ function draw() {
     for (let j = matrix - 1; j >= 0; j--) {
       if (cubes[i][j] === 0) {
         ctx.fillStyle = COLOR_EMPTY;
-      } else if (cubes[i][j] === 1) {
-        ctx.fillStyle = cubeColors[i][j];
+      } else if (cubes[i][j] >= 1) {
+        ctx.fillStyle = getHueColor(cubes[i][j]).rgb;
       }
 
       ctx.fillRect(i * SIZE_CUBE, j * SIZE_CUBE, SIZE_CUBE, SIZE_CUBE);
 
-      if (cubes[i][j] > 0) {
-        ctx.fillStyle = "rgba(0,0,0,0.1)";
-        ctx.fillRect(
-          i * SIZE_CUBE,
-          j * SIZE_CUBE + SIZE_CUBE * 0.7, // parte baja
-          SIZE_CUBE,
-          SIZE_CUBE * 0.3
-        );
-      }
 
       if (cubes[i][j] === "") {
         ctx.fillStyle = COLOR_ERROR;

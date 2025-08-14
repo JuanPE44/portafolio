@@ -8,7 +8,8 @@ export const button = cva(
         primary: "bg-primary text-white/90",
         secondary:
           "bg-secondary text-background",
-        outline: "border border-white/90 text-white/90",
+        outline: "border border-white/90 text-white/90 hover:bg-secondary hover:border-background hover:text-background",
+        disabled: "border border-zinc-500 text-zinc-500 bg-zinc-500/20 pointer-events-none",
         danger: "bg-red-600 text-white/90 hover:bg-red-700 focus:ring-red-500",
       },
       size: {

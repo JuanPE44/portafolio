@@ -1,3 +1,9 @@
+import {
+  projectDetailsExactamente,
+  projectDetailsGastos,
+  projectDetailsMamparas,
+} from "./projectsDetails";
+
 export const works = [
   {
     slug: "exactamente",
@@ -5,13 +11,17 @@ export const works = [
     urlLink: "https://exactamente.com.ar",
     urlMore: "items/mamparas-esmeralda",
     title: "Exactamente",
-    jobTitle: "Web App",
+    jobTitle: "Aplicacion Web",
     description:
-      "Plataforma Web para obtener recursos de las materias, pudiendo buscar y subir resumenes, parciales y finales.",
-    details: ["Diseño UX/UI", "Desarrollo Frontend"],
-    tecnologies: ["Astro", "React", "Typescript", "Tailwind"],
+      "Desarrollo de una plataforma web para facilitar el acceso y la colaboración en recursos académicos, donde los usuarios pueden buscar y subir resúmenes, parciales y finales de distintas materias.",
+    details: ["Desarrollo Frontend", "Integracion con Google Drive"],
+    tecnologies: [  "Astro",
+  "React",
+  "Material UI",
+  "Typescript",
+],
+    projectDetails: projectDetailsExactamente,
   },
-  
   {
     slug: "mamparas-esmeralda",
     urlImage: "/images/mamparas-esmeralda.png",
@@ -21,10 +31,26 @@ export const works = [
     jobTitle: "Landing Page",
     description:
       "Encargado del diseño y desarrollo del sitio web para Mamparas Esmeralda, donde lideré la planificación del proyecto y realicé el diseño personalizado del sitio. ",
-    details: ["Diseño UX/UI", "Desarrollo Frontend", ],
+    details: ["Diseño UX/UI", "Desarrollo Frontend", "SEO"],
     tecnologies: ["Astro", "Figma", "Typescript", "Tailwind"],
+    projectDetails: projectDetailsMamparas,
   },
 
-   
+  {
+    slug: "app-gastos",
+    urlImage: "/images/app-gastos.png",
+    urlLink: "",
+    urlMore: "items/app-gastos",
+    title: "Gestor de Gastos",
+    jobTitle: "Aplicación Web",
+    description:
+      "Colabore en la definición de funcionalidades y en la implementación de la interfaz de usuario utilizando React y Material UI.",
+    details: [
+      "Planificación del proyecto",
+      "Desarrollo Frontend",
+      "Integración de UI Components",
+    ],
+    tecnologies: ["React", "Material UI", "Typescript", "Scrum"],
+    projectDetails: projectDetailsGastos,
+  },
 ];
-

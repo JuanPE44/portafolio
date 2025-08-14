@@ -1,21 +1,32 @@
 ---
+import {
+  projectDetailsMamparas,
+  projectDetailsPracticas,
+  projectDetailsPrimarket,
+} from "@/data/projectsDetails";
 import CardExperience from "./CardExperience.astro";
 ---
 
 <div class="borde-parcial-l pb-12 pt-28 flex flex-col gap-10 grow">
   <CardExperience
+    id="modal-1"
+    details={projectDetailsPrimarket}
     title="Desarrollador Frontend"
     jobTitle="Primarket"
     date="Julio 2025 - Actualidad"
-    description="Participé en equipos Scrum desarrollando interfaces web con Next.js y Material UI, creando componentes reutilizables y vistas escalables optimizadas para el rendimiento y la experiencia de usuario, aplicando estilos y lógica visual según estándares de diseño y asegurando maquetación responsive y accesible en múltiples dispositivos."
+    description="Participo en equipos Scrum desarrollando interfaces web con Next.js y Material UI, creando componentes reutilizables y vistas escalables optimizadas para el rendimiento y la experiencia de usuario, aplicando estilos y lógica visual según estándares de diseño y asegurando maquetación responsive y accesible en múltiples dispositivos."
   />
   <CardExperience
+    id="modal-2"
+    details={projectDetailsMamparas}
     title="Desarrollador Frontend"
     jobTitle="Freelancer"
     date="Abril 2024 - Junio 2024"
     description="Me encargue del diseño y desarrollo del sitio web para Mamparas Esmeralda, donde lideré la planificación del proyecto y realicé el diseño personalizado del sitio. Utilicé Astro para el desarrollo, optimicé tanto el SEO como el rendimiento de la web, y añadí secciones para mostrar productos y promociones."
   />
   <CardExperience
+    id="modal-3"
+    details={projectDetailsPracticas}
     title="Desarrollador Fullstack"
     jobTitle="Prácticas Profesionales"
     date="Marzo 2023 - Diciembre 2023"
@@ -29,7 +40,7 @@ import CardExperience from "./CardExperience.astro";
     border-image: linear-gradient(
       to bottom,
       transparent 1%,
-       color-mix(in srgb, var(--color-secondary) 20%, transparent) 30%
+      color-mix(in srgb, var(--color-secondary) 20%, transparent) 30%
     );
     border-image-slice: 1;
   }

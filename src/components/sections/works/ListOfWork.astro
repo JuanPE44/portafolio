@@ -15,10 +15,12 @@ import { works } from "@/data/works";
           title,
           urlImage,
           urlLink,
-          urlMore
+          urlMore,
+          projectDetails
         } = work;
         return (
           <CardWork
+          projectDetails={projectDetails}
             description={description}
             jobTitle={jobTitle}
             details={details}
@@ -32,11 +34,4 @@ import { works } from "@/data/works";
       })
     }
   </div>
-  <!--
-    <a
-      href=""
-      class="py-2 px-4 relative text-center text-white/90 font-bold rounded-2xl border border-white/90"
-      >Ver mas trabajos
-    </a>
-   -->
 </div>

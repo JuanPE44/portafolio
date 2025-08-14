@@ -7,19 +7,30 @@ const { name } = Astro.props;
 ---
 
 <div>
-  {
-    name == "Astro" ? (
-      <Badge name={name} className="bg-orange-500/20 border border-orange-500 text-orange-500 " />
-    ) : name == "Figma" ? (
-      <Badge name={name} className="bg-pink-500/20 text-pink-500 border border-pink-500  " />
-    ) : name == "Typescript" ? (
-      <Badge name={name} className="bg-blue-500/20 text-blue-500 border border-blue-500" />
-    ) : name == "React" ? (
-      <Badge name={name} className="bg-cyan-500/20 border border-cyan-500 text-cyan-500" />
-    ) : name == "Tailwind" ? (
-      <Badge name={name} className="bg-emerald-500/20 border border-emerald-500 text-emerald-500" />
-    ) : (
-      <Badge name={name} />
-    )
-  }
+  {name == "Astro" ? (
+    <Badge name={name} className="bg-orange-500/20 border border-orange-500 text-orange-500 " />
+  ) : name == "Figma" ? (
+    <Badge name={name} className="bg-pink-500/20 text-pink-500 border border-pink-500" />
+  ) : name == "Typescript" ? (
+    <Badge name={name} className="bg-blue-500/20 text-blue-500 border border-blue-500" />
+  ) : name == "React" ? (
+    <Badge name={name} className="bg-cyan-500/20 border border-cyan-500 text-cyan-500" />
+  ) : name == "Tailwind" ? (
+    <Badge name={name} className="bg-emerald-500/20 border border-emerald-500 text-emerald-500" />
+  ) : name == "Next.js" ? (
+    <Badge name={name} className="bg-black/20 border border-white/80 text-white/80" />
+  ) : name == "Storybook" ? (
+    <Badge name={name} className="bg-purple-500/20 border border-purple-500 text-purple-500" />
+  ) : name == "Scrum" ? (
+    <Badge name={name} className="bg-yellow-500/20 border border-yellow-500 text-yellow-500" />
+  ) : name == "Node.js" ? (
+    <Badge name={name} className="bg-green-500/20 border border-green-500 text-green-500" />
+  ): name == "PHPMyAdmin" ? (
+    <Badge name={name} className="bg-violet-500/20 border border-violet-500 text-violet-500" />
+  ):name == "Material UI" ? (
+    <Badge name={name} className="bg-indigo-500/20 border border-indigo-500 text-indigo-500" />
+  ): (
+    <Badge name={name} />
+  )}
 </div>
+

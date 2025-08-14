@@ -2,6 +2,9 @@
 import BadgeTecnologie from "@/components/ui/BadgeTecnologie.astro";
 import IconCheck from "@/components/icons/IconCheck.astro";
 import Button from "@/components/atoms/Button.astro";
+import type { ProjectDetailsType } from "@/components/ui/ProjectModalContent.astro";
+import Modal from "@/components/ui/Modal.astro";
+import ProjectModalContent from "@/components/ui/ProjectModalContent.astro";
 
 interface Props {
   urlImage: string;
@@ -12,7 +15,7 @@ interface Props {
   jobTitle: string;
   details: string[];
   tecnologies: string[];
-  imgDirIzq: boolean
+  projectDetails: ProjectDetailsType;
 }
 
 const {
@@ -24,23 +27,26 @@ const {
   description,
   details,
   tecnologies,
-  imgDirIzq=false
+  projectDetails,
 } = Astro.props;
 ---
 
 <div
-  class={`flex flex-col  group bg-surface  hover:border-secondary/15 rounded-2xl border-color-border border ${imgDirIzq ? 'md:flex-row ' : 'md:flex-row-reverse'}`}
+  class={`flex flex-col  group bg-surface rounded-2xl border-color-border border md:flex-row `}
 >
+  <Modal id={jobTitle}>
+    <ProjectModalContent {...projectDetails} />
+  </Modal>
   <div class="w-full md:w-1/2 relative">
     <img
-      class="rounded-2xl w-full h-72 md:h-[400px] object-top-left object-cover  filter"
+      class="rounded-2xl w-full h-72 md:h-[400px] object-top-left object-cover filter"
       src={urlImage}
       alt=""
     />
     <div
-      class="absolute top-0 left-0 w-full h-full  bg-zinc-700/30 duration-300  rounded-2xl  group-hover:bg-zinc-700/20 "
+      class="absolute top-0 left-0 w-full h-full bg-zinc-700/30 duration-300 rounded-2xl group-hover:bg-zinc-700/20"
     >
-    </div> 
+    </div>
   </div>
   <div class="flex flex-col w-full md:w-1/2 p-4">
     <h3 class="text-secondary text-3xl font-bold text-left mt-3 md:mt-0">
@@ -63,10 +69,18 @@ const {
     </div>
 
     <div class="mt-5 flex gap-3">
-      <Button href={urlLink} target="_blank" intent="primary">
-        Link
-      </Button>
-       <Button href={urlMore} target="_blank" intent="secondary">
+      {
+        urlLink ? (
+          <Button href={urlLink} target="_blank" intent="primary">
+            Link
+          </Button>
+        ) : (
+          <Button href={urlLink} target="_blank" intent="disabled">
+            Link no disponible
+          </Button>
+        )
+      }
+      <Button intent="secondary" onclick={`toggleModal('${jobTitle}')`}>
         Ver más
       </Button>
     </div>
