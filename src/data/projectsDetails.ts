@@ -1,7 +1,7 @@
 const COMPANY_NAME = "Primarket";
 const PROJECT_DATES = "Jul 2025 - Actualidad";
 const PROJECT_DESCRIPTION =
-"Actualmente formo parte del desarrollo inicial de Primarket, la primera red digital argentina enfocada exclusivamente en el comercio B2B de materias primas. El proyecto busca ofrecer a empresas, pymes y emprendedores un espacio ágil, seguro y transparente para conseguir insumos específicos, vender excedentes productivos y generar nuevas oportunidades de negocio. Estoy involucrado en la planificación, definición de funcionalidades y desarrollo frontend, con el objetivo de construir una plataforma sólida que potencie la industria nacional y facilite el abastecimiento.";
+"Formé parte del desarrollo inicial de Primarket, la primera red digital argentina enfocada exclusivamente en el comercio B2B de materias primas. El proyecto buscó ofrecer a empresas, pymes y emprendedores un espacio ágil, seguro y transparente para conseguir insumos específicos, vender excedentes productivos y generar nuevas oportunidades de negocio. Estuve involucrado en la planificación, definición de funcionalidades y desarrollo frontend, con el objetivo de construir una plataforma sólida que potencie la industria nacional y facilite el abastecimiento.";
 const PROJECT_ROLE = [
   "Desarrollador Frontend con enfoque en Next.js y TypeScript.",
   "Implementación de interfaces responsivas, incluyendo la adaptación completa del header.",
