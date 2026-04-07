@@ -47,4 +47,34 @@ import "@fontsource-variable/baloo-paaji-2";
     <slot />
     <Footer />
   </ContainerPage>
+
+  <script>
+    function applyLang(lang: string) {
+      document.querySelectorAll<HTMLElement>('[data-lang]').forEach(el => {
+        el.style.display = el.dataset.lang === lang ? '' : 'none';
+      });
+      document.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('[data-placeholder-es]').forEach(el => {
+        const placeholder = lang === 'es'
+          ? el.dataset.placeholderEs
+          : el.dataset.placeholderEn;
+        if (placeholder) el.placeholder = placeholder;
+      });
+      localStorage.setItem('lang', lang);
+      const btn = document.getElementById('lang-toggle');
+      if (btn) btn.textContent = lang === 'es' ? 'EN' : 'ES';
+      document.documentElement.lang = lang;
+    }
+
+    function initLang() {
+      const saved = localStorage.getItem('lang') || 'es';
+      applyLang(saved);
+    }
+
+    document.getElementById('lang-toggle')?.addEventListener('click', () => {
+      const current = localStorage.getItem('lang') || 'es';
+      applyLang(current === 'es' ? 'en' : 'es');
+    });
+
+    initLang();
+  </script>
 </html>

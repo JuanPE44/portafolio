@@ -9,9 +9,10 @@ import IconWhatsapp from "@/components/icons/IconWhatsapp.astro";
 >
   <div class="flex gap-2 items-center justify-between w-full">
     <p class="text-foreground-secondary text-sm sm:text-base">
-      Derechos reservados <span class="text-secondary text-bold"
-        >Juan Peñalba</span
-      > &copy; {new Date().getFullYear()}
+      <span data-lang="es">Derechos reservados</span>
+      <span data-lang="en" style="display:none">All rights reserved</span>
+      <span class="text-secondary text-bold"> Juan Peñalba</span>
+      &copy; {new Date().getFullYear()}
     </p>
     <div class="flex gap-2">
       <a

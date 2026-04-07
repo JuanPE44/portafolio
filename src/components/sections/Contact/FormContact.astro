@@ -14,7 +14,8 @@ import Input from "@/components/ui/Input.astro";
   </div>
 
   <h3 class="text-white/90 text-2xl font-bold mb-6 text-center">
-    Envíame un mensaje
+    <span data-lang="es">Envíame un mensaje</span>
+    <span data-lang="en" style="display:none">Send me a message</span>
   </h3>
 
   <!-- Mensajes -->
@@ -34,9 +35,13 @@ import Input from "@/components/ui/Input.astro";
           points="22,4 12,14.01 9,11.01"></polyline></svg
       >
       <div>
-        <p class="font-semibold">¡Mensaje enviado correctamente!</p>
+        <p class="font-semibold">
+          <span data-lang="es">¡Mensaje enviado correctamente!</span>
+          <span data-lang="en" style="display:none">Message sent successfully!</span>
+        </p>
         <p class="text-sm text-secondary/80">
-          Te responderé a la brevedad. Gracias por contactarme.
+          <span data-lang="es">Te responderé a la brevedad. Gracias por contactarme.</span>
+          <span data-lang="en" style="display:none">I'll get back to you soon. Thanks for reaching out.</span>
         </p>
       </div>
     </div>
@@ -61,9 +66,13 @@ import Input from "@/components/ui/Input.astro";
           y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg
       >
       <div>
-        <p class="font-semibold">Error al enviar el mensaje</p>
+        <p class="font-semibold">
+          <span data-lang="es">Error al enviar el mensaje</span>
+          <span data-lang="en" style="display:none">Error sending the message</span>
+        </p>
         <p class="text-sm text-red-400/80">
-          Por favor, intenta nuevamente o contáctame por WhatsApp.
+          <span data-lang="es">Por favor, intenta nuevamente o contáctame por WhatsApp.</span>
+          <span data-lang="en" style="display:none">Please try again or contact me via WhatsApp.</span>
         </p>
       </div>
     </div>
@@ -82,7 +91,10 @@ import Input from "@/components/ui/Input.astro";
         stroke="currentColor"
         stroke-width="2"><path d="M21 12a9 9 0 11-6.219-8.56"></path></svg
       >
-      <p class="font-semibold">Enviando mensaje...</p>
+      <p class="font-semibold">
+        <span data-lang="es">Enviando mensaje...</span>
+        <span data-lang="en" style="display:none">Sending message...</span>
+      </p>
     </div>
   </div>
 
@@ -92,14 +104,16 @@ import Input from "@/components/ui/Input.astro";
 
   <!-- Campos del formulario -->
   <div class="space-y-4">
-    <Input name="name" type="text" placeholder="Tu nombre completo" />
-    <Input name="email" type="email" placeholder="Tu correo electrónico" />
+    <Input name="name" type="text" placeholder="Tu nombre completo" data-placeholder-es="Tu nombre completo" data-placeholder-en="Your full name" />
+    <Input name="email" type="email" placeholder="Tu correo electrónico" data-placeholder-es="Tu correo electrónico" data-placeholder-en="Your email address" />
   </div>
 
   <textarea
     name="message"
     required
     placeholder="Contame sobre tu proyecto..."
+    data-placeholder-es="Contame sobre tu proyecto..."
+    data-placeholder-en="Tell me about your project..."
     rows="5"
     class="w-full text-white/90 border border-color-border bg-surface  rounded-xl py-3 px-4 mt-4 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent resize-none"
   ></textarea>
@@ -108,7 +122,10 @@ import Input from "@/components/ui/Input.astro";
     id="submit-button"
     class="w-full bg-secondary cursor-pointer text-background font-bold py-3 px-4 rounded-xl mt-6 hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
   >
-    <span id="button-text">Enviar mensaje</span>
+    <span id="button-text">
+      <span data-lang="es">Enviar mensaje</span>
+      <span data-lang="en" style="display:none">Send message</span>
+    </span>
   </button>
 </form>
 
@@ -139,7 +156,8 @@ import Input from "@/components/ui/Input.astro";
       hideAllMessages();
       showMessage(loadingMessage);
       submitButton.disabled = true;
-      buttonText.textContent = "Enviando...";
+      const lang = localStorage.getItem('lang') || 'es';
+      buttonText.textContent = lang === 'es' ? "Enviando..." : "Sending...";
 
       const formData = new FormData(form);
       const data = {
@@ -169,7 +187,8 @@ import Input from "@/components/ui/Input.astro";
         console.error(err);
       } finally {
         submitButton.disabled = false;
-        buttonText.textContent = "Enviar mensaje";
+        const currentLang = localStorage.getItem('lang') || 'es';
+        buttonText.textContent = currentLang === 'es' ? "Enviar mensaje" : "Send message";
       }
     });
 

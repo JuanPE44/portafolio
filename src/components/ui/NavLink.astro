@@ -2,11 +2,13 @@
 interface Props {
   href: string;
   text: string;
+  textEn?: string;
 }
 
-const { href, text } = Astro.props;
+const { href, text, textEn } = Astro.props;
 ---
 
-<a href={href} class="links text-white/90 hover:text-secondary transition-[0.3s]"
-  >{text}</a
->
+<a href={href} class="links text-white/90 hover:text-secondary transition-[0.3s]">
+  <span data-lang="es">{text}</span>
+  {textEn && <span data-lang="en" style="display:none">{textEn}</span>}
+</a>

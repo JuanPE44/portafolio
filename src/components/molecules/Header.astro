@@ -24,16 +24,23 @@ import Button from "../atoms/Button.astro";
             {
               LINKS.map((link) => (
                 <li>
-                  <NavLink href={link.href} text={link.text} />
+                  <NavLink href={link.href} text={link.text} textEn={link.textEn} />
                 </li>
               ))
             }
           </ul>
         </nav>
 
-        <div class="flex">
+        <div class="flex gap-2 items-center">
+          <button
+            id="lang-toggle"
+            class="hidden sm:block text-xs font-bold px-2 py-1 border border-white/30 rounded-lg text-white/70 hover:text-white hover:border-white/60 transition-colors cursor-pointer"
+          >
+            EN
+          </button>
           <Button href="/#contact" intent="outline" class="hidden sm:block">
-            Contacto
+            <span data-lang="es">Contacto</span>
+            <span data-lang="en" style="display:none">Contact</span>
           </Button>
           <IconMenu
             className="stroke-white sm:hidden z-50 cursor-pointer"
@@ -60,12 +67,25 @@ import Button from "../atoms/Button.astro";
           {
             LINKS.map((link) => (
               <li>
-                <NavLink href={link.href} text={link.text} />
+                <NavLink href={link.href} text={link.text} textEn={link.textEn} />
               </li>
             ))
           }
 
-          <li><a href="/#contact">Contacto</a></li>
+          <li>
+            <a href="/#contact">
+              <span data-lang="es">Contacto</span>
+              <span data-lang="en" style="display:none">Contact</span>
+            </a>
+          </li>
+          <li>
+            <button
+              id="lang-toggle-mobile"
+              class="text-sm font-bold px-3 py-1 border border-white/30 rounded-lg text-white/70 hover:text-white hover:border-white/60 transition-colors cursor-pointer"
+            >
+              EN
+            </button>
+          </li>
         </ul>
       </nav>
     </div>
@@ -100,4 +120,27 @@ import Button from "../atoms/Button.astro";
       nav?.classList.toggle("py-3");
     });
   });
+
+  const syncMobileToggle = () => {
+    const lang = localStorage.getItem('lang') || 'es';
+    const mobileBtn = document.getElementById('lang-toggle-mobile');
+    if (mobileBtn) mobileBtn.textContent = lang === 'es' ? 'EN' : 'ES';
+  };
+
+  document.getElementById('lang-toggle-mobile')?.addEventListener('click', () => {
+    const current = localStorage.getItem('lang') || 'es';
+    const next = current === 'es' ? 'en' : 'es';
+    // dispatch to global handler
+    document.querySelectorAll<HTMLElement>('[data-lang]').forEach(el => {
+      el.style.display = el.dataset.lang === next ? '' : 'none';
+    });
+    localStorage.setItem('lang', next);
+    const desktopBtn = document.getElementById('lang-toggle');
+    if (desktopBtn) desktopBtn.textContent = next === 'es' ? 'EN' : 'ES';
+    const mobileBtn = document.getElementById('lang-toggle-mobile');
+    if (mobileBtn) mobileBtn.textContent = next === 'es' ? 'EN' : 'ES';
+    document.documentElement.lang = next;
+  });
+
+  syncMobileToggle();
 </script>

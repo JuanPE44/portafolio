@@ -15,7 +15,8 @@
     "@tailwindcss/vite": "^4.1.10",
     "astro": "^5.1.7",
     "class-variance-authority": "^0.7.1",
-    "resend": "^4.6.0"
+    "resend": "^4.6.0",
+    "tailwindcss": "^4.2.2"
   },
   "devDependencies": {
     "@types/estree": "^1.0.8",
