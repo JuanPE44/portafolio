@@ -1,3 +1,53 @@
+// --------------------- Chabit ---------------------
+
+const PROJECT_TITLE_CHABIT = "Sitio Web & Librería de Componentes";
+const COMPANY_NAME_CHABIT = "Chabit";
+const PROJECT_DATES_CHABIT = "Sept 2025 - Actualidad";
+const PROJECT_DESCRIPTION_CHABIT =
+  "Lideré el desarrollo del sitio web de Chabit utilizando Astro y React, diseñando una arquitectura escalable y optimizada para performance. El proyecto incluyó experiencias visuales 3D y animaciones avanzadas, además del desarrollo de una librería interna de componentes UI reutilizables distribuida como paquete privado y utilizada en las distintas aplicaciones de la empresa.";
+const PROJECT_ROLE_CHABIT = [
+  "Desarrollador de Software con rol de liderazgo técnico en el sitio web.",
+  "Implementación de experiencias 3D y animaciones avanzadas con Three.js, Spline y GSAP.",
+  "Desarrollo de librería interna de componentes con React y React Native, documentada con Storybook.",
+  "Distribución del paquete privado a través de GitHub Packages.",
+  "Colaboración en decisiones de UX/UI y comunicación directa con CEOs del cliente (España).",
+];
+const PROJECT_TECHNOLOGIES_CHABIT = [
+  "astro",
+  "react",
+  "typescript",
+  "tailwind",
+];
+const PROJECT_FEATURES_CHABIT = [
+  "Experiencias visuales 3D integradas con Three.js y Spline.",
+  "Animaciones avanzadas con GSAP y estrategias de carga diferida.",
+  "Librería de componentes UI documentada en Storybook.",
+  "Paquete privado distribuido vía GitHub Packages para uso en múltiples apps.",
+  "Arquitectura escalable y optimizada para performance.",
+];
+const PROJECT_RESULTS_CHABIT = [
+  "Sitio web en producción con experiencias visuales 3D de alto impacto.",
+  "Librería de componentes adoptada en todas las aplicaciones de la empresa.",
+  "Coherencia visual y técnica garantizada entre diseño y desarrollo.",
+];
+const PROJECT_LINK_CHABIT = "https://chabit.io/";
+const PROJECT_IMAGE_CHABIT = "/images/chabit-modal.webp";
+
+export const projectDetailsChabit = {
+  title: PROJECT_TITLE_CHABIT,
+  company: COMPANY_NAME_CHABIT,
+  dates: PROJECT_DATES_CHABIT,
+  description: PROJECT_DESCRIPTION_CHABIT,
+  role: PROJECT_ROLE_CHABIT,
+  technologies: PROJECT_TECHNOLOGIES_CHABIT,
+  features: PROJECT_FEATURES_CHABIT,
+  results: PROJECT_RESULTS_CHABIT,
+  link: PROJECT_LINK_CHABIT,
+  image: PROJECT_IMAGE_CHABIT,
+};
+
+// --------------------- Primarket ---------------------
+
 const COMPANY_NAME = "Primarket";
 const PROJECT_DATES = "Jul 2025 - Actualidad";
 const PROJECT_DESCRIPTION =
@@ -178,30 +228,35 @@ export const projectDetailsGastos = {
 
 const PROJECT_TITLE_EXACTAMENTE = "Exactamente";
 const COMPANY_NAME_EXACTAMENTE = "Proyecto Personal";
-const PROJECT_DATES_EXACTAMENTE = "2025";
+const PROJECT_DATES_EXACTAMENTE = "2025 - Actualidad";
 const PROJECT_DESCRIPTION_EXACTAMENTE =
-  "Exactamente, es una plataforma web diseñada para estudiantes de Ingeniería en Sistemas que reúne en un único espacio recursos académicos de diversas materias. Su objetivo es facilitar el acceso y la organización de resúmenes, parciales y finales, permitiendo que los usuarios puedan buscar, filtrar y compartir material de manera sencilla y rápida.";
+  "Plataforma colaborativa para estudiantes universitarios para buscar, compartir y gestionar recursos académicos — desarrollada y mantenida de forma independiente. Utilizada activamente por más de 200 estudiantes por día, con más de 4.000 recursos cargados por la comunidad. Actualmente en proceso de escalabilidad para soportar múltiples universidades.";
 const PROJECT_ROLE_EXACTAMENTE = [
-  "Desarrollador Frontend.",
-  "Participación en la planificación y definición de la estructura de la plataforma.",
-  "Implementación de componentes reutilizables y diseño adaptativo.",
+  "Desarrollador Fullstack — frontend y backend.",
+  "Diseño y desarrollo de la arquitectura completa del sistema.",
+  "Implementación del backend con Node.js, Hono, Drizzle ORM y PostgreSQL.",
+  "Desarrollo del frontend con React y Astro.",
+  "Mantenimiento continuo y escalabilidad para múltiples universidades.",
 ];
 const PROJECT_TECHNOLOGIES_EXACTAMENTE = [
   "astro",
   "react",
-  "materialui",
+  "tailwind",
   "typescript",
+  "nodejs",
 ];
 const PROJECT_FEATURES_EXACTAMENTE = [
-  "Búsqueda de recursos académicos por materia y tipo (resumen, parcial, final).",
-  "Subida de archivos y metadatos asociados para su clasificación.",
-  "Diseño responsive para acceso desde dispositivos móviles y escritorio.",
-  "Interfaz clara y fácil de navegar gracias a Material UI.",
+  "Búsqueda y filtrado de recursos académicos por materia y tipo.",
+  "Subida de archivos y metadatos por parte de la comunidad.",
+  "Backend propio con Node.js, Hono, Drizzle ORM y PostgreSQL.",
+  "Diseño responsive optimizado para móviles y escritorio.",
+  "Arquitectura escalable para soportar múltiples universidades.",
 ];
 const PROJECT_RESULTS_EXACTAMENTE = [
-  "Plataforma funcional para la gestión y acceso a materiales de estudio.",
-  "Optimización de la experiencia de usuario en la búsqueda y carga de recursos.",
-  "Experiencia en desarrollo colaborativo y uso de librerías UI modernas.",
+  "+200 estudiantes activos por día.",
+  "+4.000 recursos cargados por la comunidad.",
+  "Plataforma en producción con crecimiento orgánico constante.",
+  "Escalabilidad en curso para expansión a múltiples universidades.",
 ];
 const PROJECT_LINK_EXACTAMENTE = "https://www.exactamente.com.ar/"; // Agregar enlace si está desplegada
 const PROJECT_IMAGE_EXACTAMENTE = "/images/exactamente-modal.webp";

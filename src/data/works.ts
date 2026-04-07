@@ -13,13 +13,9 @@ export const works = [
     title: "Exactamente",
     jobTitle: "Aplicacion Web",
     description:
-      "Desarrollo de una plataforma web para facilitar el acceso y la colaboración en recursos académicos, donde los usuarios pueden buscar y subir resúmenes, parciales y finales de distintas materias.",
-    details: ["Desarrollo Frontend", "Integracion con Google Drive"],
-    tecnologies: [  "astro",
-  "react",
-  "tailwind",
-  "typescript",
-],
+      "Plataforma colaborativa para estudiantes universitarios para buscar, compartir y gestionar recursos académicos. Más de 200 estudiantes activos por día y +4.000 recursos cargados por la comunidad.",
+    details: ["Desarrollo Fullstack", "Frontend + Backend + Base de datos"],
+    tecnologies: ["astro", "react", "tailwind", "typescript", "nodejs"],
     projectDetails: projectDetailsExactamente,
   },
   {

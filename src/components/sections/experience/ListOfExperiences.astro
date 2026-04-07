@@ -1,5 +1,6 @@
 ---
 import {
+  projectDetailsChabit,
   projectDetailsMamparas,
   projectDetailsPracticas,
   projectDetailsPrimarket,
@@ -8,6 +9,14 @@ import CardExperience from "./CardExperience.astro";
 ---
 
 <div class="borde-parcial-l pb-12 pt-28 flex flex-col gap-10 grow">
+  <CardExperience
+    id="modal-0"
+    details={projectDetailsChabit}
+    title="Desarrollador de Software"
+    jobTitle="Chabit"
+    date="Septiembre 2025 - Actualidad"
+    description="Lideré el desarrollo del sitio web con Astro y React, implementando experiencias 3D y animaciones avanzadas con Three.js, Spline y GSAP. Desarrollé una librería interna de componentes UI con React y React Native, documentada con Storybook y distribuida como paquete privado vía GitHub Packages."
+  />
   <CardExperience
     id="modal-1"
     details={projectDetailsPrimarket}
