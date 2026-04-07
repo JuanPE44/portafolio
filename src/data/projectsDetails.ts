@@ -35,13 +35,35 @@ const PROJECT_IMAGE_CHABIT = "/images/chabit-modal.webp";
 
 export const projectDetailsChabit = {
   title: PROJECT_TITLE_CHABIT,
+  titleEn: "Website & Component Library",
   company: COMPANY_NAME_CHABIT,
   dates: PROJECT_DATES_CHABIT,
+  datesEn: "Sept 2025 - Present",
   description: PROJECT_DESCRIPTION_CHABIT,
+  descriptionEn: "Led the development of Chabit's website using Astro and React, designing a scalable, performance-optimized architecture. The project included 3D visual experiences and advanced animations, as well as an internal UI component library distributed as a private package and used across all company applications.",
   role: PROJECT_ROLE_CHABIT,
+  roleEn: [
+    "Software Developer with technical leadership role on the website.",
+    "Implementation of 3D experiences and advanced animations with Three.js, Spline, and GSAP.",
+    "Development of internal component library with React and React Native, documented with Storybook.",
+    "Private package distribution via GitHub Packages.",
+    "Collaboration on UX/UI decisions and direct communication with client CEOs (Spain).",
+  ],
   technologies: PROJECT_TECHNOLOGIES_CHABIT,
   features: PROJECT_FEATURES_CHABIT,
+  featuresEn: [
+    "3D visual experiences integrated with Three.js and Spline.",
+    "Advanced animations with GSAP and lazy loading strategies.",
+    "UI component library documented in Storybook.",
+    "Private package distributed via GitHub Packages for use across multiple apps.",
+    "Scalable, performance-optimized architecture.",
+  ],
   results: PROJECT_RESULTS_CHABIT,
+  resultsEn: [
+    "Production website with high-impact 3D visual experiences.",
+    "Component library adopted across all company applications.",
+    "Visual and technical consistency guaranteed between design and development.",
+  ],
   link: PROJECT_LINK_CHABIT,
   image: PROJECT_IMAGE_CHABIT,
 };
@@ -81,13 +103,34 @@ const PROJECT_TITLE = "Plataforma Primarket";
 
 export const projectDetailsPrimarket = {
   title: PROJECT_TITLE,
+  titleEn: "Primarket Platform",
   company: COMPANY_NAME,
   dates: PROJECT_DATES,
+  datesEn: "Jul 2025 - Present",
   description: PROJECT_DESCRIPTION,
+  descriptionEn: "I was part of the initial development of Primarket, the first Argentine digital network focused exclusively on B2B raw materials commerce. The project aimed to offer companies, SMEs, and entrepreneurs an agile, secure, and transparent space to source specific inputs, sell productive surpluses, and generate new business opportunities. I was involved in planning, feature definition, and frontend development.",
   role: PROJECT_ROLE,
+  roleEn: [
+    "Frontend Developer focused on Next.js and TypeScript.",
+    "Implementation of responsive interfaces, including full header adaptation.",
+    "Creation of new reusable components following best development practices.",
+    "Refactoring of existing components to optimize performance and maintainability.",
+    "Participation in Scrum meetings and coordination with the team through the Team Leader.",
+  ],
   technologies: PROJECT_TECHNOLOGIES,
   features: PROJECT_FEATURES,
+  featuresEn: [
+    "Responsive design for header and key sections.",
+    "Documented and accessible component system in Storybook.",
+    "Visual and functional improvements to the project theme.",
+    "Refactoring to optimize component architecture.",
+  ],
   results: PROJECT_RESULTS,
+  resultsEn: [
+    "Greater visual consistency thanks to an optimized theme.",
+    "Centralized component documentation to speed up development.",
+    "More adaptable and faster interfaces through code refactoring.",
+  ],
   link: PROJECT_LINK,
   image: PROJECT_IMAGE,
 };
@@ -127,13 +170,33 @@ const PROJECT_IMAGE_MAMPARAS = "/images/mamparas-modal.webp";
 
 export const projectDetailsMamparas = {
   title: PROJECT_TITLE_MAMPARAS,
+  titleEn: "Mamparas Esmeralda Website",
   company: COMPANY_NAME_MAMPARAS,
   dates: PROJECT_DATES_MAMPARAS,
+  datesEn: "Feb 2024 - Mar 2024",
   description: PROJECT_DESCRIPTION_MAMPARAS,
+  descriptionEn: "Full design and development of the website for Mamparas Esmeralda, including planning, SEO optimization, and key features for promotions management and multilingual support.",
   role: PROJECT_ROLE_MAMPARAS,
+  roleEn: [
+    "Freelance web developer and designer.",
+    "Project structure planning and visual identity definition.",
+    "Development with Astro, applying performance and SEO optimization.",
+    "Implementation of dynamic promotions management.",
+  ],
   technologies: PROJECT_TECHNOLOGIES_MAMPARAS,
   features: PROJECT_FEATURES_MAMPARAS,
+  featuresEn: [
+    "Modern design adaptable to mobile devices.",
+    "Dynamic and easy-to-manage promotions system.",
+    "Internationalization with Spanish and Portuguese support.",
+    "Load time optimization and search engine positioning.",
+  ],
   results: PROJECT_RESULTS_MAMPARAS,
+  resultsEn: [
+    "Increased brand visibility in the digital environment.",
+    "Better user experience through an optimized responsive design.",
+    "Implementation of a promotions system that facilitates content updates.",
+  ],
   link: PROJECT_LINK_MAMPARAS,
   image: PROJECT_IMAGE_MAMPARAS,
 };
@@ -171,13 +234,31 @@ const PROJECT_IMAGE_PRACTICAS = "/images/practicas-modal.webp";
 
 export const projectDetailsPracticas = {
   title: PROJECT_TITLE_PRACTICAS,
+  titleEn: "Professional Internship in Programming",
   company: COMPANY_NAME_PRACTICAS,
   dates: PROJECT_DATES_PRACTICAS,
+  datesEn: "Mar 2023 - Dec 2023",
   description: PROJECT_DESCRIPTION_PRACTICAS,
+  descriptionEn: "Participation in notable projects during the final year of the Programming Technical Degree, strengthening technical skills and teamwork. Contribution to the development of web applications and interactive solutions.",
   role: PROJECT_ROLE_PRACTICAS,
+  roleEn: [
+    "Fullstack Developer.",
+    "Development of an interactive catalog for national tech education offerings, selected as one of the best projects.",
+    "Participation in planning, design, development, and testing.",
+  ],
   technologies: PROJECT_TECHNOLOGIES_PRACTICAS,
   features: PROJECT_FEATURES_PRACTICAS,
+  featuresEn: [
+    "Interactive catalog with search and filtering of educational institutions.",
+    "Mobile-friendly interfaces.",
+    "Collaborative work under Scrum methodology.",
+  ],
   results: PROJECT_RESULTS_PRACTICAS,
+  resultsEn: [
+    "Recognition of the interactive catalog as one of the best projects of the call.",
+    "Improved frontend and backend development skills.",
+    "Practical experience in the full software development lifecycle.",
+  ],
   link: PROJECT_LINK_PRACTICAS,
   image: PROJECT_IMAGE_PRACTICAS,
 };
@@ -214,13 +295,33 @@ const PROJECT_IMAGE_GASTOS = "/images/app-gastos-modal.webp";
 
 export const projectDetailsGastos = {
   title: PROJECT_TITLE_GASTOS,
+  titleEn: "Expense Management Application",
   company: COMPANY_NAME_GASTOS,
   dates: PROJECT_DATES_GASTOS,
+  datesEn: "2025",
   description: PROJECT_DESCRIPTION_GASTOS,
+  descriptionEn: "Web application that facilitates the recording, categorization, and visualization of expenses for more efficient financial control. I was part of a development team, contributing to strategic planning, UI/UX design, and frontend implementation. We worked with Scrum and continuous communication to ensure a functional, adaptable application with a smooth user experience.",
   role: PROJECT_ROLE_GASTOS,
+  roleEn: [
+    "Frontend Developer.",
+    "Active participation in planning and feature definition.",
+    "Implementation of the user interface using React and Material UI.",
+    "Collaboration on visual design and interaction flow.",
+  ],
   technologies: PROJECT_TECHNOLOGIES_GASTOS,
   features: PROJECT_FEATURES_GASTOS,
+  featuresEn: [
+    "Expense recording and classification by category.",
+    "Totals and monthly statistics visualization.",
+    "Responsive design optimized for mobile and desktop devices.",
+    "Clean and consistent interface powered by Material UI.",
+  ],
   results: PROJECT_RESULTS_GASTOS,
+  resultsEn: [
+    "Functional application ready for personal use or adaptation to other contexts.",
+    "Improved UI design and React development skills.",
+    "Experience in component structuring and scalability.",
+  ],
   link: PROJECT_LINK_GASTOS,
   image: PROJECT_IMAGE_GASTOS,
 };
@@ -263,13 +364,36 @@ const PROJECT_IMAGE_EXACTAMENTE = "/images/exactamente-modal.webp";
 
 export const projectDetailsExactamente = {
   title: PROJECT_TITLE_EXACTAMENTE,
+  titleEn: "Exactamente",
   company: COMPANY_NAME_EXACTAMENTE,
   dates: PROJECT_DATES_EXACTAMENTE,
+  datesEn: "2025 - Present",
   description: PROJECT_DESCRIPTION_EXACTAMENTE,
+  descriptionEn: "Collaborative platform for university students to search, share, and manage academic resources — independently developed and maintained. Actively used by over 200 students per day, with more than 4,000 resources uploaded by the community. Currently scaling to support multiple universities.",
   role: PROJECT_ROLE_EXACTAMENTE,
+  roleEn: [
+    "Fullstack Developer — frontend and backend.",
+    "Design and development of the complete system architecture.",
+    "Backend implementation with Node.js, Hono, Drizzle ORM, and PostgreSQL.",
+    "Frontend development with React and Astro.",
+    "Continuous maintenance and scaling for multiple universities.",
+  ],
   technologies: PROJECT_TECHNOLOGIES_EXACTAMENTE,
   features: PROJECT_FEATURES_EXACTAMENTE,
+  featuresEn: [
+    "Search and filtering of academic resources by subject and type.",
+    "File upload and metadata by the community.",
+    "Custom backend with Node.js, Hono, Drizzle ORM, and PostgreSQL.",
+    "Responsive design optimized for mobile and desktop.",
+    "Scalable architecture to support multiple universities.",
+  ],
   results: PROJECT_RESULTS_EXACTAMENTE,
+  resultsEn: [
+    "+200 active students per day.",
+    "+4,000 resources uploaded by the community.",
+    "Platform in production with constant organic growth.",
+    "Ongoing scaling for expansion to multiple universities.",
+  ],
   link: PROJECT_LINK_EXACTAMENTE,
   image: PROJECT_IMAGE_EXACTAMENTE,
 };

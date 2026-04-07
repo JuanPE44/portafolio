@@ -63,9 +63,9 @@ export const SERVICES = [
 ];
 
 export const LINKS = [
-  { href: "/#experience", text: "Experiencia" },
-  { href: "/#works", text: "Proyectos" },
-  { href: "/#projects", text: "Experimentos" },
+  { href: "/#experience", text: "Experiencia", textEn: "Experience" },
+  { href: "/#works", text: "Proyectos", textEn: "Projects" },
+  { href: "/#projects", text: "Experimentos", textEn: "Experiments" },
 ];
 
 export const SKILLS = [
