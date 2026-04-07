@@ -20,14 +20,17 @@ interface Details {
 
 interface Props {
   title: string;
+  titleEn?: string;
   date: string;
+  dateEn?: string;
   description: string;
+  descriptionEn?: string;
   jobTitle: string;
   details: Details;
   id: string;
 }
 
-const { id, title, date, description, jobTitle, details } = Astro.props;
+const { id, title, titleEn, date, dateEn, description, descriptionEn, jobTitle, details } = Astro.props;
 ---
 
 <div class="relative -left-[9px] flex gap-2">
@@ -38,23 +41,25 @@ const { id, title, date, description, jobTitle, details } = Astro.props;
   <div class="flex flex-col lg:flex-row gap-10">
     <div class="flex flex-col lg:w-1/3">
       <h3 class="text-secondary text-2xl font-bold text-left">
-        {title}
+        <span data-lang="es">{title}</span>
+        {titleEn && <span data-lang="en" style="display:none">{titleEn}</span>}
       </h3>
       <p class="text-white/90 italic mt-2">{jobTitle}</p>
       <div class="flex gap-2 text-xs text-zinc-400 mt-2">
         <IconCalendar className="fill-zinc-400" />
-        <span>{date}</span>
+        <span data-lang="es">{date}</span>
+        {dateEn && <span data-lang="en" style="display:none">{dateEn}</span>}
       </div>
     </div>
     <div class="flex flex-col gap-3 flex-1">
-      <p class="text-foreground-secondary">
-        {description}
-      </p>
+      <p class="text-foreground-secondary" data-lang="es">{description}</p>
+      {descriptionEn && <p class="text-foreground-secondary" data-lang="en" style="display:none">{descriptionEn}</p>}
       <button
         onclick={`toggleModal('${id}')`}
         class="text-primary font-bold flex cursor-pointer items-center hover:grayscale-25"
       >
-        <span>Saber más</span>
+        <span data-lang="es">Saber más</span>
+        <span data-lang="en" style="display:none">Learn more</span>
         <IconRowRigth />
       </button>
     </div>

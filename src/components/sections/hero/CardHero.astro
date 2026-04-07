@@ -2,14 +2,16 @@
 interface Props {
   className?: string;
   title: string;
+  titleEn?: string;
 }
 
-const { className = "", title } = Astro.props;
+const { className = "", title, titleEn } = Astro.props;
 ---
 
 <div class={`p-3 bg-primary absolute rounded-2xl  ${className}`}>
   <h3 class="text-foreground font-bold text-base sm:text-sm lg:text-base">
-    {title}
+    <span data-lang="es">{title}</span>
+    {titleEn && <span data-lang="en" style="display:none">{titleEn}</span>}
   </h3>
   <slot />
 </div>

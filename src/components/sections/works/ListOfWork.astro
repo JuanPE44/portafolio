@@ -9,8 +9,11 @@ import { works } from "@/data/works";
       works.map((work,i) => {
         const {
           description,
+          descriptionEn,
           jobTitle,
+          jobTitleEn,
           details,
+          detailsEn,
           tecnologies,
           title,
           urlImage,
@@ -20,10 +23,13 @@ import { works } from "@/data/works";
         } = work;
         return (
           <CardWork
-          projectDetails={projectDetails}
+            projectDetails={projectDetails}
             description={description}
+            descriptionEn={descriptionEn}
             jobTitle={jobTitle}
+            jobTitleEn={jobTitleEn}
             details={details}
+            detailsEn={detailsEn}
             tecnologies={tecnologies}
             title={title}
             urlImage={urlImage}

@@ -15,7 +15,7 @@ import Sand from "./Sand.astro";
       <Game2048 />
     </CardProject>
     <CardProject
-      title="Reloj analogico"
+      title="Analog Clock"
       urlDemo="https://analogclockjuanpa.vercel.app"
       urlGithub="https://github.com/JuanPE44/analog-clock"
     >
@@ -23,7 +23,10 @@ import Sand from "./Sand.astro";
     </CardProject>
     <CardProject title="Sand" urlDemo="https://sand-rouge.vercel.app/" urlGithub="https://github.com/JuanPE44/sand">
       <div class="flex flex-col text-gray items-center">
-        <h4 class="text-foreground mb-2 italic">Hace click en el tablero</h4>
+        <h4 class="text-foreground mb-2 italic">
+          <span data-lang="es">Hace click en el tablero</span>
+          <span data-lang="en" style="display:none">Click on the board</span>
+        </h4>
         <Sand />
       </div>
     </CardProject>

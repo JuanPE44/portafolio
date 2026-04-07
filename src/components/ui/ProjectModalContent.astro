@@ -5,26 +5,38 @@ import Button from "../atoms/Button.astro";
 export interface ProjectDetailsType {
   image: string;
   title: string;
+  titleEn?: string;
   company: string;
   dates: string;
+  datesEn?: string;
   description: string;
+  descriptionEn?: string;
   role: string[];
+  roleEn?: string[];
   technologies: string[];
   features: string[];
+  featuresEn?: string[];
   results: string[];
+  resultsEn?: string[];
   link: string;
 }
 
 const {
   image,
   title,
+  titleEn,
   company,
   dates,
+  datesEn,
   description,
+  descriptionEn,
   role,
+  roleEn,
   technologies,
   features,
+  featuresEn,
   results,
+  resultsEn,
   link,
 } = Astro.props as ProjectDetailsType;
 ---
@@ -51,11 +63,13 @@ const {
         <span
           class="px-3 py-1 bg-foreground-secondary/20 backdrop-blur-sm text-foreground-secondary border border-foreground-secondary text-xs font-medium rounded-full"
         >
-          {dates}
+          <span data-lang="es">{dates}</span>
+          {datesEn && <span data-lang="en" style="display:none">{datesEn}</span>}
         </span>
       </div>
       <h3 class="text-2xl md:text-3xl font-bold text-foreground">
-        {title}
+        <span data-lang="es">{title}</span>
+        {titleEn && <span data-lang="en" style="display:none">{titleEn}</span>}
       </h3>
     </div>
   </div>
@@ -63,7 +77,8 @@ const {
   <!-- Description -->
   <div class="space-y-6">
     <div>
-      <p class="text-foreground-secondary leading-relaxed">{description}</p>
+      <p class="text-foreground-secondary leading-relaxed" data-lang="es">{description}</p>
+      {descriptionEn && <p class="text-foreground-secondary leading-relaxed" data-lang="en" style="display:none">{descriptionEn}</p>}
     </div>
 
     <!-- Role & Responsibilities -->
@@ -84,18 +99,27 @@ const {
             d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
           ></path>
         </svg>
-        Rol y responsabilidades
+        <span data-lang="es">Rol y responsabilidades</span>
+        <span data-lang="en" style="display:none">Role & Responsibilities</span>
       </h4>
-      <ul class="space-y-2">
-        {
-          role.map((item) => (
+      <ul class="space-y-2" data-lang="es">
+        {role.map((item) => (
+          <li class="flex items-start gap-2 text-foreground-secondary">
+            <span class="text-primary mt-1">•</span>
+            <span class="text-sm md:text-base">{item}</span>
+          </li>
+        ))}
+      </ul>
+      {roleEn && (
+        <ul class="space-y-2" data-lang="en" style="display:none">
+          {roleEn.map((item) => (
             <li class="flex items-start gap-2 text-foreground-secondary">
               <span class="text-primary mt-1">•</span>
               <span class="text-sm md:text-base">{item}</span>
             </li>
-          ))
-        }
-      </ul>
+          ))}
+        </ul>
+      )}
     </div>
 
     <!-- Technologies -->
@@ -116,7 +140,8 @@ const {
             d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
           ></path>
         </svg>
-        Tecnologías utilizadas
+        <span data-lang="es">Tecnologías utilizadas</span>
+        <span data-lang="en" style="display:none">Technologies used</span>
       </h4>
       <div class="flex flex-wrap ">
         {technologies.map((tech) => <Badge variant={tech} />)}
@@ -140,18 +165,27 @@ const {
             stroke-width="2"
             d="M5 13l4 4L19 7"></path>
         </svg>
-        Funcionalidades destacadas
+        <span data-lang="es">Funcionalidades destacadas</span>
+        <span data-lang="en" style="display:none">Key features</span>
       </h4>
-      <ul class="space-y-2">
-        {
-          features.map((feature) => (
+      <ul class="space-y-2" data-lang="es">
+        {features.map((feature) => (
+          <li class="flex items-start gap-2 text-foreground-secondary">
+            <span class="text-primary mt-1">•</span>
+            <span class="text-sm md:text-base">{feature}</span>
+          </li>
+        ))}
+      </ul>
+      {featuresEn && (
+        <ul class="space-y-2" data-lang="en" style="display:none">
+          {featuresEn.map((feature) => (
             <li class="flex items-start gap-2 text-foreground-secondary">
               <span class="text-primary mt-1">•</span>
               <span class="text-sm md:text-base">{feature}</span>
             </li>
-          ))
-        }
-      </ul>
+          ))}
+        </ul>
+      )}
     </div>
 
     <!-- Results -->
@@ -172,9 +206,10 @@ const {
                 d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
               />
             </svg>
-            Resultados e impacto
+            <span data-lang="es">Resultados e impacto</span>
+            <span data-lang="en" style="display:none">Results & Impact</span>
           </h4>
-          <ul class="space-y-2">
+          <ul class="space-y-2" data-lang="es">
             {results.map((result) => (
               <li class="flex items-start gap-2 text-foreground-secondary">
                 <span class="text-primary mt-1">•</span>
@@ -182,6 +217,16 @@ const {
               </li>
             ))}
           </ul>
+          {resultsEn && (
+            <ul class="space-y-2" data-lang="en" style="display:none">
+              {resultsEn.map((result) => (
+                <li class="flex items-start gap-2 text-foreground-secondary">
+                  <span class="text-primary mt-1">•</span>
+                  <span class="text-sm md:text-base">{result}</span>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       )
     }
@@ -197,7 +242,8 @@ const {
           </Button>
         ) : (
           <Button href={link} target="_blank" class="w-max" intent="disabled">
-            Link no disponible
+            <span data-lang="es">Link no disponible</span>
+            <span data-lang="en" style="display:none">Link unavailable</span>
           </Button>
         )
       }

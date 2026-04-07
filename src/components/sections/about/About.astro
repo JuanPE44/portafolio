@@ -21,17 +21,24 @@ import IconLinux from "@/components/icons/IconLinux.astro";
 ---
 
 <ContainerSection id="about">
-  <SectionTitle text="Sobre mi">
+  <SectionTitle text="Sobre mi" textEn="About me">
     <IconGuitar />
   </SectionTitle>
   <div class="flex flex-col md:flex-row gap-40 md:mt-28 md:gap-0">
     <div class="md:w-1/2 w-full text-foreground-secondary flex flex-col gap-4 text-lg">
-      <p>
+      <p data-lang="es">
         Desarrollador Fullstack con experiencia construyendo y entregando aplicaciones web. Trabajo en todo el stack — desde
         <span class="text-secondary font-bold">interfaces frontend cuidadas y performantes</span> hasta <span class="text-secondary font-bold">servicios backend y APIs</span> — con fuerte foco en calidad y adaptabilidad.
       </p>
-      <p>
+      <p data-lang="en" style="display:none">
+        Fullstack Developer experienced in building and shipping web applications. I work across the stack — from
+        <span class="text-secondary font-bold">performant and polished frontend interfaces</span> to <span class="text-secondary font-bold">backend services and APIs</span> — with a strong focus on quality and adaptability.
+      </p>
+      <p data-lang="es">
         Me gusta resolver problemas reales y colaborar en equipos remotos. Actualmente profundizando en <span class="text-primary font-bold">Node.js y NestJS</span>, y explorando <span class="text-primary font-bold">Web3 y Solidity</span>.
+      </p>
+      <p data-lang="en" style="display:none">
+        I enjoy solving real-world problems and collaborating in remote teams. Currently deepening my knowledge in <span class="text-primary font-bold">Node.js and NestJS</span>, and exploring <span class="text-primary font-bold">Web3 and Solidity</span>.
       </p>
       <p>
         Además de la programación, disfruto de la fotografía, el gimnasio,
@@ -72,7 +79,8 @@ import IconLinux from "@/components/icons/IconLinux.astro";
           id="descargar-cv"
           class="w-max bg-primary hover:scale-105 transition-[0.3s] cursor-pointer rounded-2xl py-3 px-4 -bottom-[40%] left-1/2 -translate-x-1/2 text-lg font-bold text-white/90 absolute z-40"
         >
-          Descargar mi CV
+          <span data-lang="es">Descargar mi CV</span>
+          <span data-lang="en" style="display:none">Download my CV</span>
         </button>
         <Image
           alt="imagen hero"

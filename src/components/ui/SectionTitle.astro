@@ -1,9 +1,10 @@
 ---
 interface Props {
   text: string;
+  textEn?: string;
   className?: string;
 }
-const { text, className = "mb-20" } = Astro.props;
+const { text, textEn, className = "mb-20" } = Astro.props;
 ---
 
 <h2
@@ -12,5 +13,6 @@ const { text, className = "mb-20" } = Astro.props;
   <div class="border-[1px] border-primary rounded-full p-1">
     <slot />
   </div>
-  <span>{text}</span>
+  <span data-lang="es">{text}</span>
+  {textEn && <span data-lang="en" style="display:none">{textEn}</span>}
 </h2>

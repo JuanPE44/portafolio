@@ -9,6 +9,7 @@ import SectionTitle from "@/components/ui/SectionTitle.astro";
 <ContainerSection className="pb-20" id="education">
   <SectionTitle
     text="Educación"
+    textEn="Education"
     className="border-l-[2px] pt-28 pb-4 border-secondary/20"
   >
     <IconBook />
@@ -39,10 +40,14 @@ import SectionTitle from "@/components/ui/SectionTitle.astro";
               >
                 Universidad Nacional del Centro de la Provincia de Buenos Aires
               </h3>
-              <p class="text-white/90 italic mt-2">Ingenieria en sistemas</p>
+              <p class="text-white/90 italic mt-2">
+                <span data-lang="es">Ingenieria en sistemas</span>
+                <span data-lang="en" style="display:none">Systems Engineering</span>
+              </p>
               <div class="flex gap-2 text-xs text-zinc-400 mt-2">
                 <IconCalendar className="fill-zinc-400" />
-                <span>Marzo 2024 - Actualmente.</span>
+                <span data-lang="es">Marzo 2024 - Actualmente.</span>
+                <span data-lang="en" style="display:none">March 2024 - Present.</span>
               </div>
             </div>
           </div>
@@ -59,12 +64,13 @@ import SectionTitle from "@/components/ui/SectionTitle.astro";
                 Escuela Técnica N.º 2 Ing. Felipe Senillosa
               </h3>
               <p class="text-white/90 italic mt-2">
-                Tecnicatura en Programación Informática - Aplicaciones
-                Específicas
+                <span data-lang="es">Tecnicatura en Programación Informática - Aplicaciones Específicas</span>
+                <span data-lang="en" style="display:none">Computer Programming Technical Degree - Specific Applications</span>
               </p>
               <div class="flex gap-2 text-xs text-zinc-400 mt-2">
                 <IconCalendar className="fill-zinc-400" />
-                <span>Marzo 2020 - Diciembre 2023</span>
+                <span data-lang="es">Marzo 2020 - Diciembre 2023</span>
+                <span data-lang="en" style="display:none">March 2020 - December 2023</span>
               </div>
             </div>
           </div>

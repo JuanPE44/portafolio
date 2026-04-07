@@ -12,8 +12,11 @@ interface Props {
   urlMore: string;
   title: string;
   description: string;
+  descriptionEn?: string;
   jobTitle: string;
+  jobTitleEn?: string;
   details: string[];
+  detailsEn?: string[];
   tecnologies: string[];
   projectDetails: ProjectDetailsType;
 }
@@ -25,7 +28,10 @@ const {
   title,
   jobTitle,
   description,
+  descriptionEn,
+  jobTitleEn,
   details,
+  detailsEn,
   tecnologies,
   projectDetails,
 } = Astro.props;
@@ -52,20 +58,34 @@ const {
     <h3 class="text-secondary text-3xl font-bold text-left mt-3 md:mt-0">
       {title}
     </h3>
-    <h4 class="text-zinc-400 italic">{jobTitle}</h4>
+    <h4 class="text-zinc-400 italic">
+      <span data-lang="es">{jobTitle}</span>
+      {jobTitleEn && <span data-lang="en" style="display:none">{jobTitleEn}</span>}
+    </h4>
     <div class="flex mt-4">
       {tecnologies.map((tecnology) => <Badge variant={tecnology}/>)}
     </div>
-    <p class="text-foreground-secondary mt-5">{description}</p>
+    <p class="text-foreground-secondary mt-5" data-lang="es">{description}</p>
+    {descriptionEn && <p class="text-foreground-secondary mt-5" data-lang="en" style="display:none">{descriptionEn}</p>}
     <div class="mt-3">
-      {
-        details.map((detail) => (
+      <div data-lang="es">
+        {details.map((detail) => (
           <div class="flex gap-1 items-center text-lg text-white/90">
             <IconCheck className="fill-primary" width="20" height="20" />
             <span>{detail}</span>
           </div>
-        ))
-      }
+        ))}
+      </div>
+      {detailsEn && (
+        <div data-lang="en" style="display:none">
+          {detailsEn.map((detail) => (
+            <div class="flex gap-1 items-center text-lg text-white/90">
+              <IconCheck className="fill-primary" width="20" height="20" />
+              <span>{detail}</span>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
 
     <div class="mt-5 flex gap-3">
@@ -76,12 +96,14 @@ const {
           </Button>
         ) : (
           <Button href={urlLink} target="_blank" intent="disabled">
-            Link no disponible
+            <span data-lang="es">Link no disponible</span>
+            <span data-lang="en" style="display:none">Link unavailable</span>
           </Button>
         )
       }
       <Button intent="secondary" onclick={`toggleModal('${jobTitle}')`}>
-        Ver más
+        <span data-lang="es">Ver más</span>
+        <span data-lang="en" style="display:none">View more</span>
       </Button>
     </div>
   </div>
